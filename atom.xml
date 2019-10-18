@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-18T15:37:16.702Z</updated>
+  <updated>2019-10-18T23:32:55.173Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,19 @@
     <link href="http://yoursite.com/2019/10/18/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     <id>http://yoursite.com/2019/10/18/Java异常处理/</id>
     <published>2019-10-18T14:38:45.354Z</published>
-    <updated>2019-10-18T15:37:16.702Z</updated>
+    <updated>2019-10-18T23:32:55.173Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: Java异常处理<br>date: 2017-04-03 18:14<br>tags: </p><ul><li>Java<br>categories: 技术栈</li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: Java异常处理<br>date: 2017-04-03 18:14<br>categories: </p><ul><li>技术栈<br>tags: </li><li>Java</li></ul><hr>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;title: Java异常处理&lt;br&gt;date: 2017-04-03 18:14&lt;br&gt;tags: &lt;/p&gt;
+&lt;p&gt;title: Java异常处理&lt;br&gt;date: 2017-04-03 18:14&lt;br&gt;categories: &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Java&lt;br&gt;categories: 技术栈&lt;/li&gt;
+&lt;li&gt;技术栈&lt;br&gt;tags: &lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 
@@ -49,21 +50,22 @@
     <link href="http://yoursite.com/2019/10/18/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/"/>
     <id>http://yoursite.com/2019/10/18/集合框架/</id>
     <published>2019-10-18T14:27:51.080Z</published>
-    <updated>2019-10-18T14:38:32.241Z</updated>
+    <updated>2019-10-18T23:43:25.047Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: 集合框架<br>date: 2017-03-25 8:58<br>tags: </p><ul><li>Java<br>categories: 技术栈</li></ul><hr><h3 id="泛型的作用"><a href="#泛型的作用" class="headerlink" title="泛型的作用:"></a>泛型的作用:</h3><h4 id="1-泛型的定义"><a href="#1-泛型的定义" class="headerlink" title="1. 泛型的定义:"></a>1. 泛型的定义:</h4><p>泛型的本质是参数化类型,也就是说所操作的数据类型被指定为一个参数.这种参数类型,可以在类 接口 和方法中创建,分别称为泛型类、泛型接口、泛型方法。 Java语言引入泛型的好处是安全简单。</p><h4 id="2-泛型的作用"><a href="#2-泛型的作用" class="headerlink" title="2. 泛型的作用:"></a>2. 泛型的作用:</h4><p>引入泛型的好处是安全简单 可以将运行时类型相关错误提前到编译时错误.</p><h4 id="3-泛型的特点"><a href="#3-泛型的特点" class="headerlink" title="3. 泛型的特点:"></a>3. 泛型的特点:</h4><ul><li>所有的泛型类的参数在编译时都会被擦除,虚拟机运行时没有泛型.</li><li>java泛型不支持基本类型</li><li>在泛型内部,无法获得有关系泛型参数类型的信息,如果传入的类型参数为T,那么在泛型代码内部你不知道T有什么方法,属性,关于T 的一切信息都丢失了</li><li>创建泛型对象时,清指明类型.</li><li>java的泛型类型不能用于new构建对象,也不能用于初始化数组.</li></ul><h3 id="集合接口"><a href="#集合接口" class="headerlink" title="集合接口:"></a>集合接口:</h3><h4 id="1-为什么要使用集合接口"><a href="#1-为什么要使用集合接口" class="headerlink" title="1.为什么要使用集合接口:"></a>1.为什么要使用集合接口:</h4><p>如果并不知道程序运行时会需要多少对象，或者需要更复杂方式存储对象——可以使用Java集合框架</p><h4 id="2-集合框架组成"><a href="#2-集合框架组成" class="headerlink" title="2. 集合框架组成"></a>2. 集合框架组成</h4><ol><li>Collection接口是最基本的集合接口.</li><li>Map接口(实现类:HasMap . TreeMap)<br>Map是一系列键值对组成的集合,提供了key到Value的映射.同时它也没有继承Collection.在Map中保证了key和Vlaue之间的一一对应,所以它不能存在相同的key值.</li><li>List接口为Collection子接口。List所代表的是有序的Collection</li></ol><ul><li>它用某种特定的插入顺序来维护元素顺序。用户可以对列表中每个元素的插入位置进行精确地控制，同时可以根据元素的整数索引（在列表中的位置，和数组相似，从0开始，到元素个数-1）访问元素，并检索列表中的元素</li><li>实现类:<ul><li><strong>ArraryList</strong>是一个非线程安全的列表,在遍历元素效率比较高.线程不同步.</li><li><strong>LinkedList</strong>是一个双向链表,在添加和删除元素时效率比较高.线程不同步.</li><li><strong>Vector</strong>与ArrayList相似，但是Vector是同步的。所以说Vector是使用数组实现的线程安全的列表。它的操作与ArrayList几乎一样.</li></ul></li></ul><ol start="4"><li>Set是一种不包括重复元素的Collection:</li></ol><ul><li>它维持自己的内部排序，所以随机访问没有任何意义。与List一样，它同样允许null的存在但是仅有一个</li><li>由于Set接口的特殊性，所有传入Set集合中的元素都必须不同</li><li>实现类:<ul><li><strong>EnumSet</strong>是枚举的专用Set。所有的元素都是枚举类型</li><li><strong>HashSet</strong> HashSet堪称查询速度最快的集合，因为其内部是以HashCode来实现的。它内部元素的顺序是由哈希码来决定的，所以它不保证set的迭代顺序；特别是它不保证该顺序恒久不变</li><li><strong>TreeSet</strong>基于TreeMap，生成一个总是处于排序状态的set，内部以TreeMap来实现。它是使用元素的自然顺序对元素进行排序，或者根据创建Set 时提供的 Comparator 进行排序，具体取决于使用的构造方法</li></ul></li></ul><ol start="5"><li>Queue</li></ol><ul><li>队列是一种先进先出的数据结构，元素在队列末尾添加，在队列头部删除。Queue接口扩展自Collection，并提供插入、提取、检验等操作</li><li>方法offer表示向队列添加一个元素，poll()与remove()方法都是移除队列头部的元素，两者的区别在于如果队列为空，那么poll()返回的是null，而remove()会抛出一个异常。方法element()与peek()主要是获取头部元素，不删除。</li><li>接口Deque，是一个扩展自Queue的双端队列，它支持在两端插入和删除元素，因为LinkedList类实现了Deque接口，所以通常我们可以使用LinkedList来创建一个队列。PriorityQueue类实现了一个优先队列，优先队列中元素被赋予优先级，拥有高优先级的先被删除</li></ul><ol start="6"><li>ArrayList</li></ol><ul><li>ArrayList是一个用数组实现的列表，也是我们最常用的集合。它允许任何符合规则的元素插入甚至包括null</li><li>每一个ArrayList都有一个初始容量（10），该容量代表了数组的大小。随着容器中的元素不断增加，容器的大小也会随着增加。在每次向容器中增加元素的同时都会进行容量检查，当快溢出时，就会进行扩容操作（构建一个新的更大的数组并将之前的内容拷贝到新书组中）。所以如果我们明确所插入元素的多少，最好指定一个初始容量值，避免过多的进行扩容操作而浪费时间、效率</li><li>ArrayList的默认扩容扩展后数组大小为：(原数组长度*3)/2+1</li><li>ArrayList是一个非线程安全的列表</li></ul><ol start="7"><li>LinkedList</li></ol><ul><li>同样实现List接口的LinkedList与ArrayList不同，LinkedList是一个双向链表。所以它除了有ArrayList的基本操作方法外还额外提供了get，remove，insert方法在LinkedList的首部或尾部</li><li>由于实现的方式不同，LinkedList不能随机访问，它所有的操作都是要按照双重链表的需要执行。在列表中索引的操作将从开头或结尾遍历列表（从靠近指定索引的一端）。这样做的好处就是可以通过较低的代价在List中进行插入和删除操作</li><li>与ArrayList一样，LinkedList也是非同步的。如果多个线程同时访问一个List，则必须自己实现访问同步</li></ul>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: 集合框架<br>date: 2017-03-25 8:58<br>categories: </p><ul><li>后端技术栈<br>tags: </li><li>Java</li></ul><hr><h3 id="泛型的作用"><a href="#泛型的作用" class="headerlink" title="泛型的作用:"></a>泛型的作用:</h3><h4 id="1-泛型的定义"><a href="#1-泛型的定义" class="headerlink" title="1. 泛型的定义:"></a>1. 泛型的定义:</h4><p>泛型的本质是参数化类型,也就是说所操作的数据类型被指定为一个参数.这种参数类型,可以在类 接口 和方法中创建,分别称为泛型类、泛型接口、泛型方法。 Java语言引入泛型的好处是安全简单。</p><h4 id="2-泛型的作用"><a href="#2-泛型的作用" class="headerlink" title="2. 泛型的作用:"></a>2. 泛型的作用:</h4><p>引入泛型的好处是安全简单 可以将运行时类型相关错误提前到编译时错误.</p><h4 id="3-泛型的特点"><a href="#3-泛型的特点" class="headerlink" title="3. 泛型的特点:"></a>3. 泛型的特点:</h4><ul><li>所有的泛型类的参数在编译时都会被擦除,虚拟机运行时没有泛型.</li><li>java泛型不支持基本类型</li><li>在泛型内部,无法获得有关系泛型参数类型的信息,如果传入的类型参数为T,那么在泛型代码内部你不知道T有什么方法,属性,关于T 的一切信息都丢失了</li><li>创建泛型对象时,清指明类型.</li><li>java的泛型类型不能用于new构建对象,也不能用于初始化数组.</li></ul><h3 id="集合接口"><a href="#集合接口" class="headerlink" title="集合接口:"></a>集合接口:</h3><h4 id="1-为什么要使用集合接口"><a href="#1-为什么要使用集合接口" class="headerlink" title="1.为什么要使用集合接口:"></a>1.为什么要使用集合接口:</h4><p>如果并不知道程序运行时会需要多少对象，或者需要更复杂方式存储对象——可以使用Java集合框架</p><h4 id="2-集合框架组成"><a href="#2-集合框架组成" class="headerlink" title="2. 集合框架组成"></a>2. 集合框架组成</h4><ol><li>Collection接口是最基本的集合接口.</li><li>Map接口(实现类:HasMap . TreeMap)<br>Map是一系列键值对组成的集合,提供了key到Value的映射.同时它也没有继承Collection.在Map中保证了key和Vlaue之间的一一对应,所以它不能存在相同的key值.</li><li>List接口为Collection子接口。List所代表的是有序的Collection</li></ol><ul><li>它用某种特定的插入顺序来维护元素顺序。用户可以对列表中每个元素的插入位置进行精确地控制，同时可以根据元素的整数索引（在列表中的位置，和数组相似，从0开始，到元素个数-1）访问元素，并检索列表中的元素</li><li>实现类:<ul><li><strong>ArraryList</strong>是一个非线程安全的列表,在遍历元素效率比较高.线程不同步.</li><li><strong>LinkedList</strong>是一个双向链表,在添加和删除元素时效率比较高.线程不同步.</li><li><strong>Vector</strong>与ArrayList相似，但是Vector是同步的。所以说Vector是使用数组实现的线程安全的列表。它的操作与ArrayList几乎一样.</li></ul></li></ul><ol start="4"><li>Set是一种不包括重复元素的Collection:</li></ol><ul><li>它维持自己的内部排序，所以随机访问没有任何意义。与List一样，它同样允许null的存在但是仅有一个</li><li>由于Set接口的特殊性，所有传入Set集合中的元素都必须不同</li><li>实现类:<ul><li><strong>EnumSet</strong>是枚举的专用Set。所有的元素都是枚举类型</li><li><strong>HashSet</strong> HashSet堪称查询速度最快的集合，因为其内部是以HashCode来实现的。它内部元素的顺序是由哈希码来决定的，所以它不保证set的迭代顺序；特别是它不保证该顺序恒久不变</li><li><strong>TreeSet</strong>基于TreeMap，生成一个总是处于排序状态的set，内部以TreeMap来实现。它是使用元素的自然顺序对元素进行排序，或者根据创建Set 时提供的 Comparator 进行排序，具体取决于使用的构造方法</li></ul></li></ul><ol start="5"><li>Queue</li></ol><ul><li>队列是一种先进先出的数据结构，元素在队列末尾添加，在队列头部删除。Queue接口扩展自Collection，并提供插入、提取、检验等操作</li><li>方法offer表示向队列添加一个元素，poll()与remove()方法都是移除队列头部的元素，两者的区别在于如果队列为空，那么poll()返回的是null，而remove()会抛出一个异常。方法element()与peek()主要是获取头部元素，不删除。</li><li>接口Deque，是一个扩展自Queue的双端队列，它支持在两端插入和删除元素，因为LinkedList类实现了Deque接口，所以通常我们可以使用LinkedList来创建一个队列。PriorityQueue类实现了一个优先队列，优先队列中元素被赋予优先级，拥有高优先级的先被删除</li></ul><ol start="6"><li>ArrayList</li></ol><ul><li>ArrayList是一个用数组实现的列表，也是我们最常用的集合。它允许任何符合规则的元素插入甚至包括null</li><li>每一个ArrayList都有一个初始容量（10），该容量代表了数组的大小。随着容器中的元素不断增加，容器的大小也会随着增加。在每次向容器中增加元素的同时都会进行容量检查，当快溢出时，就会进行扩容操作（构建一个新的更大的数组并将之前的内容拷贝到新书组中）。所以如果我们明确所插入元素的多少，最好指定一个初始容量值，避免过多的进行扩容操作而浪费时间、效率</li><li>ArrayList的默认扩容扩展后数组大小为：(原数组长度*3)/2+1</li><li>ArrayList是一个非线程安全的列表</li></ul><ol start="7"><li>LinkedList</li></ol><ul><li>同样实现List接口的LinkedList与ArrayList不同，LinkedList是一个双向链表。所以它除了有ArrayList的基本操作方法外还额外提供了get，remove，insert方法在LinkedList的首部或尾部</li><li>由于实现的方式不同，LinkedList不能随机访问，它所有的操作都是要按照双重链表的需要执行。在列表中索引的操作将从开头或结尾遍历列表（从靠近指定索引的一端）。这样做的好处就是可以通过较低的代价在List中进行插入和删除操作</li><li>与ArrayList一样，LinkedList也是非同步的。如果多个线程同时访问一个List，则必须自己实现访问同步</li></ul>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;title: 集合框架&lt;br&gt;date: 2017-03-25 8:58&lt;br&gt;tags: &lt;/p&gt;
+&lt;p&gt;title: 集合框架&lt;br&gt;date: 2017-03-25 8:58&lt;br&gt;categories: &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Java&lt;br&gt;categories: 技术栈&lt;/li&gt;
+&lt;li&gt;后端技术栈&lt;br&gt;tags: &lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&quot;泛型的作用&quot;&gt;&lt;a href=&quot;#泛型的作用&quot; 
+&lt;h3 id=&quot;泛型的作用&quot;&gt;&lt;a hr
       
     
     </summary>
@@ -77,21 +79,22 @@
     <link href="http://yoursite.com/2019/10/18/%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B/"/>
     <id>http://yoursite.com/2019/10/18/面向接口编程/</id>
     <published>2019-10-18T14:20:58.440Z</published>
-    <updated>2019-10-18T14:28:41.545Z</updated>
+    <updated>2019-10-18T23:44:57.959Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: 面向接口编程<br>date: 2017-03-23 18:27<br>tags: </p><ul><li>Java<br>categories: 技术栈</li></ul><hr><h4 id="什么是接口-为什么要用接口"><a href="#什么是接口-为什么要用接口" class="headerlink" title="什么是接口,为什么要用接口?:"></a>什么是接口,为什么要用接口?:</h4><ul><li>有时必须从几个类中派生出一个子类，继承它们所有的属性和方法。但是，Java不支持多重继承。有了接口，就可以得到多重继承的效果。</li><li>接口(interface)是抽象方法和常量值的定义的集合。</li><li>从本质上讲，接口是一种特殊的抽象类，这种抽象类中只包含常量和方法的定义，而没有变量和方法的实现。</li><li>接口定义举例  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runner</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="接口的特点"><a href="#接口的特点" class="headerlink" title="接口的特点:"></a>接口的特点:</h4><ul><li>用 interface 来定义。</li><li>接口中的所有成员变量都默认是由public static final修饰的。</li><li>接口中的所有方法都默认是由public abstract修饰的。接口没有构造方法。</li><li>实现接口的类中必须提供接口中所有方法的具体实现内容。 </li><li>多个无关的类可以实现同一个接口</li><li>一个类可以实现多个无关的接口</li><li>与继承关系类似，接口与实现类之间存在多态性</li><li>接口也可以继承另一个接口，使用extends关键字</li><li>实现接口的类中必须提供接口中所有方法的具体实现内容。 </li><li>多个无关的类可以实现同一个接口</li><li>一个类可以实现多个无关的接口</li><li>与继承关系类似，接口与实现类之间存在多态性</li></ul><h4 id="接口的使用"><a href="#接口的使用" class="headerlink" title="接口的使用"></a>接口的使用</h4><ol><li>编写接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UsbInterface</span></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *USB接口提供服务</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>实现接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UDisk</span> <span class="keyword">implements</span> <span class="title">UsbInterface</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"连接USB口,开始传输数据."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>使用接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UsbInterface uDisk = <span class="keyword">new</span> UDisk();</span><br><span class="line">uDisk.service();</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: 面向接口编程<br>date: 2017-03-23 18:27<br>categories: </p><ul><li>后端技术栈<br>tags: </li><li>Java</li></ul><hr><h4 id="什么是接口-为什么要用接口"><a href="#什么是接口-为什么要用接口" class="headerlink" title="什么是接口,为什么要用接口?:"></a>什么是接口,为什么要用接口?:</h4><ul><li>有时必须从几个类中派生出一个子类，继承它们所有的属性和方法。但是，Java不支持多重继承。有了接口，就可以得到多重继承的效果。</li><li>接口(interface)是抽象方法和常量值的定义的集合。</li><li>从本质上讲，接口是一种特殊的抽象类，这种抽象类中只包含常量和方法的定义，而没有变量和方法的实现。</li><li>接口定义举例  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runner</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="接口的特点"><a href="#接口的特点" class="headerlink" title="接口的特点:"></a>接口的特点:</h4><ul><li>用 interface 来定义。</li><li>接口中的所有成员变量都默认是由public static final修饰的。</li><li>接口中的所有方法都默认是由public abstract修饰的。接口没有构造方法。</li><li>实现接口的类中必须提供接口中所有方法的具体实现内容。 </li><li>多个无关的类可以实现同一个接口</li><li>一个类可以实现多个无关的接口</li><li>与继承关系类似，接口与实现类之间存在多态性</li><li>接口也可以继承另一个接口，使用extends关键字</li><li>实现接口的类中必须提供接口中所有方法的具体实现内容。 </li><li>多个无关的类可以实现同一个接口</li><li>一个类可以实现多个无关的接口</li><li>与继承关系类似，接口与实现类之间存在多态性</li></ul><h4 id="接口的使用"><a href="#接口的使用" class="headerlink" title="接口的使用"></a>接口的使用</h4><ol><li>编写接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UsbInterface</span></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *USB接口提供服务</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>实现接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UDisk</span> <span class="keyword">implements</span> <span class="title">UsbInterface</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"连接USB口,开始传输数据."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>使用接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UsbInterface uDisk = <span class="keyword">new</span> UDisk();</span><br><span class="line">uDisk.service();</span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;title: 面向接口编程&lt;br&gt;date: 2017-03-23 18:27&lt;br&gt;tags: &lt;/p&gt;
+&lt;p&gt;title: 面向接口编程&lt;br&gt;date: 2017-03-23 18:27&lt;br&gt;categories: &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Java&lt;br&gt;categories: 技术栈&lt;/li&gt;
+&lt;li&gt;后端技术栈&lt;br&gt;tags: &lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h4 id=&quot;什么是接口-为什么要用接口&quot;&gt;&lt;a hre
+&lt;h4 id=&quot;什么是接口-为什么
       
     
     </summary>
@@ -105,21 +108,22 @@
     <link href="http://yoursite.com/2019/10/18/%E6%B7%B1%E5%85%A5%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2019/10/18/深入面向对象/</id>
     <published>2019-10-18T14:12:15.874Z</published>
-    <updated>2019-10-18T14:28:35.582Z</updated>
+    <updated>2019-10-18T23:45:28.626Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: 深入面向对象<br>date: 2017-03-15 9:13<br>tags: </p><ul><li>Java<br>categories: 技术栈</li></ul><hr><h3 id="面向对象的三个基本特征-封装-继承-多态"><a href="#面向对象的三个基本特征-封装-继承-多态" class="headerlink" title="面向对象的三个基本特征:封装 . 继承 . 多态"></a>面向对象的三个基本特征:封装 . 继承 . 多态</h3><h4 id="封装-属性-对象"><a href="#封装-属性-对象" class="headerlink" title="封装(属性 . 对象):"></a>封装(属性 . 对象):</h4><ul><li>把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象<h4 id="继承"><a href="#继承" class="headerlink" title="继承:"></a>继承:</h4></li><li>继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法</li><li>一个新类可以从现有的类中派生，这个过程称为类继承，新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）</li><li>派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要<h4 id="多态"><a href="#多态" class="headerlink" title="多态:"></a>多态:</h4></li><li>多态性是指允许不同类的对象对同一消息作出响应</li><li>多态性语言具有灵活、抽象、行为共享、代码共享的优势<h4 id="封装的意义"><a href="#封装的意义" class="headerlink" title="封装的意义:"></a>封装的意义:</h4></li><li>适当的封装可以让代码更容易理解和维护，也加强了代码的安全性。<h4 id="包机制"><a href="#包机制" class="headerlink" title="包机制:"></a>包机制:</h4></li><li>为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间<h4 id="包的作用"><a href="#包的作用" class="headerlink" title="包的作用:"></a>包的作用:</h4></li><li>把功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用</li><li>如同文件夹一样，包也采用了树形目录的存储方式。同一个包中的类名字是不同的，不同的包中的类的名字是可以相同的，当同时调用两个不同包中相同类名的类时，应该加上包名加以区别。因此，包可以避免名字冲突。</li><li>包也提供了限定了访问权限的一个控制范围，拥有包访问权限的类才能访问某个包中的类</li></ul><h4 id="类的访问控制符"><a href="#类的访问控制符" class="headerlink" title="类的访问控制符:"></a>类的访问控制符:</h4><ul><li>default: 默认的（不提供访问控制符）仅可被同包的其他代码访问</li><li>public：可以被任何代码访问</li><li>protected: </li><li>private: 私有的</li></ul><h4 id="继承的意义"><a href="#继承的意义" class="headerlink" title="继承的意义:"></a>继承的意义:</h4><p>继承是使用已存在的类的定义作为基础建立新类的技术,新类的定义可以增加新的数据或新的功能,也可以用父类的功能,通过使用继承,我们能够非常方便的复用代码,大大提高开发效率</p><ul><li>对象向上造型:<br>所谓的向上造型就是父类的引用指向子类的对象</li><li>instanceof运算符:<br>instanceof运算符用来判断对象是否属于某个类的实例</li></ul>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: 深入面向对象<br>date: 2017-03-15 9:13<br>categories: </p><ul><li>后端技术栈<br>tags: </li><li>Java</li></ul><hr><h3 id="面向对象的三个基本特征-封装-继承-多态"><a href="#面向对象的三个基本特征-封装-继承-多态" class="headerlink" title="面向对象的三个基本特征:封装 . 继承 . 多态"></a>面向对象的三个基本特征:封装 . 继承 . 多态</h3><h4 id="封装-属性-对象"><a href="#封装-属性-对象" class="headerlink" title="封装(属性 . 对象):"></a>封装(属性 . 对象):</h4><ul><li>把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象<h4 id="继承"><a href="#继承" class="headerlink" title="继承:"></a>继承:</h4></li><li>继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法</li><li>一个新类可以从现有的类中派生，这个过程称为类继承，新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）</li><li>派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要<h4 id="多态"><a href="#多态" class="headerlink" title="多态:"></a>多态:</h4></li><li>多态性是指允许不同类的对象对同一消息作出响应</li><li>多态性语言具有灵活、抽象、行为共享、代码共享的优势<h4 id="封装的意义"><a href="#封装的意义" class="headerlink" title="封装的意义:"></a>封装的意义:</h4></li><li>适当的封装可以让代码更容易理解和维护，也加强了代码的安全性。<h4 id="包机制"><a href="#包机制" class="headerlink" title="包机制:"></a>包机制:</h4></li><li>为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间<h4 id="包的作用"><a href="#包的作用" class="headerlink" title="包的作用:"></a>包的作用:</h4></li><li>把功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用</li><li>如同文件夹一样，包也采用了树形目录的存储方式。同一个包中的类名字是不同的，不同的包中的类的名字是可以相同的，当同时调用两个不同包中相同类名的类时，应该加上包名加以区别。因此，包可以避免名字冲突。</li><li>包也提供了限定了访问权限的一个控制范围，拥有包访问权限的类才能访问某个包中的类</li></ul><h4 id="类的访问控制符"><a href="#类的访问控制符" class="headerlink" title="类的访问控制符:"></a>类的访问控制符:</h4><ul><li>default: 默认的（不提供访问控制符）仅可被同包的其他代码访问</li><li>public：可以被任何代码访问</li><li>protected: </li><li>private: 私有的</li></ul><h4 id="继承的意义"><a href="#继承的意义" class="headerlink" title="继承的意义:"></a>继承的意义:</h4><p>继承是使用已存在的类的定义作为基础建立新类的技术,新类的定义可以增加新的数据或新的功能,也可以用父类的功能,通过使用继承,我们能够非常方便的复用代码,大大提高开发效率</p><ul><li>对象向上造型:<br>所谓的向上造型就是父类的引用指向子类的对象</li><li>instanceof运算符:<br>instanceof运算符用来判断对象是否属于某个类的实例</li></ul>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;title: 深入面向对象&lt;br&gt;date: 2017-03-15 9:13&lt;br&gt;tags: &lt;/p&gt;
+&lt;p&gt;title: 深入面向对象&lt;br&gt;date: 2017-03-15 9:13&lt;br&gt;categories: &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Java&lt;br&gt;categories: 技术栈&lt;/li&gt;
+&lt;li&gt;后端技术栈&lt;br&gt;tags: &lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&quot;面向对象的三个基本特征-封装-继承-多态&quot;&gt;
+&lt;h3 id=&quot;面向对象的三个基本特
       
     
     </summary>
@@ -133,21 +137,22 @@
     <link href="http://yoursite.com/2019/10/18/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/"/>
     <id>http://yoursite.com/2019/10/18/Java类的基本结构/</id>
     <published>2019-10-18T14:04:36.256Z</published>
-    <updated>2019-10-18T14:28:28.840Z</updated>
+    <updated>2019-10-18T23:46:01.060Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: Java类的基本结构<br>date: 2017-03-06 10:13<br>tags: </p><ul><li>Java<br>categories: 技术栈</li></ul><hr><h3 id="面向对象的概念"><a href="#面向对象的概念" class="headerlink" title="面向对象的概念:"></a>面向对象的概念:</h3><h4 id="什么是类"><a href="#什么是类" class="headerlink" title="什么是类?"></a>什么是类?</h4><p>同时将具有相同特征的对象抽象成一种新的数据类型—-类<br>(具有相同特征和行为的多个对象的集合)</p><h4 id="封装的好处"><a href="#封装的好处" class="headerlink" title="封装的好处:"></a>封装的好处:</h4><p>一个类把属性算法(逻辑处理)封装起来,只留必要的方法(接口)让用户使用,一个类该暴露什么,不该暴露什么,由类的设计者更具需求设计决定的.private属性用户不能直接访问,如果设计者提供相应的接口方法,那么用户可以通过该接口方法访问.<br>一个类,不直接修改属性而通过方法来修改,可以在方法里做相应的处理避免用户输入的一些非法数据而造成系统故障</p><h3 id="什么是构造方法"><a href="#什么是构造方法" class="headerlink" title="什么是构造方法:"></a>什么是构造方法:</h3><ul><li>构造方法是与类同名的方法</li><li>没返回值，也不能写void</li><li>主要作用是完成新建对象的初始化工作</li><li>一般不能显式地直接调用，而是用new来调用（后面会存在使用this/super调用）</li><li>创建一个类的新对象的同时，系统自动调用该类的构造函数，为新建对象的初始化</li></ul><h3 id="构造方法重载"><a href="#构造方法重载" class="headerlink" title="构造方法重载:"></a>构造方法重载:</h3><ul><li>构造方法是一种特殊的方法，它也能重载</li><li>构造函数的重载是指同一个类中存在着若干个具有不同参数列表的构造函数</li></ul><h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字:"></a>this关键字:</h3><p>this用于表示当前对象自身的引用，可以用于访问被局部变量隐藏的成员变量，也可以将本对象作为参数传递给其他对象操作</p><h3 id="类初始化代码块static"><a href="#类初始化代码块static" class="headerlink" title="类初始化代码块static:"></a>类初始化代码块static:</h3><p>####static代码块的执行时机: </p><ul><li>用Class.forName(类名)显式加载的时候（反射、JDBC时详细讲解）</li><li>new或反射实例化一个类的对象时候</li><li>调用类的static方法的时候（后续详细讲解）</li><li>调用类的static变量的时候（后续详细讲解）</li><li>调用类的静态常量（后续详细讲解）的时候，是不会加载类的，即不会执行static{}语句块当访问类的静态常量时，如果编译器可以计算出常量的值，则不会加载类，否则会加载类</li><li>用Class.forName()形式的时候，也可以自己设定要不要加载类，如将<code>Class.forName(&quot;Test&quot;</code>)改为 <code>Class.forName(&quot;Test&quot;,false,StaticBlockTest.class.getClassLoader())</code>，你会发现Test没有被加载，static{}没有被执行</li></ul>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: Java类的基本结构<br>date: 2017-03-06 10:13<br>categories: </p><ul><li>后端技术栈<br>tags: </li><li>Java</li></ul><hr><h3 id="面向对象的概念"><a href="#面向对象的概念" class="headerlink" title="面向对象的概念:"></a>面向对象的概念:</h3><h4 id="什么是类"><a href="#什么是类" class="headerlink" title="什么是类?"></a>什么是类?</h4><p>同时将具有相同特征的对象抽象成一种新的数据类型—-类<br>(具有相同特征和行为的多个对象的集合)</p><h4 id="封装的好处"><a href="#封装的好处" class="headerlink" title="封装的好处:"></a>封装的好处:</h4><p>一个类把属性算法(逻辑处理)封装起来,只留必要的方法(接口)让用户使用,一个类该暴露什么,不该暴露什么,由类的设计者更具需求设计决定的.private属性用户不能直接访问,如果设计者提供相应的接口方法,那么用户可以通过该接口方法访问.<br>一个类,不直接修改属性而通过方法来修改,可以在方法里做相应的处理避免用户输入的一些非法数据而造成系统故障</p><h3 id="什么是构造方法"><a href="#什么是构造方法" class="headerlink" title="什么是构造方法:"></a>什么是构造方法:</h3><ul><li>构造方法是与类同名的方法</li><li>没返回值，也不能写void</li><li>主要作用是完成新建对象的初始化工作</li><li>一般不能显式地直接调用，而是用new来调用（后面会存在使用this/super调用）</li><li>创建一个类的新对象的同时，系统自动调用该类的构造函数，为新建对象的初始化</li></ul><h3 id="构造方法重载"><a href="#构造方法重载" class="headerlink" title="构造方法重载:"></a>构造方法重载:</h3><ul><li>构造方法是一种特殊的方法，它也能重载</li><li>构造函数的重载是指同一个类中存在着若干个具有不同参数列表的构造函数</li></ul><h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字:"></a>this关键字:</h3><p>this用于表示当前对象自身的引用，可以用于访问被局部变量隐藏的成员变量，也可以将本对象作为参数传递给其他对象操作</p><h3 id="类初始化代码块static"><a href="#类初始化代码块static" class="headerlink" title="类初始化代码块static:"></a>类初始化代码块static:</h3><p>####static代码块的执行时机: </p><ul><li>用Class.forName(类名)显式加载的时候（反射、JDBC时详细讲解）</li><li>new或反射实例化一个类的对象时候</li><li>调用类的static方法的时候（后续详细讲解）</li><li>调用类的static变量的时候（后续详细讲解）</li><li>调用类的静态常量（后续详细讲解）的时候，是不会加载类的，即不会执行static{}语句块当访问类的静态常量时，如果编译器可以计算出常量的值，则不会加载类，否则会加载类</li><li>用Class.forName()形式的时候，也可以自己设定要不要加载类，如将<code>Class.forName(&quot;Test&quot;</code>)改为 <code>Class.forName(&quot;Test&quot;,false,StaticBlockTest.class.getClassLoader())</code>，你会发现Test没有被加载，static{}没有被执行</li></ul>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;title: Java类的基本结构&lt;br&gt;date: 2017-03-06 10:13&lt;br&gt;tags: &lt;/p&gt;
+&lt;p&gt;title: Java类的基本结构&lt;br&gt;date: 2017-03-06 10:13&lt;br&gt;categories: &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Java&lt;br&gt;categories: 技术栈&lt;/li&gt;
+&lt;li&gt;后端技术栈&lt;br&gt;tags: &lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&quot;面向对象的概念&quot;&gt;&lt;a href=
+&lt;h3 id=&quot;面向对象的
       
     
     </summary>
@@ -161,21 +166,22 @@
     <link href="http://yoursite.com/2019/10/18/Java%E6%95%B0%E7%BB%84/"/>
     <id>http://yoursite.com/2019/10/18/Java数组/</id>
     <published>2019-10-18T14:02:59.039Z</published>
-    <updated>2019-10-18T14:03:51.322Z</updated>
+    <updated>2019-10-18T23:46:09.348Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: Java数组<br>date: 2017-03-05 16:21<br>tags: </p><ul><li>Java<br>categories: 技术栈</li></ul><hr><h4 id="数组"><a href="#数组" class="headerlink" title="数组:"></a>数组:</h4><ul><li>数组是一组类型相同的数据的集合</li><li>数组可以存储多个数据,但类型必须相同</li><li>数组能作为数据的容器使用,把多个数据集中存储</li><li>存储在数组中的数据,都有相应的索引值,可以方便获取或修改</li><li>当需要同时保存多个类型相同的变量并进行处理时,可以考虑用数组<h5 id="数组的特性"><a href="#数组的特性" class="headerlink" title="数组的特性:"></a>数组的特性:</h5></li><li>Java的数组是引用类型，</li><li>数组与类、接口、枚举、注解并列，是引用类型中的一种，</li><li>Java的数组长度一经确定不能改变； </li><li>数组在内存中是连续分配，所以读取速度快</li><li>实际应用中，常常无法确定变量的数量，后续我们将学习集合框架，实现可变长度的数据容器；<h5 id="数组的元素"><a href="#数组的元素" class="headerlink" title="数组的元素:"></a>数组的元素:</h5></li><li>数组中存储的数据称为数组的元素(Element)，</li><li>数组本身是引用类型，但是数组中的元素可以是基本数也可以是引用类型，<ul><li>也就是说，即可以有存储基本数据类型int的数组，也可以有存储引用类型String的数组，但是数组本身是引用类型</li></ul></li><li>数组中的元素有索引值，索引值从0开始<ul><li>也就是说，如果一个数组的长度是10，那么索引值就是0-9，也就是第一个元素的索引值是0，第二个的索引值是1，以此类准，通过索引值可以方便访问元素</li></ul></li></ul><h5 id="数组的维数"><a href="#数组的维数" class="headerlink" title="数组的维数:"></a>数组的维数:</h5><ul><li>如果一个数组中存储数据结构如下所示，元素都是单个数据，称为一维数组，<br>67 78 54 89 12 45 87 97 79 9</li><li>其中，67被称为第0个元素，78称为第1个元素……</li><li>如果个数组中存储数据结构如下所示，元素是一维数组，称为二维数组，<br>[67 78 54] [89 12] [45 87 79] [3] </li></ul><h5 id="数组声明"><a href="#数组声明" class="headerlink" title="数组声明:"></a>数组声明:</h5><p>一维数组的声明:<br><code>数组元素类型[] 变量名称</code>     或<br><code>数组元素类型 变量名称[]</code> </p>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: Java数组<br>date: 2017-03-05 16:21<br>categories: </p><ul><li>后端技术栈<br>tags: </li><li>Java</li></ul><hr><h4 id="数组"><a href="#数组" class="headerlink" title="数组:"></a>数组:</h4><ul><li>数组是一组类型相同的数据的集合</li><li>数组可以存储多个数据,但类型必须相同</li><li>数组能作为数据的容器使用,把多个数据集中存储</li><li>存储在数组中的数据,都有相应的索引值,可以方便获取或修改</li><li>当需要同时保存多个类型相同的变量并进行处理时,可以考虑用数组<h5 id="数组的特性"><a href="#数组的特性" class="headerlink" title="数组的特性:"></a>数组的特性:</h5></li><li>Java的数组是引用类型，</li><li>数组与类、接口、枚举、注解并列，是引用类型中的一种，</li><li>Java的数组长度一经确定不能改变； </li><li>数组在内存中是连续分配，所以读取速度快</li><li>实际应用中，常常无法确定变量的数量，后续我们将学习集合框架，实现可变长度的数据容器；<h5 id="数组的元素"><a href="#数组的元素" class="headerlink" title="数组的元素:"></a>数组的元素:</h5></li><li>数组中存储的数据称为数组的元素(Element)，</li><li>数组本身是引用类型，但是数组中的元素可以是基本数也可以是引用类型，<ul><li>也就是说，即可以有存储基本数据类型int的数组，也可以有存储引用类型String的数组，但是数组本身是引用类型</li></ul></li><li>数组中的元素有索引值，索引值从0开始<ul><li>也就是说，如果一个数组的长度是10，那么索引值就是0-9，也就是第一个元素的索引值是0，第二个的索引值是1，以此类准，通过索引值可以方便访问元素</li></ul></li></ul><h5 id="数组的维数"><a href="#数组的维数" class="headerlink" title="数组的维数:"></a>数组的维数:</h5><ul><li>如果一个数组中存储数据结构如下所示，元素都是单个数据，称为一维数组，<br>67 78 54 89 12 45 87 97 79 9</li><li>其中，67被称为第0个元素，78称为第1个元素……</li><li>如果个数组中存储数据结构如下所示，元素是一维数组，称为二维数组，<br>[67 78 54] [89 12] [45 87 79] [3] </li></ul><h5 id="数组声明"><a href="#数组声明" class="headerlink" title="数组声明:"></a>数组声明:</h5><p>一维数组的声明:<br><code>数组元素类型[] 变量名称</code>     或<br><code>数组元素类型 变量名称[]</code> </p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;title: Java数组&lt;br&gt;date: 2017-03-05 16:21&lt;br&gt;tags: &lt;/p&gt;
+&lt;p&gt;title: Java数组&lt;br&gt;date: 2017-03-05 16:21&lt;br&gt;categories: &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Java&lt;br&gt;categories: 技术栈&lt;/li&gt;
+&lt;li&gt;后端技术栈&lt;br&gt;tags: &lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h4 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; cla
+&lt;h4 id=&quot;数组&quot;&gt;&lt;a hr
       
     
     </summary>
@@ -189,21 +195,22 @@
     <link href="http://yoursite.com/2019/10/18/Java%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/2019/10/18/Java基础/</id>
     <published>2019-10-18T12:16:50.835Z</published>
-    <updated>2019-10-18T14:03:25.737Z</updated>
+    <updated>2019-10-18T23:45:50.653Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: Java基础<br>date: 2017-03-05 13:43<br>tags: </p><ul><li>Java<br>categories: 技术栈</li></ul><hr><h4 id="为什么学习java"><a href="#为什么学习java" class="headerlink" title="为什么学习java:"></a>为什么学习java:</h4><p>Java是Sun Microsystems于1995年推出的<strong>高级编程语言</strong><br>Java 领域的JavaSE、JavaEE技术已发展成为同C#和.NET平分天下的应用软件开发平台和技术</p><h4 id="java语言的特点"><a href="#java语言的特点" class="headerlink" title="java语言的特点:"></a>java语言的特点:</h4><ul><li><strong>跨平台性</strong>;一处编写,处处运行.</li><li><strong>面向对象</strong>(三大特征);<strong><em>封装</em></strong>.<strong><em>继承</em></strong>.<strong><em>多态</em></strong>.</li><li><strong>健壮性</strong>;<strong><em>强类型机制</em></strong>,<strong><em>异常处理机制</em></strong>,<strong><em>自动垃圾回收机制</em></strong></li><li><strong>分布式</strong>;</li><li><strong>多线程</strong>;</li><li><strong>动态性</strong>;</li></ul><h4 id="JVM-Java-Virtual-Machine-介绍"><a href="#JVM-Java-Virtual-Machine-介绍" class="headerlink" title="JVM(Java Virtual Machine)介绍:"></a>JVM(Java Virtual Machine)介绍:</h4><p>JVM称为java虚拟机;<br>JVM可以理解为Java编译器和操作系统之间的虚拟处理器;</p><ul><li>编译器编译的字节码只要JVM认识即可</li><li>JVM再将字节码解释成操作系统认识的机器码   </li></ul><p>只要需要运行Java程序的设备,都需要安装JVM</p><h4 id="JDK与JRE"><a href="#JDK与JRE" class="headerlink" title="JDK与JRE:"></a>JDK与JRE:</h4><ul><li>JDK是Java开发工具包(Java Development Kit)的简称,是一个软件;<br>如果要用Java语言编写程序,就必须在计算机上安装JDK;</li><li>JRE是Java运行环境(Java Runtime Environment)的简称<br>如果要在机器上运行Java程序,就必须要有JRE;</li></ul><h4 id="JDK的一些常用工具"><a href="#JDK的一些常用工具" class="headerlink" title="JDK的一些常用工具:"></a>JDK的一些常用工具:</h4><ul><li>javac: 编译器,将源程序转为字节码;</li><li>java: 运行编译后的java程序(.class后缀的);</li><li>jar: 打包工具,将相关的类文件打包成一个文件;</li><li>javadoc: 文档生成器,从源码注释中提取文档;</li></ul><h4 id="Java项目结构"><a href="#Java项目结构" class="headerlink" title="Java项目结构:"></a>Java项目结构:</h4><p><strong>src目录</strong>：存放包和源文件<br><strong>JRE系统库目录</strong>：存放程序运行必须的系统库文件<br><strong>bin目录</strong>：存放可执行的字节码文件</p><h4 id="注释"><a href="#注释" class="headerlink" title="注释:"></a>注释:</h4><p>文本注释:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* version ycj</span></span><br><span class="line"><span class="comment">* data 2017-03-05</span></span><br><span class="line"><span class="comment">* /</span></span><br></pre></td></tr></table></figure><h4 id="标识符命名规则"><a href="#标识符命名规则" class="headerlink" title="标识符命名规则:"></a>标识符命名规则:</h4><ul><li>某一个区域中是唯一的，在不同的区域中可以使用同一名字</li><li>必须由字母、数字、下划线和$符号组成</li><li>不能以数字开头</li><li>不能使非法的字符，如：#，％……“&amp;等 </li><li>不能使系统关键字</li><li>不能使空格来分隔</li><li>长度无限制</li><li>严格区分大小写</li><li>不同的标识符有一定的命名规矩，后续学习    </li></ul><h4 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别:"></a>成员变量和局部变量的区别:</h4><p>成员变量是作用于整个类,局部变量作用于某个方法,局部变量没有默认值,必须初始化,成员变量有默认值.</p><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型:"></a>数据类型:</h4><p>数据类型分为基本数据类型和引用数据类型;</p><ol><li>数据类型(8个基本数据类型):byte, short, int, long, float, double, boolean, char    </li><li>引用数据类型:String, 数组, 接口, 类, 枚举, 包装类型<h5 id="String、StringBufferStringBuilder的区别"><a href="#String、StringBufferStringBuilder的区别" class="headerlink" title="String、StringBufferStringBuilder的区别:"></a>String、StringBufferStringBuilder的区别:</h5></li></ol><p><strong>String</strong>类是不可变的，对象一旦被创建，就不能被修改；可以使用=直接赋值，此时使用常量池；也可以使用new创建，不使用常量池；<br><strong>StringBuffer</strong>是可变的，对象创建后，可以修改；必须使用new关键字；<br><strong>StringBuilder</strong>是不同步的，在单线程情况下使用比StringBuffer高效；必须使用new关键字；</p><h4 id="堆-栈-常量池-方法区"><a href="#堆-栈-常量池-方法区" class="headerlink" title="堆,栈,常量池,方法区:"></a>堆,栈,常量池,方法区:</h4><p>基本数据类型保存在栈中,引用数据类型保存在堆中;<br><strong>堆</strong>:存放所有new出来的对象<br><strong>栈</strong>:存放基本类型的变量数据和对象的应用<br><strong>方法区</strong>:包含所有的class和static变量<br><strong>常量区</strong>:存放基本类型和字符串常量        </p><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符:"></a>运算符:</h4><p>从功能角度分，Java中的运算符可以分为算术、关系、位、逻辑运算符四类<br><strong>算术运算符</strong>:用来对操作数进行数学运算.<br><strong>关系运算符</strong>:又叫比较运算符,用来运算操作两个数的大小关系.<br><strong>位运算符</strong>:针对操作数的二进制位进行运算<br><strong>逻辑运算符</strong>:针对布尔值或返回值为布尔值的表达式进行运算</p>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: Java基础<br>date: 2017-03-05 13:43<br>categories: </p><ul><li>后端技术栈<br>tags: </li><li>Java</li></ul><hr><h4 id="为什么学习java"><a href="#为什么学习java" class="headerlink" title="为什么学习java:"></a>为什么学习java:</h4><p>Java是Sun Microsystems于1995年推出的<strong>高级编程语言</strong><br>Java 领域的JavaSE、JavaEE技术已发展成为同C#和.NET平分天下的应用软件开发平台和技术</p><h4 id="java语言的特点"><a href="#java语言的特点" class="headerlink" title="java语言的特点:"></a>java语言的特点:</h4><ul><li><strong>跨平台性</strong>;一处编写,处处运行.</li><li><strong>面向对象</strong>(三大特征);<strong><em>封装</em></strong>.<strong><em>继承</em></strong>.<strong><em>多态</em></strong>.</li><li><strong>健壮性</strong>;<strong><em>强类型机制</em></strong>,<strong><em>异常处理机制</em></strong>,<strong><em>自动垃圾回收机制</em></strong></li><li><strong>分布式</strong>;</li><li><strong>多线程</strong>;</li><li><strong>动态性</strong>;</li></ul><h4 id="JVM-Java-Virtual-Machine-介绍"><a href="#JVM-Java-Virtual-Machine-介绍" class="headerlink" title="JVM(Java Virtual Machine)介绍:"></a>JVM(Java Virtual Machine)介绍:</h4><p>JVM称为java虚拟机;<br>JVM可以理解为Java编译器和操作系统之间的虚拟处理器;</p><ul><li>编译器编译的字节码只要JVM认识即可</li><li>JVM再将字节码解释成操作系统认识的机器码   </li></ul><p>只要需要运行Java程序的设备,都需要安装JVM</p><h4 id="JDK与JRE"><a href="#JDK与JRE" class="headerlink" title="JDK与JRE:"></a>JDK与JRE:</h4><ul><li>JDK是Java开发工具包(Java Development Kit)的简称,是一个软件;<br>如果要用Java语言编写程序,就必须在计算机上安装JDK;</li><li>JRE是Java运行环境(Java Runtime Environment)的简称<br>如果要在机器上运行Java程序,就必须要有JRE;</li></ul><h4 id="JDK的一些常用工具"><a href="#JDK的一些常用工具" class="headerlink" title="JDK的一些常用工具:"></a>JDK的一些常用工具:</h4><ul><li>javac: 编译器,将源程序转为字节码;</li><li>java: 运行编译后的java程序(.class后缀的);</li><li>jar: 打包工具,将相关的类文件打包成一个文件;</li><li>javadoc: 文档生成器,从源码注释中提取文档;</li></ul><h4 id="Java项目结构"><a href="#Java项目结构" class="headerlink" title="Java项目结构:"></a>Java项目结构:</h4><p><strong>src目录</strong>：存放包和源文件<br><strong>JRE系统库目录</strong>：存放程序运行必须的系统库文件<br><strong>bin目录</strong>：存放可执行的字节码文件</p><h4 id="注释"><a href="#注释" class="headerlink" title="注释:"></a>注释:</h4><p>文本注释:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* version ycj</span></span><br><span class="line"><span class="comment">* data 2017-03-05</span></span><br><span class="line"><span class="comment">* /</span></span><br></pre></td></tr></table></figure><h4 id="标识符命名规则"><a href="#标识符命名规则" class="headerlink" title="标识符命名规则:"></a>标识符命名规则:</h4><ul><li>某一个区域中是唯一的，在不同的区域中可以使用同一名字</li><li>必须由字母、数字、下划线和$符号组成</li><li>不能以数字开头</li><li>不能使非法的字符，如：#，％……“&amp;等 </li><li>不能使系统关键字</li><li>不能使空格来分隔</li><li>长度无限制</li><li>严格区分大小写</li><li>不同的标识符有一定的命名规矩，后续学习    </li></ul><h4 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别:"></a>成员变量和局部变量的区别:</h4><p>成员变量是作用于整个类,局部变量作用于某个方法,局部变量没有默认值,必须初始化,成员变量有默认值.</p><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型:"></a>数据类型:</h4><p>数据类型分为基本数据类型和引用数据类型;</p><ol><li>数据类型(8个基本数据类型):byte, short, int, long, float, double, boolean, char    </li><li>引用数据类型:String, 数组, 接口, 类, 枚举, 包装类型<h5 id="String、StringBufferStringBuilder的区别"><a href="#String、StringBufferStringBuilder的区别" class="headerlink" title="String、StringBufferStringBuilder的区别:"></a>String、StringBufferStringBuilder的区别:</h5></li></ol><p><strong>String</strong>类是不可变的，对象一旦被创建，就不能被修改；可以使用=直接赋值，此时使用常量池；也可以使用new创建，不使用常量池；<br><strong>StringBuffer</strong>是可变的，对象创建后，可以修改；必须使用new关键字；<br><strong>StringBuilder</strong>是不同步的，在单线程情况下使用比StringBuffer高效；必须使用new关键字；</p><h4 id="堆-栈-常量池-方法区"><a href="#堆-栈-常量池-方法区" class="headerlink" title="堆,栈,常量池,方法区:"></a>堆,栈,常量池,方法区:</h4><p>基本数据类型保存在栈中,引用数据类型保存在堆中;<br><strong>堆</strong>:存放所有new出来的对象<br><strong>栈</strong>:存放基本类型的变量数据和对象的应用<br><strong>方法区</strong>:包含所有的class和static变量<br><strong>常量区</strong>:存放基本类型和字符串常量        </p><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符:"></a>运算符:</h4><p>从功能角度分，Java中的运算符可以分为算术、关系、位、逻辑运算符四类<br><strong>算术运算符</strong>:用来对操作数进行数学运算.<br><strong>关系运算符</strong>:又叫比较运算符,用来运算操作两个数的大小关系.<br><strong>位运算符</strong>:针对操作数的二进制位进行运算<br><strong>逻辑运算符</strong>:针对布尔值或返回值为布尔值的表达式进行运算</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;hr&gt;
-&lt;p&gt;title: Java基础&lt;br&gt;date: 2017-03-05 13:43&lt;br&gt;tags: &lt;/p&gt;
+&lt;p&gt;title: Java基础&lt;br&gt;date: 2017-03-05 13:43&lt;br&gt;categories: &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Java&lt;br&gt;categories: 技术栈&lt;/li&gt;
+&lt;li&gt;后端技术栈&lt;br&gt;tags: &lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h4 id=&quot;为什么学习java&quot;&gt;&lt;a href=&quot;#
+&lt;h4 id=&quot;为什么学习java
       
     
     </summary>
@@ -217,7 +224,7 @@
     <link href="http://yoursite.com/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
     <id>http://yoursite.com/2019/07/30/JVM指令手册/</id>
     <published>2019-07-30T07:18:00.000Z</published>
-    <updated>2019-10-18T12:08:59.828Z</updated>
+    <updated>2019-10-18T23:46:24.661Z</updated>
     
     <content type="html"><![CDATA[<p>栈和局部变量操作<br>将常量压入栈的指令<br>aconst_null 将null对象引用压入栈<br>iconst_m1 将int类型常量-1压入栈<br>iconst_0 将int类型常量0压入栈<br>iconst_1 将int类型常量1压入栈<br>iconst_2 将int类型常量2压入栈<br>iconst_3 将int类型常量3压入栈<br>iconst_4 将int类型常量4压入栈<br>iconst_5 将int类型常量5压入栈<br>lconst_0 将long类型常量0压入栈<br>lconst_1 将long类型常量1压入栈<br>fconst_0 将float类型常量0压入栈<br>fconst_1 将float类型常量1压入栈<br>dconst_0 将double类型常量0压入栈<br>dconst_1 将double类型常量1压入栈<br>bipush 将一个8位带符号整数压入栈<br>sipush 将16位带符号整数压入栈<br>ldc 把常量池中的项压入栈<br>ldc_w 把常量池中的项压入栈（使用宽索引）<br>ldc2_w 把常量池中long类型或者double类型的项压入栈（使用宽索引）<br>从栈中的局部变量中装载值的指令<br>iload 从局部变量中装载int类型值<br>lload 从局部变量中装载long类型值<br>fload 从局部变量中装载float类型值<br>dload 从局部变量中装载double类型值<br>aload 从局部变量中装载引用类型值（refernce）<br>iload_0 从局部变量0中装载int类型值<br>iload_1 从局部变量1中装载int类型值<br>iload_2 从局部变量2中装载int类型值<br>iload_3 从局部变量3中装载int类型值<br>lload_0 从局部变量0中装载long类型值<br>lload_1 从局部变量1中装载long类型值<br>lload_2 从局部变量2中装载long类型值<br>lload_3 从局部变量3中装载long类型值<br>fload_0 从局部变量0中装载float类型值<br>fload_1 从局部变量1中装载float类型值<br>fload_2 从局部变量2中装载float类型值<br>fload_3 从局部变量3中装载float类型值<br>dload_0 从局部变量0中装载double类型值<br>dload_1 从局部变量1中装载double类型值<br>dload_2 从局部变量2中装载double类型值<br>dload_3 从局部变量3中装载double类型值<br>aload_0 从局部变量0中装载引用类型值<br>aload_1 从局部变量1中装载引用类型值<br>aload_2 从局部变量2中装载引用类型值<br>aload_3 从局部变量3中装载引用类型值<br>iaload 从数组中装载int类型值<br>laload 从数组中装载long类型值<br>faload 从数组中装载float类型值<br>daload 从数组中装载double类型值<br>aaload 从数组中装载引用类型值<br>baload 从数组中装载byte类型或boolean类型值<br>caload 从数组中装载char类型值<br>saload 从数组中装载short类型值<br>将栈中的值存入局部变量的指令<br>istore 将int类型值存入局部变量<br>lstore 将long类型值存入局部变量<br>fstore 将float类型值存入局部变量<br>dstore 将double类型值存入局部变量<br>astore 将将引用类型或returnAddress类型值存入局部变量<br>istore_0 将int类型值存入局部变量0<br>istore_1 将int类型值存入局部变量1<br>istore_2 将int类型值存入局部变量2<br>istore_3 将int类型值存入局部变量3<br>lstore_0 将long类型值存入局部变量0<br>lstore_1 将long类型值存入局部变量1<br>lstore_2 将long类型值存入局部变量2<br>lstore_3 将long类型值存入局部变量3<br>fstore_0 将float类型值存入局部变量0<br>fstore_1 将float类型值存入局部变量1<br>fstore_2 将float类型值存入局部变量2<br>fstore_3 将float类型值存入局部变量3<br>dstore_0 将double类型值存入局部变量0<br>dstore_1 将double类型值存入局部变量1<br>dstore_2 将double类型值存入局部变量2<br>dstore_3 将double类型值存入局部变量3<br>astore_0 将引用类型或returnAddress类型值存入局部变量0<br>astore_1 将引用类型或returnAddress类型值存入局部变量1<br>astore_2 将引用类型或returnAddress类型值存入局部变量2<br>astore_3 将引用类型或returnAddress类型值存入局部变量3<br>iastore 将int类型值存入数组中<br>lastore 将long类型值存入数组中<br>fastore 将float类型值存入数组中<br>dastore 将double类型值存入数组中<br>aastore 将引用类型值存入数组中<br>bastore 将byte类型或者boolean类型值存入数组中<br>castore 将char类型值存入数组中<br>sastore 将short类型值存入数组中<br>wide指令<br>wide 使用附加字节扩展局部变量索引<br>通用(无类型）栈操作<br>nop 不做任何操作<br>pop 弹出栈顶端一个字长的内容<br>pop2 弹出栈顶端两个字长的内容<br>dup 复制栈顶部一个字长内容<br>dup_x1 复制栈顶部一个字长的内容，然后将复制内容及原来弹出的两个字长的内容压入栈<br>dup_x2 复制栈顶部一个字长的内容，然后将复制内容及原来弹出的三个字长的内容压入栈<br>dup2 复制栈顶部两个字长内容<br>dup2_x1 复制栈顶部两个字长的内容，然后将复制内容及原来弹出的三个字长的内容压入栈<br>dup2_x2 复制栈顶部两个字长的内容，然后将复制内容及原来弹出的四个字长的内容压入栈<br>swap 交换栈顶部两个字长内容<br>类型转换<br>i2l 把int类型的数据转化为long类型<br>i2f 把int类型的数据转化为float类型<br>i2d 把int类型的数据转化为double类型<br>l2i 把long类型的数据转化为int类型<br>l2f 把long类型的数据转化为float类型<br>l2d 把long类型的数据转化为double类型<br>f2i 把float类型的数据转化为int类型<br>f2l 把float类型的数据转化为long类型<br>f2d 把float类型的数据转化为double类型<br>d2i 把double类型的数据转化为int类型<br>d2l 把double类型的数据转化为long类型<br>d2f 把double类型的数据转化为float类型<br>i2b 把int类型的数据转化为byte类型<br>i2c 把int类型的数据转化为char类型<br>i2s 把int类型的数据转化为short类型<br>整数运算<br>iadd 执行int类型的加法<br>ladd 执行long类型的加法<br>isub 执行int类型的减法<br>lsub 执行long类型的减法<br>imul 执行int类型的乘法<br>lmul 执行long类型的乘法<br>idiv 执行int类型的除法<br>ldiv 执行long类型的除法<br>irem 计算int类型除法的余数<br>lrem 计算long类型除法的余数<br>ineg 对一个int类型值进行取反操作<br>lneg 对一个long类型值进行取反操作<br>iinc 把一个常量值加到一个int类型的局部变量上<br>逻辑运算<br>移位操作<br>ishl 执行int类型的向左移位操作<br>lshl 执行long类型的向左移位操作<br>ishr 执行int类型的向右移位操作<br>lshr 执行long类型的向右移位操作<br>iushr 执行int类型的向右逻辑移位操作<br>lushr 执行long类型的向右逻辑移位操作<br>按位布尔运算<br>iand 对int类型值进行“逻辑与”操作<br>land 对long类型值进行“逻辑与”操作<br>ior 对int类型值进行“逻辑或”操作<br>lor 对long类型值进行“逻辑或”操作<br>ixor 对int类型值进行“逻辑异或”操作<br>lxor 对long类型值进行“逻辑异或”操作<br>浮点运算<br>fadd 执行float类型的加法<br>dadd 执行double类型的加法<br>fsub 执行float类型的减法<br>dsub 执行double类型的减法<br>fmul 执行float类型的乘法<br>dmul 执行double类型的乘法<br>fdiv 执行float类型的除法<br>ddiv 执行double类型的除法<br>frem 计算float类型除法的余数<br>drem 计算double类型除法的余数<br>fneg 将一个float类型的数值取反<br>dneg 将一个double类型的数值取反<br>对象和数组<br>对象操作指令<br>new 创建一个新对象<br>checkcast 确定对象为所给定的类型<br>getfield 从对象中获取字段<br>putfield 设置对象中字段的值<br>getstatic 从类中获取静态字段<br>putstatic 设置类中静态字段的值<br>instanceof 判断对象是否为给定的类型<br>数组操作指令<br>newarray 分配数据成员类型为基本上数据类型的新数组<br>anewarray 分配数据成员类型为引用类型的新数组<br>arraylength 获取数组长度<br>multianewarray 分配新的多维数组<br>控制流<br>条件分支指令<br>ifeq 如果等于0，则跳转<br>ifne 如果不等于0，则跳转<br>iflt 如果小于0，则跳转<br>ifge 如果大于等于0，则跳转<br>ifgt 如果大于0，则跳转<br>ifle 如果小于等于0，则跳转<br>if_icmpcq 如果两个int值相等，则跳转<br>if_icmpne 如果两个int类型值不相等，则跳转<br>if_icmplt 如果一个int类型值小于另外一个int类型值，则跳转<br>if_icmpge 如果一个int类型值大于或者等于另外一个int类型值，则跳转<br>if_icmpgt 如果一个int类型值大于另外一个int类型值，则跳转<br>if_icmple 如果一个int类型值小于或者等于另外一个int类型值，则跳转<br>ifnull 如果等于null，则跳转<br>ifnonnull 如果不等于null，则跳转<br>if_acmpeq 如果两个对象引用相等，则跳转<br>if_acmpnc 如果两个对象引用不相等，则跳转<br>比较指令<br>lcmp 比较long类型值<br>fcmpl 比较float类型值（当遇到NaN时，返回-1）<br>fcmpg 比较float类型值（当遇到NaN时，返回1）<br>dcmpl 比较double类型值（当遇到NaN时，返回-1）<br>dcmpg 比较double类型值（当遇到NaN时，返回1）<br>无条件转移指令<br>goto 无条件跳转<br>goto_w 无条件跳转（宽索引）<br>表跳转指令<br>tableswitch 通过索引访问跳转表，并跳转<br>lookupswitch 通过键值匹配访问跳转表，并执行跳转操作<br>异常<br>athrow 抛出异常或错误<br>finally子句<br>jsr 跳转到子例程<br>jsr_w 跳转到子例程（宽索引）<br>rct 从子例程返回<br>方法调用与返回<br>方法调用指令<br>invokcvirtual 运行时按照对象的类来调用实例方法<br>invokespecial 根据编译时类型来调用实例方法<br>invokestatic 调用类（静态）方法<br>invokcinterface 调用接口方法<br>方法返回指令<br>ireturn 从方法中返回int类型的数据<br>lreturn 从方法中返回long类型的数据<br>freturn 从方法中返回float类型的数据<br>dreturn 从方法中返回double类型的数据<br>areturn 从方法中返回引用类型的数据<br>return 从方法中返回，返回值为void<br>线程同步<br>montiorenter 进入并获取对象监视器<br>monitorexit 释放并退出对象监视器</p><hr><p>JVM指令助记符<br>变量到操作数栈：iload,iload_,lload,lload_,fload,fload_,dload,dload_,aload,aload_<br>操作数栈到变量：istore,istore_,lstore,lstore_,fstore,fstore_,dstore,dstor_,astore,astore_<br>常数到操作数栈：bipush,sipush,ldc,ldc_w,ldc2_w,aconst_null,iconst_ml,iconst_,lconst_,fconst_,dconst_<br>加：iadd,ladd,fadd,dadd<br>减：isub,lsub,fsub,dsub<br>乘：imul,lmul,fmul,dmul<br>除：idiv,ldiv,fdiv,ddiv<br>余数：irem,lrem,frem,drem<br>取负：ineg,lneg,fneg,dneg<br>移位：ishl,lshr,iushr,lshl,lshr,lushr<br>按位或：ior,lor<br>按位与：iand,land<br>按位异或：ixor,lxor<br>类型转换：i2l,i2f,i2d,l2f,l2d,f2d(放宽数值转换)<br>i2b,i2c,i2s,l2i,f2i,f2l,d2i,d2l,d2f(缩窄数值转换)<br>创建类实便：new<br>创建新数组：newarray,anewarray,multianwarray<br>访问类的域和类实例域：getfield,putfield,getstatic,putstatic<br>把数据装载到操作数栈：baload,caload,saload,iaload,laload,faload,daload,aaload<br>从操作数栈存存储到数组：bastore,castore,sastore,iastore,lastore,fastore,dastore,aastore<br>获取数组长度：arraylength<br>检相类实例或数组属性：instanceof,checkcast<br>操作数栈管理：pop,pop2,dup,dup2,dup_xl,dup2_xl,dup_x2,dup2_x2,swap<br>有条件转移：ifeq,iflt,ifle,ifne,ifgt,ifge,ifnull,ifnonnull,if_icmpeq,if_icmpene,<br>if_icmplt,if_icmpgt,if_icmple,if_icmpge,if_acmpeq,if_acmpne,lcmp,fcmpl<br>fcmpg,dcmpl,dcmpg<br>复合条件转移：tableswitch,lookupswitch<br>无条件转移：goto,goto_w,jsr,jsr_w,ret<br>调度对象的实便方法：invokevirtual<br>调用由接口实现的方法：invokeinterface<br>调用需要特殊处理的实例方法：invokespecial<br>调用命名类中的静态方法：invokestatic<br>方法返回：ireturn,lreturn,freturn,dreturn,areturn,return<br>异常：athrow<br>finally关键字的实现使用：jsr,jsr_w,ret</p>]]></content>
     
@@ -231,14 +238,12 @@
     </summary>
     
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
       <category term="JVM" scheme="http://yoursite.com/tags/JVM/"/>
     
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-      <category term="后端" scheme="http://yoursite.com/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -247,7 +252,7 @@
     <link href="http://yoursite.com/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/"/>
     <id>http://yoursite.com/2018/01/13/系统开发和运行知识/</id>
     <published>2018-01-13T14:40:00.000Z</published>
-    <updated>2019-10-18T13:45:26.278Z</updated>
+    <updated>2019-10-18T23:45:43.571Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-软件工程、软件过程改进和软件开发项目管理知识"><a href="#1-软件工程、软件过程改进和软件开发项目管理知识" class="headerlink" title="1. 软件工程、软件过程改进和软件开发项目管理知识"></a>1. 软件工程、软件过程改进和软件开发项目管理知识</h3><ul><li>软件工程知识</li><li>软件开发生命周期各阶段的目标和任务</li><li>软件开发项目管理基础知识（时间管理、成本管理、质量管理、人力资源管理、风险管理等）及其常用管理工具</li><li>主要的软件开发方法（生命周期法、原型法、面向对象法、CASE）</li><li>软件开发工具与环境知识</li><li>软件过程改进知识</li><li>软件质量管理知识</li><li>软件开发过程评估、软件能力成熟评估基础知识<h3 id="2-系统分析基础知识"><a href="#2-系统分析基础知识" class="headerlink" title="2. 系统分析基础知识"></a>2. 系统分析基础知识</h3></li><li>系统分析的目的和任务</li><li>结构化分析方法（数据流图（DFD）、数据字典（DD）、实体关系图（ERD）、描述加工处理的结构化语言）</li><li>统一建模语言（UML）</li><li>系统规格说明书<h3 id="3-系统设计知识"><a href="#3-系统设计知识" class="headerlink" title="3. 系统设计知识"></a>3. 系统设计知识</h3></li><li>系统设计的目的和任务</li><li>结构化设计方法和工具（系统流程图、HIPO图、控制流程图）</li><li>系统总体结构设计（总体布局、设计原则、模块结构设计、数据存储设计、系统配置方案）</li><li>系统详细设计（代码设计、数据库设计、用户界面设计、处理过程设计）</li><li>系统设计说明书<h3 id="4-系统实施知识"><a href="#4-系统实施知识" class="headerlink" title="4. 系统实施知识"></a>4. 系统实施知识</h3></li><li>系统实施的主要任务</li><li>结构化程序设计、面向对象程序设计、可视化程序设计</li><li>程序设计风格</li><li>程序设计语言的选择</li><li>系统测试的目的、类型，系统测试方法（黑盒测试、白盒测试、灰盒测试）</li><li>测试设计和管理（错误曲线、错误排除、收敛、注入故障、测试用例设计、系统测试报告）</li><li>系统转换基础知识<h3 id="5-系统运行和维护知识"><a href="#5-系统运行和维护知识" class="headerlink" title="5. 系统运行和维护知识"></a>5. 系统运行和维护知识</h3></li><li>系统运行管理基础知识</li><li>系统维护基础知识</li><li>系统评价基础知识<h3 id="6-面向对象开发方法"><a href="#6-面向对象开发方法" class="headerlink" title="6. 面向对象开发方法"></a>6. 面向对象开发方法</h3></li><li>面向对象开发概念（类、对象、属性、封装性、继承性、多态性、对象之间的引用）</li><li>面向对象开发方法的优越性以及有效领域</li><li>面向对象设计方法（体系结构、类的设计、用户接口设计）</li><li>面向对象实现方法（选择程序设计语言、类的实现、方法的实现、用户接口的实现、准备测试数据）</li><li>面向对象程序设计语言（如C++、Java、Visual、Bsasic、Visual C++）的基本机制</li><li>面向对象数据库、分布式对象的概念</li></ul>]]></content>
     
@@ -261,7 +266,7 @@
     </summary>
     
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
       <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
@@ -273,7 +278,7 @@
     <link href="http://yoursite.com/2017/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/"/>
     <id>http://yoursite.com/2017/12/30/计算机系统知识/</id>
     <published>2017-12-30T14:36:00.000Z</published>
-    <updated>2019-10-18T14:28:45.355Z</updated>
+    <updated>2019-10-18T23:43:46.122Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-硬件知识"><a href="#1-硬件知识" class="headerlink" title="1. 硬件知识"></a>1. 硬件知识</h3><h4 id="1-1-计算机系统的组成、体系结构分类及特性"><a href="#1-1-计算机系统的组成、体系结构分类及特性" class="headerlink" title="1.1 计算机系统的组成、体系结构分类及特性"></a>1.1 计算机系统的组成、体系结构分类及特性</h4><ul><li>CPU和存储器的组成、性能和基本工作原理</li><li>常用I/O设备、通信设备的性能，以及基本工作原理</li><li>I/O接口的功能、类型和特性</li><li>I/O控制方式（中断系统、DMA、I/O处理机方式）</li><li>CISC/RISC，流水线操作，多处理机，并行处理<h4 id="1-2-存储系统"><a href="#1-2-存储系统" class="headerlink" title="1.2 存储系统"></a>1.2 存储系统</h4></li><li>主存-Cache存储系统的工作原理</li><li>虚拟存储器基本工作原理，多级存储体系的性能价格</li><li>RAID类型和特性<h4 id="1-3-安全性、可靠性与系统性能评测基础知识"><a href="#1-3-安全性、可靠性与系统性能评测基础知识" class="headerlink" title="1.3 安全性、可靠性与系统性能评测基础知识"></a>1.3 安全性、可靠性与系统性能评测基础知识</h4></li><li>诊断与容错</li><li>系统可靠性分析评价</li><li>计算机系统性能评测方式<h3 id="2-软件知识"><a href="#2-软件知识" class="headerlink" title="2. 软件知识"></a>2. 软件知识</h3><h4 id="2-1-操作系统知识"><a href="#2-1-操作系统知识" class="headerlink" title="2.1 操作系统知识"></a>2.1 操作系统知识</h4></li><li>操作系统的内核（中断控制）、进程、线程概念</li><li>处理机管理（状态转换、共享与互斥、分时轮转、抢占、死锁）</li><li>存储管理（主存保护、动态连接分配、分段、分页、虚存）</li><li>设备管理（I/O控制、假脱机）</li><li>文件管理（文件目录、文件组织、存取方法、存取控制、恢复处理）</li><li>作业管理（作业调度、作业控制语言（JCL）、多道程序设计）</li><li>汉字处理，多媒体处理，人机界面</li><li>网络操作系统和嵌入式操作系统基础知识</li><li>操作系统的配置<h4 id="2-2-程序设计语言和语言处理程序的知识"><a href="#2-2-程序设计语言和语言处理程序的知识" class="headerlink" title="2.2 程序设计语言和语言处理程序的知识"></a>2.2 程序设计语言和语言处理程序的知识</h4></li><li>汇编、编译、解释系统的基础知识和基本工作原理</li><li>程序设计语言的基本成分：数据、运算、控制和传输，过程（函数）调用</li><li>各类程序设计语言主要特点和适用情况<h3 id="3-计算机网络知识"><a href="#3-计算机网络知识" class="headerlink" title="3. 计算机网络知识"></a>3. 计算机网络知识</h3></li><li>网络体系结构（网络拓扑、OSI/RM、基本的网络协议）</li><li>传输介质、传输技术、传输方法、传输控制</li><li>常用网络设备和各类通信设备</li><li>Client/Server结构、Browser/Server结构</li><li>LAN拓扑，存取控制，LAN的组网，LAN间连接，LAN-WAN连接</li><li>因特网基础知识以及应用</li><li>网络软件</li><li>网络管理</li><li>网络性能分析<h3 id="4-数据库知识"><a href="#4-数据库知识" class="headerlink" title="4. 数据库知识"></a>4. 数据库知识</h3></li><li>数据库管理系统的功能和特征</li><li>数据库模型（概念模式、外模式、内模式）</li><li>数据模型，ER图，第一范式、第二范式、第三范式</li><li>数据操作（集合运算和关系运算）</li><li>数据库语言（SQL）</li><li>数据库的控制功能（并发控制、恢复、安全性、完整性）</li><li>数据仓库和分布式数据库基础知识<h3 id="5-多媒体知识"><a href="#5-多媒体知识" class="headerlink" title="5. 多媒体知识"></a>5. 多媒体知识</h3></li><li>多媒体系统基础知识，多媒体设备的性能特性，常用多媒体文件格式</li><li>简单图形的绘制，图像文件的处理方法</li><li>音频和视频信息的应用</li><li>多媒体应用开发过程<h3 id="6-系统性能知识"><a href="#6-系统性能知识" class="headerlink" title="6. 系统性能知识"></a>6. 系统性能知识</h3></li><li>性能指标（响应时间、吞吐量、周转时间）和性能设计</li><li>性能测试和性能评估</li><li>可靠性指标及计算、可靠性设计</li><li>可靠性测试和可靠性评估<h3 id="7-计算机应用基础知识"><a href="#7-计算机应用基础知识" class="headerlink" title="7. 计算机应用基础知识"></a>7. 计算机应用基础知识</h3></li><li>信息管理、数据处理、辅助设计、自动控制、科学计算、人工智能等基础知识</li><li>远程通信服务基础知识</li><li>常用应用系统</li></ul>]]></content>
     
@@ -287,7 +292,7 @@
     </summary>
     
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
       <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
@@ -295,41 +300,11 @@
   </entry>
   
   <entry>
-    <title>Web开发入门</title>
-    <link href="http://yoursite.com/2017/04/25/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
-    <id>http://yoursite.com/2017/04/25/Web开发入门/</id>
-    <published>2017-04-25T09:12:00.000Z</published>
-    <updated>2019-10-18T14:28:15.026Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="C-S-B-S网络应用"><a href="#C-S-B-S网络应用" class="headerlink" title="C/S B/S网络应用:"></a>C/S B/S网络应用:</h4><p><strong>C/S</strong>就是(<strong>客户机/服务器</strong>)的简称,桌面应用程序采用的多是这种结构.<br><strong>B/S</strong>就是(<strong>浏览器/服务器</strong>)的简称,特点是客户端无需安装特定的软件,只需要安装一个浏览器就可以与系统进行交互</p><h4 id="C-S优缺点"><a href="#C-S优缺点" class="headerlink" title="C/S优缺点:"></a>C/S优缺点:</h4><p>由于C/S结构没有像B/S（下一个基本概念介绍）结构中服务器向客户端发送的数据还包含了大量的非实际交换数据，比如请求响应头，还有页面数据等等，它的==相应时间还是相对较快==的；<br>由于C/S结构安装的客户端软件，很多的业务逻辑、算法逻辑处理都在客户端进行，这样就==减轻了服务器的压力==，这是优点，但是带来的问题也显而易见，不但==有被反编译的安全隐患==，而且不断的安装各种客户端软件，会使==客户端越来越臃肿==；<br>在升级维护等工作上带来的麻烦也是令人不愉快，因为每发生一次升级都需要重新更新客户端的软件，这样做的后果就是在==开发上的工作量加大==，而且用户每次都要更新自己终端上的软件，这些都是令人非常头疼的问题；<br>由于需要在客户端进行安装特定软件，因此==对操作系统有一定的限制==；</p><h4 id="Web站点、Web应用、HTTP服务器、Web应用服务器"><a href="#Web站点、Web应用、HTTP服务器、Web应用服务器" class="headerlink" title="Web站点、Web应用、HTTP服务器、Web应用服务器:"></a>Web站点、Web应用、HTTP服务器、Web应用服务器:</h4><p>==Web站点:==<br>即Web Site,也被成为Web网站;比如某公司逛完就是Web站点</p><p>==Web应用:==<br>即Web Application,简单来说,就是通过浏览器访问的应用程序,从而为客户提供相应服务</p><p>==Http服务器:==<br>即Web服务器,主要功能是提供网上信息浏览服务,例如Apache、Nginx、IIS是比较常用的HTTP服务器.</p><p>==Web应用服务器:==<br>Web应用服务器能够运行服务器上的应用程序,并将结果返回给客户端浏览器;例如Tomcat,通常Web应用服务器兼具部分Http服务器的功能.</p><p>==Servlet的概念及功能:==</p><ul><li>Servlet运行在服务器端，需要Servlet容器的支持，例如Tomcat；</li><li>可以通过浏览器访问Servlet，Servlet可以生成动态页面返回给浏览器；</li><li>Servlet也是一段代码，是一个Java类，这个Java类需要遵守一定的编写规范，例如，必须继承于javax.servlet.http.HttpServlet类；</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;C-S-B-S网络应用&quot;&gt;&lt;a href=&quot;#C-S-B-S网络应用&quot; class=&quot;headerlink&quot; title=&quot;C/S B/S网络应用:&quot;&gt;&lt;/a&gt;C/S B/S网络应用:&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;C/S&lt;/strong&gt;就是(&lt;strong&gt;客
-      
-    
-    </summary>
-    
-    
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-      <category term="JVM" scheme="http://yoursite.com/tags/JVM/"/>
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-      <category term="后端" scheme="http://yoursite.com/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>计算机科学基础</title>
-    <link href="http://yoursite.com/2016/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    <id>http://yoursite.com/2016/12/27/计算机科学基础/</id>
-    <published>2016-12-27T14:17:00.000Z</published>
-    <updated>2019-10-18T13:36:02.529Z</updated>
+    <link href="http://yoursite.com/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2017/12/27/计算机科学基础/</id>
+    <published>2017-12-27T14:17:00.000Z</published>
+    <updated>2019-10-18T23:43:36.916Z</updated>
     
     <content type="html"><![CDATA[<h4 id="1-数制及其转换"><a href="#1-数制及其转换" class="headerlink" title="1. 数制及其转换"></a>1. 数制及其转换</h4><p>• 二进制、十进制和十六进制等常用制数制及其相互转换</p><h4 id="2-数据的表示"><a href="#2-数据的表示" class="headerlink" title="2. 数据的表示"></a>2. 数据的表示</h4><p>• 数的表示（原码、反码、补码、移码表示，整数和实数的机内表示，精度和溢出）<br>• 非数值表示（字符和汉字表示、声音表示、图像表示）<br>• 校验方法和校验码（奇偶校验码、海明校验码、循环冗余校验码）</p><h4 id="3-算术运算和逻辑运算"><a href="#3-算术运算和逻辑运算" class="headerlink" title="3. 算术运算和逻辑运算"></a>3. 算术运算和逻辑运算</h4><p>• 计算机中的二进制数运算方法<br>• 逻辑代数的基本运算和逻辑表达式的化简</p><h4 id="4-数学基础知识"><a href="#4-数学基础知识" class="headerlink" title="4.  数学基础知识"></a>4.  数学基础知识</h4><p>• 命题逻辑、谓词逻辑、形式逻辑的基础知识<br>• 常用数值计算（误差、矩阵和行列式、近似求解方程、插值、数值积分）<br>• 排列组合、概率论应用、应用统计（数据的统计分析）<br>• 运算基本方法（预测与决策、线性规划、网络图、模拟）</p><h4 id="5-常用数据结构"><a href="#5-常用数据结构" class="headerlink" title="5. 常用数据结构"></a>5. 常用数据结构</h4><p>• 数组（静态数组、动态数组）、线性表、链表（单向链表、双向链表、循环链表）、队列、栈、树（二叉树、查找树、平衡树、线索树、线索树、堆）、图等的定义、存储和操作<br>• Hash（存储地址计算，冲突处理）</p><h4 id="6-常用算法"><a href="#6-常用算法" class="headerlink" title="6. 常用算法"></a>6. 常用算法</h4><p>• 排序算法、查找算法、数值计算方法、字符串处理方法、数据压缩算法、递归算法、图的相关算法<br>• 算法与数据结构的关系、算法效率、算法设计、算法描述（流程图、伪代码、决策表）、算法的复杂性</p>]]></content>
     
@@ -344,7 +319,33 @@
     </summary>
     
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web开发入门</title>
+    <link href="http://yoursite.com/2017/04/25/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
+    <id>http://yoursite.com/2017/04/25/Web开发入门/</id>
+    <published>2017-04-25T09:12:00.000Z</published>
+    <updated>2019-10-18T23:46:57.866Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="C-S-B-S网络应用"><a href="#C-S-B-S网络应用" class="headerlink" title="C/S B/S网络应用:"></a>C/S B/S网络应用:</h4><p><strong>C/S</strong>就是(<strong>客户机/服务器</strong>)的简称,桌面应用程序采用的多是这种结构.<br><strong>B/S</strong>就是(<strong>浏览器/服务器</strong>)的简称,特点是客户端无需安装特定的软件,只需要安装一个浏览器就可以与系统进行交互</p><h4 id="C-S优缺点"><a href="#C-S优缺点" class="headerlink" title="C/S优缺点:"></a>C/S优缺点:</h4><p>由于C/S结构没有像B/S（下一个基本概念介绍）结构中服务器向客户端发送的数据还包含了大量的非实际交换数据，比如请求响应头，还有页面数据等等，它的==相应时间还是相对较快==的；<br>由于C/S结构安装的客户端软件，很多的业务逻辑、算法逻辑处理都在客户端进行，这样就==减轻了服务器的压力==，这是优点，但是带来的问题也显而易见，不但==有被反编译的安全隐患==，而且不断的安装各种客户端软件，会使==客户端越来越臃肿==；<br>在升级维护等工作上带来的麻烦也是令人不愉快，因为每发生一次升级都需要重新更新客户端的软件，这样做的后果就是在==开发上的工作量加大==，而且用户每次都要更新自己终端上的软件，这些都是令人非常头疼的问题；<br>由于需要在客户端进行安装特定软件，因此==对操作系统有一定的限制==；</p><h4 id="Web站点、Web应用、HTTP服务器、Web应用服务器"><a href="#Web站点、Web应用、HTTP服务器、Web应用服务器" class="headerlink" title="Web站点、Web应用、HTTP服务器、Web应用服务器:"></a>Web站点、Web应用、HTTP服务器、Web应用服务器:</h4><p>==Web站点:==<br>即Web Site,也被成为Web网站;比如某公司逛完就是Web站点</p><p>==Web应用:==<br>即Web Application,简单来说,就是通过浏览器访问的应用程序,从而为客户提供相应服务</p><p>==Http服务器:==<br>即Web服务器,主要功能是提供网上信息浏览服务,例如Apache、Nginx、IIS是比较常用的HTTP服务器.</p><p>==Web应用服务器:==<br>Web应用服务器能够运行服务器上的应用程序,并将结果返回给客户端浏览器;例如Tomcat,通常Web应用服务器兼具部分Http服务器的功能.</p><p>==Servlet的概念及功能:==</p><ul><li>Servlet运行在服务器端，需要Servlet容器的支持，例如Tomcat；</li><li>可以通过浏览器访问Servlet，Servlet可以生成动态页面返回给浏览器；</li><li>Servlet也是一段代码，是一个Java类，这个Java类需要遵守一定的编写规范，例如，必须继承于javax.servlet.http.HttpServlet类；</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;C-S-B-S网络应用&quot;&gt;&lt;a href=&quot;#C-S-B-S网络应用&quot; class=&quot;headerlink&quot; title=&quot;C/S B/S网络应用:&quot;&gt;&lt;/a&gt;C/S B/S网络应用:&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;C/S&lt;/strong&gt;就是(&lt;strong&gt;客
+      
+    
+    </summary>
+    
+    
+      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
       <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
@@ -356,7 +357,7 @@
     <link href="http://yoursite.com/2016/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/2016/12/25/软件开发基础/</id>
     <published>2016-12-25T07:18:00.000Z</published>
-    <updated>2019-10-18T12:24:13.008Z</updated>
+    <updated>2019-10-18T23:45:15.683Z</updated>
     
     <content type="html"><![CDATA[<h4 id="计算机工作的简单过程"><a href="#计算机工作的简单过程" class="headerlink" title="计算机工作的简单过程:"></a>计算机工作的简单过程:</h4><ol><li>将程序和数据通关输入设备送入存储器(可以理解为内存)</li><li>计算机从存储器中取出程序指令送到控制器(可以理解为CPU)</li><li>控制器更具指令的含义发出相应的命令(如加法,减法),将存储单元中存放的操作数据取出送往运算器进行运算,再把运算结果送回存储器指定的单元中<h4 id="什么是软件"><a href="#什么是软件" class="headerlink" title="什么是软件:"></a>什么是软件:</h4> 软件=程序+文档</li></ol><h4 id="不同类型语言的编译与运行"><a href="#不同类型语言的编译与运行" class="headerlink" title="不同类型语言的编译与运行:"></a>不同类型语言的编译与运行:</h4><p>==编译型==语言是先把源程序的每一条语句都编译成机器语言,并保存成二进制文件,运行时计算机可以直接以机器语言来运行此程序,速度较快;<br>==解释型==语言在执行程序时才一条条的解释成机器语言给计算机来执行,所以运行速度会受到影响</p>]]></content>
     
@@ -371,7 +372,7 @@
     </summary>
     
     
-      <category term="技术栈" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
       <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
