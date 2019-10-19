@@ -125,10 +125,10 @@
   
   <entry>
     <title>Web开发入门</title>
-    <link href="http://yoursite.com/2017/04/25/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
-    <id>http://yoursite.com/2017/04/25/Web开发入门/</id>
-    <published>2017-04-25T09:12:00.000Z</published>
-    <updated>2019-10-19T00:10:24.038Z</updated>
+    <link href="http://yoursite.com/2017/06/25/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
+    <id>http://yoursite.com/2017/06/25/Web开发入门/</id>
+    <published>2017-06-25T09:12:00.000Z</published>
+    <updated>2019-10-19T08:13:55.792Z</updated>
     
     <content type="html"><![CDATA[<h4 id="C-S-B-S网络应用"><a href="#C-S-B-S网络应用" class="headerlink" title="C/S B/S网络应用:"></a>C/S B/S网络应用:</h4><p><strong>C/S</strong>就是(<strong>客户机/服务器</strong>)的简称,桌面应用程序采用的多是这种结构.<br><strong>B/S</strong>就是(<strong>浏览器/服务器</strong>)的简称,特点是客户端无需安装特定的软件,只需要安装一个浏览器就可以与系统进行交互</p><h4 id="C-S优缺点"><a href="#C-S优缺点" class="headerlink" title="C/S优缺点:"></a>C/S优缺点:</h4><p>由于C/S结构没有像B/S（下一个基本概念介绍）结构中服务器向客户端发送的数据还包含了大量的非实际交换数据，比如请求响应头，还有页面数据等等，它的==相应时间还是相对较快==的；<br>由于C/S结构安装的客户端软件，很多的业务逻辑、算法逻辑处理都在客户端进行，这样就==减轻了服务器的压力==，这是优点，但是带来的问题也显而易见，不但==有被反编译的安全隐患==，而且不断的安装各种客户端软件，会使==客户端越来越臃肿==；<br>在升级维护等工作上带来的麻烦也是令人不愉快，因为每发生一次升级都需要重新更新客户端的软件，这样做的后果就是在==开发上的工作量加大==，而且用户每次都要更新自己终端上的软件，这些都是令人非常头疼的问题；<br>由于需要在客户端进行安装特定软件，因此==对操作系统有一定的限制==；</p><h4 id="Web站点、Web应用、HTTP服务器、Web应用服务器"><a href="#Web站点、Web应用、HTTP服务器、Web应用服务器" class="headerlink" title="Web站点、Web应用、HTTP服务器、Web应用服务器:"></a>Web站点、Web应用、HTTP服务器、Web应用服务器:</h4><p>==Web站点:==<br>即Web Site,也被成为Web网站;比如某公司逛完就是Web站点</p><p>==Web应用:==<br>即Web Application,简单来说,就是通过浏览器访问的应用程序,从而为客户提供相应服务</p><p>==Http服务器:==<br>即Web服务器,主要功能是提供网上信息浏览服务,例如Apache、Nginx、IIS是比较常用的HTTP服务器.</p><p>==Web应用服务器:==<br>Web应用服务器能够运行服务器上的应用程序,并将结果返回给客户端浏览器;例如Tomcat,通常Web应用服务器兼具部分Http服务器的功能.</p><p>==Servlet的概念及功能:==</p><ul><li>Servlet运行在服务器端，需要Servlet容器的支持，例如Tomcat；</li><li>可以通过浏览器访问Servlet，Servlet可以生成动态页面返回给浏览器；</li><li>Servlet也是一段代码，是一个Java类，这个Java类需要遵守一定的编写规范，例如，必须继承于javax.servlet.http.HttpServlet类；</li></ul>]]></content>
     
@@ -150,13 +150,47 @@
   </entry>
   
   <entry>
+    <title>软件开发基础</title>
+    <link href="http://yoursite.com/2017/04/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2017/04/25/软件开发基础/</id>
+    <published>2017-04-25T07:18:00.000Z</published>
+    <updated>2019-10-19T08:13:37.882Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="计算机工作的简单过程"><a href="#计算机工作的简单过程" class="headerlink" title="计算机工作的简单过程:"></a>计算机工作的简单过程:</h4><ol><li>将程序和数据通关输入设备送入存储器(可以理解为内存)</li><li>计算机从存储器中取出程序指令送到控制器(可以理解为CPU)</li><li>控制器更具指令的含义发出相应的命令(如加法,减法),将存储单元中存放的操作数据取出送往运算器进行运算,再把运算结果送回存储器指定的单元中<h4 id="什么是软件"><a href="#什么是软件" class="headerlink" title="什么是软件:"></a>什么是软件:</h4> 软件=程序+文档</li></ol><h4 id="不同类型语言的编译与运行"><a href="#不同类型语言的编译与运行" class="headerlink" title="不同类型语言的编译与运行:"></a>不同类型语言的编译与运行:</h4><p>==编译型==语言是先把源程序的每一条语句都编译成机器语言,并保存成二进制文件,运行时计算机可以直接以机器语言来运行此程序,速度较快;<br>==解释型==语言在执行程序时才一条条的解释成机器语言给计算机来执行,所以运行速度会受到影响</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;计算机工作的简单过程&quot;&gt;&lt;a href=&quot;#计算机工作的简单过程&quot; class=&quot;headerlink&quot; title=&quot;计算机工作的简单过程:&quot;&gt;&lt;/a&gt;计算机工作的简单过程:&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;将程序和数据通关输入设备送入存储器(可以理解为内存)&lt;/li
+      
+    
+    </summary>
+    
+    
+      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java异常处理</title>
     <link href="http://yoursite.com/2017/04/03/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     <id>http://yoursite.com/2017/04/03/Java异常处理/</id>
     <published>2017-04-03T10:14:00.000Z</published>
-    <updated>2019-10-19T00:13:16.959Z</updated>
+    <updated>2019-10-19T08:11:35.203Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="异常处理和错误的区别"><a href="#异常处理和错误的区别" class="headerlink" title="异常处理和错误的区别:"></a>异常处理和错误的区别:</h4><p><strong>异常:</strong> 异常指的是程序运行时发生的不正常的时间;异常能够被程序处理,保证程序继续运行下去;例如除数为0,文件没有找到,输入的数字格式不对;<br><strong>错误:</strong> 错误程序没法处理,例如内存泄漏,发生错误后,一般虚拟机会选择终止程序运行,程序员需要修改代码才能解决相关错误;</p><h4 id="运行时异常与非运行时异常"><a href="#运行时异常与非运行时异常" class="headerlink" title="运行时异常与非运行时异常:"></a>运行时异常与非运行时异常:</h4><p>Exception有很多子类,这些子类又可以分为两大类;即<strong>运行时异常</strong>和<strong>非运行时异常</strong><br><strong>运行时异常:</strong> 也称为非检测异常,这些异常在编译期不检测,程序中可以选择处理,也可以不处理,如果不处理运行时会中断,但编译没问题.<br><strong>非运行时异常:</strong> 也称为检测异常,是必须进行处理的异常,如果不处理,将发生编译期错误.</p><h4 id="异常处理的标准流程"><a href="#异常处理的标准流程" class="headerlink" title="异常处理的标准流程:"></a>异常处理的标准流程:</h4><ol><li><strong>抛出异常</strong><br>运行时异常JVM自行抛出,非运行时异常使用<code>throw</code>抛出</li><li><strong>捕获异常</strong><br><code>catch</code>语句捕获异常</li><li>如<strong>捕获成功</strong>,异常被处理,程序继续运行<br><code>catch</code>的异常类型与抛出的异常类型匹配时</li><li>如<strong>捕获失败</strong>,异常未被处理,程序中断运行<br><code>catch</code>的异常类型与抛出的异常类型不匹配</li></ol><h4 id="常见的异常类型"><a href="#常见的异常类型" class="headerlink" title="常见的异常类型"></a>常见的异常类型</h4><ul><li><strong>Exception</strong>: 异常层次结构的父类</li><li><strong>ArithmeticException</strong>:算术错误情况,如以0作除数</li><li><strong>ArrayIndexOutOfBoundsException</strong>: 数组下标越界</li><li><strong>NullPointerException</strong>: 尝试访问null对象成员</li><li><strong>ClassNotFoundException</strong>: 不能加载所需的类</li><li><strong>ClassCastException</strong>:对象强制类型转换出错</li><li><strong>NumberFormatException</strong>: 数字格式转换异常,如把”abc”转成数字了</li></ul><h4 id="Try-catch代码块"><a href="#Try-catch代码块" class="headerlink" title="Try-catch代码块:"></a>Try-catch代码块:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// 代码段 1</span></span><br><span class="line">  <span class="comment">// 产生异常的代码段 2</span></span><br><span class="line">  <span class="comment">// 代码段 3</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (异常类型<span class="number">1</span> e) &#123;</span><br><span class="line">  <span class="comment">// 对异常进行处理的代码段4</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (异常类型<span class="number">2</span> e) &#123;</span><br><span class="line">  <span class="comment">// 对异常进行处理的代码段5</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">  <span class="comment">// 无论是否发生异常,代码总能执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="Throw-Throws关键字"><a href="#Throw-Throws关键字" class="headerlink" title="Throw,Throws关键字"></a>Throw,Throws关键字</h4><ul><li><strong>throw</strong>: 抛出异常(一般用于代码块和方法中)</li><li><strong>throws</strong>: 声明异常(一般用于方法中)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span><span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(age&lt;=<span class="number">0</span>||age&gt;<span class="number">100</span>)&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> Exception(); <span class="comment">//处理方法 try-catch</span></span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常:"></a>自定义异常:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class AgeException extends <span class="title">Exception</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">AgeException</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">AgeException</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="断言"><a href="#断言" class="headerlink" title="断言:"></a>断言:</h4><p>assert 5&lt;3==false “断言信息”</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;异常处理和错误的区别&quot;&gt;&lt;a href=&quot;#异常处理和错误的区别&quot; class=&quot;headerlink&quot; title=&quot;异常处理和错误的区别:&quot;&gt;&lt;/a&gt;异常处理和错误的区别:&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;异常:&lt;/strong&gt; 异常指的是程序运行时发生的不正
+      
     
     </summary>
     
@@ -226,7 +260,7 @@
     <link href="http://yoursite.com/2017/03/15/%E6%B7%B1%E5%85%A5%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2017/03/15/深入面向对象/</id>
     <published>2017-03-15T01:13:00.000Z</published>
-    <updated>2019-10-19T00:09:57.304Z</updated>
+    <updated>2019-10-19T08:14:21.374Z</updated>
     
     <content type="html"><![CDATA[<h3 id="面向对象的三个基本特征-封装-继承-多态"><a href="#面向对象的三个基本特征-封装-继承-多态" class="headerlink" title="面向对象的三个基本特征:封装 . 继承 . 多态"></a>面向对象的三个基本特征:封装 . 继承 . 多态</h3><h4 id="封装-属性-对象"><a href="#封装-属性-对象" class="headerlink" title="封装(属性 . 对象):"></a>封装(属性 . 对象):</h4><ul><li>把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象<h4 id="继承"><a href="#继承" class="headerlink" title="继承:"></a>继承:</h4></li><li>继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法</li><li>一个新类可以从现有的类中派生，这个过程称为类继承，新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）</li><li>派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要<h4 id="多态"><a href="#多态" class="headerlink" title="多态:"></a>多态:</h4></li><li>多态性是指允许不同类的对象对同一消息作出响应</li><li>多态性语言具有灵活、抽象、行为共享、代码共享的优势<h4 id="封装的意义"><a href="#封装的意义" class="headerlink" title="封装的意义:"></a>封装的意义:</h4></li><li>适当的封装可以让代码更容易理解和维护，也加强了代码的安全性。<h4 id="包机制"><a href="#包机制" class="headerlink" title="包机制:"></a>包机制:</h4></li><li>为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间<h4 id="包的作用"><a href="#包的作用" class="headerlink" title="包的作用:"></a>包的作用:</h4></li><li>把功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用</li><li>如同文件夹一样，包也采用了树形目录的存储方式。同一个包中的类名字是不同的，不同的包中的类的名字是可以相同的，当同时调用两个不同包中相同类名的类时，应该加上包名加以区别。因此，包可以避免名字冲突。</li><li>包也提供了限定了访问权限的一个控制范围，拥有包访问权限的类才能访问某个包中的类</li></ul><h4 id="类的访问控制符"><a href="#类的访问控制符" class="headerlink" title="类的访问控制符:"></a>类的访问控制符:</h4><ul><li>default: 默认的（不提供访问控制符）仅可被同包的其他代码访问</li><li>public：可以被任何代码访问</li><li>protected: </li><li>private: 私有的</li></ul><h4 id="继承的意义"><a href="#继承的意义" class="headerlink" title="继承的意义:"></a>继承的意义:</h4><p>继承是使用已存在的类的定义作为基础建立新类的技术,新类的定义可以增加新的数据或新的功能,也可以用父类的功能,通过使用继承,我们能够非常方便的复用代码,大大提高开发效率</p><ul><li>对象向上造型:<br>所谓的向上造型就是父类的引用指向子类的对象</li><li>instanceof运算符:<br>instanceof运算符用来判断对象是否属于某个类的实例</li></ul>]]></content>
     
@@ -325,33 +359,6 @@
     
     
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>软件开发基础</title>
-    <link href="http://yoursite.com/2016/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"/>
-    <id>http://yoursite.com/2016/12/25/软件开发基础/</id>
-    <published>2016-12-25T07:18:00.000Z</published>
-    <updated>2019-10-19T00:09:53.064Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="计算机工作的简单过程"><a href="#计算机工作的简单过程" class="headerlink" title="计算机工作的简单过程:"></a>计算机工作的简单过程:</h4><ol><li>将程序和数据通关输入设备送入存储器(可以理解为内存)</li><li>计算机从存储器中取出程序指令送到控制器(可以理解为CPU)</li><li>控制器更具指令的含义发出相应的命令(如加法,减法),将存储单元中存放的操作数据取出送往运算器进行运算,再把运算结果送回存储器指定的单元中<h4 id="什么是软件"><a href="#什么是软件" class="headerlink" title="什么是软件:"></a>什么是软件:</h4> 软件=程序+文档</li></ol><h4 id="不同类型语言的编译与运行"><a href="#不同类型语言的编译与运行" class="headerlink" title="不同类型语言的编译与运行:"></a>不同类型语言的编译与运行:</h4><p>==编译型==语言是先把源程序的每一条语句都编译成机器语言,并保存成二进制文件,运行时计算机可以直接以机器语言来运行此程序,速度较快;<br>==解释型==语言在执行程序时才一条条的解释成机器语言给计算机来执行,所以运行速度会受到影响</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;计算机工作的简单过程&quot;&gt;&lt;a href=&quot;#计算机工作的简单过程&quot; class=&quot;headerlink&quot; title=&quot;计算机工作的简单过程:&quot;&gt;&lt;/a&gt;计算机工作的简单过程:&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;将程序和数据通关输入设备送入存储器(可以理解为内存)&lt;/li
-      
-    
-    </summary>
-    
-    
-      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
