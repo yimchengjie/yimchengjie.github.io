@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://zhuyiting.xyz/"/>
   <updated>2019-10-19T11:53:04.512Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://zhuyiting.xyz/</id>
   
   <author>
     <name>yanchengjie</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>一封信</title>
-    <link href="http://yoursite.com/2019/09/14/%E4%B8%80%E5%B0%81%E4%BF%A1/"/>
-    <id>http://yoursite.com/2019/09/14/一封信/</id>
+    <link href="https://zhuyiting.xyz/2019/09/14/%E4%B8%80%E5%B0%81%E4%BF%A1/"/>
+    <id>https://zhuyiting.xyz/2019/09/14/一封信/</id>
     <published>2019-09-13T16:00:00.000Z</published>
     <updated>2019-10-19T11:53:04.512Z</updated>
     
@@ -36,17 +36,17 @@
     </summary>
     
     
-      <category term="生活方式" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/"/>
+      <category term="生活方式" scheme="https://zhuyiting.xyz/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/"/>
     
     
-      <category term="个人总结" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
+      <category term="个人总结" scheme="https://zhuyiting.xyz/tags/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>JVM指令手册</title>
-    <link href="http://yoursite.com/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
-    <id>http://yoursite.com/2019/07/30/JVM指令手册/</id>
+    <link href="https://zhuyiting.xyz/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/"/>
+    <id>https://zhuyiting.xyz/2019/07/30/JVM指令手册/</id>
     <published>2019-07-30T07:18:00.000Z</published>
     <updated>2019-10-19T00:10:20.374Z</updated>
     
@@ -62,19 +62,19 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
-      <category term="JVM" scheme="http://yoursite.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
     
   </entry>
   
   <entry>
     <title>系统开发和运行知识</title>
-    <link href="http://yoursite.com/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/"/>
-    <id>http://yoursite.com/2018/01/13/系统开发和运行知识/</id>
+    <link href="https://zhuyiting.xyz/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/"/>
+    <id>https://zhuyiting.xyz/2018/01/13/系统开发和运行知识/</id>
     <published>2018-01-13T14:40:00.000Z</published>
     <updated>2019-10-19T00:10:01.041Z</updated>
     
@@ -90,17 +90,17 @@
     </summary>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>计算机系统知识</title>
-    <link href="http://yoursite.com/2017/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/"/>
-    <id>http://yoursite.com/2017/12/30/计算机系统知识/</id>
+    <link href="https://zhuyiting.xyz/2017/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/"/>
+    <id>https://zhuyiting.xyz/2017/12/30/计算机系统知识/</id>
     <published>2017-12-30T14:36:00.000Z</published>
     <updated>2019-10-19T00:09:45.757Z</updated>
     
@@ -116,17 +116,17 @@
     </summary>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>计算机科学基础</title>
-    <link href="http://yoursite.com/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
-    <id>http://yoursite.com/2017/12/27/计算机科学基础/</id>
+    <link href="https://zhuyiting.xyz/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    <id>https://zhuyiting.xyz/2017/12/27/计算机科学基础/</id>
     <published>2017-12-27T14:17:00.000Z</published>
     <updated>2019-10-19T00:09:42.314Z</updated>
     
@@ -143,17 +143,17 @@
     </summary>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Web开发入门</title>
-    <link href="http://yoursite.com/2017/06/25/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
-    <id>http://yoursite.com/2017/06/25/Web开发入门/</id>
+    <link href="https://zhuyiting.xyz/2017/06/25/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
+    <id>https://zhuyiting.xyz/2017/06/25/Web开发入门/</id>
     <published>2017-06-25T09:12:00.000Z</published>
     <updated>2019-10-19T08:13:55.792Z</updated>
     
@@ -169,17 +169,17 @@
     </summary>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Java多线程</title>
-    <link href="http://yoursite.com/2017/04/30/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    <id>http://yoursite.com/2017/04/30/Java多线程/</id>
+    <link href="https://zhuyiting.xyz/2017/04/30/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>https://zhuyiting.xyz/2017/04/30/Java多线程/</id>
     <published>2017-04-30T00:43:00.000Z</published>
     <updated>2019-10-19T11:49:14.743Z</updated>
     
@@ -195,17 +195,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>软件开发基础</title>
-    <link href="http://yoursite.com/2017/04/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"/>
-    <id>http://yoursite.com/2017/04/25/软件开发基础/</id>
+    <link href="https://zhuyiting.xyz/2017/04/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/"/>
+    <id>https://zhuyiting.xyz/2017/04/25/软件开发基础/</id>
     <published>2017-04-25T07:18:00.000Z</published>
     <updated>2019-10-19T08:13:37.882Z</updated>
     
@@ -222,17 +222,17 @@
     </summary>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="https://zhuyiting.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>SteamAPI</title>
-    <link href="http://yoursite.com/2017/04/25/SteamAPI/"/>
-    <id>http://yoursite.com/2017/04/25/SteamAPI/</id>
+    <link href="https://zhuyiting.xyz/2017/04/25/SteamAPI/"/>
+    <id>https://zhuyiting.xyz/2017/04/25/SteamAPI/</id>
     <published>2017-04-25T03:30:00.000Z</published>
     <updated>2019-10-19T11:44:19.211Z</updated>
     
@@ -248,17 +248,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Lambda</title>
-    <link href="http://yoursite.com/2017/04/18/Lambda/"/>
-    <id>http://yoursite.com/2017/04/18/Lambda/</id>
+    <link href="https://zhuyiting.xyz/2017/04/18/Lambda/"/>
+    <id>https://zhuyiting.xyz/2017/04/18/Lambda/</id>
     <published>2017-04-18T05:40:00.000Z</published>
     <updated>2019-10-19T11:14:14.758Z</updated>
     
@@ -275,17 +275,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java输入输出</title>
-    <link href="http://yoursite.com/2017/04/14/Java%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
-    <id>http://yoursite.com/2017/04/14/Java输入输出/</id>
+    <link href="https://zhuyiting.xyz/2017/04/14/Java%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
+    <id>https://zhuyiting.xyz/2017/04/14/Java输入输出/</id>
     <published>2017-04-14T02:01:00.000Z</published>
     <updated>2019-10-19T10:45:00.807Z</updated>
     
@@ -305,17 +305,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java核心API</title>
-    <link href="http://yoursite.com/2017/04/10/Java%E6%A0%B8%E5%BF%83API/"/>
-    <id>http://yoursite.com/2017/04/10/Java核心API/</id>
+    <link href="https://zhuyiting.xyz/2017/04/10/Java%E6%A0%B8%E5%BF%83API/"/>
+    <id>https://zhuyiting.xyz/2017/04/10/Java核心API/</id>
     <published>2017-04-10T02:09:00.000Z</published>
     <updated>2019-10-19T08:54:51.194Z</updated>
     
@@ -332,17 +332,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java异常处理</title>
-    <link href="http://yoursite.com/2017/04/03/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
-    <id>http://yoursite.com/2017/04/03/Java异常处理/</id>
+    <link href="https://zhuyiting.xyz/2017/04/03/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    <id>https://zhuyiting.xyz/2017/04/03/Java异常处理/</id>
     <published>2017-04-03T10:14:00.000Z</published>
     <updated>2019-10-19T08:11:35.203Z</updated>
     
@@ -358,17 +358,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>集合框架</title>
-    <link href="http://yoursite.com/2017/03/25/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/"/>
-    <id>http://yoursite.com/2017/03/25/集合框架/</id>
+    <link href="https://zhuyiting.xyz/2017/03/25/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/"/>
+    <id>https://zhuyiting.xyz/2017/03/25/集合框架/</id>
     <published>2017-03-25T00:58:00.000Z</published>
     <updated>2019-10-19T00:09:37.327Z</updated>
     
@@ -384,17 +384,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>面向接口编程</title>
-    <link href="http://yoursite.com/2017/03/23/%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B/"/>
-    <id>http://yoursite.com/2017/03/23/面向接口编程/</id>
+    <link href="https://zhuyiting.xyz/2017/03/23/%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B/"/>
+    <id>https://zhuyiting.xyz/2017/03/23/面向接口编程/</id>
     <published>2017-03-23T10:27:00.000Z</published>
     <updated>2019-10-19T00:09:49.637Z</updated>
     
@@ -411,17 +411,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>深入面向对象</title>
-    <link href="http://yoursite.com/2017/03/15/%E6%B7%B1%E5%85%A5%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2017/03/15/深入面向对象/</id>
+    <link href="https://zhuyiting.xyz/2017/03/15/%E6%B7%B1%E5%85%A5%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://zhuyiting.xyz/2017/03/15/深入面向对象/</id>
     <published>2017-03-15T01:13:00.000Z</published>
     <updated>2019-10-19T08:14:21.374Z</updated>
     
@@ -437,17 +437,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java类的基本结构</title>
-    <link href="http://yoursite.com/2017/03/06/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/"/>
-    <id>http://yoursite.com/2017/03/06/Java类的基本结构/</id>
+    <link href="https://zhuyiting.xyz/2017/03/06/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/"/>
+    <id>https://zhuyiting.xyz/2017/03/06/Java类的基本结构/</id>
     <published>2017-03-06T02:13:00.000Z</published>
     <updated>2019-10-19T00:10:08.841Z</updated>
     
@@ -463,17 +463,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java数组</title>
-    <link href="http://yoursite.com/2017/03/05/Java%E6%95%B0%E7%BB%84/"/>
-    <id>http://yoursite.com/2017/03/05/Java数组/</id>
+    <link href="https://zhuyiting.xyz/2017/03/05/Java%E6%95%B0%E7%BB%84/"/>
+    <id>https://zhuyiting.xyz/2017/03/05/Java数组/</id>
     <published>2017-03-05T08:21:00.000Z</published>
     <updated>2019-10-19T00:10:13.302Z</updated>
     
@@ -492,17 +492,17 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java基础</title>
-    <link href="http://yoursite.com/2017/03/05/Java%E5%9F%BA%E7%A1%80/"/>
-    <id>http://yoursite.com/2017/03/05/Java基础/</id>
+    <link href="https://zhuyiting.xyz/2017/03/05/Java%E5%9F%BA%E7%A1%80/"/>
+    <id>https://zhuyiting.xyz/2017/03/05/Java基础/</id>
     <published>2017-03-05T05:43:00.000Z</published>
     <updated>2019-10-19T00:10:05.277Z</updated>
     
@@ -518,10 +518,10 @@
     </summary>
     
     
-      <category term="后端技术栈" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
     
   </entry>
   
