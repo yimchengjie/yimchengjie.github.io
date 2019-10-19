@@ -17,19 +17,19 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>计算机科学基础 | ycjBlog</title>
-  <meta name="description" content="1. 数制及其转换• 二进制、十进制和十六进制等常用制数制及其相互转换 2. 数据的表示• 数的表示（原码、反码、补码、移码表示，整数和实数的机内表示，精度和溢出）• 非数值表示（字符和汉字表示、声音表示、图像表示）• 校验方法和校验码（奇偶校验码、海明校验码、循环冗余校验码） 3. 算术运算和逻辑运算• 计算机中的二进制数运算方法• 逻辑代数的基本运算和逻辑表达式的化简 4.  数学基础知识•">
-<meta name="keywords" content="计算机基础">
+  <title>Java类的基本结构 | ycjBlog</title>
+  <meta name="description" content="面向对象的概念:什么是类?同时将具有相同特征的对象抽象成一种新的数据类型—-类(具有相同特征和行为的多个对象的集合) 封装的好处:一个类把属性算法(逻辑处理)封装起来,只留必要的方法(接口)让用户使用,一个类该暴露什么,不该暴露什么,由类的设计者更具需求设计决定的.private属性用户不能直接访问,如果设计者提供相应的接口方法,那么用户可以通过该接口方法访问.一个类,不直接修改属性而通过方法来修">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机科学基础">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;12&#x2F;27&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80&#x2F;index.html">
+<meta property="og:title" content="Java类的基本结构">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;03&#x2F;06&#x2F;Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="1. 数制及其转换• 二进制、十进制和十六进制等常用制数制及其相互转换 2. 数据的表示• 数的表示（原码、反码、补码、移码表示，整数和实数的机内表示，精度和溢出）• 非数值表示（字符和汉字表示、声音表示、图像表示）• 校验方法和校验码（奇偶校验码、海明校验码、循环冗余校验码） 3. 算术运算和逻辑运算• 计算机中的二进制数运算方法• 逻辑代数的基本运算和逻辑表达式的化简 4.  数学基础知识•">
+<meta property="og:description" content="面向对象的概念:什么是类?同时将具有相同特征的对象抽象成一种新的数据类型—-类(具有相同特征和行为的多个对象的集合) 封装的好处:一个类把属性算法(逻辑处理)封装起来,只留必要的方法(接口)让用户使用,一个类该暴露什么,不该暴露什么,由类的设计者更具需求设计决定的.private属性用户不能直接访问,如果设计者提供相应的接口方法,那么用户可以通过该接口方法访问.一个类,不直接修改属性而通过方法来修">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-19T00:02:01.568Z">
+<meta property="og:updated_time" content="2019-10-19T00:07:04.321Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/index.html">
+  <link rel="canonical" href="http://yoursite.com/2017/03/06/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -352,21 +352,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-数制及其转换"><span class="toc-number">1.</span> <span class="toc-text">1. 数制及其转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-数据的表示"><span class="toc-number">2.</span> <span class="toc-text">2. 数据的表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-算术运算和逻辑运算"><span class="toc-number">3.</span> <span class="toc-text">3. 算术运算和逻辑运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-数学基础知识"><span class="toc-number">4.</span> <span class="toc-text">4.  数学基础知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-常用数据结构"><span class="toc-number">5.</span> <span class="toc-text">5. 常用数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-常用算法"><span class="toc-number">6.</span> <span class="toc-text">6. 常用算法</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象的概念"><span class="toc-number">1.</span> <span class="toc-text">面向对象的概念:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是类"><span class="toc-number">1.1.</span> <span class="toc-text">什么是类?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#封装的好处"><span class="toc-number">1.2.</span> <span class="toc-text">封装的好处:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是构造方法"><span class="toc-number">2.</span> <span class="toc-text">什么是构造方法:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造方法重载"><span class="toc-number">3.</span> <span class="toc-text">构造方法重载:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this关键字"><span class="toc-number">4.</span> <span class="toc-text">this关键字:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类初始化代码块static"><span class="toc-number">5.</span> <span class="toc-text">类初始化代码块static:</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-计算机科学基础" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Java类的基本结构" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      计算机科学基础
+      Java类的基本结构
     </h1>
   
 
@@ -374,37 +374,54 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="article-date">
-	  <time datetime="2017-12-27T14:17:00.000Z" itemprop="datePublished">2017-12-27</time>
+	<a href="/2017/03/06/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/" class="article-date">
+	  <time datetime="2017-03-06T02:13:00.000Z" itemprop="datePublished">2017-03-06</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a>
+	<a class="article-tag-link" href="/tags/Java/" rel="tag">Java</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/03/06/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="1-数制及其转换"><a href="#1-数制及其转换" class="headerlink" title="1. 数制及其转换"></a>1. 数制及其转换</h4><p>• 二进制、十进制和十六进制等常用制数制及其相互转换</p>
-<h4 id="2-数据的表示"><a href="#2-数据的表示" class="headerlink" title="2. 数据的表示"></a>2. 数据的表示</h4><p>• 数的表示（原码、反码、补码、移码表示，整数和实数的机内表示，精度和溢出）<br>• 非数值表示（字符和汉字表示、声音表示、图像表示）<br>• 校验方法和校验码（奇偶校验码、海明校验码、循环冗余校验码）</p>
-<h4 id="3-算术运算和逻辑运算"><a href="#3-算术运算和逻辑运算" class="headerlink" title="3. 算术运算和逻辑运算"></a>3. 算术运算和逻辑运算</h4><p>• 计算机中的二进制数运算方法<br>• 逻辑代数的基本运算和逻辑表达式的化简</p>
-<h4 id="4-数学基础知识"><a href="#4-数学基础知识" class="headerlink" title="4.  数学基础知识"></a>4.  数学基础知识</h4><p>• 命题逻辑、谓词逻辑、形式逻辑的基础知识<br>• 常用数值计算（误差、矩阵和行列式、近似求解方程、插值、数值积分）<br>• 排列组合、概率论应用、应用统计（数据的统计分析）<br>• 运算基本方法（预测与决策、线性规划、网络图、模拟）</p>
-<h4 id="5-常用数据结构"><a href="#5-常用数据结构" class="headerlink" title="5. 常用数据结构"></a>5. 常用数据结构</h4><p>• 数组（静态数组、动态数组）、线性表、链表（单向链表、双向链表、循环链表）、队列、栈、树（二叉树、查找树、平衡树、线索树、线索树、堆）、图等的定义、存储和操作<br>• Hash（存储地址计算，冲突处理）</p>
-<h4 id="6-常用算法"><a href="#6-常用算法" class="headerlink" title="6. 常用算法"></a>6. 常用算法</h4><p>• 排序算法、查找算法、数值计算方法、字符串处理方法、数据压缩算法、递归算法、图的相关算法<br>• 算法与数据结构的关系、算法效率、算法设计、算法描述（流程图、伪代码、决策表）、算法的复杂性</p>
+        <h3 id="面向对象的概念"><a href="#面向对象的概念" class="headerlink" title="面向对象的概念:"></a>面向对象的概念:</h3><h4 id="什么是类"><a href="#什么是类" class="headerlink" title="什么是类?"></a>什么是类?</h4><p>同时将具有相同特征的对象抽象成一种新的数据类型—-类<br>(具有相同特征和行为的多个对象的集合)</p>
+<h4 id="封装的好处"><a href="#封装的好处" class="headerlink" title="封装的好处:"></a>封装的好处:</h4><p>一个类把属性算法(逻辑处理)封装起来,只留必要的方法(接口)让用户使用,一个类该暴露什么,不该暴露什么,由类的设计者更具需求设计决定的.private属性用户不能直接访问,如果设计者提供相应的接口方法,那么用户可以通过该接口方法访问.<br>一个类,不直接修改属性而通过方法来修改,可以在方法里做相应的处理避免用户输入的一些非法数据而造成系统故障</p>
+<h3 id="什么是构造方法"><a href="#什么是构造方法" class="headerlink" title="什么是构造方法:"></a>什么是构造方法:</h3><ul>
+<li>构造方法是与类同名的方法</li>
+<li>没返回值，也不能写void</li>
+<li>主要作用是完成新建对象的初始化工作</li>
+<li>一般不能显式地直接调用，而是用new来调用（后面会存在使用this/super调用）</li>
+<li>创建一个类的新对象的同时，系统自动调用该类的构造函数，为新建对象的初始化</li>
+</ul>
+<h3 id="构造方法重载"><a href="#构造方法重载" class="headerlink" title="构造方法重载:"></a>构造方法重载:</h3><ul>
+<li>构造方法是一种特殊的方法，它也能重载</li>
+<li>构造函数的重载是指同一个类中存在着若干个具有不同参数列表的构造函数</li>
+</ul>
+<h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字:"></a>this关键字:</h3><p>this用于表示当前对象自身的引用，可以用于访问被局部变量隐藏的成员变量，也可以将本对象作为参数传递给其他对象操作</p>
+<h3 id="类初始化代码块static"><a href="#类初始化代码块static" class="headerlink" title="类初始化代码块static:"></a>类初始化代码块static:</h3><p>####static代码块的执行时机: </p>
+<ul>
+<li>用Class.forName(类名)显式加载的时候（反射、JDBC时详细讲解）</li>
+<li>new或反射实例化一个类的对象时候</li>
+<li>调用类的static方法的时候（后续详细讲解）</li>
+<li>调用类的static变量的时候（后续详细讲解）</li>
+<li>调用类的静态常量（后续详细讲解）的时候，是不会加载类的，即不会执行static{}语句块当访问类的静态常量时，如果编译器可以计算出常量的值，则不会加载类，否则会加载类</li>
+<li>用Class.forName()形式的时候，也可以自己设定要不要加载类，如将<code>Class.forName(&quot;Test&quot;</code>)改为 <code>Class.forName(&quot;Test&quot;,false,StaticBlockTest.class.getClassLoader())</code>，你会发现Test没有被加载，static{}没有被执行</li>
+</ul>
 
       
     </div>
@@ -414,7 +431,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="计算机科学基础" target="_blank" rel="external">http://yoursite.com/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/</a>
+      <a href="http://yoursite.com/2017/03/06/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/" title="Java类的基本结构" target="_blank" rel="external">http://yoursite.com/2017/03/06/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -461,12 +478,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2017/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" title="计算机系统知识"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2017/03/15/%E6%B7%B1%E5%85%A5%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="深入面向对象"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2017/04/25/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" title="Web开发入门"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2017/03/05/Java%E6%95%B0%E7%BB%84/" title="Java数组"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -565,7 +582,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '计算机科学基础', 
+  id: 'Java类的基本结构', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {
