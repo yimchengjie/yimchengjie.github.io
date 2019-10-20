@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>会话跟踪(前后端交互) | ycjBlog</title>
+  <meta name="description" content="会话的概念和作用: 会话:    对于Web应用来说,会话就是浏览器与服务器之间的一次连续的通讯过程. HTTP协议是无状态的，也就是说，一次请求结束后，HTTP协议就不再记录相关信息； 而实际应用中，却常常需要记住一些状态信息； ==会话跟踪==技术就是能够跟踪客户端和服务端的交互,保存和记忆相关信息,保存请求的状态信息.  常用的四种会话跟踪技术: URL方式：需要保存的信息直接追加到URL后">
+<meta name="keywords" content="JavaEE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="会话跟踪(前后端交互)">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2017&#x2F;05&#x2F;18&#x2F;%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)&#x2F;index.html">
+<meta property="og:site_name" content="ycjBlog">
+<meta property="og:description" content="会话的概念和作用: 会话:    对于Web应用来说,会话就是浏览器与服务器之间的一次连续的通讯过程. HTTP协议是无状态的，也就是说，一次请求结束后，HTTP协议就不再记录相关信息； 而实际应用中，却常常需要记住一些状态信息； ==会话跟踪==技术就是能够跟踪客户端和服务端的交互,保存和记忆相关信息,保存请求的状态信息.  常用的四种会话跟踪技术: URL方式：需要保存的信息直接追加到URL后">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-20T11:34:45.061Z">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://zhuyiting.xyz/2017/05/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/yimchengjie" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">yanchengjie</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">love and share</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> jiaxing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/yimchengjie" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Facebook" data-toggle=tooltip data-placement=top><i class="icon icon-facebook"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Dribbble" data-toggle=tooltip data-placement=top><i class="icon icon-dribbble"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaEE/" rel="tag">JavaEE</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaSE/" rel="tag">JavaSE</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JVM/" style="font-size: 13px;">JVM</a> <a href="/tags/JavaEE/" style="font-size: 13.67px;">JavaEE</a> <a href="/tags/JavaSE/" style="font-size: 14px;">JavaSE</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 13.33px;">计算机基础</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/" class="title">JVM指令手册</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-30T07:18:00.000Z" itemprop="datePublished">2019-07-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/" class="title">系统开发和运行知识</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-13T14:40:00.000Z" itemprop="datePublished">2018-01-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" class="title">计算机系统知识</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-12-30T14:36:00.000Z" itemprop="datePublished">2017-12-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="title">计算机科学基础</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-12-27T14:17:00.000Z" itemprop="datePublished">2017-12-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" class="title">软件开发基础</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-12-25T07:18:00.000Z" itemprop="datePublished">2017-12-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#会话的概念和作用"><span class="toc-number">1.</span> <span class="toc-text">会话的概念和作用:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用的四种会话跟踪技术"><span class="toc-number">2.</span> <span class="toc-text">常用的四种会话跟踪技术:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie的功能和特点"><span class="toc-number">3.</span> <span class="toc-text">Cookie的功能和特点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建cookie-设置cookie属性"><span class="toc-number">4.</span> <span class="toc-text">创建cookie,设置cookie属性:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Session简介"><span class="toc-number">5.</span> <span class="toc-text">Session简介:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#session创建的时间"><span class="toc-number">5.1.</span> <span class="toc-text">session创建的时间:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#session的生命周期"><span class="toc-number">5.2.</span> <span class="toc-text">session的生命周期:</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-会话跟踪(前后端交互)" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      会话跟踪(前后端交互)
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2017/05/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/" class="article-date">
+	  <time datetime="2017-05-18T06:01:00.000Z" itemprop="datePublished">2017-05-18</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/JavaEE/" rel="tag">JavaEE</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/05/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h4 id="会话的概念和作用"><a href="#会话的概念和作用" class="headerlink" title="会话的概念和作用:"></a>会话的概念和作用:</h4><ul>
+<li><strong>会话</strong>:    对于Web应用来说,会话就是浏览器与服务器之间的一次连续的通讯过程.</li>
+<li>HTTP协议是无状态的，也就是说，一次请求结束后，HTTP协议就不再记录相关信息；</li>
+<li>而实际应用中，却常常需要记住一些状态信息；</li>
+<li>==会话跟踪==技术就是能够跟踪<strong>客户端和服务端的交互</strong>,保存和记忆相关信息,保存请求的状态信息.</li>
+</ul>
+<h4 id="常用的四种会话跟踪技术"><a href="#常用的四种会话跟踪技术" class="headerlink" title="常用的四种会话跟踪技术:"></a>常用的四种会话跟踪技术:</h4><ul>
+<li><strong>URL方式</strong>：需要保存的信息直接追加到URL后，例如：<code>http://127.0.0.1:8080/chapter03/viewList?pageNo=12</code></li>
+<li><strong>隐藏域方式</strong>：可以使用表单中的隐藏域保存相关信息， 例如：<br><code>&lt;input type=&quot;hidden&quot; name=“status&quot; value=“true&quot;&gt;</code></li>
+<li><strong>Cookie方式</strong>：将状态信息保存到客户端，服务器能够获得相关信息进行分析，从而生成对客户端的响应；例如简化登录功能就可以使用Cookie实现；</li>
+<li><strong>Session方式</strong>：将状态信息保存到服务器的会话对象中，通过唯一标记的ID值与客户端进行绑定使用；例如访问控制功能就可以使用Session实现；</li>
+</ul>
+<h4 id="Cookie的功能和特点"><a href="#Cookie的功能和特点" class="headerlink" title="Cookie的功能和特点:"></a>Cookie的功能和特点:</h4><ul>
+<li>Cookie是一段保存在客户端的小文本；能够用来将用户活动过程中的状态信息保存到客户端，服务器可以获得该信息以便进行处理，跟踪到用户的状态；</li>
+<li>Cookie包含一系列属性:如:<ul>
+<li><strong>name</strong>：cookie的名字，每个cookie都有一个名字；<ul>
+<li><strong>content</strong>：cookie的值，与名字一起作为键值对形式存在；</li>
+<li><strong>domain</strong>：域，该cookie的域名，例如csdn.net，说明当前cookie来自csdn.net;</li>
+<li><strong>path</strong>：路径，访问csdn.net下该路径时，当前cookie将被发送；</li>
+<li><strong>created</strong>：cookie被创建的时间；</li>
+<li><strong>Expired</strong>：cookie失效的时间；</li>
+<li><strong>最大生命时间</strong>：失效时间和创建时间的时间差，就是cookie的最大生命时间，超过该时间，cookie将失效，不再被发送到相应的域地址；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="创建cookie-设置cookie属性"><a href="#创建cookie-设置cookie属性" class="headerlink" title="创建cookie,设置cookie属性:"></a>创建cookie,设置cookie属性:</h4><p>Servlet规范中定了Cookie类，创建该类对象就可以创建Cookie，并可以调用其中方法为Cookie设置属性；</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法声明</th>
+<th align="center">方法描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Cookie(java.lang.String name, java.lang.String value)</td>
+<td align="center">创建Cookie对象，指定名字和对应的值；</td>
+</tr>
+<tr>
+<td align="center">void setMaxAge(int expiry)</td>
+<td align="center">设置最大生命时间（秒），如果不设置，当前浏览器关闭，cookie即失效；</td>
+</tr>
+<tr>
+<td align="center">void setValue(java.lang.String newValue)</td>
+<td align="center">设置Cookie的值；</td>
+</tr>
+<tr>
+<td align="center">setDomain(java.lang.String domain)</td>
+<td align="center">设置cookie的域名；</td>
+</tr>
+</tbody></table>
+<p>cookie创建好后并不能存储到客户端,要将cookie保存到客户端,必须添加到响应对象中,响应接口中定义了Cookie的方法:<br>|方法声明|方法描述|<br>|:—:|:—:|<br>|void addCookie(Cookie cookie)|将Cookie对象保存到相应的响应对象中；|</p>
+<p>当访问相同域名及路径时,没有超过有效时间的cookie将自动通关请求发送到网站;</p>
+<p>Servlet在请求接口中定义了获取cookie的方法:<br>|方法声明|方法描述|<br>|:—:|:—:|<br>|Cookie[] getCookies()|获取请求中的所有Cookie对象，返回数组；|</p>
+<h4 id="Session简介"><a href="#Session简介" class="headerlink" title="Session简介:"></a>Session简介:</h4><ul>
+<li>Session是会话跟踪的另一种实现手段；</li>
+<li>Session是存储在服务器上的对象，该对象由服务器创建并维护；</li>
+<li>服务器为客户端与服务器的每一次会话过程都创建并维护一个Session对象；每个服务器对Session的创建和维护的底层实现有所区别；</li>
+</ul>
+<h5 id="session创建的时间"><a href="#session创建的时间" class="headerlink" title="session创建的时间:"></a>session创建的时间:</h5><p>一个常见的误解是以为session在有客户端访问时就被创建，然而事实是直到某server端程序调用 <code>HttpServletRequest.getSession(true)</code>这样的语句时才被创建，注意如果JSP没有显示的使用 <code>&lt;% @page session=”false”%&gt;</code> 关闭session，则JSP文件在编译成Servlet时将会自动加上这样一条语句 <code>HttpSession session = HttpServletRequest.getSession(true);</code>这也是JSP中隐含的 session对象的来历。 </p>
+<p>由于session会消耗内存资源，因此，如果不打算使用session，应该在所有的JSP中关闭它。</p>
+<h5 id="session的生命周期"><a href="#session的生命周期" class="headerlink" title="session的生命周期:"></a>session的生命周期:</h5><p>Session生成后，只要用户继续访问，服务器就会更新Session的最后访问时间，并维护该Session。用户每访问服务器一次，无论是否读写Session，服务器都认为该用户的Session“活跃（active）”了一次。 </p>
+<p>由于会有越来越多的用户访问服务器，因此Session也会越来越多。为防止内存溢出，服务器会把长时间内没有活跃的Session从内存删除。这个时间就是Session的超时时间。如果超过了超时时间没访问过服务器，Session就自动失效了。 </p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://zhuyiting.xyz/2017/05/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/" title="会话跟踪(前后端交互)" target="_blank" rel="external">https://zhuyiting.xyz/2017/05/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yimchengjie" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yimchengjie" target="_blank"><span class="text-dark">yanchengjie</span><small class="ml-1x">love and share</small></a></h3>
+        <div>Anything can go right will go right</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2017/05/25/JSP%E4%B8%8A%E4%B8%8B%E6%96%87/" title="Servlet上下文"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2017/05/15/JSP/" title="JSP"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/yimchengjie" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Facebook" data-toggle=tooltip data-placement=top><i class="icon icon-facebook"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Dribbble" data-toggle=tooltip data-placement=top><i class="icon icon-dribbble"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+<script src="//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: '会话跟踪(前后端交互)', 
+  owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'yimchengjie.github.io',
+  oauth: {
+    client_id: '5357d42fc4697dd63264',
+    client_secret: 'de58f57f595c5efd724c391370688331b810f100',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
