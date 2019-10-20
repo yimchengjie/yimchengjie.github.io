@@ -17,19 +17,19 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>JSP | ycjBlog</title>
-  <meta name="description" content="什么是JSPJSP（Java Server Page）是Java服务端的页面，所以它是动态的，它是需要经过JDK编译后把内容发给客户端去显示，我们都知道，Java文件编译后会产生一个class文件，最终执行的就是这个class文件。翻译和编译的过程遵守Servlet规范，因此说==JSP的本质也是Servlet==； html和jsp的表头不一样，这个是JSP的头&amp;lt;%@ page langu">
+  <title>会话跟踪(前后端交互) | ycjBlog</title>
+  <meta name="description" content="会话的概念和作用: 会话:    对于Web应用来说,会话就是浏览器与服务器之间的一次连续的通讯过程. HTTP协议是无状态的，也就是说，一次请求结束后，HTTP协议就不再记录相关信息； 而实际应用中，却常常需要记住一些状态信息； ==会话跟踪==技术就是能够跟踪客户端和服务端的交互,保存和记忆相关信息,保存请求的状态信息.  常用的四种会话跟踪技术: URL方式：需要保存的信息直接追加到URL后">
 <meta name="keywords" content="JavaEE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSP">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2017&#x2F;05&#x2F;15&#x2F;JSP&#x2F;index.html">
+<meta property="og:title" content="会话跟踪(前后端交互)">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2017&#x2F;12&#x2F;23&#x2F;%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="什么是JSPJSP（Java Server Page）是Java服务端的页面，所以它是动态的，它是需要经过JDK编译后把内容发给客户端去显示，我们都知道，Java文件编译后会产生一个class文件，最终执行的就是这个class文件。翻译和编译的过程遵守Servlet规范，因此说==JSP的本质也是Servlet==； html和jsp的表头不一样，这个是JSP的头&amp;lt;%@ page langu">
+<meta property="og:description" content="会话的概念和作用: 会话:    对于Web应用来说,会话就是浏览器与服务器之间的一次连续的通讯过程. HTTP协议是无状态的，也就是说，一次请求结束后，HTTP协议就不再记录相关信息； 而实际应用中，却常常需要记住一些状态信息； ==会话跟踪==技术就是能够跟踪客户端和服务端的交互,保存和记忆相关信息,保存请求的状态信息.  常用的四种会话跟踪技术: URL方式：需要保存的信息直接追加到URL后">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T08:48:27.672Z">
+<meta property="og:updated_time" content="2019-10-20T14:03:46.506Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2017/05/15/JSP/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2017/12/23/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -250,7 +250,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -273,6 +273,36 @@
               </p>
               <p class="item-date">
                 <time datetime="2019-07-30T07:18:00.000Z" itemprop="datePublished">2019-07-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="title">EL与JSTL表达式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-30T06:15:00.000Z" itemprop="datePublished">2018-01-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/19/MVC%E6%A8%A1%E5%BC%8F/" class="title">MVC模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-19T06:15:00.000Z" itemprop="datePublished">2018-01-19</time>
               </p>
             </div>
           </li>
@@ -307,36 +337,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="title">计算机科学基础</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-12-27T14:17:00.000Z" itemprop="datePublished">2017-12-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" class="title">软件开发基础</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-12-25T07:18:00.000Z" itemprop="datePublished">2017-12-25</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -352,21 +352,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是JSP"><span class="toc-number">1.</span> <span class="toc-text">什么是JSP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么要用JSP"><span class="toc-number">2.</span> <span class="toc-text">为什么要用JSP:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP元素"><span class="toc-number">3.</span> <span class="toc-text">JSP元素:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内置对象"><span class="toc-number">4.</span> <span class="toc-text">内置对象:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet和JSP的作用"><span class="toc-number">5.</span> <span class="toc-text">Servlet和JSP的作用:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet与JSP之间的跳转方式"><span class="toc-number">6.</span> <span class="toc-text">Servlet与JSP之间的跳转方式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求属性的使用"><span class="toc-number">7.</span> <span class="toc-text">请求属性的使用:</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#会话的概念和作用"><span class="toc-number">1.</span> <span class="toc-text">会话的概念和作用:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用的四种会话跟踪技术"><span class="toc-number">2.</span> <span class="toc-text">常用的四种会话跟踪技术:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie的功能和特点"><span class="toc-number">3.</span> <span class="toc-text">Cookie的功能和特点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建cookie-设置cookie属性"><span class="toc-number">4.</span> <span class="toc-text">创建cookie,设置cookie属性:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Session简介"><span class="toc-number">5.</span> <span class="toc-text">Session简介:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#session创建的时间"><span class="toc-number">5.1.</span> <span class="toc-text">session创建的时间:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#session的生命周期"><span class="toc-number">5.2.</span> <span class="toc-text">session的生命周期:</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-JSP" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-会话跟踪(前后端交互)" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      JSP
+      会话跟踪(前后端交互)
     </h1>
   
 
@@ -374,8 +374,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2017/05/15/JSP/" class="article-date">
-	  <time datetime="2017-05-15T06:37:00.000Z" itemprop="datePublished">2017-05-15</time>
+	<a href="/2017/12/23/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/" class="article-date">
+	  <time datetime="2017-12-23T06:01:00.000Z" itemprop="datePublished">2017-12-23</time>
 	</a>
 </span>
         
@@ -393,79 +393,76 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/05/15/JSP/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/12/23/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="什么是JSP"><a href="#什么是JSP" class="headerlink" title="什么是JSP"></a>什么是JSP</h4><p>JSP（Java Server Page）是Java服务端的页面，所以它是动态的，它是需要经过JDK编译后把内容发给客户端去显示，我们都知道，Java文件编译后会产生一个class文件，最终执行的就是这个class文件。翻译和编译的过程遵守Servlet规范，因此说==JSP的本质也是Servlet==；</p>
-<p>html和jsp的表头不一样，这个是JSP的头<code>&lt;%@ page language=”java” import=”java.util.*” pageEncoding=”gbk”%&gt;</code>在表头中有编码格式和倒入包等。也是很好区分的，在jsp中用&lt;%%&gt;就可以写Java代码了，而html没有&lt;%%&gt;。</p>
-<p><u><strong>简单说，jsp在后台通过服务器解析为相应的html，然后在供浏览器识别显示。</strong></u></p>
-<h4 id="为什么要用JSP"><a href="#为什么要用JSP" class="headerlink" title="为什么要用JSP:"></a>为什么要用JSP:</h4><p>Servlet生成动态页面比较繁琐，使用JSP生成动态页面比较便捷，因为其中的静态内容可以使用HTML生成；</p>
-<h4 id="JSP元素"><a href="#JSP元素" class="headerlink" title="JSP元素:"></a>JSP元素:</h4><ul>
-<li><p>脚本元素可以用来包含任意Java代码,格式为：<code>&lt;%Java代码%&gt;</code></p>
-<ul>
-<li>服务器翻译脚本元素时，将把其中Java代码直接翻译到<code>jspService</code>方法中，如果语法错误，将在浏览器中提示错误；</li>
+        <h4 id="会话的概念和作用"><a href="#会话的概念和作用" class="headerlink" title="会话的概念和作用:"></a>会话的概念和作用:</h4><ul>
+<li><strong>会话</strong>:    对于Web应用来说,会话就是浏览器与服务器之间的一次连续的通讯过程.</li>
+<li>HTTP协议是无状态的，也就是说，一次请求结束后，HTTP协议就不再记录相关信息；</li>
+<li>而实际应用中，却常常需要记住一些状态信息；</li>
+<li>==会话跟踪==技术就是能够跟踪<strong>客户端和服务端的交互</strong>,保存和记忆相关信息,保存请求的状态信息.</li>
 </ul>
-</li>
-<li><p>表达式元素用来向页面输出动态内容;格式为：<code>&lt;%=Java代码%&gt;</code></p>
-<ul>
-<li>服务器翻译表达式元素时，将把其中Java代码部分的返回值使用out.write语句输出</li>
+<h4 id="常用的四种会话跟踪技术"><a href="#常用的四种会话跟踪技术" class="headerlink" title="常用的四种会话跟踪技术:"></a>常用的四种会话跟踪技术:</h4><ul>
+<li><strong>URL方式</strong>：需要保存的信息直接追加到URL后，例如：<code>http://127.0.0.1:8080/chapter03/viewList?pageNo=12</code></li>
+<li><strong>隐藏域方式</strong>：可以使用表单中的隐藏域保存相关信息， 例如：<br><code>&lt;input type=&quot;hidden&quot; name=“status&quot; value=“true&quot;&gt;</code></li>
+<li><strong>Cookie方式</strong>：将状态信息保存到客户端，服务器能够获得相关信息进行分析，从而生成对客户端的响应；例如简化登录功能就可以使用Cookie实现；</li>
+<li><strong>Session方式</strong>：将状态信息保存到服务器的会话对象中，通过唯一标记的ID值与客户端进行绑定使用；例如访问控制功能就可以使用Session实现；</li>
 </ul>
-</li>
-<li><p>模块元素指JSP中静态HTML或者XML内容</p>
-</li>
-<li><p>注释元素有三种情况：</p>
-<ul>
-<li>格式为<code>&lt;%--JSP注释--%&gt;</code>；JSP的注释只有在源代码中可见，翻译时已经忽略；</li>
-<li>在JSP中，除了使用JSP注释外，还可以使用HTML注释，<code>&lt;!--HTML注释--&gt;</code>，HTML注释会被返回到客户端，但是不显示到页面中；</li>
-<li>JSP中的Java代码部分，可以使用Java注释；Java注释会翻译到.java文件中，但是编译时忽略；</li>
-</ul>
-</li>
-<li><p>声明元素:</p>
-<ul>
-<li>如果需要在JSP文件中定义类的成员变量或方法，可以使用声明元素，格式为<code>&lt;%! 声明语句%&gt;</code>  <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! <span class="keyword">private</span> String path=<span class="string">"WEB-INF"</span>; <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readPropertiesFile</span><span class="params">()</span></span>&#123;&#125;&gt;</span><br></pre></td></tr></table></figure></li>
-<li>声明元素被翻译到Java类中，而不是_jspService方法中；</li>
+<h4 id="Cookie的功能和特点"><a href="#Cookie的功能和特点" class="headerlink" title="Cookie的功能和特点:"></a>Cookie的功能和特点:</h4><ul>
+<li>Cookie是一段保存在客户端的小文本；能够用来将用户活动过程中的状态信息保存到客户端，服务器可以获得该信息以便进行处理，跟踪到用户的状态；</li>
+<li>Cookie包含一系列属性:如:<ul>
+<li><strong>name</strong>：cookie的名字，每个cookie都有一个名字；<ul>
+<li><strong>content</strong>：cookie的值，与名字一起作为键值对形式存在；</li>
+<li><strong>domain</strong>：域，该cookie的域名，例如csdn.net，说明当前cookie来自csdn.net;</li>
+<li><strong>path</strong>：路径，访问csdn.net下该路径时，当前cookie将被发送；</li>
+<li><strong>created</strong>：cookie被创建的时间；</li>
+<li><strong>Expired</strong>：cookie失效的时间；</li>
+<li><strong>最大生命时间</strong>：失效时间和创建时间的时间差，就是cookie的最大生命时间，超过该时间，cookie将失效，不再被发送到相应的域地址；</li>
 </ul>
 </li>
 </ul>
-<h4 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象:"></a>内置对象:</h4><p>内置对象指的是在JSP中<strong>可以直接使用的对象，不需要声明</strong>，直接使用固定的名字使用即可；例如<code>&lt;%=request.getRemoteAddr()%&gt;</code>中的<code>request</code>就是内置对象；</p>
-<p>jsp中共有9种对象</p>
-<ol>
-<li><code>request</code>：用户端请求，此请求会包含来自GET/Post请求的参数；</li>
-<li><code>response</code>：网页传回用户端的回应。</li>
-<li><code>pageContext</code>：页面的属性是在这里管理</li>
-<li><code>session</code>：与请求有关的回话期</li>
-<li><code>application</code> ：Servlet正在执行的内容</li>
-<li><code>out</code> ：用来传递回应的输出</li>
-<li><code>config</code> ：servlet的构架部件</li>
-<li><code>pagejsp</code>网页本身</li>
-<li><code>exception</code> ：针对错误的网页。未捕捉的例外</li>
-</ol>
-<h4 id="Servlet和JSP的作用"><a href="#Servlet和JSP的作用" class="headerlink" title="Servlet和JSP的作用:"></a>Servlet和JSP的作用:</h4><p>实际应用中，Servlet是不会用来生成动态页面的，而是会用来接收来自JSP的请求，处理请求，然后调跳转到JSP页面把结果显示给客户端看；</p>
-<h4 id="Servlet与JSP之间的跳转方式"><a href="#Servlet与JSP之间的跳转方式" class="headerlink" title="Servlet与JSP之间的跳转方式:"></a>Servlet与JSP之间的跳转方式:</h4><ol>
-<li><p>跳转方式一:<strong>响应重定向</strong>,响应接口中提供了该方法    </p>
-<ul>
-<li><p><code>void sendRedirect(java.lang.String location)</code>:响应重定向到location，相当于客户端重新请求location所在的资源；    </p>
-</li>
-<li><p>第一个JSP页面发送请求<code>request</code>到<code>Servlet</code>,<code>Servlet</code>接收请求后,响应<code>response</code>重定向到目标JSP页面,但是请求并没有传递过来.(<strong>重定向相当于是产生一个新的请求</strong>)</p>
 </li>
 </ul>
-</li>
-<li><p>跳转方式二:<strong>请求转发</strong>,RequestDispatcher接口定义了请求转发的方法</p>
-<ul>
-<li><code>forward(ServletRequest request, ServletResponse response)</code>:将请求转发到服务器上的其他资源，包括其他的Servlet，JSP等；</li>
-<li>要使用forward方法，需要先获得RequestDispatcher对象；请求接口(request)中提供了获得该对象的方法：<ul>
-<li><code>RequestDispatcher getRequestDispatcher(java.lang.String path)</code>:使用path返回一个RequestDispatcher 对象</li>
+<h4 id="创建cookie-设置cookie属性"><a href="#创建cookie-设置cookie属性" class="headerlink" title="创建cookie,设置cookie属性:"></a>创建cookie,设置cookie属性:</h4><p>Servlet规范中定了Cookie类，创建该类对象就可以创建Cookie，并可以调用其中方法为Cookie设置属性；</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法声明</th>
+<th align="center">方法描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Cookie(java.lang.String name, java.lang.String value)</td>
+<td align="center">创建Cookie对象，指定名字和对应的值；</td>
+</tr>
+<tr>
+<td align="center">void setMaxAge(int expiry)</td>
+<td align="center">设置最大生命时间（秒），如果不设置，当前浏览器关闭，cookie即失效；</td>
+</tr>
+<tr>
+<td align="center">void setValue(java.lang.String newValue)</td>
+<td align="center">设置Cookie的值；</td>
+</tr>
+<tr>
+<td align="center">setDomain(java.lang.String domain)</td>
+<td align="center">设置cookie的域名；</td>
+</tr>
+</tbody></table>
+<p>cookie创建好后并不能存储到客户端,要将cookie保存到客户端,必须添加到响应对象中,响应接口中定义了Cookie的方法:<br>|方法声明|方法描述|<br>|:—:|:—:|<br>|void addCookie(Cookie cookie)|将Cookie对象保存到相应的响应对象中；|</p>
+<p>当访问相同域名及路径时,没有超过有效时间的cookie将自动通关请求发送到网站;</p>
+<p>Servlet在请求接口中定义了获取cookie的方法:<br>|方法声明|方法描述|<br>|:—:|:—:|<br>|Cookie[] getCookies()|获取请求中的所有Cookie对象，返回数组；|</p>
+<h4 id="Session简介"><a href="#Session简介" class="headerlink" title="Session简介:"></a>Session简介:</h4><ul>
+<li>Session是会话跟踪的另一种实现手段；</li>
+<li>Session是存储在服务器上的对象，该对象由服务器创建并维护；</li>
+<li>服务器为客户端与服务器的每一次会话过程都创建并维护一个Session对象；每个服务器对Session的创建和维护的底层实现有所区别；</li>
 </ul>
-</li>
-<li>请求转发把请求对象发送到了目标JSP页面,因此<strong>目标页面可以获得上一个页面的请求对象.</strong></li>
-</ul>
-</li>
-</ol>
-<h4 id="请求属性的使用"><a href="#请求属性的使用" class="headerlink" title="请求属性的使用:"></a>请求属性的使用:</h4><p>如果需要在Servlet，JSP之间跳转时，同时把一些自定义的、或者通过数据库查询的、或者调用其他资源获得的数据传递到下一个资源时，就可以把这些数据设置为请求的属性即可。</p>
-<p>请求接口中定义了一系列与属性有关的方法。<br>|方法声明|方法描述|<br>|:——:|:—–:|<br>|void setAttribute(java.lang.String name, java.lang.Object o)|将任意类型对象设置为请求的属性，指定一个名字；|<br>|java.lang.Object getAttribute(java.lang.String name)|通过属性的名字，获取属性的值；|<br>|void removeAttribute(java.lang.String name)|通过属性的名字，删除属性；|<br>可以将数据封装进请求对象中,在前后端传递<br>例如:后台Servlet中将数据保存进request(请求)中,跳转到前台JSP后,JSP可以用<code>&lt;%=request.getAttribute(&quot;name&quot;)%&gt;</code>来获取(直接输出)也可以<strong>保存为变量(前提是需要强转</strong>,因为获取的是Object类型)</p>
+<h5 id="session创建的时间"><a href="#session创建的时间" class="headerlink" title="session创建的时间:"></a>session创建的时间:</h5><p>一个常见的误解是以为session在有客户端访问时就被创建，然而事实是直到某server端程序调用 <code>HttpServletRequest.getSession(true)</code>这样的语句时才被创建，注意如果JSP没有显示的使用 <code>&lt;% @page session=”false”%&gt;</code> 关闭session，则JSP文件在编译成Servlet时将会自动加上这样一条语句 <code>HttpSession session = HttpServletRequest.getSession(true);</code>这也是JSP中隐含的 session对象的来历。 </p>
+<p>由于session会消耗内存资源，因此，如果不打算使用session，应该在所有的JSP中关闭它。</p>
+<h5 id="session的生命周期"><a href="#session的生命周期" class="headerlink" title="session的生命周期:"></a>session的生命周期:</h5><p>Session生成后，只要用户继续访问，服务器就会更新Session的最后访问时间，并维护该Session。用户每访问服务器一次，无论是否读写Session，服务器都认为该用户的Session“活跃（active）”了一次。 </p>
+<p>由于会有越来越多的用户访问服务器，因此Session也会越来越多。为防止内存溢出，服务器会把长时间内没有活跃的Session从内存删除。这个时间就是Session的超时时间。如果超过了超时时间没访问过服务器，Session就自动失效了。 </p>
 
       
     </div>
@@ -475,7 +472,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2017/05/15/JSP/" title="JSP" target="_blank" rel="external">https://zhuyiting.xyz/2017/05/15/JSP/</a>
+      <a href="https://zhuyiting.xyz/2017/12/23/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/" title="会话跟踪(前后端交互)" target="_blank" rel="external">https://zhuyiting.xyz/2017/12/23/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -522,12 +519,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2017/05/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/" title="会话跟踪(前后端交互)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2017/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" title="软件开发基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2017/05/06/Servlet/" title="Servlet"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2017/12/15/JSP/" title="JSP"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -626,7 +623,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'JSP', 
+  id: '会话跟踪(前后端交互)', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {

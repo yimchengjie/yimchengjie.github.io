@@ -17,19 +17,19 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Web开发入门 | ycjBlog</title>
-  <meta name="description" content="C&#x2F;S B&#x2F;S网络应用:C&#x2F;S就是(客户机&#x2F;服务器)的简称,桌面应用程序采用的多是这种结构.B&#x2F;S就是(浏览器&#x2F;服务器)的简称,特点是客户端无需安装特定的软件,只需要安装一个浏览器就可以与系统进行交互 C&#x2F;S优缺点:由于C&#x2F;S结构没有像B&#x2F;S（下一个基本概念介绍）结构中服务器向客户端发送的数据还包含了大量的非实际交换数据，比如请求响应头，还有页面数据等等，它的==相应时间还是相对较快==的；由于C">
-<meta name="keywords" content="计算机基础">
+  <title>Servlet上下文 | ycjBlog</title>
+  <meta name="description" content="什么是上下文:上下文ServletContext对象是用来存储全局范围信息的对象;换句话说,一个Web应用只有唯一一个上下文对象.  当服务器启动的时候，就会为每一个应用创建一个上下文对象； 当服务器关闭的时候，上下文对象就销毁；  Servlet中的ServletContext接口:   方法声明 方法描述    java.io.InputStream getResourceAsStream(j">
+<meta name="keywords" content="JavaEE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web开发入门">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2017&#x2F;04&#x2F;30&#x2F;Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8&#x2F;index.html">
+<meta property="og:title" content="Servlet上下文">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2017&#x2F;12&#x2F;25&#x2F;JSP%E4%B8%8A%E4%B8%8B%E6%96%87&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="C&#x2F;S B&#x2F;S网络应用:C&#x2F;S就是(客户机&#x2F;服务器)的简称,桌面应用程序采用的多是这种结构.B&#x2F;S就是(浏览器&#x2F;服务器)的简称,特点是客户端无需安装特定的软件,只需要安装一个浏览器就可以与系统进行交互 C&#x2F;S优缺点:由于C&#x2F;S结构没有像B&#x2F;S（下一个基本概念介绍）结构中服务器向客户端发送的数据还包含了大量的非实际交换数据，比如请求响应头，还有页面数据等等，它的==相应时间还是相对较快==的；由于C">
+<meta property="og:description" content="什么是上下文:上下文ServletContext对象是用来存储全局范围信息的对象;换句话说,一个Web应用只有唯一一个上下文对象.  当服务器启动的时候，就会为每一个应用创建一个上下文对象； 当服务器关闭的时候，上下文对象就销毁；  Servlet中的ServletContext接口:   方法声明 方法描述    java.io.InputStream getResourceAsStream(j">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T00:43:55.088Z">
+<meta property="og:updated_time" content="2019-10-20T14:04:04.576Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2017/04/30/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2017/12/25/JSP%E4%B8%8A%E4%B8%8B%E6%96%87/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -250,7 +250,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -273,6 +273,36 @@
               </p>
               <p class="item-date">
                 <time datetime="2019-07-30T07:18:00.000Z" itemprop="datePublished">2019-07-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="title">EL与JSTL表达式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-30T06:15:00.000Z" itemprop="datePublished">2018-01-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/19/MVC%E6%A8%A1%E5%BC%8F/" class="title">MVC模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-19T06:15:00.000Z" itemprop="datePublished">2018-01-19</time>
               </p>
             </div>
           </li>
@@ -307,36 +337,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="title">计算机科学基础</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-12-27T14:17:00.000Z" itemprop="datePublished">2017-12-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" class="title">软件开发基础</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-12-25T07:18:00.000Z" itemprop="datePublished">2017-12-25</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -352,21 +352,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-S-B-S网络应用"><span class="toc-number">1.</span> <span class="toc-text">C/S B/S网络应用:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-S优缺点"><span class="toc-number">2.</span> <span class="toc-text">C/S优缺点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web站点、Web应用、HTTP服务器、Web应用服务器"><span class="toc-number">3.</span> <span class="toc-text">Web站点、Web应用、HTTP服务器、Web应用服务器:</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是上下文"><span class="toc-number">1.</span> <span class="toc-text">什么是上下文:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet中的ServletContext接口"><span class="toc-number">2.</span> <span class="toc-text">Servlet中的ServletContext接口:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上下文获取方法"><span class="toc-number">3.</span> <span class="toc-text">上下文获取方法:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上下文参数"><span class="toc-number">4.</span> <span class="toc-text">上下文参数:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用ServletContext在应用中共享数据"><span class="toc-number">5.</span> <span class="toc-text">利用ServletContext在应用中共享数据:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四大作用范围"><span class="toc-number">6.</span> <span class="toc-text">四大作用范围:</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Web开发入门" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-JSP上下文" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Web开发入门
+      Servlet上下文
     </h1>
   
 
@@ -374,42 +374,87 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2017/04/30/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" class="article-date">
-	  <time datetime="2017-04-30T09:12:00.000Z" itemprop="datePublished">2017-04-30</time>
+	<a href="/2017/12/25/JSP%E4%B8%8A%E4%B8%8B%E6%96%87/" class="article-date">
+	  <time datetime="2017-12-25T10:47:00.000Z" itemprop="datePublished">2017-12-25</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a>
+	<a class="article-tag-link" href="/tags/JavaEE/" rel="tag">JavaEE</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/04/30/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/12/25/JSP%E4%B8%8A%E4%B8%8B%E6%96%87/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="C-S-B-S网络应用"><a href="#C-S-B-S网络应用" class="headerlink" title="C/S B/S网络应用:"></a>C/S B/S网络应用:</h4><p><strong>C/S</strong>就是(<strong>客户机/服务器</strong>)的简称,桌面应用程序采用的多是这种结构.<br><strong>B/S</strong>就是(<strong>浏览器/服务器</strong>)的简称,特点是客户端无需安装特定的软件,只需要安装一个浏览器就可以与系统进行交互</p>
-<h4 id="C-S优缺点"><a href="#C-S优缺点" class="headerlink" title="C/S优缺点:"></a>C/S优缺点:</h4><p>由于C/S结构没有像B/S（下一个基本概念介绍）结构中服务器向客户端发送的数据还包含了大量的非实际交换数据，比如请求响应头，还有页面数据等等，它的==相应时间还是相对较快==的；<br>由于C/S结构安装的客户端软件，很多的业务逻辑、算法逻辑处理都在客户端进行，这样就==减轻了服务器的压力==，这是优点，但是带来的问题也显而易见，不但==有被反编译的安全隐患==，而且不断的安装各种客户端软件，会使==客户端越来越臃肿==；<br>在升级维护等工作上带来的麻烦也是令人不愉快，因为每发生一次升级都需要重新更新客户端的软件，这样做的后果就是在==开发上的工作量加大==，而且用户每次都要更新自己终端上的软件，这些都是令人非常头疼的问题；<br>由于需要在客户端进行安装特定软件，因此==对操作系统有一定的限制==；</p>
-<h4 id="Web站点、Web应用、HTTP服务器、Web应用服务器"><a href="#Web站点、Web应用、HTTP服务器、Web应用服务器" class="headerlink" title="Web站点、Web应用、HTTP服务器、Web应用服务器:"></a>Web站点、Web应用、HTTP服务器、Web应用服务器:</h4><p>==Web站点:==<br>即Web Site,也被成为Web网站;比如某公司逛完就是Web站点</p>
-<p>==Web应用:==<br>即Web Application,简单来说,就是通过浏览器访问的应用程序,从而为客户提供相应服务</p>
-<p>==Http服务器:==<br>即Web服务器,主要功能是提供网上信息浏览服务,例如Apache、Nginx、IIS是比较常用的HTTP服务器.</p>
-<p>==Web应用服务器:==<br>Web应用服务器能够运行服务器上的应用程序,并将结果返回给客户端浏览器;例如Tomcat,通常Web应用服务器兼具部分Http服务器的功能.</p>
-<p>==Servlet的概念及功能:==</p>
+        <h4 id="什么是上下文"><a href="#什么是上下文" class="headerlink" title="什么是上下文:"></a>什么是上下文:</h4><p>上下文ServletContext对象是用来存储全局范围信息的对象;换句话说,一个Web应用只有唯一一个上下文对象.</p>
 <ul>
-<li>Servlet运行在服务器端，需要Servlet容器的支持，例如Tomcat；</li>
-<li>可以通过浏览器访问Servlet，Servlet可以生成动态页面返回给浏览器；</li>
-<li>Servlet也是一段代码，是一个Java类，这个Java类需要遵守一定的编写规范，例如，必须继承于javax.servlet.http.HttpServlet类；</li>
+<li>当服务器启动的时候，就会为每一个应用创建一个上下文对象；</li>
+<li>当服务器关闭的时候，上下文对象就销毁；</li>
+</ul>
+<h4 id="Servlet中的ServletContext接口"><a href="#Servlet中的ServletContext接口" class="headerlink" title="Servlet中的ServletContext接口:"></a>Servlet中的ServletContext接口:</h4><table>
+<thead>
+<tr>
+<th align="center">方法声明</th>
+<th align="center">方法描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">java.io.InputStream getResourceAsStream(java.lang.String path)</td>
+<td align="center">将path所代表的资源以输入流返回，可以进一步进行读操作；可以用来读取服务器端的文件；</td>
+</tr>
+<tr>
+<td align="center">RequestDispatcher getRequestDispatcher(java.lang.String path)</td>
+<td align="center">返回RequestDispatcher 对象，路径是相对于上下文路径的；</td>
+</tr>
+</tbody></table>
+<h4 id="上下文获取方法"><a href="#上下文获取方法" class="headerlink" title="上下文获取方法:"></a>上下文获取方法:</h4><p>Servlet规范中的多个接口中都定义了<code>getServletContext</code>方法获得上下文对象</p>
+<h4 id="上下文参数"><a href="#上下文参数" class="headerlink" title="上下文参数:"></a>上下文参数:</h4><ul>
+<li>在web.xml中可以配置上下文参数，使用<code>ServletContext</code>中的<code>getInitParameter</code>方法可以获取该参数；【之前学习过的Servlet初始化参数，只能在当前Servlet中使用】</li>
+<li>上下文参数存储在上下文对象，所以应用下所有组件都可以使用；</li>
+<li>获取上下文参数：  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>version<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//返回ServletContext对象</span></span><br><span class="line">ServletContext ctxt=<span class="keyword">this</span>.getServletContext();</span><br><span class="line"><span class="comment">//获取上下文参数</span></span><br><span class="line">String version=ctxt.getinitParameter(<span class="string">"version"</span>);</span><br><span class="line">System.out.println(<span class="string">"上下文参数version的值:"</span>+version);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="利用ServletContext在应用中共享数据"><a href="#利用ServletContext在应用中共享数据" class="headerlink" title="利用ServletContext在应用中共享数据:"></a>利用ServletContext在应用中共享数据:</h4><table>
+<thead>
+<tr>
+<th align="center">方法声明</th>
+<th align="center">方法描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">void setAttribute(java.lang.String name, java.lang.Object o)</td>
+<td align="center">将任意类型对象设置为上下文属性，指定一个名字</td>
+</tr>
+<tr>
+<td align="center">java.lang.Object getAttribute(java.lang.String name)</td>
+<td align="center">通过属性的名字，获取属性的值；</td>
+</tr>
+<tr>
+<td align="center">void removeAttribute(java.lang.String name)</td>
+<td align="center">通过属性的名字，删除属性；</td>
+</tr>
+</tbody></table>
+<h4 id="四大作用范围"><a href="#四大作用范围" class="headerlink" title="四大作用范围:"></a>四大作用范围:</h4><p>在Web应用中，有四大作用域范围</p>
+<ul>
+<li>页面范围<code>PageContext</code>：一个Servlet或JSP文件；</li>
+<li>请求范围<code>ServletRequest</code>：一次请求中可以访问多个Servlet或JSP； 访问的Servlet或JSP能够包含其他资源；</li>
+<li>会话范围<code>HttpSession</code>：一次会话中可以包含多个请求；</li>
+<li>上下文范围<code>ServletContext</code>：上下文包含所有会话；</li>
 </ul>
 
       
@@ -420,7 +465,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2017/04/30/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" title="Web开发入门" target="_blank" rel="external">https://zhuyiting.xyz/2017/04/30/Web%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/</a>
+      <a href="https://zhuyiting.xyz/2017/12/25/JSP%E4%B8%8A%E4%B8%8B%E6%96%87/" title="Servlet上下文" target="_blank" rel="external">https://zhuyiting.xyz/2017/12/25/JSP%E4%B8%8A%E4%B8%8B%E6%96%87/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -467,9 +512,13 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2017/05/06/Servlet/" title="Servlet"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="计算机科学基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
+    
+    <li class="next">
+      <a href="/2017/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" title="软件开发基础"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
     <li class="toggle-toc">
@@ -567,7 +616,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'Web开发入门', 
+  id: 'Servlet上下文', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {

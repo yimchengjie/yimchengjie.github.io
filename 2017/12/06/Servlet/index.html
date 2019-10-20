@@ -17,19 +17,19 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>EL与JSTL表达式 | ycjBlog</title>
-  <meta name="description" content="EL表达式:EL表达式的功能:(让JSP编写更为简单)  EL是Expression Language的简称，即表达式语言； EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码； EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&amp;lt;%=%&amp;gt;  EL表达式的一般格式: ${EL表达式}    例如:${param.username}    等同于:&amp;">
+  <title>Servlet | ycjBlog</title>
+  <meta name="description" content="什么是ServletJava Servlet 是运行在 Web 服务器或应用服务器上的程序，它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。 Servlet的线程特性:Web应用服务器(Tomcat)将为每个客户端的连接启动一个线程来服务 第一次访问Servlet时，服务器将创建一个该Servlet类的对象，并调用doXXX方法生成响">
 <meta name="keywords" content="JavaEE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EL与JSTL表达式">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2017&#x2F;06&#x2F;30&#x2F;EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F&#x2F;index.html">
+<meta property="og:title" content="Servlet">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2017&#x2F;12&#x2F;06&#x2F;Servlet&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="EL表达式:EL表达式的功能:(让JSP编写更为简单)  EL是Expression Language的简称，即表达式语言； EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码； EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&amp;lt;%=%&amp;gt;  EL表达式的一般格式: ${EL表达式}    例如:${param.username}    等同于:&amp;">
+<meta property="og:description" content="什么是ServletJava Servlet 是运行在 Web 服务器或应用服务器上的程序，它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。 Servlet的线程特性:Web应用服务器(Tomcat)将为每个客户端的连接启动一个线程来服务 第一次访问Servlet时，服务器将创建一个该Servlet类的对象，并调用doXXX方法生成响">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T13:51:10.275Z">
+<meta property="og:updated_time" content="2019-10-20T14:03:11.936Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2017/06/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2017/12/06/Servlet/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -250,7 +250,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -273,6 +273,36 @@
               </p>
               <p class="item-date">
                 <time datetime="2019-07-30T07:18:00.000Z" itemprop="datePublished">2019-07-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="title">EL与JSTL表达式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-30T06:15:00.000Z" itemprop="datePublished">2018-01-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/19/MVC%E6%A8%A1%E5%BC%8F/" class="title">MVC模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-19T06:15:00.000Z" itemprop="datePublished">2018-01-19</time>
               </p>
             </div>
           </li>
@@ -307,36 +337,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/12/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="title">计算机科学基础</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-12-27T14:17:00.000Z" itemprop="datePublished">2017-12-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/12/25/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" class="title">软件开发基础</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-12-25T07:18:00.000Z" itemprop="datePublished">2017-12-25</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -352,21 +352,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#EL表达式"><span class="toc-number">1.</span> <span class="toc-text">EL表达式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EL表达式的内置对象"><span class="toc-number">2.</span> <span class="toc-text">EL表达式的内置对象:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-EL-取出内置对象的数据。"><span class="toc-number">3.</span> <span class="toc-text">使用 EL 取出内置对象的数据。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EL运算符"><span class="toc-number">4.</span> <span class="toc-text">EL运算符:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSTL"><span class="toc-number">5.</span> <span class="toc-text">JSTL:</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是Servlet"><span class="toc-number">1.</span> <span class="toc-text">什么是Servlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet的线程特性"><span class="toc-number">2.</span> <span class="toc-text">Servlet的线程特性:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet请求和响应接口"><span class="toc-number">3.</span> <span class="toc-text">Servlet请求和响应接口:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用Servlet对客户端不同方式请求作出动态响应"><span class="toc-number">4.</span> <span class="toc-text">利用Servlet对客户端不同方式请求作出动态响应:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet初始化参数"><span class="toc-number">5.</span> <span class="toc-text">Servlet初始化参数:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet加载启动选项"><span class="toc-number">6.</span> <span class="toc-text">Servlet加载启动选项:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet配置中通配符-的用法"><span class="toc-number">7.</span> <span class="toc-text">Servlet配置中通配符*的用法:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web-xml中首页及错误页面等其他配置信息"><span class="toc-number">8.</span> <span class="toc-text">web.xml中首页及错误页面等其他配置信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet中获取请求头属性的方法"><span class="toc-number">9.</span> <span class="toc-text">Servlet中获取请求头属性的方法:</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-EL与JSTL表达式" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Servlet" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      EL与JSTL表达式
+      Servlet
     </h1>
   
 
@@ -374,8 +374,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2017/06/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
-	  <time datetime="2017-06-30T06:15:00.000Z" itemprop="datePublished">2017-06-30</time>
+	<a href="/2017/12/06/Servlet/" class="article-date">
+	  <time datetime="2017-12-06T09:12:00.000Z" itemprop="datePublished">2017-12-06</time>
 	</a>
 </span>
         
@@ -393,66 +393,61 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/06/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/12/06/Servlet/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式:"></a>EL表达式:</h4><p>EL表达式的功能:(让JSP编写更为简单)</p>
+        <h4 id="什么是Servlet"><a href="#什么是Servlet" class="headerlink" title="什么是Servlet"></a>什么是Servlet</h4><p>Java Servlet 是运行在 Web 服务器或应用服务器上的程序，它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。</p>
+<h4 id="Servlet的线程特性"><a href="#Servlet的线程特性" class="headerlink" title="Servlet的线程特性:"></a>Servlet的线程特性:</h4><p>Web应用服务器(Tomcat)将为每个客户端的连接启动一个线程来服务</p>
+<p>第一次访问Servlet时，服务器将创建一个该Servlet类的对象，并调用doXXX方法生成响应；多个客户端访问同一个Servlet时，不再创建新的对象，而是共用同一个Servlet对象。可以说，Servlet是多线程单实例的。</p>
+<h4 id="Servlet请求和响应接口"><a href="#Servlet请求和响应接口" class="headerlink" title="Servlet请求和响应接口:"></a>Servlet请求和响应接口:</h4><p>通过浏览器提交给服务端的所有数据,都称为<strong>请求数据</strong></p>
+<p>通过服务器返回给客户端的所有数据,都称为<strong>响应数据</strong></p>
+<p>ServletAPI中,定义了请求和响应接口,用来封装和操作请求和响应数据</p>
+<ul>
+<li>请求接口:<ul>
+<li><code>javax.servlet.ServletRequest</code></li>
+<li><code>javax.servlet.HttpServletRequest</code></li>
+</ul>
+</li>
+<li>响应接口:<ul>
+<li><code>javax.servlet.ServletResponse</code></li>
+<li><code>javax.servlet.HttpServletResponse</code></li>
+</ul>
+</li>
+</ul>
+<p>Servlet类使用doXXX方法提供服务,这些方法继承于<code>HttpServlet</code><br>doXXX方法中都有两个参数,分别是请求和响应;<br>|方法|参数|作用|<br>|:–:|:–:|:–:|<br>|void doDelete|(HttpServletRequest request,HttpServletResponse response)|用来处理一个HTTP DELETE操作,这个操作允许客户端请求从服务器上删除URL|<br>|void doGet|(HttpServletRequest request,             HttpServletResponse response)|用来处理一个HTTP GET操作。这个操作允许客户端简单地从一个HTTP服务器“获得”资源|<br>|void doHead|(HttpServletRequest request,          HttpServletResponse response)|用来处理一个HTTP HEAD操作。默认的情况是，这个操作会按照一个无条件的GET方法来执行|<br>|void doOptions|(HttpServletRequest request,           HttpServletResponse response)|用来处理一个HTTP OPTION操作。这个操作自动地决定支持哪一种HTTP方法。例如，一个Servlet写了一个HttpServlet的子类并重载了doGet方法，doOption会返回下面的头：    Allow:GET,HEAD,TRACE,OPTIONS|<br>|void doPost|(HttpServletRequest request,             HttpServletResponse response)|用来处理一个HTTP POST操作。这个操作包含请求体的数据，Servlet应该按照他行事。|<br>|void doPut|(HttpServletRequest request,        HttpServletResponse response)|用来处理一个HTTP PUT操作。这个操作类似于通过FTP发送文件。|<br>|void doTrace|(HttpServletRequest request,            HttpServletResponse response)|用来处理一个HTTP TRACE操作。这个操作的默认执行结果是产生一个响应，这个响应包含一个反映trace请求中发送的所有头域的信息。|<br>|long getLastModified|(HttpServletRequest request)|返回这个请求实体的最后修改时间。|<br>|void service|(HttpServletRequest request,     HttpServletResponse response)|这是一个Servlet的HTTP-specific方案，它分配请求到这个类的支持这个请求的其他方法。当你开发Servlet时，在多数情况下你不必重载这个方法。|<br><strong><em>也就是说：服务器会创建请求对象和响应对象传递给doXXX方法，doXXX方法中可以直接使用请求和响应对象;</em></strong><br><strong>doXXX方法中可以使用方法参数request，response去调用请求和响应接口中的方法；</strong></p>
+<h4 id="利用Servlet对客户端不同方式请求作出动态响应"><a href="#利用Servlet对客户端不同方式请求作出动态响应" class="headerlink" title="利用Servlet对客户端不同方式请求作出动态响应:"></a>利用Servlet对客户端不同方式请求作出动态响应:</h4><p>客户端访问服务器端Servlet的三种方式:</p>
 <ol>
-<li>EL是Expression Language的简称，即表达式语言；</li>
-<li>EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码；</li>
-<li>EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&lt;%=%&gt;</li>
+<li>直接从地址栏输入URL访问；是GET方式，调用doGet方法;</li>
+<li>在网页中点击超级链接访问；是GET方式，调用doGet方法;</li>
+<li>在网页中通过表单提交访问；取决form的method属性的值，默认是get，指定为post时，调用doPost方法;</li>
 </ol>
-<p><strong>EL表达式的一般格式:</strong><br> <code>${EL表达式}</code><br>    例如:<code>${param.username}</code><br>    等同于:<code>&lt;%=request.getParameter(&quot;username&quot;)%&gt;</code></p>
-<h4 id="EL表达式的内置对象"><a href="#EL表达式的内置对象" class="headerlink" title="EL表达式的内置对象:"></a>EL表达式的内置对象:</h4><p>其中</p>
-<ul>
-<li>2个内置对象为了方便输出请求参数： param/paramValues；<ul>
-<li>内置对象param：用来输出请求参数的值，格式为${param.请求参数名字}</li>
-<li>内置对象paramValues：用来获取一对多的参数值，返回一个数组。</li>
-</ul>
-</li>
-<li>4个内置对象为了方便输出各个范围的属性： pageScope/ requestScope /sessionScope /applicationScope<ul>
-<li>获取四个范围的属性数据</li>
-<li>检索顺序：当不指定范围时，例如，${user.pwd}，将自动从pageScope开始查找，直到applicationScope，如果没查到，则什么也不显示</li>
-</ul>
-</li>
-<li>2个与请求头有关的内置对象：header/headerValues<ul>
-<li>内置对象header：用来输出输出某一个请求头的值，格式为${header.请求头名字}</li>
-<li>内置对象headerValues：如果某个请求头的值有多个，则使用headerValues返回一个数组。</li>
-</ul>
-</li>
-<li>2个其他内置对象：cookie/initParam<ul>
-<li>内置对象cookie：用来获取cookie的值</li>
-<li>内置对象initParam：用来输出上下文参数;</li>
-</ul>
-</li>
-<li>1个特殊的内置对象pageContext<ul>
-<li>内置对象pageContext：EL中的pageContext对象可以调用PageContext类中所有符合规范的getXxx方法</li>
-</ul>
-</li>
-</ul>
-<h4 id="使用-EL-取出内置对象的数据。"><a href="#使用-EL-取出内置对象的数据。" class="headerlink" title="使用 EL 取出内置对象的数据。"></a>使用 EL 取出内置对象的数据。</h4><ol>
-<li>普通对象和对象属性。<br> 服务器端：<pre><code>`request.setAttribute(&quot;student&quot;, student);`</code></pre> 在浏览器上打印出服务器端绑定的数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; student &#125;  <span class="comment">&lt;!-- 相当于执行了 student.toString(); --&gt;</span></span><br><span class="line">$&#123; student.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getName(); --&gt;</span></span><br><span class="line">$&#123; student.teacher.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getTeacher().getName(); --&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>数组中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String[] nameArray = <span class="keyword">new</span> String[]&#123;<span class="string">"Tom"</span>, <span class="string">"Lucy"</span>, <span class="string">"Lilei"</span>&#125;;</span><br><span class="line">request.setAttribute(“nameArray”,nameArray);</span><br><span class="line">Student[] students = <span class="keyword">new</span> Student[<span class="number">3</span>];</span><br><span class="line">students[<span class="number">0</span>] = stu1;</span><br><span class="line">students[<span class="number">1</span>] = stu2;</span><br><span class="line">students[<span class="number">2</span>] = stu3;</span><br><span class="line">request.setAttribute(“students”,students);</span><br></pre></td></tr></table></figure>
- 在浏览器上打印出服务器端绑定的数组数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123; nameArray[0] &#125;   <span class="comment">&lt;!-- Tom --&gt;</span></span><br><span class="line">$&#123; nameArray[1] &#125;   <span class="comment">&lt;!-- Lucy --&gt;</span></span><br><span class="line">$&#123; nameArray[2] &#125;   <span class="comment">&lt;!-- Lilei --&gt;</span></span><br><span class="line">$&#123; students[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; students[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; students[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>List中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Student&gt; studentList=<span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">studentList.add(stu1);</span><br><span class="line">studentList.add(stu2);</span><br><span class="line">studentList.add(stu3);</span><br><span class="line">request.setAttribute(“studentList”,studentList);</span><br></pre></td></tr></table></figure>
- 在浏览器上打印出服务器端绑定的List数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentList[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentList[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; studentList[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>Map中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Student&gt; studentMap = <span class="keyword">new</span> HashMap&lt;String, Student&gt;();</span><br><span class="line">studentMap.put(<span class="string">"Tom"</span>, stu1);</span><br><span class="line">studentMap.put(<span class="string">"Lucy"</span>, stu2);</span><br><span class="line">studentMap.put(<span class="string">"Lilei"</span>, stu3);</span><br><span class="line">request.setAttribute(“studentMap”,studentMap);</span><br></pre></td></tr></table></figure>
- 在浏览器上打印出服务器端绑定的Map数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentMap.Tom.id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentMap.Lucy.name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">   $&#123; studentMap.Lilei.teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="EL运算符"><a href="#EL运算符" class="headerlink" title="EL运算符:"></a>EL运算符:</h4>EL中提供了多种运算符，可以对变量或常量进行运算，输出运算结果；<br>EL中的运算符包括：</li>
-<li>算术运算符</li>
-<li>比较运算符</li>
-<li>逻辑运算符</li>
-<li>其他运算符</li>
+<p>Servlet中获取请求参数的方法:</p>
+<ol>
+<li>可以在URL后使用name=value&amp;name=value的形式传递，例如： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“TestPramServlet?page</span>=<span class="string">1&amp;author</span>=<span class="string">wangxh”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 传递两个请求参数，名字分别为page和author，值分别为1和wangxh；--&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>可以在使用表单提交，表单中的元素值将作为请求参数传递，元素的name是参数名字，value的值是参数的值</li>
 </ol>
-<h4 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL:"></a>JSTL:</h4><p>JSTL是一套定义好的标签库，可以直接使用；<br>JSTL的全称是Jsp  Standard Tag Library，即JSP标准标签库；<br>JSTL包含很多标签，根据其作用可以分为：属性相关的标签、条件分支相关的标签、迭代标签、其他标签；<br>标签库包括标签处理器类及描述文件tld文件，JSTL也一样：</p>
-<ul>
-<li>使用JSTL首先需要下载相关的jar文件并保存到工程的lib目录下；在JSP中使用taglib指令引入需要使用的标签库；</li>
-<li>forEach、set、if等是JSTL中常用的标签；</li>
-<li>JSTL标签库的使用是为类弥补html表的不足，规范自定义标签的使用而诞生的。在告别modle1模式开发应用程序后，人们开始注重软件的分层设计，不希望在jsp页面中出现java逻辑代码，同时也由于自定义标签的开发难度较大和不利于技术标准化产生了自定义标签库。</li>
+<p>当客户端请求服务器端的Servlet时，请求参数都会被发送到服务器，服务器会将请求参数封装到<strong>请求对象</strong>中；</p>
+<h4 id="Servlet初始化参数"><a href="#Servlet初始化参数" class="headerlink" title="Servlet初始化参数:"></a>Servlet初始化参数:</h4><ol>
+<li>如果某个Servlet需要使用一些可以配置的参数，可以在web.xml进行配置，称为初始化参数；</li>
+<li>这些参数在服务器初始化Servlet实例时被初始化到配置信息中，可以在Servlet中获取并使用；</li>
+<li>一个Servlet可以配置多个初始化参数，所有的初始化参数只能在当前Servlet类中使用；</li>
+</ol>
+<h4 id="Servlet加载启动选项"><a href="#Servlet加载启动选项" class="headerlink" title="Servlet加载启动选项:"></a>Servlet加载启动选项:</h4><ol>
+<li>默认情况下，只有当第一次访问Servlet时，服务器才会初始化Servlet实例；</li>
+<li>如果需要更早实例化Servlet，可以在web.xml中进行配置，使得在启动容器的时候就能初始化Servlet实例；</li>
+</ol>
+<h4 id="Servlet配置中通配符-的用法"><a href="#Servlet配置中通配符-的用法" class="headerlink" title="Servlet配置中通配符*的用法:"></a>Servlet配置中通配符*的用法:</h4><ul>
+<li><em>.扩展名 ： 比如 *.do、</em>.action</li>
+<li>以 / 开头，同时以 /* 结尾，比如  /*  、/admin/*</li>
 </ul>
+<h4 id="web-xml中首页及错误页面等其他配置信息"><a href="#web-xml中首页及错误页面等其他配置信息" class="headerlink" title="web.xml中首页及错误页面等其他配置信息"></a>web.xml中首页及错误页面等其他配置信息</h4><ul>
+<li><strong>配置默认页面</strong>:当不指定具体访问路径时,默认访问默认页面<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>配置错误页面</strong>:当应用中出现响应错误或者异常时,可以跳转到错误页面;</li>
+</ul>
+<h4 id="Servlet中获取请求头属性的方法"><a href="#Servlet中获取请求头属性的方法" class="headerlink" title="Servlet中获取请求头属性的方法:"></a>Servlet中获取请求头属性的方法:</h4><p>客户端请求服务端的Servlet,会传递给服务器一系列的HTTP请求头属性,请求接口中定义了系列方法获取请求属性</p>
 
       
     </div>
@@ -462,7 +457,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2017/06/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="EL与JSTL表达式" target="_blank" rel="external">https://zhuyiting.xyz/2017/06/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/</a>
+      <a href="https://zhuyiting.xyz/2017/12/06/Servlet/" title="Servlet" target="_blank" rel="external">https://zhuyiting.xyz/2017/12/06/Servlet/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -509,12 +504,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2017/10/05/Java%E5%9F%BA%E7%A1%80/" title="Java基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2017/12/15/JSP/" title="JSP"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2017/06/19/MVC%E6%A8%A1%E5%BC%8F/" title="MVC模式"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2017/11/30/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="Java多线程"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -613,7 +608,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'EL与JSTL表达式', 
+  id: 'Servlet', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {
