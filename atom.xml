@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhuyiting.xyz/"/>
-  <updated>2019-10-20T00:56:02.507Z</updated>
+  <updated>2019-10-21T03:08:49.464Z</updated>
   <id>https://zhuyiting.xyz/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019双十一攻略</title>
+    <link href="https://zhuyiting.xyz/2019/10/21/2019%E5%8F%8C%E5%8D%81%E4%B8%80%E6%94%BB%E7%95%A5/"/>
+    <id>https://zhuyiting.xyz/2019/10/21/2019双十一攻略/</id>
+    <published>2019-10-21T01:49:00.000Z</published>
+    <updated>2019-10-21T03:08:49.464Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="淘宝"><a href="#淘宝" class="headerlink" title="淘宝"></a>淘宝</h3><ol><li>每日任务领喵币</li><li>团队PK拉人助力</li></ol><h3 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h3><ol><li>每日任务领喵币</li><li>双十一7点领彩蛋</li><li>双十一7点钻石铂金会员领金手指</li></ol><h3 id="优酷"><a href="#优酷" class="headerlink" title="优酷"></a>优酷</h3><ol><li>每日进入APP获红包</li><li>每日视频观看3分钟获红包</li></ol><h3 id="UC"><a href="#UC" class="headerlink" title="UC"></a>UC</h3><ol><li>每日签到领红包</li><li>每日开启红包雨</li><li>做任务瓜分现金</li><li>每日可抽10次幸运好礼</li></ol><h3 id="高德"><a href="#高德" class="headerlink" title="高德"></a>高德</h3><ol><li>完成每日体验获红包</li></ol><h3 id="饿了吗"><a href="#饿了吗" class="headerlink" title="饿了吗"></a>饿了吗</h3><ol><li>每日心愿城打卡得红包</li><li>下单外卖获红包</li><li>每日三次掷骰子有机会获红包</li></ol><h3 id="口碑"><a href="#口碑" class="headerlink" title="口碑"></a>口碑</h3><ol><li>每日登陆领红包</li><li>掷骰子获得更多奖励</li><li>每天玩游戏5次可获得一个红包</li></ol><h3 id="飞猪"><a href="#飞猪" class="headerlink" title="飞猪"></a>飞猪</h3><ol><li>每日签到获红包</li><li>完成每日任务,打卡成功获红包</li></ol><h3 id="淘宝特价版"><a href="#淘宝特价版" class="headerlink" title="淘宝特价版"></a>淘宝特价版</h3><ol><li>登陆签到得红包</li></ol><h3 id="天猫小店"><a href="#天猫小店" class="headerlink" title="天猫小店"></a>天猫小店</h3><ol><li>每日三次红包抽奖机会</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;淘宝&quot;&gt;&lt;a href=&quot;#淘宝&quot; class=&quot;headerlink&quot; title=&quot;淘宝&quot;&gt;&lt;/a&gt;淘宝&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;每日任务领喵币&lt;/li&gt;
+&lt;li&gt;团队PK拉人助力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;支付宝&quot;&gt;&lt;a href=&quot;#支付宝&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="生活方式" scheme="https://zhuyiting.xyz/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/"/>
+    
+    
+      <category term="生活技巧" scheme="https://zhuyiting.xyz/tags/%E7%94%9F%E6%B4%BB%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>JVM指令手册</title>
@@ -47,7 +77,7 @@
     <link href="https://zhuyiting.xyz/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>https://zhuyiting.xyz/2018/01/30/EL与JSTL表达式/</id>
     <published>2018-01-30T06:15:00.000Z</published>
-    <updated>2019-10-20T14:05:05.887Z</updated>
+    <updated>2019-10-20T14:59:58.191Z</updated>
     
     <content type="html"><![CDATA[<h4 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式:"></a>EL表达式:</h4><p>EL表达式的功能:(让JSP编写更为简单)</p><ol><li>EL是Expression Language的简称，即表达式语言；</li><li>EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码；</li><li>EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&lt;%=%&gt;</li></ol><p><strong>EL表达式的一般格式:</strong><br> <code>${EL表达式}</code><br>    例如:<code>${param.username}</code><br>    等同于:<code>&lt;%=request.getParameter(&quot;username&quot;)%&gt;</code></p><h4 id="EL表达式的内置对象"><a href="#EL表达式的内置对象" class="headerlink" title="EL表达式的内置对象:"></a>EL表达式的内置对象:</h4><p>其中</p><ul><li>2个内置对象为了方便输出请求参数： param/paramValues；<ul><li>内置对象param：用来输出请求参数的值，格式为${param.请求参数名字}</li><li>内置对象paramValues：用来获取一对多的参数值，返回一个数组。</li></ul></li><li>4个内置对象为了方便输出各个范围的属性： pageScope/ requestScope /sessionScope /applicationScope<ul><li>获取四个范围的属性数据</li><li>检索顺序：当不指定范围时，例如，${user.pwd}，将自动从pageScope开始查找，直到applicationScope，如果没查到，则什么也不显示</li></ul></li><li>2个与请求头有关的内置对象：header/headerValues<ul><li>内置对象header：用来输出输出某一个请求头的值，格式为${header.请求头名字}</li><li>内置对象headerValues：如果某个请求头的值有多个，则使用headerValues返回一个数组。</li></ul></li><li>2个其他内置对象：cookie/initParam<ul><li>内置对象cookie：用来获取cookie的值</li><li>内置对象initParam：用来输出上下文参数;</li></ul></li><li>1个特殊的内置对象pageContext<ul><li>内置对象pageContext：EL中的pageContext对象可以调用PageContext类中所有符合规范的getXxx方法</li></ul></li></ul><h4 id="使用-EL-取出内置对象的数据。"><a href="#使用-EL-取出内置对象的数据。" class="headerlink" title="使用 EL 取出内置对象的数据。"></a>使用 EL 取出内置对象的数据。</h4><ol><li>普通对象和对象属性。<br> 服务器端：<pre><code>`request.setAttribute(&quot;student&quot;, student);`</code></pre> 在浏览器上打印出服务器端绑定的数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; student &#125;  <span class="comment">&lt;!-- 相当于执行了 student.toString(); --&gt;</span></span><br><span class="line">$&#123; student.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getName(); --&gt;</span></span><br><span class="line">$&#123; student.teacher.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getTeacher().getName(); --&gt;</span></span><br></pre></td></tr></table></figure></li><li>数组中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String[] nameArray = <span class="keyword">new</span> String[]&#123;<span class="string">"Tom"</span>, <span class="string">"Lucy"</span>, <span class="string">"Lilei"</span>&#125;;</span><br><span class="line">request.setAttribute(“nameArray”,nameArray);</span><br><span class="line">Student[] students = <span class="keyword">new</span> Student[<span class="number">3</span>];</span><br><span class="line">students[<span class="number">0</span>] = stu1;</span><br><span class="line">students[<span class="number">1</span>] = stu2;</span><br><span class="line">students[<span class="number">2</span>] = stu3;</span><br><span class="line">request.setAttribute(“students”,students);</span><br></pre></td></tr></table></figure> 在浏览器上打印出服务器端绑定的数组数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123; nameArray[0] &#125;   <span class="comment">&lt;!-- Tom --&gt;</span></span><br><span class="line">$&#123; nameArray[1] &#125;   <span class="comment">&lt;!-- Lucy --&gt;</span></span><br><span class="line">$&#123; nameArray[2] &#125;   <span class="comment">&lt;!-- Lilei --&gt;</span></span><br><span class="line">$&#123; students[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; students[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; students[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li><li>List中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Student&gt; studentList=<span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">studentList.add(stu1);</span><br><span class="line">studentList.add(stu2);</span><br><span class="line">studentList.add(stu3);</span><br><span class="line">request.setAttribute(“studentList”,studentList);</span><br></pre></td></tr></table></figure> 在浏览器上打印出服务器端绑定的List数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentList[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentList[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; studentList[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li><li>Map中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Student&gt; studentMap = <span class="keyword">new</span> HashMap&lt;String, Student&gt;();</span><br><span class="line">studentMap.put(<span class="string">"Tom"</span>, stu1);</span><br><span class="line">studentMap.put(<span class="string">"Lucy"</span>, stu2);</span><br><span class="line">studentMap.put(<span class="string">"Lilei"</span>, stu3);</span><br><span class="line">request.setAttribute(“studentMap”,studentMap);</span><br></pre></td></tr></table></figure> 在浏览器上打印出服务器端绑定的Map数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentMap.Tom.id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentMap.Lucy.name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">   $&#123; studentMap.Lilei.teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure><h4 id="EL运算符"><a href="#EL运算符" class="headerlink" title="EL运算符:"></a>EL运算符:</h4>EL中提供了多种运算符，可以对变量或常量进行运算，输出运算结果；<br>EL中的运算符包括：</li><li>算术运算符</li><li>比较运算符</li><li>逻辑运算符</li><li>其他运算符</li></ol><h4 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL:"></a>JSTL:</h4><p>JSTL是一套定义好的标签库，可以直接使用；<br>JSTL的全称是Jsp  Standard Tag Library，即JSP标准标签库；<br>JSTL包含很多标签，根据其作用可以分为：属性相关的标签、条件分支相关的标签、迭代标签、其他标签；<br>标签库包括标签处理器类及描述文件tld文件，JSTL也一样：</p><ul><li>使用JSTL首先需要下载相关的jar文件并保存到工程的lib目录下；在JSP中使用taglib指令引入需要使用的标签库；</li><li>forEach、set、if等是JSTL中常用的标签；</li><li>JSTL标签库的使用是为类弥补html表的不足，规范自定义标签的使用而诞生的。在告别modle1模式开发应用程序后，人们开始注重软件的分层设计，不希望在jsp页面中出现java逻辑代码，同时也由于自定义标签的开发难度较大和不利于技术标准化产生了自定义标签库。</li></ul>]]></content>
     
@@ -511,33 +541,6 @@
       
       
         &lt;h3 id=&quot;泛型的作用&quot;&gt;&lt;a href=&quot;#泛型的作用&quot; class=&quot;headerlink&quot; title=&quot;泛型的作用:&quot;&gt;&lt;/a&gt;泛型的作用:&lt;/h3&gt;&lt;h4 id=&quot;1-泛型的定义&quot;&gt;&lt;a href=&quot;#1-泛型的定义&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-    
-      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-      <category term="JavaSE" scheme="https://zhuyiting.xyz/tags/JavaSE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面向接口编程</title>
-    <link href="https://zhuyiting.xyz/2017/10/23/%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B/"/>
-    <id>https://zhuyiting.xyz/2017/10/23/面向接口编程/</id>
-    <published>2017-10-23T10:27:00.000Z</published>
-    <updated>2019-10-20T13:54:58.868Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="什么是接口-为什么要用接口"><a href="#什么是接口-为什么要用接口" class="headerlink" title="什么是接口,为什么要用接口?:"></a>什么是接口,为什么要用接口?:</h4><ul><li>有时必须从几个类中派生出一个子类，继承它们所有的属性和方法。但是，Java不支持多重继承。有了接口，就可以得到多重继承的效果。</li><li>接口(interface)是抽象方法和常量值的定义的集合。</li><li>从本质上讲，接口是一种特殊的抽象类，这种抽象类中只包含常量和方法的定义，而没有变量和方法的实现。</li><li>接口定义举例  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runner</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="接口的特点"><a href="#接口的特点" class="headerlink" title="接口的特点:"></a>接口的特点:</h4><ul><li>用 interface 来定义。</li><li>接口中的所有成员变量都默认是由public static final修饰的。</li><li>接口中的所有方法都默认是由public abstract修饰的。接口没有构造方法。</li><li>实现接口的类中必须提供接口中所有方法的具体实现内容。 </li><li>多个无关的类可以实现同一个接口</li><li>一个类可以实现多个无关的接口</li><li>与继承关系类似，接口与实现类之间存在多态性</li><li>接口也可以继承另一个接口，使用extends关键字</li><li>实现接口的类中必须提供接口中所有方法的具体实现内容。 </li><li>多个无关的类可以实现同一个接口</li><li>一个类可以实现多个无关的接口</li><li>与继承关系类似，接口与实现类之间存在多态性</li></ul><h4 id="接口的使用"><a href="#接口的使用" class="headerlink" title="接口的使用"></a>接口的使用</h4><ol><li>编写接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UsbInterface</span></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *USB接口提供服务</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>实现接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UDisk</span> <span class="keyword">implements</span> <span class="title">UsbInterface</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"连接USB口,开始传输数据."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>使用接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UsbInterface uDisk = <span class="keyword">new</span> UDisk();</span><br><span class="line">uDisk.service();</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;什么是接口-为什么要用接口&quot;&gt;&lt;a href=&quot;#什么是接口-为什么要用接口&quot; class=&quot;headerlink&quot; title=&quot;什么是接口,为什么要用接口?:&quot;&gt;&lt;/a&gt;什么是接口,为什么要用接口?:&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;有时必须从几个类中派生出一个子类
       
     
     </summary>
