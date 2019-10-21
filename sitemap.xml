@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/about/index.html</loc>
+    
+    <lastmod>2019-10-21T05:39:02.359Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2019/10/21/2019%25E5%258F%258C%25E5%258D%2581%25E4%25B8%2580%25E6%2594%25BB%25E7%2595%25A5/</loc>
     
     <lastmod>2019-10-21T05:17:23.090Z</lastmod>
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/repository/index.html</loc>
+    <loc>https://zhuyiting.xyz/tags/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/tags/index.html</loc>
+    <loc>https://zhuyiting.xyz/repository/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
     
