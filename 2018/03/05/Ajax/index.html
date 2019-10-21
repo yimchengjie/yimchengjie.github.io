@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>EL与JSTL表达式 | ycjBlog</title>
+  <meta name="description" content="AJAX1.Ajax的作用获取服务器的数据 2.Ajax的效果在不刷新整个页面的情况下,通过一个url地址获取服务器的数据,然后进行页面的局部刷新. 异布加载, 3.小结Ajax的全称: Asychronous JavaScript And XML,就是使用js代码获取服务器数据.       4.Ajax的使用Ajax简单的来说,就是一个异布的JavaScript请求,用来获取后台服务端的数据,">
+<meta name="keywords" content="JavaScrpit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EL与JSTL表达式">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;03&#x2F;05&#x2F;Ajax&#x2F;index.html">
+<meta property="og:site_name" content="ycjBlog">
+<meta property="og:description" content="AJAX1.Ajax的作用获取服务器的数据 2.Ajax的效果在不刷新整个页面的情况下,通过一个url地址获取服务器的数据,然后进行页面的局部刷新. 异布加载, 3.小结Ajax的全称: Asychronous JavaScript And XML,就是使用js代码获取服务器数据.       4.Ajax的使用Ajax简单的来说,就是一个异布的JavaScript请求,用来获取后台服务端的数据,">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-21T06:07:53.016Z">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://zhuyiting.xyz/2018/03/05/Ajax/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/yimchengjie" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">yanchengjie</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">love and share</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> jiaxing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/yimchengjie" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">前端技术栈</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/">生活方式</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaEE/" rel="tag">JavaEE</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaSE/" rel="tag">JavaSE</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScrpit/" rel="tag">JavaScrpit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" rel="tag">代码托管</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">版本控制</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E6%8A%80%E5%B7%A7/" rel="tag">生活技巧</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JVM/" style="font-size: 13px;">JVM</a> <a href="/tags/JavaEE/" style="font-size: 13.75px;">JavaEE</a> <a href="/tags/JavaSE/" style="font-size: 14px;">JavaSE</a> <a href="/tags/JavaScrpit/" style="font-size: 13px;">JavaScrpit</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" style="font-size: 13px;">代码托管</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 13.25px;">版本控制</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E6%8A%80%E5%B7%A7/" style="font-size: 13.25px;">生活技巧</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 13.5px;">计算机基础</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/">生活方式</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/10/21/2019%E5%8F%8C%E5%8D%81%E4%B8%80%E6%94%BB%E7%95%A5/" class="title">2019双十一攻略</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-10-21T01:49:00.000Z" itemprop="datePublished">2019-10-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/">生活方式</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/10/18/%E5%BB%B6%E6%9C%9F%E5%B9%B4%E9%87%91%E7%8E%B0%E5%80%BC%E7%9A%84%E8%AE%A1%E7%AE%97/" class="title">延期年金现值的计算</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-10-18T01:56:00.000Z" itemprop="datePublished">2019-10-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/" class="title">JVM指令手册</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-30T07:18:00.000Z" itemprop="datePublished">2019-07-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/03/GitHub%E4%BD%BF%E7%94%A8/" class="title">Git简单教程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-03T09:33:00.000Z" itemprop="datePublished">2018-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/03/31/Git%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" class="title">Git简单教程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-03-31T00:33:00.000Z" itemprop="datePublished">2018-03-31</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AJAX"><span class="toc-number">1.</span> <span class="toc-text">AJAX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Ajax的作用"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.Ajax的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Ajax的效果"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.Ajax的效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-小结"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Ajax的使用"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.Ajax的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-数据格式"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 数据格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-封装Ajax"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.封装Ajax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-用jQuery实现Ajax"><span class="toc-number">1.0.7.</span> <span class="toc-text">7 用jQuery实现Ajax</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Ajax" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      EL与JSTL表达式
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/03/05/Ajax/" class="article-date">
+	  <time datetime="2018-03-05T08:25:00.000Z" itemprop="datePublished">2018-03-05</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">前端技术栈</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/JavaScrpit/" rel="tag">JavaScrpit</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/03/05/Ajax/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h3 id="1-Ajax的作用"><a href="#1-Ajax的作用" class="headerlink" title="1.Ajax的作用"></a>1.Ajax的作用</h3><p>获取服务器的数据</p>
+<h3 id="2-Ajax的效果"><a href="#2-Ajax的效果" class="headerlink" title="2.Ajax的效果"></a>2.Ajax的效果</h3><p>在不刷新整个页面的情况下,通过一个url地址获取服务器的数据,然后进行页面的局部刷新. 异布加载,</p>
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3.小结"></a>3.小结</h3><p>Ajax的全称: Asychronous JavaScript And XML,就是使用js代码获取服务器数据.      </p>
+<h3 id="4-Ajax的使用"><a href="#4-Ajax的使用" class="headerlink" title="4.Ajax的使用"></a>4.Ajax的使用</h3><p>Ajax简单的来说,就是一个异布的JavaScript请求,用来获取后台服务端的数据,而并不是整个界面进行跳转.    </p>
+<p> 在元素js中来实现AJax主要的类就是XMLHttpRequest,它的使用一般有四个步骤;</p>
+<ol>
+<li>创建XMLHttpRequest对象</li>
+<li>准备发送网络请求</li>
+<li>开始发送网络请求</li>
+<li>指定回调函数</li>
+</ol>
+<p><strong>注意:</strong> </p>
+<blockquote>
+</blockquote>
+<ol>
+<li>需要注意兼容处理.低版本浏览器不支持XMLHttpRequest对象,需要创建ActiveXObject对象;</li>
+<li>指定请求方式,请求地址以及指定是否异步刷新</li>
+<li>执行发送,<strong>POST请求方式</strong>时,数据不写在地址中,放在请求数据体中.需要发送给服务器,同时设置请求头</li>
+<li>异步的原理是通过请求浏览器进行网络数据的请求   </li>
+</ol>
+<h3 id="5-数据格式"><a href="#5-数据格式" class="headerlink" title="5. 数据格式"></a>5. 数据格式</h3><ol>
+<li>Xml数据格式<br>Xml数据格式是将数据以标签的方式进行组装,必须以<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</code>开头,标签必须成对出现,xml是一个通用标准,任何人都知道如何解析它;</li>
+</ol>
+<p><strong>缺点:</strong>体积太大,传播慢,元数据太多,解析不方便,目前使用很少    </p>
+<ol start="2">
+<li>JSON数据格式<br>Json数据格式类似于js中的对象方式,通过key-value的形式组装,是一个通用的标准,任何人都知道如何解析它;</li>
+</ol>
+<p><strong>优点:</strong>体积小,传输快,解析方便    </p>
+<ol start="3">
+<li>解析Xml数据格式<br>获取Xml对象,在通过getElementsBtTagName获取标签内元素<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result=xhr.responseXML;</span><br><span class="line"><span class="keyword">var</span> books=result.getElementsByTagName(<span class="string">"booklist"</span>)[<span class="number">0</span>].getElementsByTagName(<span class="string">"book"</span>);</span><br><span class="line"><span class="keyword">var</span> newHtml=<span class="built_in">document</span>.getElementById(<span class="string">"bookContariner"</span>).innerHtml;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;books.length;i++)&#123;</span><br><span class="line">	<span class="keyword">var</span> itemBook=books[i];</span><br><span class="line">	<span class="keyword">var</span> name=itemBook.getElementsByTagName(<span class="string">"name"</span>)[<span class="number">0</span>].textContent;</span><br><span class="line">	<span class="keyword">var</span> author=itemBook.getElementsByTagName(<span class="string">"author"</span>)[<span class="number">0</span>].textContent;</span><br><span class="line">	<span class="keyword">var</span> desc=itemBook.getElementsByTagName(<span class="string">"desc"</span>)[<span class="number">0</span>].textContent;</span><br><span class="line">	<span class="keyword">var</span> tempHtml=<span class="string">"&lt;tr&gt;&lt;td&gt;"</span>+name+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+author+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+desc+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>;</span><br><span class="line">	newHtml += tempHtml;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"bookContariner"</span>).innerHtml = newHtml;</span><br></pre></td></tr></table></figure></li>
+<li>解析Json数据格式<br>获取Json对象,再通过对象直接获取对象的属性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result=xhr.responseTest;</span><br><span class="line"><span class="comment">//responseTest获取的是字符串,要转换成JSON对象</span></span><br><span class="line">result=<span class="built_in">JSON</span>.parse(result);</span><br><span class="line"><span class="keyword">var</span> newHtml=<span class="built_in">document</span>.getElementById(<span class="string">"bookContariner"</span>).innerHtml;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;result.length;i++)&#123;</span><br><span class="line">	<span class="keyword">var</span> item=result[i];</span><br><span class="line">	<span class="keyword">var</span> name=item.name;</span><br><span class="line">	<span class="keyword">var</span> author=item.author;</span><br><span class="line">	<span class="keyword">var</span> desc=item.desc;</span><br><span class="line">	<span class="keyword">var</span> tempHtml=<span class="string">"&lt;tr&gt;&lt;td&gt;"</span>+name+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+author+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+desc+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>;</span><br><span class="line">	newHtml += tempHtml;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"bookContariner"</span>).innerHtml = newHtml;</span><br></pre></td></tr></table></figure>
+<h3 id="6-封装Ajax"><a href="#6-封装Ajax" class="headerlink" title="6.封装Ajax"></a>6.封装Ajax</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAjax</span>(<span class="params">type,url,params,callback,async</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> xhr = <span class="literal">null</span>;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(type == <span class="string">"get"</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(params &amp;&amp; params!=<span class="string">""</span>)&#123;</span><br><span class="line">			url += <span class="string">"?"</span> + params;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	xhr.open(type,url,<span class="keyword">async</span>);</span><br><span class="line">	<span class="keyword">if</span>(type == <span class="string">"get"</span>)&#123;</span><br><span class="line">		xhr.send(<span class="literal">null</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(type == <span class="string">"post"</span>)&#123;</span><br><span class="line">		xhr.setRequestHeader(<span class="string">"Contend-Type"</span>,<span class="string">"application/x-www-from-urlencoded"</span>);</span><br><span class="line">		xhr.send(params);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">async</span>)&#123;</span><br><span class="line">		xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(xhr.readyState == <span class="number">200</span>)&#123;</span><br><span class="line">					<span class="keyword">var</span> result = <span class="literal">null</span>;</span><br><span class="line">					<span class="keyword">if</span>(dataType == <span class="string">"json"</span>)&#123;</span><br><span class="line">						result = xhr.responseText;</span><br><span class="line">						result = <span class="built_in">JSON</span>.parse(result);</span><br><span class="line">					&#125;<span class="keyword">else</span> <span class="keyword">if</span>(dataType == <span class="string">"xml"</span>)&#123;</span><br><span class="line">						result = xhr.responseXML;</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						result = xhr.responseText;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span>(callback)&#123;</span><br><span class="line">						callback(result);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(xhr.readyState == <span class="number">200</span>)&#123;</span><br><span class="line">					<span class="keyword">var</span> result = <span class="literal">null</span>;</span><br><span class="line">					<span class="keyword">if</span>(dataType == <span class="string">"json"</span>)&#123;</span><br><span class="line">						result = xhr.responseText;</span><br><span class="line">						result = <span class="built_in">JSON</span>.parse(result);</span><br><span class="line">					&#125;<span class="keyword">else</span> <span class="keyword">if</span>(dataType == <span class="string">"xml"</span>)&#123;</span><br><span class="line">						result = xhr.responseXML;</span><br><span class="line">					&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">						result = xhr.responseText;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span>(callback)&#123;</span><br><span class="line">						callback(result);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-用jQuery实现Ajax"><a href="#7-用jQuery实现Ajax" class="headerlink" title="7 用jQuery实现Ajax"></a>7 用jQuery实现Ajax</h3>jQuery对Ajex操作进行了封装,在jQuery中最底层的方法是<code>$.ajax()</code>,第二层是<code>$.load()</code>、<code>$.get()</code> 、<code>$.post()</code>  第三层是<code>$.getJSON()</code>、<code>$.getScript()</code></li>
+</ol>
+<ul>
+<li><code>$.ajax()</code>用法:<ul>
+<li><strong>type</strong>：指定数据提交的方式</li>
+<li><strong>url</strong>：提交数据的路径</li>
+<li><strong>cache</strong>:是否存在缓存</li>
+<li><strong>data</strong>：向后台发送的数据</li>
+<li><strong>dataType</strong>：服务器端返回的数据类型，比如：xml，text，json, html，script</li>
+<li><strong>success</strong>：响应成功后执行的函数</li>
+<li><strong>error</strong>：响应失败后执行的函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subData=&#123;</span><br><span class="line">		name:<span class="string">'张三'</span></span><br><span class="line">	&#125; <span class="comment">//提交的数据</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">	url : <span class="string">"IndexController/getIndexImages.html"</span>,</span><br><span class="line">	type : <span class="string">"POST"</span>,</span><br><span class="line">	<span class="keyword">async</span> : <span class="literal">true</span>,<span class="comment">//表示进行异步获取</span></span><br><span class="line">	data:subData,<span class="comment">//提交的数据</span></span><br><span class="line">	dataType : <span class="string">'json'</span>,</span><br><span class="line">	contentType : <span class="string">'application/x-www-form-urlencoded;charset=UTF-8'</span>, <span class="comment">//contentType很重要   </span></span><br><span class="line">	success : <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> obj = $.parseJSON(result); </span><br><span class="line">		<span class="comment">//在这里对返回的数据进行处理</span></span><br><span class="line">	&#125;</span><br><span class="line">	error:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//请求失败执行这个</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://zhuyiting.xyz/2018/03/05/Ajax/" title="EL与JSTL表达式" target="_blank" rel="external">https://zhuyiting.xyz/2018/03/05/Ajax/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yimchengjie" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yimchengjie" target="_blank"><span class="text-dark">yanchengjie</span><small class="ml-1x">love and share</small></a></h3>
+        <div>Anything can go right will go right</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/03/31/Git%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/" title="Git简单教程"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="EL与JSTL表达式"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/yimchengjie" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+<script src="//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'EL与JSTL表达式', 
+  owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'yimchengjie.github.io',
+  oauth: {
+    client_id: '5357d42fc4697dd63264',
+    client_secret: 'de58f57f595c5efd724c391370688331b810f100',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
