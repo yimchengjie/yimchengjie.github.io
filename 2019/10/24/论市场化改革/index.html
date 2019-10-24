@@ -17,19 +17,18 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>EL与JSTL表达式 | ycjBlog</title>
-  <meta name="description" content="EL表达式:EL表达式的功能:(让JSP编写更为简单)  EL是Expression Language的简称，即表达式语言； EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码； EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&amp;lt;%=%&amp;gt;  EL表达式的一般格式: ${EL表达式}    例如:${param.username}    等同于:&amp;">
-<meta name="keywords" content="JavaEE">
+  <title>论市场化改革 | ycjBlog</title>
+  <meta name="description" content="当前的市场化改革是否有助于挽救我国经济下滑趋势? 应该怎么样抓住市场化改革带来的巨大机遇?最近，==全球掀起了一阵降息潮，全球的经济环境普遍不太理想==，全球正在经历一轮新的经济周期调整。以10年为周期的金融危机再一次来临。中美的贸易摩擦对于中国金融市场的影响冲击也是巨大的，==人民币一度破7，持续的贬值导致国内资金外逃==，也导致了人民币国际化的步伐放缓。1.[为什么经济不理想的时候要加息?加息">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EL与JSTL表达式">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;01&#x2F;30&#x2F;EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F&#x2F;index.html">
+<meta property="og:title" content="论市场化改革">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="EL表达式:EL表达式的功能:(让JSP编写更为简单)  EL是Expression Language的简称，即表达式语言； EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码； EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&amp;lt;%=%&amp;gt;  EL表达式的一般格式: ${EL表达式}    例如:${param.username}    等同于:&amp;">
+<meta property="og:description" content="当前的市场化改革是否有助于挽救我国经济下滑趋势? 应该怎么样抓住市场化改革带来的巨大机遇?最近，==全球掀起了一阵降息潮，全球的经济环境普遍不太理想==，全球正在经历一轮新的经济周期调整。以10年为周期的金融危机再一次来临。中美的贸易摩擦对于中国金融市场的影响冲击也是巨大的，==人民币一度破7，持续的贬值导致国内资金外逃==，也导致了人民币国际化的步伐放缓。1.[为什么经济不理想的时候要加息?加息">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T14:59:58.191Z">
+<meta property="og:updated_time" content="2019-10-24T14:12:38.928Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2019/10/24/%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -340,25 +339,16 @@
 
   
   
-<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    <nav id="toc" class="article-toc">
-      <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#EL表达式"><span class="toc-number">1.</span> <span class="toc-text">EL表达式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EL表达式的内置对象"><span class="toc-number">2.</span> <span class="toc-text">EL表达式的内置对象:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-EL-取出内置对象的数据。"><span class="toc-number">3.</span> <span class="toc-text">使用 EL 取出内置对象的数据。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EL运算符"><span class="toc-number">4.</span> <span class="toc-text">EL运算符:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSTL"><span class="toc-number">5.</span> <span class="toc-text">JSTL:</span></a></li></ol>
-    </nav>
-  </div>
-</aside>
-
 <main class="main" role="main">
   <div class="content">
-  <article id="post-EL与JSTL表达式" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-论市场化改革" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      EL与JSTL表达式
+      论市场化改革
     </h1>
   
 
@@ -366,85 +356,28 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
-	  <time datetime="2018-01-30T06:15:00.000Z" itemprop="datePublished">2018-01-30</time>
+	<a href="/2019/10/24/%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9/" class="article-date">
+	  <time datetime="2019-10-24T12:42:13.000Z" itemprop="datePublished">2019-10-24</time>
 	</a>
 </span>
         
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
-  </span>
-
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/JavaEE/" rel="tag">JavaEE</a>
-  </span>
-
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/10/24/%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式:"></a>EL表达式:</h4><p>EL表达式的功能:(让JSP编写更为简单)</p>
-<ol>
-<li>EL是Expression Language的简称，即表达式语言；</li>
-<li>EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码；</li>
-<li>EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&lt;%=%&gt;</li>
-</ol>
-<p><strong>EL表达式的一般格式:</strong><br> <code>${EL表达式}</code><br>    例如:<code>${param.username}</code><br>    等同于:<code>&lt;%=request.getParameter(&quot;username&quot;)%&gt;</code></p>
-<h4 id="EL表达式的内置对象"><a href="#EL表达式的内置对象" class="headerlink" title="EL表达式的内置对象:"></a>EL表达式的内置对象:</h4><p>其中</p>
-<ul>
-<li>2个内置对象为了方便输出请求参数： param/paramValues；<ul>
-<li>内置对象param：用来输出请求参数的值，格式为${param.请求参数名字}</li>
-<li>内置对象paramValues：用来获取一对多的参数值，返回一个数组。</li>
-</ul>
-</li>
-<li>4个内置对象为了方便输出各个范围的属性： pageScope/ requestScope /sessionScope /applicationScope<ul>
-<li>获取四个范围的属性数据</li>
-<li>检索顺序：当不指定范围时，例如，${user.pwd}，将自动从pageScope开始查找，直到applicationScope，如果没查到，则什么也不显示</li>
-</ul>
-</li>
-<li>2个与请求头有关的内置对象：header/headerValues<ul>
-<li>内置对象header：用来输出输出某一个请求头的值，格式为${header.请求头名字}</li>
-<li>内置对象headerValues：如果某个请求头的值有多个，则使用headerValues返回一个数组。</li>
-</ul>
-</li>
-<li>2个其他内置对象：cookie/initParam<ul>
-<li>内置对象cookie：用来获取cookie的值</li>
-<li>内置对象initParam：用来输出上下文参数;</li>
-</ul>
-</li>
-<li>1个特殊的内置对象pageContext<ul>
-<li>内置对象pageContext：EL中的pageContext对象可以调用PageContext类中所有符合规范的getXxx方法</li>
-</ul>
-</li>
-</ul>
-<h4 id="使用-EL-取出内置对象的数据。"><a href="#使用-EL-取出内置对象的数据。" class="headerlink" title="使用 EL 取出内置对象的数据。"></a>使用 EL 取出内置对象的数据。</h4><ol>
-<li>普通对象和对象属性。<br> 服务器端：<pre><code>`request.setAttribute(&quot;student&quot;, student);`</code></pre> 在浏览器上打印出服务器端绑定的数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; student &#125;  <span class="comment">&lt;!-- 相当于执行了 student.toString(); --&gt;</span></span><br><span class="line">$&#123; student.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getName(); --&gt;</span></span><br><span class="line">$&#123; student.teacher.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getTeacher().getName(); --&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>数组中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String[] nameArray = <span class="keyword">new</span> String[]&#123;<span class="string">"Tom"</span>, <span class="string">"Lucy"</span>, <span class="string">"Lilei"</span>&#125;;</span><br><span class="line">request.setAttribute(“nameArray”,nameArray);</span><br><span class="line">Student[] students = <span class="keyword">new</span> Student[<span class="number">3</span>];</span><br><span class="line">students[<span class="number">0</span>] = stu1;</span><br><span class="line">students[<span class="number">1</span>] = stu2;</span><br><span class="line">students[<span class="number">2</span>] = stu3;</span><br><span class="line">request.setAttribute(“students”,students);</span><br></pre></td></tr></table></figure>
- 在浏览器上打印出服务器端绑定的数组数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123; nameArray[0] &#125;   <span class="comment">&lt;!-- Tom --&gt;</span></span><br><span class="line">$&#123; nameArray[1] &#125;   <span class="comment">&lt;!-- Lucy --&gt;</span></span><br><span class="line">$&#123; nameArray[2] &#125;   <span class="comment">&lt;!-- Lilei --&gt;</span></span><br><span class="line">$&#123; students[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; students[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; students[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>List中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Student&gt; studentList=<span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">studentList.add(stu1);</span><br><span class="line">studentList.add(stu2);</span><br><span class="line">studentList.add(stu3);</span><br><span class="line">request.setAttribute(“studentList”,studentList);</span><br></pre></td></tr></table></figure>
- 在浏览器上打印出服务器端绑定的List数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentList[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentList[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; studentList[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>Map中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Student&gt; studentMap = <span class="keyword">new</span> HashMap&lt;String, Student&gt;();</span><br><span class="line">studentMap.put(<span class="string">"Tom"</span>, stu1);</span><br><span class="line">studentMap.put(<span class="string">"Lucy"</span>, stu2);</span><br><span class="line">studentMap.put(<span class="string">"Lilei"</span>, stu3);</span><br><span class="line">request.setAttribute(“studentMap”,studentMap);</span><br></pre></td></tr></table></figure>
- 在浏览器上打印出服务器端绑定的Map数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentMap.Tom.id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentMap.Lucy.name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">   $&#123; studentMap.Lilei.teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="EL运算符"><a href="#EL运算符" class="headerlink" title="EL运算符:"></a>EL运算符:</h4>EL中提供了多种运算符，可以对变量或常量进行运算，输出运算结果；<br>EL中的运算符包括：</li>
-<li>算术运算符</li>
-<li>比较运算符</li>
-<li>逻辑运算符</li>
-<li>其他运算符</li>
-</ol>
-<h4 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL:"></a>JSTL:</h4><p>JSTL是一套定义好的标签库，可以直接使用；<br>JSTL的全称是Jsp  Standard Tag Library，即JSP标准标签库；<br>JSTL包含很多标签，根据其作用可以分为：属性相关的标签、条件分支相关的标签、迭代标签、其他标签；<br>标签库包括标签处理器类及描述文件tld文件，JSTL也一样：</p>
-<ul>
-<li>使用JSTL首先需要下载相关的jar文件并保存到工程的lib目录下；在JSP中使用taglib指令引入需要使用的标签库；</li>
-<li>forEach、set、if等是JSTL中常用的标签；</li>
-<li>JSTL标签库的使用是为类弥补html表的不足，规范自定义标签的使用而诞生的。在告别modle1模式开发应用程序后，人们开始注重软件的分层设计，不希望在jsp页面中出现java逻辑代码，同时也由于自定义标签的开发难度较大和不利于技术标准化产生了自定义标签库。</li>
-</ul>
+        <h4 id="当前的市场化改革是否有助于挽救我国经济下滑趋势-应该怎么样抓住市场化改革带来的巨大机遇"><a href="#当前的市场化改革是否有助于挽救我国经济下滑趋势-应该怎么样抓住市场化改革带来的巨大机遇" class="headerlink" title="当前的市场化改革是否有助于挽救我国经济下滑趋势? 应该怎么样抓住市场化改革带来的巨大机遇?"></a>当前的市场化改革是否有助于挽救我国经济下滑趋势? 应该怎么样抓住市场化改革带来的巨大机遇?</h4><p>最近，==全球掀起了一阵降息潮，全球的经济环境普遍不太理想==，全球正在经历一轮新的经济周期调整。以10年为周期的金融危机再一次来临。中美的贸易摩擦对于中国金融市场的影响冲击也是巨大的，==人民币一度破7，持续的贬值导致国内资金外逃==，也导致了人民币国际化的步伐放缓。<br><font color="red">1.<em>[为什么经济不理想的时候要加息?加息为什么可以调整经济]</em><br>因为经济不理想(经济衰退)是市场投资不足(市场中流动的钱少了,都存银行了),政府为了刺激市场,减少银行利息,这样本来钱存在银行的一部分人就会因为收益少了,把钱投向市场中(股票或者消费),都会促进市场健康发展,使经济复苏<br>2.<em>[为什么人民币破7会导致国内资金外逃,人民币破7由什么导致,为什么人民币破7会阻碍人民币国际化?]</em><br>因为人民币破7是1美元兑换7块多人民币,而国际上以美元为主,本来6块多可以买到的东西,现在要多花钱才能买到,这样中国人不愿意买国外的东西(进口不利,因为变贵了).但是相反,中国更愿意卖东西了(出口有利).然后来自国外的资金,会因为人民币不值钱了(能换到的美元变少了)而减少对国内的投资(资本外逃).人民币的贬值是由于美元强势造成的(美国降息,资本都进入市场,经济强势)<br></font></p>
+<p>2019年来，中国的经济形式总体仍延续着2018年的情况，我国经济增速下滑已是事实。由政府主导的央企在2000年后改革缓慢，各大原材料行业都亏损很大，产业的利润下滑非常严重，产能过剩，中国的供需关系面临着很大的结构性失衡，总体上低端产品产能过剩，高端产品产能不足。其次，我国低附加值、高功耗、高污染的产业比重很大；区域人口分布不合理，城镇化率低，导致发展不平衡；随着人口、土地、环境等这些红利慢慢的消失，==人工成本的上涨，土地价格的升高，环境的恶化，导致中低端产业较多==；我国经济的增长过多的依靠”==三驾马车==”，我国城乡收入差距大，行业收入差距大，居民贫富差距大。这些问题就会束缚经济的发展。<br><font color="red">1.<em>[为什么会导致中低端产业较多]</em><br>因为红利的消失会导致企业成本的增加,产品价格上涨,高端产品竞争力变弱(比如国产车和进口车一个价格, 选择国产车的人大大减少)<br>2.<em>[三驾马车是什么]</em><br>三驾马车是投资,消费,进口; 三驾马车是用来计算GDP的三部分,是经济发展的结果,不是根本动力. 根本动力是靠企业靠市场自我的健康发展.<br></font></p>
+<p>当前的市场化改革，正式由习近平提出的供给侧结构性改革，==供给侧结构性改革，就是从提高供给质量出发，用改革的办法推进结构调整，矫正要素配置扭曲，扩大有效供给，提高供给结构对需求变化的适应性和灵活性，提高全要素生产率==，更好满足广大人民群众的需要，促进经济社会持续健康发展。<br><font color="red">1.<em>[解释一下供给侧结构性改革]</em><br>供给侧结构性改革就是强调供给方(也就是企业),能够制造出物美价廉的商品,怎么改呢呢? 通过改革,减少税收,降低土地价格,给予政策福利支持等<br></font></p>
+<p>强调供给侧改革，从生产、供给入手，调整供应结构，才能使经济健康稳固发展。提升居民消费以及当前的供给侧改革并不能完全改变经济下滑趋势，==还必须打通供给以及需求，这一层中间地带==，一是政府对企业的税收以及居民的社保缴费高，让企业无法生产，市场需求低。二是垄断性国企占有太多的社会资源而效率又太低，靠价格垄断生存，抬高了整个市场的生产成本，比如油价，房价。<br><font color="red">1.<em>[为什么中间地带很重要]</em><br>中间地带是商品产出到消费者买入之间的地带,是企业或者消费者,在商品之外承担的费用,比如企业的税,居民的五险一金. 企业会把这些费用加到商品的价格上或者自己承担损失, 居民手上钱少, 消费降低, 都不利于经济健康发展<br></font></p>
+<p>供给侧结构性改革自2015年提出以后，其主要任务也在不断变化。最初的“三去一降一补”，通过关、停、并、转等方式去掉多余产能，稳定房价去房地产库存，去杠杆减少政府债务，降低企业各项成本，补充生态建设、完善产业链。<br><font color="red">1.<em>[三去一降一补]</em><br>去产能,去库存,去债务,降成本,补生态产业链<br></font></p>
+<p>当前不仅需要优化供给，提高内需，还要解决供给与需求的中间地带，做好减税降费，优化市场生态。供给侧结构性改革是利好于我国经济发展的，在贸易战加剧，逆全球化回溯的国际背景下，我国的供给侧结构性改革要结合一带一路，深化与沿线国家的合作，强化和欧洲，拉美地区国家的科技合作，扩大开放，将中国制造带出国。</p>
+<p>我国要吸取日本经济发展的教训，20世纪后期，日本大力发展建设，逐渐陷入了失控的建设狂奔，建设业创造了庞大的就业机会，并非来自于真正的经济增长，==而是人为制造出的就业机会。这大大削弱并延缓了日本高技术产业的发展==，但这种失控的建设无法停止，因为一旦停止公共建设，就会出现大量失业。更严重的是，公共建设积累的巨大负债让日本难堪重负。==日本的房价泡沫也重创了日本实体工业的发展，泡沫的破灭导致了大量企业倒闭，失业率狂升==。当下的日本，也还没有完全走出当年的阴影。日本经济衰退的20年，主要原因就是日本政府对经济把控出现了失误，制定了违背经济规律的政策。<br><font color="red">1.<em>[为什么这会阻碍日本高科技产业发展?]</em><br>因为大量的人口资金投入到了基础建设业,相应的高科技产业就会没钱没人<br>2.<em>[房价的泡沫破裂为什么影响这么大?]</em><br>房价泡沫破灭, 高价买地的开发商,会破产,很多大企业也会因为投资房地产而大出血,这会让市场严重下跌,这样所有人手上的资产都贬值了,同时企业大量倒闭,失业率也会大大提高,已经买房的人失业后也还要承担巨额贷款.整个国家的经济都会受损,日本房价泡沫当时特别高,政府为了防止泡沫更高影响更恶劣,采取了主动刺破的措施.单也还是经济大衰退<br></font><br>我国可以从日本的经济发展的教训中收益到：房地产不能长久作为支柱产业，必须防止货币超发和过度升值，在宏观调控上，政府不能过于频繁也不能过紧过松，政策引导着眼长远，统筹兼顾。<br>面对经济寒冬，我们个人也需要重视，不要觉得离我们很遥远，面对危机，我们要留好资金，节约开销，努力工作，提升个人能力。<br>我国的市场化改革也会带来巨大的机遇，站在风口上，猪都会飞。乱世出英雄，变革带来的巨大机遇可能产生意想不到的风云人物，不过代价也是巨大的，在改革中，抓住机会很重要，不过我们需要做好充足的准备，机会总是留给有准备的人。能力上的准备，思想上的准备，以及恰到好处的机会。<br>在危机来临初期持有货币，在危机崩溃期买入资产，在政体调控收缩货币时期再次抛售就能获利了，但这其中随便哪一步出错，都会损失惨重，即使每一个环节都准确无误，也可能因为突如其来的不可抗力，导致整个投资计划的泡汤。比如限购限售，比如失业，比如投资企业破产。==在危机时期，不要轻易触碰杠杆加大交易规模==，其次要勤于学习，要对未来的风险做准备。<br><font color="red">1.<em>[为什么在危机崩溃期买入资产，在政体调控收缩货币时期再次抛售就能获利了?]</em><br>通俗点说就是在商品最便宜的时候买进。接下来商品会因为市场规律或者政府调控回升。但是政府为了控制物价（控制通货膨胀），会加息，钱流进银行，商品需求变小。在政府调控的时候，可以看成物价比较理想（高）的时候。这时候卖出。获利就很客观（差价最大的时候）<br>2.<em>[为什么不要触碰杠杆]</em><br>触碰杠杆可以理解为贷款,因为在经济危机时期,银行出于安全考虑不可能把大量的钱借给你, 所以只能贷到很少的钱,而钱越少,承受意外的能力越低,而且贷款需要抵押,(房子或者股票,在危机时期看不到底,随时会被银行卖掉,因为银行不可能等你房子不值钱了再卖,那就失去了抵押的意义),而银行低价卖出也会导致市场供大于求,进一步下跌. 而你通过贷款买入的资产也可能会进一步下跌.很容易破产<br></font><br>在宏观经济下滑的趋势下，要合理分配资产，综合来看2019年上半年的投资者大多以黄金、比特币为代表的避险资产，这些产品或者说是资产的价格也一直在上高，在国际范围中，各大央行实行降息政策，促进经济发展的前提下，黄金和比特币的抗通胀能力就展现出来了。==但千万不能在不了解的情况下，进行投资。==<br><font color="red">1.<em>[为什么黄金,比特币是避险资产?]</em><br>因为他们都有共同属性,价值不受政府调控影响(因为总量固定,且没法造假).这样不管经济怎么样,黄金比特币本来能换多少米还是能换多少米.举例:比如一块黄金本来换一代米,一百块也能换一袋米,但是经济变化,一百块只能买半袋米了,但是一快黄金还是能买一袋米.<br>2.<em>[为什么不了解不能投资呢]</em><br>正式因为他们总量固定 ,他们会被资本炒作,比如大量买入造成供不应求,价格高了以后再高价卖出, 不了解就很可能成了韭菜,承担了这部分人造差价<br></font><br>改革初期，商品紧缺，供不应求，是暴利的时代，后来，电子商务兴起以及产能过剩，商家开启价格战，于是进入了薄利时期，而当前，我国正在转变，产品开始个性化、定制化、高端化，提高增值空间，从而进入厚利时代。<br>2019年下半年，==各大二线城市的抢人大战也已经偃旗息鼓，但一线新一线仍然对人才有着很高的需求。这意味着，宏观上的城市化进程将会放缓，大城市的自我迭代会深度展开。==其次我国股市长期以来以房地产与科技相关的驱动，目前的房价以稳为主，投资的机会在科技类企业。<br><font color="red">1.<em>[为什么二线城市不抢人了?]</em><br>因为人才需要高薪,需要好的企业,而好的企业需要政策扶持,它才愿意来,二线城市没有这样的实力,相反,一线城市企业多,对于人才的需求也大,大城市的建设需要人才.<br>2.<em>[为什么说投资机会在科技类企业]</em><br>因为国家需要发展科技类企业来促进产业升级,政策的支持以及资金的流入,就会让科技类企业更健康的发展<br></font><br>在我国市场化改革的背景下，勤于学习，不多弥补知识盲区，扩充个人知识领域，才能知道更多有用的信息，见多识广的人，更能规避风险，才有更大的机会抓住机遇。</p>
 
       
     </div>
@@ -454,7 +387,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="EL与JSTL表达式" target="_blank" rel="external">https://zhuyiting.xyz/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/</a>
+      <a href="https://zhuyiting.xyz/2019/10/24/%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9/" title="论市场化改革" target="_blank" rel="external">https://zhuyiting.xyz/2019/10/24/%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -500,24 +433,11 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/03/05/Ajax/" title="Ajax"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2018/01/19/MVC%E6%A8%A1%E5%BC%8F/" title="MVC模式"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/10/21/%E5%98%89%E5%96%84%E7%AB%8B%E6%98%A5/" title="嘉善立春"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
-    
-    <li class="toggle-toc">
-      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
-        <span>[&nbsp;</span><span>文章目录</span>
-        <i class="text-collapsed icon icon-anchor"></i>
-        <i class="text-in icon icon-close"></i>
-        <span>]</span>
-      </a>
-    </li>
     
   </ul>
   
@@ -597,7 +517,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'EL与JSTL表达式', 
+  id: '论市场化改革', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {

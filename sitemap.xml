@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zhuyiting.xyz/2019/10/21/GitHub%25E5%25A6%2582%25E4%25BD%2595%25E6%258A%258A%25E5%25B7%25B2%25E6%259C%2589%25E9%25A1%25B9%25E7%259B%25AE%25E4%25B8%258A%25E4%25BC%25A0/</loc>
+    <loc>https://zhuyiting.xyz/2019/10/24/%25E8%25AE%25BA%25E5%25B8%2582%25E5%259C%25BA%25E5%258C%2596%25E6%2594%25B9%25E9%259D%25A9/</loc>
     
-    <lastmod>2019-10-24T02:15:56.031Z</lastmod>
+    <lastmod>2019-10-24T14:12:38.928Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zhuyiting.xyz/2018/04/03/GitHub%25E4%25BD%25BF%25E7%2594%25A8/</loc>
     
-    <lastmod>2019-10-24T01:31:17.915Z</lastmod>
+    <lastmod>2019-10-24T12:42:40.780Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/10/21/GitHub%25E5%25A6%2582%25E4%25BD%2595%25E6%258A%258A%25E5%25B7%25B2%25E6%259C%2589%25E9%25A1%25B9%25E7%259B%25AE%25E4%25B8%258A%25E4%25BC%25A0/</loc>
+    
+    <lastmod>2019-10-24T02:15:56.031Z</lastmod>
     
   </url>
   
@@ -233,13 +240,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/repository/index.html</loc>
-    
-    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/tags/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
@@ -247,14 +247,21 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/repository/index.html</loc>
+    
+    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
