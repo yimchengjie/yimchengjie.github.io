@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhuyiting.xyz/"/>
-  <updated>2019-10-22T02:39:46.099Z</updated>
+  <updated>2019-10-22T02:40:41.045Z</updated>
   <id>https://zhuyiting.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://zhuyiting.xyz/2019/10/21/%E5%98%89%E5%96%84%E7%AB%8B%E6%98%A5/"/>
     <id>https://zhuyiting.xyz/2019/10/21/嘉善立春/</id>
     <published>2019-10-21T09:06:16.000Z</published>
-    <updated>2019-10-22T02:39:46.099Z</updated>
+    <updated>2019-10-22T02:40:41.045Z</updated>
     
     <content type="html"><![CDATA[<p>节气之首是立春,<br>万物复苏很精神.<br>嘉善地方虽然小,<br>东西样样都不少.<br>初春温度还很低,<br>地嘉人善却不冷.<br>早晨起来还有露,<br>上学骑在阳光路.<br>几年发展太迅速,<br>日子过的真惬意.<br>不管我们去哪里,<br>嘉善永远是窝里.<br>车站路上哼小曲,<br>儿童公园有飞机.<br>白水塘里游大鱼,<br>大云还有巧克力.<br>西塘景区人密集,<br>灯火夜景很美丽.<br>现在还有新西塘,<br>小桥流水和人家.<br>看看嘉善的变化,<br>讲讲嘉善的闲话.<br>今年也要努努力,<br>明年定会更顺利.</p>]]></content>
     
@@ -62,7 +62,7 @@
     <link href="https://zhuyiting.xyz/2019/10/21/2019%E5%8F%8C%E5%8D%81%E4%B8%80%E6%94%BB%E7%95%A5/"/>
     <id>https://zhuyiting.xyz/2019/10/21/2019双十一攻略/</id>
     <published>2019-10-21T01:49:00.000Z</published>
-    <updated>2019-10-22T01:19:16.511Z</updated>
+    <updated>2019-10-23T02:45:41.619Z</updated>
     
     <content type="html"><![CDATA[<h3 id="淘宝"><a href="#淘宝" class="headerlink" title="淘宝"></a>淘宝</h3><ol><li>每日任务领喵币</li><li>团队PK拉人助力</li></ol><h3 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h3><ol><li>每日任务领喵币</li><li>双十一7点领彩蛋</li><li>双十一7点钻石铂金会员领金手指</li></ol><h3 id="优酷"><a href="#优酷" class="headerlink" title="优酷"></a>优酷</h3><ol><li>每日进入APP获红包</li><li>每日视频观看3分钟获红包</li></ol><h3 id="UC"><a href="#UC" class="headerlink" title="UC"></a>UC</h3><ol><li>每日签到领红包</li><li>每日开启红包雨</li><li>每日可抽10次幸运好礼</li></ol><h3 id="高德"><a href="#高德" class="headerlink" title="高德"></a>高德</h3><ol><li>完成每日体验获红包</li></ol><h3 id="饿了吗"><a href="#饿了吗" class="headerlink" title="饿了吗"></a>饿了吗</h3><ol><li>每日心愿城打卡得红包</li><li>下单外卖获红包</li><li>每日三次掷骰子有机会获红包</li></ol><h3 id="口碑"><a href="#口碑" class="headerlink" title="口碑"></a>口碑</h3><ol><li>每日登陆领红包</li><li>掷骰子获得更多奖励</li><li>每天玩游戏5次可获得一个红包</li></ol><h3 id="飞猪"><a href="#飞猪" class="headerlink" title="飞猪"></a>飞猪</h3><ol><li>每日签到获红包</li><li>完成每日任务,打卡成功获红包</li></ol><h3 id="淘宝特价版"><a href="#淘宝特价版" class="headerlink" title="淘宝特价版"></a>淘宝特价版</h3><ol><li>登陆签到得红包</li></ol>]]></content>
     
@@ -144,7 +144,7 @@
     <link href="https://zhuyiting.xyz/2018/04/03/GitHub%E4%BD%BF%E7%94%A8/"/>
     <id>https://zhuyiting.xyz/2018/04/03/GitHub使用/</id>
     <published>2018-04-03T09:33:00.000Z</published>
-    <updated>2019-10-21T08:35:24.392Z</updated>
+    <updated>2019-10-24T01:08:02.703Z</updated>
     
     <content type="html"><![CDATA[<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>GitHub可以用来托管代码,也可以用来进行版本控制,它相比与其他版本控制工具的优势在于,可以非常方便的进行分支操作</p><h4 id="1-注册账户"><a href="#1-注册账户" class="headerlink" title="1.注册账户"></a>1.注册账户</h4><h4 id="2-新建一个仓库-repository"><a href="#2-新建一个仓库-repository" class="headerlink" title="2.新建一个仓库(repository)"></a>2.新建一个仓库(repository)</h4><p><img src="/.xyz//newRepo.png" alt="新建仓库"></p><h4 id="3-配置GitHub公钥"><a href="#3-配置GitHub公钥" class="headerlink" title="3.配置GitHub公钥"></a>3.配置GitHub公钥</h4><p>在Git终端输入<code>ssh-keygen -t rsa -C &quot;email@email.com&quot;</code><br>在系统用户下的<code>/.ssh</code>目录,找到<code>id_rsa.pub</code>文件,其中存放的就是秘钥.</p><p>再进入github个人设置,选择SSH and GPG keys,将<code>id_rsa.pub</code>文件中的内容复制进去<br>如:<br><img src="/.xyz//setSSHKey.png" alt="设置秘钥"></p><h4 id="4-clone仓库"><a href="#4-clone仓库" class="headerlink" title="4. clone仓库"></a>4. clone仓库</h4><p>使用 <code>git clone &lt;项目链接&gt;</code><br>将github仓库克隆到本地</p>]]></content>
     
