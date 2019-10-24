@@ -144,7 +144,7 @@
     <link href="https://zhuyiting.xyz/2018/04/03/GitHub%E4%BD%BF%E7%94%A8/"/>
     <id>https://zhuyiting.xyz/2018/04/03/GitHub使用/</id>
     <published>2018-04-03T09:33:00.000Z</published>
-    <updated>2019-10-24T01:08:02.703Z</updated>
+    <updated>2019-10-24T01:09:55.600Z</updated>
     
     <content type="html"><![CDATA[<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>GitHub可以用来托管代码,也可以用来进行版本控制,它相比与其他版本控制工具的优势在于,可以非常方便的进行分支操作</p><h4 id="1-注册账户"><a href="#1-注册账户" class="headerlink" title="1.注册账户"></a>1.注册账户</h4><h4 id="2-新建一个仓库-repository"><a href="#2-新建一个仓库-repository" class="headerlink" title="2.新建一个仓库(repository)"></a>2.新建一个仓库(repository)</h4><p><img src="/.xyz//newRepo.png" alt="新建仓库"></p><h4 id="3-配置GitHub公钥"><a href="#3-配置GitHub公钥" class="headerlink" title="3.配置GitHub公钥"></a>3.配置GitHub公钥</h4><p>在Git终端输入<code>ssh-keygen -t rsa -C &quot;email@email.com&quot;</code><br>在系统用户下的<code>/.ssh</code>目录,找到<code>id_rsa.pub</code>文件,其中存放的就是秘钥.</p><p>再进入github个人设置,选择SSH and GPG keys,将<code>id_rsa.pub</code>文件中的内容复制进去<br>如:<br><img src="/.xyz//setSSHKey.png" alt="设置秘钥"></p><h4 id="4-clone仓库"><a href="#4-clone仓库" class="headerlink" title="4. clone仓库"></a>4. clone仓库</h4><p>使用 <code>git clone &lt;项目链接&gt;</code><br>将github仓库克隆到本地</p>]]></content>
     
