@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2019/10/20/%25E8%258B%25B1%25E8%25AF%25AD%25E7%25BB%2583%25E4%25B9%25A001/</loc>
+    
+    <lastmod>2019-10-29T07:06:38.601Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E9%2585%258D%25E7%25BD%25AE%25E6%2596%2587%25E4%25BB%25B6/</loc>
     
     <lastmod>2019-10-29T07:04:26.477Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://zhuyiting.xyz/2018/04/13/Java%25E4%25B8%25ADequals%25E7%259A%2584%25E6%25B3%25A8%25E6%2584%258F%25E4%25BA%258B%25E9%25A1%25B9/</loc>
     
     <lastmod>2019-10-29T03:13:36.576Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2019/10/20/%25E8%258B%25B1%25E8%25AF%25AD%25E7%25BB%2583%25E4%25B9%25A001/</loc>
-    
-    <lastmod>2019-10-29T02:35:43.326Z</lastmod>
     
   </url>
   
@@ -289,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/repository/index.html</loc>
+    <loc>https://zhuyiting.xyz/tags/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/tags/index.html</loc>
+    <loc>https://zhuyiting.xyz/repository/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
     
