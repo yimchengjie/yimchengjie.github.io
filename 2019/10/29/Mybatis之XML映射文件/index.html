@@ -17,19 +17,16 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Java中equals的注意事项 | ycjBlog</title>
-  <meta name="description" content="Java中equals的注意事项对象的equals方法容易抛出空指针的异常,应尽量使用常量或者有确定值的对象来调用equals方法例如: 123456String str = null;if (str.equals(&quot;English&quot;)) &amp;#123;  ...&amp;#125; else &amp;#123;  ..&amp;#125; 这样容易报空指针,应该采用以下写法 1&quot;English&quot;.equals(str)">
-<meta name="keywords" content="JavaSE">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java中equals的注意事项">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;04&#x2F;13&#x2F;Java%E4%B8%ADequals%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9&#x2F;index.html">
+  <title>Mybatis之XML映射文件 | ycjBlog</title>
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis之XML映射文件">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;10&#x2F;29&#x2F;Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="Java中equals的注意事项对象的equals方法容易抛出空指针的异常,应尽量使用常量或者有确定值的对象来调用equals方法例如: 123456String str = null;if (str.equals(&quot;English&quot;)) &amp;#123;  ...&amp;#125; else &amp;#123;  ..&amp;#125; 这样容易报空指针,应该采用以下写法 1&quot;English&quot;.equals(str)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-29T03:13:36.576Z">
+<meta property="og:updated_time" content="2019-10-29T07:04:03.937Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2018/04/13/Java%E4%B8%ADequals%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2019/10/29/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -342,14 +339,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Java中equals的注意事项" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Mybatis之XML映射文件" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Java中equals的注意事项
+      Mybatis之XML映射文件
     </h1>
   
 
@@ -357,37 +354,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/13/Java%E4%B8%ADequals%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
-	  <time datetime="2018-04-13T02:25:33.000Z" itemprop="datePublished">2018-04-13</time>
+	<a href="/2019/10/29/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" class="article-date">
+	  <time datetime="2019-10-29T07:04:03.000Z" itemprop="datePublished">2019-10-29</time>
 	</a>
 </span>
         
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
-  </span>
-
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/JavaSE/" rel="tag">JavaSE</a>
-  </span>
-
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/13/Java%E4%B8%ADequals%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/10/29/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="Java中equals的注意事项"><a href="#Java中equals的注意事项" class="headerlink" title="Java中equals的注意事项"></a>Java中equals的注意事项</h4><p>对象的equals方法容易抛出空指针的异常,应尽量使用常量或者有确定值的对象来调用equals方法<br>例如:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">if</span> (str.equals(<span class="string">"English"</span>)) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  ..</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样容易报空指针,应该采用以下写法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"English"</span>.equals(str);</span><br></pre></td></tr></table></figure>
-<p>在jdk7中,有一个新的工具类<code>java.util.Objects</code> 更加推荐</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Objects.equals(str,<span class="string">"English"</span>);</span><br></pre></td></tr></table></figure>
+        
       
     </div>
     <div class="article-footer">
@@ -396,7 +378,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2018/04/13/Java%E4%B8%ADequals%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java中equals的注意事项" target="_blank" rel="external">https://zhuyiting.xyz/2018/04/13/Java%E4%B8%ADequals%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</a>
+      <a href="https://zhuyiting.xyz/2019/10/29/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" title="Mybatis之XML映射文件" target="_blank" rel="external">https://zhuyiting.xyz/2019/10/29/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -442,13 +424,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/04/17/Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E5%A0%86%E6%A0%88%E5%88%86%E6%9E%90/" title="Java程序运行堆栈分析"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2018/04/10/maven%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="maven项目构建工具"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/10/24/%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9/" title="论市场化改革"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -530,7 +508,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'Java中equals的注意事项', 
+  id: 'Mybatis之XML映射文件', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {
