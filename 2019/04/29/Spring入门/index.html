@@ -17,19 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>系统开发和运行知识 | ycjBlog</title>
-  <meta name="description" content="1. 软件工程、软件过程改进和软件开发项目管理知识 软件工程知识 软件开发生命周期各阶段的目标和任务 软件开发项目管理基础知识（时间管理、成本管理、质量管理、人力资源管理、风险管理等）及其常用管理工具 主要的软件开发方法（生命周期法、原型法、面向对象法、CASE） 软件开发工具与环境知识 软件过程改进知识 软件质量管理知识 软件开发过程评估、软件能力成熟评估基础知识2. 系统分析基础知识 系统分析">
-<meta name="keywords" content="计算机基础">
+  <title>Spring入门 | ycjBlog</title>
+  <meta name="description" content="Spring入门spring简介Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 编程模型来促进良好的编程实践。 spring架构图">
+<meta name="keywords" content="Web框架,Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="系统开发和运行知识">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;01&#x2F;13&#x2F;%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86&#x2F;index.html">
+<meta property="og:title" content="Spring入门">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;04&#x2F;29&#x2F;Spring%E5%85%A5%E9%97%A8&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="1. 软件工程、软件过程改进和软件开发项目管理知识 软件工程知识 软件开发生命周期各阶段的目标和任务 软件开发项目管理基础知识（时间管理、成本管理、质量管理、人力资源管理、风险管理等）及其常用管理工具 主要的软件开发方法（生命周期法、原型法、面向对象法、CASE） 软件开发工具与环境知识 软件过程改进知识 软件质量管理知识 软件开发过程评估、软件能力成熟评估基础知识2. 系统分析基础知识 系统分析">
+<meta property="og:description" content="Spring入门spring简介Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 编程模型来促进良好的编程实践。 spring架构图">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-19T00:10:01.041Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;04&#x2F;29&#x2F;Spring%E5%85%A5%E9%97%A8&#x2F;Spring%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg">
+<meta property="og:updated_time" content="2019-10-29T09:06:45.174Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;04&#x2F;29&#x2F;Spring%E5%85%A5%E9%97%A8&#x2F;Spring%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2019/04/29/Spring%E5%85%A5%E9%97%A8/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -344,21 +346,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-软件工程、软件过程改进和软件开发项目管理知识"><span class="toc-number">1.</span> <span class="toc-text">1. 软件工程、软件过程改进和软件开发项目管理知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-系统分析基础知识"><span class="toc-number">2.</span> <span class="toc-text">2. 系统分析基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-系统设计知识"><span class="toc-number">3.</span> <span class="toc-text">3. 系统设计知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-系统实施知识"><span class="toc-number">4.</span> <span class="toc-text">4. 系统实施知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-系统运行和维护知识"><span class="toc-number">5.</span> <span class="toc-text">5. 系统运行和维护知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-面向对象开发方法"><span class="toc-number">6.</span> <span class="toc-text">6. 面向对象开发方法</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring入门"><span class="toc-number">1.</span> <span class="toc-text">Spring入门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#spring简介"><span class="toc-number">1.1.</span> <span class="toc-text">spring简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#spring架构图"><span class="toc-number">1.2.</span> <span class="toc-text">spring架构图</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-系统开发和运行知识" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Spring入门" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      系统开发和运行知识
+      Spring入门
     </h1>
   
 
@@ -366,66 +368,33 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/" class="article-date">
-	  <time datetime="2018-01-13T14:40:00.000Z" itemprop="datePublished">2018-01-13</time>
+	<a href="/2019/04/29/Spring%E5%85%A5%E9%97%A8/" class="article-date">
+	  <time datetime="2019-04-29T08:55:38.000Z" itemprop="datePublished">2019-04-29</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a>
+	<a class="article-tag-link" href="/tags/Spring/" rel="tag">Spring</a>, <a class="article-tag-link" href="/tags/Web%E6%A1%86%E6%9E%B6/" rel="tag">Web框架</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/04/29/Spring%E5%85%A5%E9%97%A8/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="1-软件工程、软件过程改进和软件开发项目管理知识"><a href="#1-软件工程、软件过程改进和软件开发项目管理知识" class="headerlink" title="1. 软件工程、软件过程改进和软件开发项目管理知识"></a>1. 软件工程、软件过程改进和软件开发项目管理知识</h3><ul>
-<li>软件工程知识</li>
-<li>软件开发生命周期各阶段的目标和任务</li>
-<li>软件开发项目管理基础知识（时间管理、成本管理、质量管理、人力资源管理、风险管理等）及其常用管理工具</li>
-<li>主要的软件开发方法（生命周期法、原型法、面向对象法、CASE）</li>
-<li>软件开发工具与环境知识</li>
-<li>软件过程改进知识</li>
-<li>软件质量管理知识</li>
-<li>软件开发过程评估、软件能力成熟评估基础知识<h3 id="2-系统分析基础知识"><a href="#2-系统分析基础知识" class="headerlink" title="2. 系统分析基础知识"></a>2. 系统分析基础知识</h3></li>
-<li>系统分析的目的和任务</li>
-<li>结构化分析方法（数据流图（DFD）、数据字典（DD）、实体关系图（ERD）、描述加工处理的结构化语言）</li>
-<li>统一建模语言（UML）</li>
-<li>系统规格说明书<h3 id="3-系统设计知识"><a href="#3-系统设计知识" class="headerlink" title="3. 系统设计知识"></a>3. 系统设计知识</h3></li>
-<li>系统设计的目的和任务</li>
-<li>结构化设计方法和工具（系统流程图、HIPO图、控制流程图）</li>
-<li>系统总体结构设计（总体布局、设计原则、模块结构设计、数据存储设计、系统配置方案）</li>
-<li>系统详细设计（代码设计、数据库设计、用户界面设计、处理过程设计）</li>
-<li>系统设计说明书<h3 id="4-系统实施知识"><a href="#4-系统实施知识" class="headerlink" title="4. 系统实施知识"></a>4. 系统实施知识</h3></li>
-<li>系统实施的主要任务</li>
-<li>结构化程序设计、面向对象程序设计、可视化程序设计</li>
-<li>程序设计风格</li>
-<li>程序设计语言的选择</li>
-<li>系统测试的目的、类型，系统测试方法（黑盒测试、白盒测试、灰盒测试）</li>
-<li>测试设计和管理（错误曲线、错误排除、收敛、注入故障、测试用例设计、系统测试报告）</li>
-<li>系统转换基础知识<h3 id="5-系统运行和维护知识"><a href="#5-系统运行和维护知识" class="headerlink" title="5. 系统运行和维护知识"></a>5. 系统运行和维护知识</h3></li>
-<li>系统运行管理基础知识</li>
-<li>系统维护基础知识</li>
-<li>系统评价基础知识<h3 id="6-面向对象开发方法"><a href="#6-面向对象开发方法" class="headerlink" title="6. 面向对象开发方法"></a>6. 面向对象开发方法</h3></li>
-<li>面向对象开发概念（类、对象、属性、封装性、继承性、多态性、对象之间的引用）</li>
-<li>面向对象开发方法的优越性以及有效领域</li>
-<li>面向对象设计方法（体系结构、类的设计、用户接口设计）</li>
-<li>面向对象实现方法（选择程序设计语言、类的实现、方法的实现、用户接口的实现、准备测试数据）</li>
-<li>面向对象程序设计语言（如C++、Java、Visual、Bsasic、Visual C++）的基本机制</li>
-<li>面向对象数据库、分布式对象的概念</li>
-</ul>
+        <h3 id="Spring入门"><a href="#Spring入门" class="headerlink" title="Spring入门"></a>Spring入门</h3><h4 id="spring简介"><a href="#spring简介" class="headerlink" title="spring简介"></a>spring简介</h4><p>Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 编程模型来促进良好的编程实践。</p>
+<h4 id="spring架构图"><a href="#spring架构图" class="headerlink" title="spring架构图"></a>spring架构图</h4><p><img src="/2019/04/29/Spring%E5%85%A5%E9%97%A8/Spring%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg" alt="spring架构"></p>
 
       
     </div>
@@ -435,7 +404,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/" title="系统开发和运行知识" target="_blank" rel="external">https://zhuyiting.xyz/2018/01/13/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9F%A5%E8%AF%86/</a>
+      <a href="https://zhuyiting.xyz/2019/04/29/Spring%E5%85%A5%E9%97%A8/" title="Spring入门" target="_blank" rel="external">https://zhuyiting.xyz/2019/04/29/Spring%E5%85%A5%E9%97%A8/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -482,12 +451,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/01/19/MVC%E6%A8%A1%E5%BC%8F/" title="MVC模式"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/" title="JVM指令手册"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2017/12/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" title="计算机系统知识"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/04/22/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" title="Mybatis之XML映射文件"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -578,7 +547,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '系统开发和运行知识', 
+  id: 'Spring入门', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {
