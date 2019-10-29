@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhuyiting.xyz/"/>
-  <updated>2019-10-24T14:40:47.107Z</updated>
+  <updated>2019-10-29T02:25:33.893Z</updated>
   <id>https://zhuyiting.xyz/</id>
   
   <author>
@@ -17,11 +17,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java中equals的注意事项</title>
+    <link href="https://zhuyiting.xyz/2019/10/29/Java%E4%B8%ADequals%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>https://zhuyiting.xyz/2019/10/29/Java中equals的注意事项/</id>
+    <published>2019-10-29T02:25:33.000Z</published>
+    <updated>2019-10-29T02:25:33.893Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>英语练习01</title>
+    <link href="https://zhuyiting.xyz/2019/10/25/%E8%8B%B1%E8%AF%AD%E7%BB%83%E4%B9%A001/"/>
+    <id>https://zhuyiting.xyz/2019/10/25/英语练习01/</id>
+    <published>2019-10-25T08:40:19.299Z</published>
+    <updated>2019-10-25T09:32:15.059Z</updated>
+    
+    <content type="html"><![CDATA[<p>Oceanography has been defined as “The application of all sciences to the study of the sea”.<br><font color="red">{Oceanography:海洋学}<br>海洋学已经被定义为”所有科学的应用来进行海洋的学习”.<br></font></p><p>Before the nineteenth century ,scientists with an interest in the sea were few and far between.<br><font color="red">在19世纪之前,对海洋有兴趣的科学家们是很少并且距离很远的.<br></font></p><p>Certainly Newton considered some theoretical aspects of it in his writings ,but he was reluctant to go to sea to further his work.<br><font color="red">{consider:认为,Certainly:当然啦,theoretical:理论上的,aspect:方面,reluctant:不情愿的}<br>当然啦,牛顿在他写下的内容中考虑到一些理论上的方面,但是他是不情愿的去海洋去更进一步他的工作<br></font></p><p>For most people the sea was remote, and with the exception of early intercontinental travelers or others who earned a living from the sea ,there was little reason to ask many questions about it ,let alone to ask what lay beneath the surface.<br><font color="red">{remote:遥远的,intercontinental:洲际的,let alone:更不必说}<br>因为对于很多人海洋是遥远的,除了早期的洲际航行中的从海洋中获得生活的人,有很少的理由来问这些问题,更不必说去问在表面之下的是什么了.<br></font></p><p>The first time that the question ”what is at the bottom of the oceans? ”had to be answered with any commercial consequence was when the laying of a telegraph cable from Europe to America was proposed.<br><font color="red">{commercial:商业的}<br>第一次”海洋的底部是什么?”这个问题必须被回答伴随着商业结果是在电话线缆要躺在欧洲到美国被提出的时候<br></font></p><p>The engineers had to know the depth profile of the route to estimate the length of cable that had to be manufactured.<br><font color="red">{estimate:估计}<br>工程师必须知道路径的深度轮廓来估算必须被人造的线缆的长度<br></font></p><p>It was to Maury of the US Navy that the Atlantic Telegraph Company turned, in 1853, for information on this matter.<br><font color="red"><br>在1853年,大西洋电报公司转向了美国海军的莫里,为了在这件事情上的信息<br></font></p><p>In the 1840s, Maury had been responsible for encouraging voyages during which soundings were taken to investigate the depths of the North Atlantic and Pacific Oceans.<br><font color="red">{investigate:调查}<br>在1840年代,莫里是负责的为了鼓励航海在这个声音被用来调查大西洋和太平痒的深度的时期<br></font></p><p>Later, some of his findings aroused much popular interest in his book The Physical Geography of the Sea.<br><font color="red">{arouse:引起}<br>之后,他的发现的在他的《The Physical Geography of the Sea》书里的一些事引起了很大的兴趣<br></font></p><p>The cable was laid, but not until 1866 was the connection made permanent and reliable.<br><font color="red"><br></font></p><p>At the early attempts, the cable failed and when it was taken out for repairs it was found to be covered in living growths, a fact which defied contemporary scientific opinion that there was no life in the deeper parts of the sea.<br><font color="red"><br></font></p><p>Within a few years oceanography was under way.<br><font color="red"><br></font></p><p>In 1872 Thomson led a scientific expedition, which lasted four years and brought home thousands of samples from the sea.<br><font color="red"><br></font></p><p>Their classification and analysis occupied scientists for years and led to a five-volume report, the last volume being published in 1895.<br><font color="red"><br></font></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Oceanography has been defined as “The application of all sciences to the study of the sea”.&lt;br&gt;&lt;font color=&quot;red&quot;&gt;{Oceanography:海洋学}&lt;br&gt;海洋
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>论市场化改革</title>
     <link href="https://zhuyiting.xyz/2019/10/24/%E8%AE%BA%E5%B8%82%E5%9C%BA%E5%8C%96%E6%94%B9%E9%9D%A9/"/>
     <id>https://zhuyiting.xyz/2019/10/24/论市场化改革/</id>
     <published>2019-10-24T12:42:13.000Z</published>
-    <updated>2019-10-24T14:40:47.107Z</updated>
+    <updated>2019-10-29T02:32:58.652Z</updated>
     
     <content type="html"><![CDATA[<h4 id="当前的市场化改革是否有助于挽救我国经济下滑趋势-应该怎么样抓住市场化改革带来的巨大机遇"><a href="#当前的市场化改革是否有助于挽救我国经济下滑趋势-应该怎么样抓住市场化改革带来的巨大机遇" class="headerlink" title="当前的市场化改革是否有助于挽救我国经济下滑趋势? 应该怎么样抓住市场化改革带来的巨大机遇?"></a>当前的市场化改革是否有助于挽救我国经济下滑趋势? 应该怎么样抓住市场化改革带来的巨大机遇?</h4><p>最近，<u>全球掀起了一阵降息潮，全球的经济环境普遍不太理想</u>，全球正在经历一轮新的经济周期调整。以10年为周期的金融危机再一次来临。中美的贸易摩擦对于中国金融市场的影响冲击也是巨大的，<u>人民币一度破7，持续的贬值导致国内资金外逃</u>，也导致了人民币国际化的步伐放缓。<br><font color="red">1.<em>[为什么经济不理想的时候要加息?加息为什么可以调整经济]</em><br>因为经济不理想(经济衰退)是市场投资不足(市场中流动的钱少了,都存银行了),政府为了刺激市场,减少银行利息,这样本来钱存在银行的一部分人就会因为收益少了,把钱投向市场中(股票或者消费),都会促进市场健康发展,使经济复苏<br>2.<em>[为什么人民币破7会导致国内资金外逃,人民币破7由什么导致,为什么人民币破7会阻碍人民币国际化?]</em><br>因为人民币破7是1美元兑换7块多人民币,而国际上以美元为主,本来6块多可以买到的东西,现在要多花钱才能买到,这样中国人不愿意买国外的东西(进口不利,因为变贵了).但是相反,中国更愿意卖东西了(出口有利).然后来自国外的资金,会因为人民币不值钱了(能换到的美元变少了)而减少对国内的投资(资本外逃).人民币的贬值是由于美元强势造成的(美国降息,资本都进入市场,经济强势)<br></font></p><p>2019年来，中国的经济形式总体仍延续着2018年的情况，我国经济增速下滑已是事实。由政府主导的央企在2000年后改革缓慢，各大原材料行业都亏损很大，产业的利润下滑非常严重，产能过剩，中国的供需关系面临着很大的结构性失衡，总体上低端产品产能过剩，高端产品产能不足。其次，我国低附加值、高功耗、高污染的产业比重很大；区域人口分布不合理，城镇化率低，导致发展不平衡；随着人口、土地、环境等这些红利慢慢的消失，<u>人工成本的上涨，土地价格的升高，环境的恶化，导致中低端产业较多</u>；我国经济的增长过多的依靠”<u>三驾马车</u>“，我国城乡收入差距大，行业收入差距大，居民贫富差距大。这些问题就会束缚经济的发展。<br><font color="red">1.<em>[为什么会导致中低端产业较多]</em><br>因为红利的消失会导致企业成本的增加,产品价格上涨,高端产品竞争力变弱(比如国产车和进口车一个价格, 选择国产车的人大大减少)<br>2.<em>[三驾马车是什么]</em><br>三驾马车是投资,消费,进口; 三驾马车是用来计算GDP的三部分,是经济发展的结果,不是根本动力. 根本动力是靠企业靠市场自我的健康发展.<br></font></p><p>当前的市场化改革，正式由习近平提出的供给侧结构性改革，<u>供给侧结构性改革，就是从提高供给质量出发，用改革的办法推进结构调整，矫正要素配置扭曲，扩大有效供给，提高供给结构对需求变化的适应性和灵活性，提高全要素生产率</u>，更好满足广大人民群众的需要，促进经济社会持续健康发展。<br><font color="red">1.<em>[解释一下供给侧结构性改革]</em><br>供给侧结构性改革就是强调供给方(也就是企业),能够制造出物美价廉的商品,怎么改呢呢? 通过改革,减少税收,降低土地价格,给予政策福利支持等<br></font></p><p>强调供给侧改革，从生产、供给入手，调整供应结构，才能使经济健康稳固发展。提升居民消费以及当前的供给侧改革并不能完全改变经济下滑趋势，<u>还必须打通供给以及需求，这一层中间地带</u>，一是政府对企业的税收以及居民的社保缴费高，让企业无法生产，市场需求低。二是垄断性国企占有太多的社会资源而效率又太低，靠价格垄断生存，抬高了整个市场的生产成本，比如油价，房价。<br><font color="red">1.<em>[为什么中间地带很重要]</em><br>中间地带是商品产出到消费者买入之间的地带,是企业或者消费者,在商品之外承担的费用,比如企业的税,居民的五险一金. 企业会把这些费用加到商品的价格上或者自己承担损失, 居民手上钱少, 消费降低, 都不利于经济健康发展<br></font></p><p>供给侧结构性改革自2015年提出以后，其主要任务也在不断变化。最初的“<u>三去一降一补</u>”，通过关、停、并、转等方式去掉多余产能，稳定房价去房地产库存，去杠杆减少政府债务，降低企业各项成本，补充生态建设、完善产业链。<br><font color="red">1.<em>[三去一降一补]</em><br>去产能,去库存,去债务,降成本,补生态产业链<br></font></p><p>当前不仅需要优化供给，提高内需，还要解决供给与需求的中间地带，做好减税降费，优化市场生态。供给侧结构性改革是利好于我国经济发展的，在贸易战加剧，逆全球化回溯的国际背景下，我国的供给侧结构性改革要结合一带一路，深化与沿线国家的合作，强化和欧洲，拉美地区国家的科技合作，扩大开放，将中国制造带出国。</p><p>我国要吸取日本经济发展的教训，20世纪后期，日本大力发展建设，逐渐陷入了失控的建设狂奔，建设业创造了庞大的就业机会，并非来自于真正的经济增长，<u>而是人为制造出的就业机会。这大大削弱并延缓了日本高技术产业的发展</u>，但这种失控的建设无法停止，因为一旦停止公共建设，就会出现大量失业。更严重的是，公共建设积累的巨大负债让日本难堪重负。<u>日本的房价泡沫也重创了日本实体工业的发展，泡沫的破灭导致了大量企业倒闭，失业率狂升</u>。当下的日本，也还没有完全走出当年的阴影。日本经济衰退的20年，主要原因就是日本政府对经济把控出现了失误，制定了违背经济规律的政策。<br><font color="red">1.<em>[为什么这会阻碍日本高科技产业发展?]</em><br>因为大量的人口资金投入到了基础建设业,相应的高科技产业就会没钱没人<br>2.<em>[房价的泡沫破裂为什么影响这么大?]</em><br>房价泡沫破灭, 高价买地的开发商,会破产,很多大企业也会因为投资房地产而大出血,这会让市场严重下跌,这样所有人手上的资产都贬值了,同时企业大量倒闭,失业率也会大大提高,已经买房的人失业后也还要承担巨额贷款.整个国家的经济都会受损,日本房价泡沫当时特别高,政府为了防止泡沫更高影响更恶劣,采取了主动刺破的措施.单也还是经济大衰退<br></font><br>我国可以从日本的经济发展的教训中收益到：房地产不能长久作为支柱产业，必须防止货币超发和过度升值，在宏观调控上，政府不能过于频繁也不能过紧过松，政策引导着眼长远，统筹兼顾。<br>面对经济寒冬，我们个人也需要重视，不要觉得离我们很遥远，面对危机，我们要留好资金，节约开销，努力工作，提升个人能力。<br>我国的市场化改革也会带来巨大的机遇，站在风口上，猪都会飞。乱世出英雄，变革带来的巨大机遇可能产生意想不到的风云人物，不过代价也是巨大的，在改革中，抓住机会很重要，不过我们需要做好充足的准备，机会总是留给有准备的人。能力上的准备，思想上的准备，以及恰到好处的机会。<br>在危机来临初期持有货币，<u>在危机崩溃期买入资产，在政体调控收缩货币时期再次抛售就能获利了</u>，但这其中随便哪一步出错，都会损失惨重，即使每一个环节都准确无误，也可能因为突如其来的不可抗力，导致整个投资计划的泡汤。比如限购限售，比如失业，比如投资企业破产。<u>在危机时期，不要轻易触碰杠杆加大交易规模</u>，其次要勤于学习，要对未来的风险做准备。<br><font color="red">1.<em>[为什么在危机崩溃期买入资产，在政体调控收缩货币时期再次抛售就能获利了?]</em><br>通俗点说就是在商品最便宜的时候买进。接下来商品会因为市场规律或者政府调控回升。但是政府为了控制物价（控制通货膨胀），会加息，钱流进银行，商品需求变小。在政府调控的时候，可以看成物价比较理想（高）的时候。这时候卖出。获利就很客观（差价最大的时候）<br>2.<em>[为什么不要触碰杠杆]</em><br>触碰杠杆可以理解为贷款,因为在经济危机时期,银行出于安全考虑不可能把大量的钱借给你, 所以只能贷到很少的钱,而钱越少,承受意外的能力越低,而且贷款需要抵押,(房子或者股票,在危机时期看不到底,随时会被银行卖掉,因为银行不可能等你房子不值钱了再卖,那就失去了抵押的意义),而银行低价卖出也会导致市场供大于求,进一步下跌. 而你通过贷款买入的资产也可能会进一步下跌.很容易破产<br></font><br>在宏观经济下滑的趋势下，要合理分配资产，综合来看2019年上半年的投资者大多以<u>黄金、比特币为代表的避险资产</u>，这些产品或者说是资产的价格也一直在上高，在国际范围中，各大央行实行降息政策，促进经济发展的前提下，黄金和比特币的抗通胀能力就展现出来了。<u>但千万不能在不了解的情况下，进行投资。</u><br><font color="red">1.<em>[为什么黄金,比特币是避险资产?]</em><br>因为他们都有共同属性,价值不受政府调控影响(因为总量固定,且没法造假).这样不管经济怎么样,黄金比特币本来能换多少米还是能换多少米.举例:比如一块黄金本来换一代米,一百块也能换一袋米,但是经济变化,一百块只能买半袋米了,但是一快黄金还是能买一袋米.<br>2.<em>[为什么不了解不能投资呢]</em><br>正式因为他们总量固定 ,他们会被资本炒作,比如大量买入造成供不应求,价格高了以后再高价卖出, 不了解就很可能成了韭菜,承担了这部分人造差价<br></font><br>改革初期，商品紧缺，供不应求，是暴利的时代，后来，电子商务兴起以及产能过剩，商家开启价格战，于是进入了薄利时期，而当前，我国正在转变，产品开始个性化、定制化、高端化，提高增值空间，从而进入厚利时代。<br>2019年下半年，<u>各大二线城市的抢人大战也已经偃旗息鼓，但一线新一线仍然对人才有着很高的需求。这意味着，宏观上的城市化进程将会放缓，大城市的自我迭代会深度展开</u>。其次我国股市长期以来以房地产与科技相关的驱动，目前的房价以稳为主，<u>投资的机会在科技类企业。</u><br><font color="red">1.<em>[为什么二线城市不抢人了?]</em><br>因为人才需要高薪,需要好的企业,而好的企业需要政策扶持,它才愿意来,二线城市没有这样的实力,相反,一线城市企业多,对于人才的需求也大,大城市的建设需要人才.<br>2.<em>[为什么说投资机会在科技类企业]</em><br>因为国家需要发展科技类企业来促进产业升级,政策的支持以及资金的流入,就会让科技类企业更健康的发展<br></font><br>在我国市场化改革的背景下，勤于学习，不多弥补知识盲区，扩充个人知识领域，才能知道更多有用的信息，见多识广的人，更能规避风险，才有更大的机会抓住机遇。</p>]]></content>
     
@@ -35,6 +72,10 @@
     </summary>
     
     
+      <category term="生活" scheme="https://zhuyiting.xyz/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="备忘录" scheme="https://zhuyiting.xyz/tags/%E5%A4%87%E5%BF%98%E5%BD%95/"/>
     
   </entry>
   
@@ -91,26 +132,11 @@
   </entry>
   
   <entry>
-    <title>GitHub如何把已有项目上传</title>
-    <link href="https://zhuyiting.xyz/2019/10/21/GitHub%E5%A6%82%E4%BD%95%E6%8A%8A%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0/"/>
-    <id>https://zhuyiting.xyz/2019/10/21/GitHub如何把已有项目上传/</id>
-    <published>2019-10-21T08:50:53.000Z</published>
-    <updated>2019-10-24T02:15:56.031Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>2019双十一攻略</title>
     <link href="https://zhuyiting.xyz/2019/10/21/2019%E5%8F%8C%E5%8D%81%E4%B8%80%E6%94%BB%E7%95%A5/"/>
     <id>https://zhuyiting.xyz/2019/10/21/2019双十一攻略/</id>
     <published>2019-10-21T01:49:00.000Z</published>
-    <updated>2019-10-23T02:45:41.619Z</updated>
+    <updated>2019-10-29T02:32:17.549Z</updated>
     
     <content type="html"><![CDATA[<h3 id="淘宝"><a href="#淘宝" class="headerlink" title="淘宝"></a>淘宝</h3><ol><li>每日任务领喵币</li><li>团队PK拉人助力</li></ol><h3 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h3><ol><li>每日任务领喵币</li><li>双十一7点领彩蛋</li><li>双十一7点钻石铂金会员领金手指</li></ol><h3 id="优酷"><a href="#优酷" class="headerlink" title="优酷"></a>优酷</h3><ol><li>每日进入APP获红包</li><li>每日视频观看3分钟获红包</li></ol><h3 id="UC"><a href="#UC" class="headerlink" title="UC"></a>UC</h3><ol><li>每日签到领红包</li><li>每日开启红包雨</li><li>每日可抽10次幸运好礼</li></ol><h3 id="高德"><a href="#高德" class="headerlink" title="高德"></a>高德</h3><ol><li>完成每日体验获红包</li></ol><h3 id="饿了吗"><a href="#饿了吗" class="headerlink" title="饿了吗"></a>饿了吗</h3><ol><li>每日心愿城打卡得红包</li><li>下单外卖获红包</li><li>每日三次掷骰子有机会获红包</li></ol><h3 id="口碑"><a href="#口碑" class="headerlink" title="口碑"></a>口碑</h3><ol><li>每日登陆领红包</li><li>掷骰子获得更多奖励</li><li>每天玩游戏5次可获得一个红包</li></ol><h3 id="飞猪"><a href="#飞猪" class="headerlink" title="飞猪"></a>飞猪</h3><ol><li>每日签到获红包</li><li>完成每日任务,打卡成功获红包</li></ol><h3 id="淘宝特价版"><a href="#淘宝特价版" class="headerlink" title="淘宝特价版"></a>淘宝特价版</h3><ol><li>登陆签到得红包</li></ol>]]></content>
     
@@ -128,7 +154,7 @@
     </summary>
     
     
-      <category term="生活方式" scheme="https://zhuyiting.xyz/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/"/>
+      <category term="生活" scheme="https://zhuyiting.xyz/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
       <category term="生活技巧" scheme="https://zhuyiting.xyz/tags/%E7%94%9F%E6%B4%BB%E6%8A%80%E5%B7%A7/"/>
@@ -140,7 +166,7 @@
     <link href="https://zhuyiting.xyz/2019/10/18/%E5%BB%B6%E6%9C%9F%E5%B9%B4%E9%87%91%E7%8E%B0%E5%80%BC%E7%9A%84%E8%AE%A1%E7%AE%97/"/>
     <id>https://zhuyiting.xyz/2019/10/18/延期年金现值的计算/</id>
     <published>2019-10-18T01:56:00.000Z</published>
-    <updated>2019-10-21T03:58:39.166Z</updated>
+    <updated>2019-10-29T02:32:30.230Z</updated>
     
     <content type="html"><![CDATA[<h2 id="延期年金"><a href="#延期年金" class="headerlink" title="延期年金"></a>延期年金</h2><p>==延期年金==又称递延年金,是指在最初若干期没有收付款项的情况下,后面若干期有等额的系列收付款项的年金.<br>==延期年金现值计算==假定最初又m期没有收付款项,后面n期每年有等额的系列收付款项,则此延期年金的现值即为后n期年金先折现至n期期初(m期期末),再折现至第一期期初的现值.</p><p>==年金==是指定期定额的收付款项</p><p>==现值==成本或收益的价值以今天的现金来计量时,称为现值</p><p>==终值==是指现在某一时点上的一定量现金折合到未来的价值</p><ol><li>延期年金的==终值==大小和延期数m无关<br>所以延期m期之后的n期年金终值为<br>$ F=A\frac{(1+i)^n-1}{i} $</li><li>普通年金的==现值==计算<br>$ P=A\frac{1-\frac{1}{(1+i)^n}}{i}$</li><li>==延期年金==的现值计算<br>延期年金的现值与延期数m相关,m越长,现值越低.<ul><li>方法一:先当成n期普通年金,求出现值P1,在将P作为第m期终值,再折现到第一期的现值P2<br>$P1=A\frac{1-\frac{1}{(1+i)^n}}{i}$<br>$P2=P1\frac{1-\frac{1}{(1+i)^m}}{i} $</li><li>方法二:先计算m+n期现值,再减去m期年金现值<br>$P=A(\frac{1-\frac{1}{(1+i)^m(1+i)^n}}{i}-\frac{1-\frac{1}{(1+i)^m}}{i}) $</li></ul></li></ol>]]></content>
     
@@ -154,7 +180,7 @@
     </summary>
     
     
-      <category term="生活方式" scheme="https://zhuyiting.xyz/categories/%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/"/>
+      <category term="生活" scheme="https://zhuyiting.xyz/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
       <category term="生活技巧" scheme="https://zhuyiting.xyz/tags/%E7%94%9F%E6%B4%BB%E6%8A%80%E5%B7%A7/"/>
@@ -184,6 +210,32 @@
     
     
       <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>maven项目构建工具</title>
+    <link href="https://zhuyiting.xyz/2018/04/10/maven%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
+    <id>https://zhuyiting.xyz/2018/04/10/maven项目构建工具/</id>
+    <published>2018-04-10T00:33:00.000Z</published>
+    <updated>2019-10-25T08:40:26.807Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1-Maven是什么"><a href="#1-Maven是什么" class="headerlink" title="1. Maven是什么?"></a>1. Maven是什么?</h4><p>Maven是一个用于构建项目包依赖的工具<br>它可以帮助统一维护项目中的jar包, 它把所有包都放在了仓库中,项目如果需要用到包,只需要引入jar包和对应的版本号就行了<br>这样只需要在本地配置好一个仓库,所有的项目都可以引入,不需要再把包复制到每个项目当中了.</p><h4 id="2-Maven的安装和配置"><a href="#2-Maven的安装和配置" class="headerlink" title="2.Maven的安装和配置"></a>2.Maven的安装和配置</h4><ol><li>从官网下载最新版本的maven,下载完后,解压到本地</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;1-Maven是什么&quot;&gt;&lt;a href=&quot;#1-Maven是什么&quot; class=&quot;headerlink&quot; title=&quot;1. Maven是什么?&quot;&gt;&lt;/a&gt;1. Maven是什么?&lt;/h4&gt;&lt;p&gt;Maven是一个用于构建项目包依赖的工具&lt;br&gt;它可以帮助统一维护项
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://zhuyiting.xyz/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="项目构建" scheme="https://zhuyiting.xyz/tags/%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA/"/>
     
   </entry>
   
@@ -479,59 +531,6 @@
     
     
       <category term="计算机基础" scheme="https://zhuyiting.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>会话跟踪(前后端交互)</title>
-    <link href="https://zhuyiting.xyz/2017/12/23/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/"/>
-    <id>https://zhuyiting.xyz/2017/12/23/会话跟踪(前后端交互)/</id>
-    <published>2017-12-23T06:01:00.000Z</published>
-    <updated>2019-10-20T14:03:46.506Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="会话的概念和作用"><a href="#会话的概念和作用" class="headerlink" title="会话的概念和作用:"></a>会话的概念和作用:</h4><ul><li><strong>会话</strong>:    对于Web应用来说,会话就是浏览器与服务器之间的一次连续的通讯过程.</li><li>HTTP协议是无状态的，也就是说，一次请求结束后，HTTP协议就不再记录相关信息；</li><li>而实际应用中，却常常需要记住一些状态信息；</li><li>==会话跟踪==技术就是能够跟踪<strong>客户端和服务端的交互</strong>,保存和记忆相关信息,保存请求的状态信息.</li></ul><h4 id="常用的四种会话跟踪技术"><a href="#常用的四种会话跟踪技术" class="headerlink" title="常用的四种会话跟踪技术:"></a>常用的四种会话跟踪技术:</h4><ul><li><strong>URL方式</strong>：需要保存的信息直接追加到URL后，例如：<code>http://127.0.0.1:8080/chapter03/viewList?pageNo=12</code></li><li><strong>隐藏域方式</strong>：可以使用表单中的隐藏域保存相关信息， 例如：<br><code>&lt;input type=&quot;hidden&quot; name=“status&quot; value=“true&quot;&gt;</code></li><li><strong>Cookie方式</strong>：将状态信息保存到客户端，服务器能够获得相关信息进行分析，从而生成对客户端的响应；例如简化登录功能就可以使用Cookie实现；</li><li><strong>Session方式</strong>：将状态信息保存到服务器的会话对象中，通过唯一标记的ID值与客户端进行绑定使用；例如访问控制功能就可以使用Session实现；</li></ul><h4 id="Cookie的功能和特点"><a href="#Cookie的功能和特点" class="headerlink" title="Cookie的功能和特点:"></a>Cookie的功能和特点:</h4><ul><li>Cookie是一段保存在客户端的小文本；能够用来将用户活动过程中的状态信息保存到客户端，服务器可以获得该信息以便进行处理，跟踪到用户的状态；</li><li>Cookie包含一系列属性:如:<ul><li><strong>name</strong>：cookie的名字，每个cookie都有一个名字；<ul><li><strong>content</strong>：cookie的值，与名字一起作为键值对形式存在；</li><li><strong>domain</strong>：域，该cookie的域名，例如csdn.net，说明当前cookie来自csdn.net;</li><li><strong>path</strong>：路径，访问csdn.net下该路径时，当前cookie将被发送；</li><li><strong>created</strong>：cookie被创建的时间；</li><li><strong>Expired</strong>：cookie失效的时间；</li><li><strong>最大生命时间</strong>：失效时间和创建时间的时间差，就是cookie的最大生命时间，超过该时间，cookie将失效，不再被发送到相应的域地址；</li></ul></li></ul></li></ul><h4 id="创建cookie-设置cookie属性"><a href="#创建cookie-设置cookie属性" class="headerlink" title="创建cookie,设置cookie属性:"></a>创建cookie,设置cookie属性:</h4><p>Servlet规范中定了Cookie类，创建该类对象就可以创建Cookie，并可以调用其中方法为Cookie设置属性；</p><table><thead><tr><th align="center">方法声明</th><th align="center">方法描述</th></tr></thead><tbody><tr><td align="center">Cookie(java.lang.String name, java.lang.String value)</td><td align="center">创建Cookie对象，指定名字和对应的值；</td></tr><tr><td align="center">void setMaxAge(int expiry)</td><td align="center">设置最大生命时间（秒），如果不设置，当前浏览器关闭，cookie即失效；</td></tr><tr><td align="center">void setValue(java.lang.String newValue)</td><td align="center">设置Cookie的值；</td></tr><tr><td align="center">setDomain(java.lang.String domain)</td><td align="center">设置cookie的域名；</td></tr></tbody></table><p>cookie创建好后并不能存储到客户端,要将cookie保存到客户端,必须添加到响应对象中,响应接口中定义了Cookie的方法:<br>|方法声明|方法描述|<br>|:—:|:—:|<br>|void addCookie(Cookie cookie)|将Cookie对象保存到相应的响应对象中；|</p><p>当访问相同域名及路径时,没有超过有效时间的cookie将自动通关请求发送到网站;</p><p>Servlet在请求接口中定义了获取cookie的方法:<br>|方法声明|方法描述|<br>|:—:|:—:|<br>|Cookie[] getCookies()|获取请求中的所有Cookie对象，返回数组；|</p><h4 id="Session简介"><a href="#Session简介" class="headerlink" title="Session简介:"></a>Session简介:</h4><ul><li>Session是会话跟踪的另一种实现手段；</li><li>Session是存储在服务器上的对象，该对象由服务器创建并维护；</li><li>服务器为客户端与服务器的每一次会话过程都创建并维护一个Session对象；每个服务器对Session的创建和维护的底层实现有所区别；</li></ul><h5 id="session创建的时间"><a href="#session创建的时间" class="headerlink" title="session创建的时间:"></a>session创建的时间:</h5><p>一个常见的误解是以为session在有客户端访问时就被创建，然而事实是直到某server端程序调用 <code>HttpServletRequest.getSession(true)</code>这样的语句时才被创建，注意如果JSP没有显示的使用 <code>&lt;% @page session=”false”%&gt;</code> 关闭session，则JSP文件在编译成Servlet时将会自动加上这样一条语句 <code>HttpSession session = HttpServletRequest.getSession(true);</code>这也是JSP中隐含的 session对象的来历。 </p><p>由于session会消耗内存资源，因此，如果不打算使用session，应该在所有的JSP中关闭它。</p><h5 id="session的生命周期"><a href="#session的生命周期" class="headerlink" title="session的生命周期:"></a>session的生命周期:</h5><p>Session生成后，只要用户继续访问，服务器就会更新Session的最后访问时间，并维护该Session。用户每访问服务器一次，无论是否读写Session，服务器都认为该用户的Session“活跃（active）”了一次。 </p><p>由于会有越来越多的用户访问服务器，因此Session也会越来越多。为防止内存溢出，服务器会把长时间内没有活跃的Session从内存删除。这个时间就是Session的超时时间。如果超过了超时时间没访问过服务器，Session就自动失效了。 </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;会话的概念和作用&quot;&gt;&lt;a href=&quot;#会话的概念和作用&quot; class=&quot;headerlink&quot; title=&quot;会话的概念和作用:&quot;&gt;&lt;/a&gt;会话的概念和作用:&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;会话&lt;/strong&gt;:    对于Web应用来说,会话就是
-      
-    
-    </summary>
-    
-    
-      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-      <category term="JavaEE" scheme="https://zhuyiting.xyz/tags/JavaEE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSP</title>
-    <link href="https://zhuyiting.xyz/2017/12/15/JSP/"/>
-    <id>https://zhuyiting.xyz/2017/12/15/JSP/</id>
-    <published>2017-12-15T06:37:00.000Z</published>
-    <updated>2019-10-20T14:03:32.230Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="什么是JSP"><a href="#什么是JSP" class="headerlink" title="什么是JSP"></a>什么是JSP</h4><p>JSP（Java Server Page）是Java服务端的页面，所以它是动态的，它是需要经过JDK编译后把内容发给客户端去显示，我们都知道，Java文件编译后会产生一个class文件，最终执行的就是这个class文件。翻译和编译的过程遵守Servlet规范，因此说==JSP的本质也是Servlet==；</p><p>html和jsp的表头不一样，这个是JSP的头<code>&lt;%@ page language=”java” import=”java.util.*” pageEncoding=”gbk”%&gt;</code>在表头中有编码格式和倒入包等。也是很好区分的，在jsp中用&lt;%%&gt;就可以写Java代码了，而html没有&lt;%%&gt;。</p><p><u><strong>简单说，jsp在后台通过服务器解析为相应的html，然后在供浏览器识别显示。</strong></u></p><h4 id="为什么要用JSP"><a href="#为什么要用JSP" class="headerlink" title="为什么要用JSP:"></a>为什么要用JSP:</h4><p>Servlet生成动态页面比较繁琐，使用JSP生成动态页面比较便捷，因为其中的静态内容可以使用HTML生成；</p><h4 id="JSP元素"><a href="#JSP元素" class="headerlink" title="JSP元素:"></a>JSP元素:</h4><ul><li><p>脚本元素可以用来包含任意Java代码,格式为：<code>&lt;%Java代码%&gt;</code></p><ul><li>服务器翻译脚本元素时，将把其中Java代码直接翻译到<code>jspService</code>方法中，如果语法错误，将在浏览器中提示错误；</li></ul></li><li><p>表达式元素用来向页面输出动态内容;格式为：<code>&lt;%=Java代码%&gt;</code></p><ul><li>服务器翻译表达式元素时，将把其中Java代码部分的返回值使用out.write语句输出</li></ul></li><li><p>模块元素指JSP中静态HTML或者XML内容</p></li><li><p>注释元素有三种情况：</p><ul><li>格式为<code>&lt;%--JSP注释--%&gt;</code>；JSP的注释只有在源代码中可见，翻译时已经忽略；</li><li>在JSP中，除了使用JSP注释外，还可以使用HTML注释，<code>&lt;!--HTML注释--&gt;</code>，HTML注释会被返回到客户端，但是不显示到页面中；</li><li>JSP中的Java代码部分，可以使用Java注释；Java注释会翻译到.java文件中，但是编译时忽略；</li></ul></li><li><p>声明元素:</p><ul><li>如果需要在JSP文件中定义类的成员变量或方法，可以使用声明元素，格式为<code>&lt;%! 声明语句%&gt;</code>  <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! <span class="keyword">private</span> String path=<span class="string">"WEB-INF"</span>; <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readPropertiesFile</span><span class="params">()</span></span>&#123;&#125;&gt;</span><br></pre></td></tr></table></figure></li><li>声明元素被翻译到Java类中，而不是_jspService方法中；</li></ul></li></ul><h4 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象:"></a>内置对象:</h4><p>内置对象指的是在JSP中<strong>可以直接使用的对象，不需要声明</strong>，直接使用固定的名字使用即可；例如<code>&lt;%=request.getRemoteAddr()%&gt;</code>中的<code>request</code>就是内置对象；</p><p>jsp中共有9种对象</p><ol><li><code>request</code>：用户端请求，此请求会包含来自GET/Post请求的参数；</li><li><code>response</code>：网页传回用户端的回应。</li><li><code>pageContext</code>：页面的属性是在这里管理</li><li><code>session</code>：与请求有关的回话期</li><li><code>application</code> ：Servlet正在执行的内容</li><li><code>out</code> ：用来传递回应的输出</li><li><code>config</code> ：servlet的构架部件</li><li><code>pagejsp</code>网页本身</li><li><code>exception</code> ：针对错误的网页。未捕捉的例外</li></ol><h4 id="Servlet和JSP的作用"><a href="#Servlet和JSP的作用" class="headerlink" title="Servlet和JSP的作用:"></a>Servlet和JSP的作用:</h4><p>实际应用中，Servlet是不会用来生成动态页面的，而是会用来接收来自JSP的请求，处理请求，然后调跳转到JSP页面把结果显示给客户端看；</p><h4 id="Servlet与JSP之间的跳转方式"><a href="#Servlet与JSP之间的跳转方式" class="headerlink" title="Servlet与JSP之间的跳转方式:"></a>Servlet与JSP之间的跳转方式:</h4><ol><li><p>跳转方式一:<strong>响应重定向</strong>,响应接口中提供了该方法    </p><ul><li><p><code>void sendRedirect(java.lang.String location)</code>:响应重定向到location，相当于客户端重新请求location所在的资源；    </p></li><li><p>第一个JSP页面发送请求<code>request</code>到<code>Servlet</code>,<code>Servlet</code>接收请求后,响应<code>response</code>重定向到目标JSP页面,但是请求并没有传递过来.(<strong>重定向相当于是产生一个新的请求</strong>)</p></li></ul></li><li><p>跳转方式二:<strong>请求转发</strong>,RequestDispatcher接口定义了请求转发的方法</p><ul><li><code>forward(ServletRequest request, ServletResponse response)</code>:将请求转发到服务器上的其他资源，包括其他的Servlet，JSP等；</li><li>要使用forward方法，需要先获得RequestDispatcher对象；请求接口(request)中提供了获得该对象的方法：<ul><li><code>RequestDispatcher getRequestDispatcher(java.lang.String path)</code>:使用path返回一个RequestDispatcher 对象</li></ul></li><li>请求转发把请求对象发送到了目标JSP页面,因此<strong>目标页面可以获得上一个页面的请求对象.</strong></li></ul></li></ol><h4 id="请求属性的使用"><a href="#请求属性的使用" class="headerlink" title="请求属性的使用:"></a>请求属性的使用:</h4><p>如果需要在Servlet，JSP之间跳转时，同时把一些自定义的、或者通过数据库查询的、或者调用其他资源获得的数据传递到下一个资源时，就可以把这些数据设置为请求的属性即可。</p><p>请求接口中定义了一系列与属性有关的方法。<br>|方法声明|方法描述|<br>|:——:|:—–:|<br>|void setAttribute(java.lang.String name, java.lang.Object o)|将任意类型对象设置为请求的属性，指定一个名字；|<br>|java.lang.Object getAttribute(java.lang.String name)|通过属性的名字，获取属性的值；|<br>|void removeAttribute(java.lang.String name)|通过属性的名字，删除属性；|<br>可以将数据封装进请求对象中,在前后端传递<br>例如:后台Servlet中将数据保存进request(请求)中,跳转到前台JSP后,JSP可以用<code>&lt;%=request.getAttribute(&quot;name&quot;)%&gt;</code>来获取(直接输出)也可以<strong>保存为变量(前提是需要强转</strong>,因为获取的是Object类型)</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;什么是JSP&quot;&gt;&lt;a href=&quot;#什么是JSP&quot; class=&quot;headerlink&quot; title=&quot;什么是JSP&quot;&gt;&lt;/a&gt;什么是JSP&lt;/h4&gt;&lt;p&gt;JSP（Java Server Page）是Java服务端的页面，所以它是动态的，它是需要经过JDK编译后把
-      
-    
-    </summary>
-    
-    
-      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-      <category term="JavaEE" scheme="https://zhuyiting.xyz/tags/JavaEE/"/>
     
   </entry>
   
