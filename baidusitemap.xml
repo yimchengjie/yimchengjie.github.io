@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2019-10-31</lastmod>
+  </url>  <url>
     <loc>https://zhuyiting.xyz/2018/05/01/Spring%E4%B9%8B%E5%AE%B9%E5%99%A8%E5%92%8C%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</loc>
     <lastmod>2019-10-31</lastmod>
   </url>  <url>
@@ -14,9 +17,6 @@
     <lastmod>2019-10-29</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2019-10-29</lastmod>
-  </url>  <url>
-    <loc>https://zhuyiting.xyz/2019/04/22/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2019-10-29</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2019/10/20/%E8%8B%B1%E8%AF%AD%E7%BB%83%E4%B9%A001/</loc>
