@@ -233,9 +233,9 @@
     <link href="https://zhuyiting.xyz/2019/04/29/Spring%E5%85%A5%E9%97%A8/"/>
     <id>https://zhuyiting.xyz/2019/04/29/Spring入门/</id>
     <published>2019-04-29T08:55:38.000Z</published>
-    <updated>2019-10-29T09:06:45.174Z</updated>
+    <updated>2019-10-31T07:12:33.164Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Spring入门"><a href="#Spring入门" class="headerlink" title="Spring入门"></a>Spring入门</h3><h4 id="spring简介"><a href="#spring简介" class="headerlink" title="spring简介"></a>spring简介</h4><p>Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 编程模型来促进良好的编程实践。</p><h4 id="spring架构图"><a href="#spring架构图" class="headerlink" title="spring架构图"></a>spring架构图</h4><p><img src="/2019/04/29/Spring%E5%85%A5%E9%97%A8/Spring%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg" alt="spring架构"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Spring入门"><a href="#Spring入门" class="headerlink" title="Spring入门"></a>Spring入门</h3><h4 id="spring简介"><a href="#spring简介" class="headerlink" title="spring简介"></a>spring简介</h4><p>Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 编程模型来促进良好的编程实践。</p><h4 id="spring架构图"><a href="#spring架构图" class="headerlink" title="spring架构图"></a>spring架构图</h4><p><img src="/2019/04/29/Spring%E5%85%A5%E9%97%A8/Spring%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg" alt="spring架构"></p><p>Spring是一个从实际项目开发经验中抽取的,可高度重用的应用框架. </p><h4 id="Spring的主要作用"><a href="#Spring的主要作用" class="headerlink" title="Spring的主要作用"></a>Spring的主要作用</h4><ol><li>springBeanFactory:<br>所有的实例可以都可以配置到spring工厂中,新建对象时通过工厂来新建,降低了耦合性. 并且可以配置对象的作用域</li><li>Spring依赖注入(控制反转):<br>相当于一个工厂管理对象之间的依赖关系<br>用户只需要在spring中配置好依赖关系(在bean中配置属性的方式配置所依赖的对象)，在调用对象的时候，就不需要再管依赖关系了(不用new那些需要依赖的对象了)。比如一个对象需要另一个对象来协助完成,这时不需要主动创建所需对象,spring容器会自动创建所需要的实例,然后注入进调用者中</li><li>SpringAOP(面向切面):<br>实现在执行过程前后执行另外的代码,进行拦截、监控等功能<br>也就是用来定义,在方法前后要完成的什么功能<br>spring的事务管理,就是基于AOP来实现的</li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol><li>方便解耦,简化开发<br>Spring就是一个工厂,可以将所有对象的创建以及依赖关系的维护都交给它</li><li>AOP编程的支持<br>Spring提供了面向切面编程,可以方便的进行权限拦截和运行监控</li><li>方便结合其他框架<br>Spring内部支持了和其他框架的整合,如mybatis</li><li>方便程序测试<br>Spring支持JUnit4,可以通过注释方便的测试</li><li>降低了调用JavaEE中一些API的难度<br>比如对JDBC等进行了封装</li><li>声明式事务的支持<br>只需要配置就可以完成对事务的管理</li></ol>]]></content>
     
     <summary type="html">
     
