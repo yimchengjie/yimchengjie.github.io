@@ -229,34 +229,6 @@
   </entry>
   
   <entry>
-    <title>Spring入门</title>
-    <link href="https://zhuyiting.xyz/2019/04/29/Spring%E5%85%A5%E9%97%A8/"/>
-    <id>https://zhuyiting.xyz/2019/04/29/Spring入门/</id>
-    <published>2019-04-29T08:55:38.000Z</published>
-    <updated>2019-10-31T07:12:33.164Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Spring入门"><a href="#Spring入门" class="headerlink" title="Spring入门"></a>Spring入门</h3><h4 id="spring简介"><a href="#spring简介" class="headerlink" title="spring简介"></a>spring简介</h4><p>Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 编程模型来促进良好的编程实践。</p><h4 id="spring架构图"><a href="#spring架构图" class="headerlink" title="spring架构图"></a>spring架构图</h4><p><img src="/2019/04/29/Spring%E5%85%A5%E9%97%A8/Spring%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg" alt="spring架构"></p><p>Spring是一个从实际项目开发经验中抽取的,可高度重用的应用框架. </p><h4 id="Spring的主要作用"><a href="#Spring的主要作用" class="headerlink" title="Spring的主要作用"></a>Spring的主要作用</h4><ol><li>springBeanFactory:<br>所有的实例可以都可以配置到spring工厂中,新建对象时通过工厂来新建,降低了耦合性. 并且可以配置对象的作用域</li><li>Spring依赖注入(控制反转):<br>相当于一个工厂管理对象之间的依赖关系<br>用户只需要在spring中配置好依赖关系(在bean中配置属性的方式配置所依赖的对象)，在调用对象的时候，就不需要再管依赖关系了(不用new那些需要依赖的对象了)。比如一个对象需要另一个对象来协助完成,这时不需要主动创建所需对象,spring容器会自动创建所需要的实例,然后注入进调用者中</li><li>SpringAOP(面向切面):<br>实现在执行过程前后执行另外的代码,进行拦截、监控等功能<br>也就是用来定义,在方法前后要完成的什么功能<br>spring的事务管理,就是基于AOP来实现的</li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol><li>方便解耦,简化开发<br>Spring就是一个工厂,可以将所有对象的创建以及依赖关系的维护都交给它</li><li>AOP编程的支持<br>Spring提供了面向切面编程,可以方便的进行权限拦截和运行监控</li><li>方便结合其他框架<br>Spring内部支持了和其他框架的整合,如mybatis</li><li>方便程序测试<br>Spring支持JUnit4,可以通过注释方便的测试</li><li>降低了调用JavaEE中一些API的难度<br>比如对JDBC等进行了封装</li><li>声明式事务的支持<br>只需要配置就可以完成对事务的管理</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Spring入门&quot;&gt;&lt;a href=&quot;#Spring入门&quot; class=&quot;headerlink&quot; title=&quot;Spring入门&quot;&gt;&lt;/a&gt;Spring入门&lt;/h3&gt;&lt;h4 id=&quot;spring简介&quot;&gt;&lt;a href=&quot;#spring简介&quot; class=&quot;head
-      
-    
-    </summary>
-    
-    
-      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-      <category term="Web框架" scheme="https://zhuyiting.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="Spring" scheme="https://zhuyiting.xyz/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Mybatis之XML映射文件</title>
     <link href="https://zhuyiting.xyz/2019/04/22/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/"/>
     <id>https://zhuyiting.xyz/2019/04/22/Mybatis之XML映射文件/</id>
@@ -281,6 +253,55 @@
       <category term="Web框架" scheme="https://zhuyiting.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
     
       <category term="Mybatis" scheme="https://zhuyiting.xyz/tags/Mybatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring之容器和依赖注入</title>
+    <link href="https://zhuyiting.xyz/2018/05/01/Spring%E4%B9%8B%E5%AE%B9%E5%99%A8%E5%92%8C%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
+    <id>https://zhuyiting.xyz/2018/05/01/Spring之容器和依赖注入/</id>
+    <published>2018-05-01T07:18:44.000Z</published>
+    <updated>2019-10-31T07:20:41.203Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    
+    
+      <category term="Web框架" scheme="https://zhuyiting.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="Spring" scheme="https://zhuyiting.xyz/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring入门</title>
+    <link href="https://zhuyiting.xyz/2018/04/29/Spring%E5%85%A5%E9%97%A8/"/>
+    <id>https://zhuyiting.xyz/2018/04/29/Spring入门/</id>
+    <published>2018-04-29T08:55:38.000Z</published>
+    <updated>2019-10-31T07:20:32.727Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Spring入门"><a href="#Spring入门" class="headerlink" title="Spring入门"></a>Spring入门</h3><h4 id="spring简介"><a href="#spring简介" class="headerlink" title="spring简介"></a>spring简介</h4><p>Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 编程模型来促进良好的编程实践。</p><h4 id="spring架构图"><a href="#spring架构图" class="headerlink" title="spring架构图"></a>spring架构图</h4><p><img src="/2018/04/29/Spring%E5%85%A5%E9%97%A8/Spring%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg" alt="spring架构"></p><p>Spring是一个从实际项目开发经验中抽取的,可高度重用的应用框架. </p><h4 id="Spring的主要作用"><a href="#Spring的主要作用" class="headerlink" title="Spring的主要作用"></a>Spring的主要作用</h4><ol><li>springBeanFactory:<br>所有的实例可以都可以配置到spring工厂中,新建对象时通过工厂来新建,降低了耦合性. 并且可以配置对象的作用域</li><li>Spring依赖注入(控制反转):<br>相当于一个工厂管理对象之间的依赖关系<br>用户只需要在spring中配置好依赖关系(在bean中配置属性的方式配置所依赖的对象)，在调用对象的时候，就不需要再管依赖关系了(不用new那些需要依赖的对象了)。比如一个对象需要另一个对象来协助完成,这时不需要主动创建所需对象,spring容器会自动创建所需要的实例,然后注入进调用者中</li><li>SpringAOP(面向切面):<br>实现在执行过程前后执行另外的代码,进行拦截、监控等功能<br>也就是用来定义,在方法前后要完成的什么功能<br>spring的事务管理,就是基于AOP来实现的</li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol><li>方便解耦,简化开发<br>Spring就是一个工厂,可以将所有对象的创建以及依赖关系的维护都交给它</li><li>AOP编程的支持<br>Spring提供了面向切面编程,可以方便的进行权限拦截和运行监控</li><li>方便结合其他框架<br>Spring内部支持了和其他框架的整合,如mybatis</li><li>方便程序测试<br>Spring支持JUnit4,可以通过注释方便的测试</li><li>降低了调用JavaEE中一些API的难度<br>比如对JDBC等进行了封装</li><li>声明式事务的支持<br>只需要配置就可以完成对事务的管理</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Spring入门&quot;&gt;&lt;a href=&quot;#Spring入门&quot; class=&quot;headerlink&quot; title=&quot;Spring入门&quot;&gt;&lt;/a&gt;Spring入门&lt;/h3&gt;&lt;h4 id=&quot;spring简介&quot;&gt;&lt;a href=&quot;#spring简介&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
+    
+    
+      <category term="Web框架" scheme="https://zhuyiting.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="Spring" scheme="https://zhuyiting.xyz/tags/Spring/"/>
     
   </entry>
   
@@ -523,34 +544,6 @@
     
     
       <category term="JavaScrpit" scheme="https://zhuyiting.xyz/tags/JavaScrpit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>EL与JSTL表达式</title>
-    <link href="https://zhuyiting.xyz/2018/01/30/EL%E4%B8%8EJSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>https://zhuyiting.xyz/2018/01/30/EL与JSTL表达式/</id>
-    <published>2018-01-30T06:15:00.000Z</published>
-    <updated>2019-10-20T14:59:58.191Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式:"></a>EL表达式:</h4><p>EL表达式的功能:(让JSP编写更为简单)</p><ol><li>EL是Expression Language的简称，即表达式语言；</li><li>EL在JSP中使用，服务器会对其进行解析翻译，生成相应的Java代码；</li><li>EL的作用是用来在JSP页面输出动态内容，可以替代JSP中的表达式元素&lt;%=%&gt;</li></ol><p><strong>EL表达式的一般格式:</strong><br> <code>${EL表达式}</code><br>    例如:<code>${param.username}</code><br>    等同于:<code>&lt;%=request.getParameter(&quot;username&quot;)%&gt;</code></p><h4 id="EL表达式的内置对象"><a href="#EL表达式的内置对象" class="headerlink" title="EL表达式的内置对象:"></a>EL表达式的内置对象:</h4><p>其中</p><ul><li>2个内置对象为了方便输出请求参数： param/paramValues；<ul><li>内置对象param：用来输出请求参数的值，格式为${param.请求参数名字}</li><li>内置对象paramValues：用来获取一对多的参数值，返回一个数组。</li></ul></li><li>4个内置对象为了方便输出各个范围的属性： pageScope/ requestScope /sessionScope /applicationScope<ul><li>获取四个范围的属性数据</li><li>检索顺序：当不指定范围时，例如，${user.pwd}，将自动从pageScope开始查找，直到applicationScope，如果没查到，则什么也不显示</li></ul></li><li>2个与请求头有关的内置对象：header/headerValues<ul><li>内置对象header：用来输出输出某一个请求头的值，格式为${header.请求头名字}</li><li>内置对象headerValues：如果某个请求头的值有多个，则使用headerValues返回一个数组。</li></ul></li><li>2个其他内置对象：cookie/initParam<ul><li>内置对象cookie：用来获取cookie的值</li><li>内置对象initParam：用来输出上下文参数;</li></ul></li><li>1个特殊的内置对象pageContext<ul><li>内置对象pageContext：EL中的pageContext对象可以调用PageContext类中所有符合规范的getXxx方法</li></ul></li></ul><h4 id="使用-EL-取出内置对象的数据。"><a href="#使用-EL-取出内置对象的数据。" class="headerlink" title="使用 EL 取出内置对象的数据。"></a>使用 EL 取出内置对象的数据。</h4><ol><li>普通对象和对象属性。<br> 服务器端：<pre><code>`request.setAttribute(&quot;student&quot;, student);`</code></pre> 在浏览器上打印出服务器端绑定的数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; student &#125;  <span class="comment">&lt;!-- 相当于执行了 student.toString(); --&gt;</span></span><br><span class="line">$&#123; student.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getName(); --&gt;</span></span><br><span class="line">$&#123; student.teacher.name &#125;  <span class="comment">&lt;!-- 相当于执行了 student.getTeacher().getName(); --&gt;</span></span><br></pre></td></tr></table></figure></li><li>数组中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String[] nameArray = <span class="keyword">new</span> String[]&#123;<span class="string">"Tom"</span>, <span class="string">"Lucy"</span>, <span class="string">"Lilei"</span>&#125;;</span><br><span class="line">request.setAttribute(“nameArray”,nameArray);</span><br><span class="line">Student[] students = <span class="keyword">new</span> Student[<span class="number">3</span>];</span><br><span class="line">students[<span class="number">0</span>] = stu1;</span><br><span class="line">students[<span class="number">1</span>] = stu2;</span><br><span class="line">students[<span class="number">2</span>] = stu3;</span><br><span class="line">request.setAttribute(“students”,students);</span><br></pre></td></tr></table></figure> 在浏览器上打印出服务器端绑定的数组数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123; nameArray[0] &#125;   <span class="comment">&lt;!-- Tom --&gt;</span></span><br><span class="line">$&#123; nameArray[1] &#125;   <span class="comment">&lt;!-- Lucy --&gt;</span></span><br><span class="line">$&#123; nameArray[2] &#125;   <span class="comment">&lt;!-- Lilei --&gt;</span></span><br><span class="line">$&#123; students[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; students[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; students[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li><li>List中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Student&gt; studentList=<span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">studentList.add(stu1);</span><br><span class="line">studentList.add(stu2);</span><br><span class="line">studentList.add(stu3);</span><br><span class="line">request.setAttribute(“studentList”,studentList);</span><br></pre></td></tr></table></figure> 在浏览器上打印出服务器端绑定的List数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentList[0].id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentList[1].name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">$&#123; studentList[2].teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure></li><li>Map中的数据。<br> 服务器端： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Student&gt; studentMap = <span class="keyword">new</span> HashMap&lt;String, Student&gt;();</span><br><span class="line">studentMap.put(<span class="string">"Tom"</span>, stu1);</span><br><span class="line">studentMap.put(<span class="string">"Lucy"</span>, stu2);</span><br><span class="line">studentMap.put(<span class="string">"Lilei"</span>, stu3);</span><br><span class="line">request.setAttribute(“studentMap”,studentMap);</span><br></pre></td></tr></table></figure> 在浏览器上打印出服务器端绑定的Map数据： <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123; studentMap.Tom.id &#125;   <span class="comment">&lt;!-- 输出第一个学生的ID --&gt;</span></span><br><span class="line">$&#123; studentMap.Lucy.name &#125;   <span class="comment">&lt;!-- 输出第二个学生的name --&gt;</span></span><br><span class="line">   $&#123; studentMap.Lilei.teacher.name &#125;   <span class="comment">&lt;!-- 输出第三个学生的老师的name --&gt;</span></span><br></pre></td></tr></table></figure><h4 id="EL运算符"><a href="#EL运算符" class="headerlink" title="EL运算符:"></a>EL运算符:</h4>EL中提供了多种运算符，可以对变量或常量进行运算，输出运算结果；<br>EL中的运算符包括：</li><li>算术运算符</li><li>比较运算符</li><li>逻辑运算符</li><li>其他运算符</li></ol><h4 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL:"></a>JSTL:</h4><p>JSTL是一套定义好的标签库，可以直接使用；<br>JSTL的全称是Jsp  Standard Tag Library，即JSP标准标签库；<br>JSTL包含很多标签，根据其作用可以分为：属性相关的标签、条件分支相关的标签、迭代标签、其他标签；<br>标签库包括标签处理器类及描述文件tld文件，JSTL也一样：</p><ul><li>使用JSTL首先需要下载相关的jar文件并保存到工程的lib目录下；在JSP中使用taglib指令引入需要使用的标签库；</li><li>forEach、set、if等是JSTL中常用的标签；</li><li>JSTL标签库的使用是为类弥补html表的不足，规范自定义标签的使用而诞生的。在告别modle1模式开发应用程序后，人们开始注重软件的分层设计，不希望在jsp页面中出现java逻辑代码，同时也由于自定义标签的开发难度较大和不利于技术标准化产生了自定义标签库。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;EL表达式&quot;&gt;&lt;a href=&quot;#EL表达式&quot; class=&quot;headerlink&quot; title=&quot;EL表达式:&quot;&gt;&lt;/a&gt;EL表达式:&lt;/h4&gt;&lt;p&gt;EL表达式的功能:(让JSP编写更为简单)&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;EL是Expression Languag
-      
-    
-    </summary>
-    
-    
-      <category term="后端技术栈" scheme="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/"/>
-    
-    
-      <category term="JavaEE" scheme="https://zhuyiting.xyz/tags/JavaEE/"/>
     
   </entry>
   
