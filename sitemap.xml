@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2019/11/01/Spring%25E4%25B9%258BSpringMVC/</loc>
+    
+    <lastmod>2019-11-01T09:02:03.831Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/05/21/Spring%25E4%25B9%258B%25E4%25BA%258B%25E5%258A%25A1%25E7%25AE%25A1%25E7%2590%2586/</loc>
     
     <lastmod>2019-11-01T03:28:55.099Z</lastmod>
@@ -338,13 +345,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/repository/index.html</loc>
-    
-    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/tags/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
@@ -352,14 +352,21 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/repository/index.html</loc>
+    
+    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
