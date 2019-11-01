@@ -17,15 +17,19 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>分类: 后端技术栈 | ycjBlog</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ycjBlog">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;categories&#x2F;%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88&#x2F;page&#x2F;3&#x2F;index.html">
+  <title>Spring之JDBC支持 | ycjBlog</title>
+  <meta name="description" content="Spring之JDBC支持Spring框架针对数据库开发的应用提供了JDBCTemplate类,该类是Spring对JDBC支持的核心,提供了所有对数据库操作功能的支持  DataSource主要功能是获取数据库的连接,还可以引入数据库缓冲池和分布式事务的支持,可以作为访问数据库资源的标准接口 SQLExceptionTranslator该接口负责对SQLException进行转换,通过配置,可以">
+<meta name="keywords" content="Web框架,Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring之JDBC支持">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;05&#x2F;15&#x2F;Spring%E4%B9%8BJDBC%E6%94%AF%E6%8C%81&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
+<meta property="og:description" content="Spring之JDBC支持Spring框架针对数据库开发的应用提供了JDBCTemplate类,该类是Spring对JDBC支持的核心,提供了所有对数据库操作功能的支持  DataSource主要功能是获取数据库的连接,还可以引入数据库缓冲池和分布式事务的支持,可以作为访问数据库资源的标准接口 SQLExceptionTranslator该接口负责对SQLException进行转换,通过配置,可以">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-01T02:45:34.098Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/page/3/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2018/05/15/Spring%E4%B9%8BJDBC%E6%94%AF%E6%8C%81/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -34,6 +38,8 @@
   
   <link rel="stylesheet" href="/css/style.css">
   
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
   
   
   
@@ -333,161 +339,154 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-categories article-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">分类: 后端技术栈</h1>
-      <p class="hidden-xs">共 10 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/categories">All</a></li>
-          
-          <li><a href="/categories/前端技术栈/">前端技术栈</a></li>
-          
-          <li><a href="/categories/生活/">生活</a></li>
-          
-          <li><a href="/categories/工具/">工具</a></li>
-          
-          <li><a href="/categories/后端技术栈/">后端技术栈</a></li>
-          
-          <li><a href="/categories/计算机基础/">计算机基础</a></li>
-          
-          <li><a href="/categories/生活方式/">生活方式</a></li>
-          
-          <li><a href="/categories/英语/">英语</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="panel panel-default b-no">
-    <div class="panel-heading" role="tab">
-        <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapse后端技术栈" aria-expanded="true">
-              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
-              后端技术栈
-            </a>
-            <small class="text-muted">(Total 10 articles)</small>
-        </h4>
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring之JDBC支持"><span class="toc-number">1.</span> <span class="toc-text">Spring之JDBC支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring中JDBC的配置信息"><span class="toc-number">1.1.</span> <span class="toc-text">Spring中JDBC的配置信息</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Spring之JDBC支持" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring之JDBC支持
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/05/15/Spring%E4%B9%8BJDBC%E6%94%AF%E6%8C%81/" class="article-date">
+	  <time datetime="2018-05-15T02:32:03.000Z" itemprop="datePublished">2018-05-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Spring/" rel="tag">Spring</a>, <a class="article-tag-link" href="/tags/Web%E6%A1%86%E6%9E%B6/" rel="tag">Web框架</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/15/Spring%E4%B9%8BJDBC%E6%94%AF%E6%8C%81/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
     </div>
-    <div id="collapse后端技术栈" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading后端技术栈">
-        <div class="panel-body">
-            <div class="collection">
-              
-                
-<a href="/2017/11/18/Lambda/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-18T05:40:00.000Z" itemprop="datePublished">2017-11-18</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Lambda
-</a>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="Spring之JDBC支持"><a href="#Spring之JDBC支持" class="headerlink" title="Spring之JDBC支持"></a>Spring之JDBC支持</h3><p>Spring框架针对数据库开发的应用提供了JDBCTemplate类,该类是Spring对JDBC支持的核心,提供了所有对数据库操作功能的支持</p>
+<ol>
+<li>DataSource<br>主要功能是获取数据库的连接,还可以引入数据库缓冲池和分布式事务的支持,可以作为访问数据库资源的标准接口</li>
+<li>SQLExceptionTranslator<br>该接口负责对SQLException进行转换,通过配置,可以使JDBCTemplate在需要处理SQLException时,完成一些转译工作</li>
+</ol>
+<h4 id="Spring中JDBC的配置信息"><a href="#Spring中JDBC的配置信息" class="headerlink" title="Spring中JDBC的配置信息"></a>Spring中JDBC的配置信息</h4><p>在Spring配置文件中配置</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http:/www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span> </span><br><span class="line">   </span><br><span class="line">    <span class="comment">&lt;!-- 配置数据源 --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.dataSource.DriverManagerDataSource"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--数据库驱动--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span> </span><br><span class="line">        <span class="comment">&lt;!--连接数据库的url--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>= <span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost/spring"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--连接数据库的用户名--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--连接数据库的密码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置JDBC模板--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"jdbcTemplate"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.core.jdbcTemplate"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--默认必须使用数据源--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置注入类(Dao层)--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"xxx"</span> <span class="attr">class</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 在Dao层中注入jdbcTemplate --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcTemplate"</span> <span class="attr">ref</span>=<span class="string">"jdbcTemplate"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在Dao层中注入jdbcTemplate实例, 该实例提供了大量的查询和更新数据库的方法,比如<code>query()</code>,<code>update()</code>等</p>
 
-
-              
-                
-<a href="/2017/11/14/Java%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-14T02:01:00.000Z" itemprop="datePublished">2017-11-14</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java输入输出
-</a>
-
-
-              
-                
-<a href="/2017/11/10/Java%E6%A0%B8%E5%BF%83API/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-10T02:09:00.000Z" itemprop="datePublished">2017-11-10</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java核心API
-</a>
-
-
-              
-                
-<a href="/2017/11/03/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-11-03T10:14:00.000Z" itemprop="datePublished">2017-11-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java异常处理
-</a>
-
-
-              
-                
-<a href="/2017/10/25/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-10-25T00:58:00.000Z" itemprop="datePublished">2017-10-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 集合框架
-</a>
-
-
-              
-                
-<a href="/2017/10/23/%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-10-23T10:27:00.000Z" itemprop="datePublished">2017-10-23</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 面向接口编程
-</a>
-
-
-              
-                
-<a href="/2017/10/15/%E6%B7%B1%E5%85%A5%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-10-15T01:13:00.000Z" itemprop="datePublished">2017-10-15</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 深入面向对象
-</a>
-
-
-              
-                
-<a href="/2017/10/10/Java%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-10-10T02:13:00.000Z" itemprop="datePublished">2017-10-10</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java类的基本结构
-</a>
-
-
-              
-                
-<a href="/2017/10/08/Java%E6%95%B0%E7%BB%84/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-10-08T08:21:00.000Z" itemprop="datePublished">2017-10-08</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java数组
-</a>
-
-
-              
-                
-<a href="/2017/10/05/Java%E5%9F%BA%E7%A1%80/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-10-05T05:43:00.000Z" itemprop="datePublished">2017-10-05</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java基础
-</a>
-
-
-              
-            </div>
-        </div>
+      
     </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://zhuyiting.xyz/2018/05/15/Spring%E4%B9%8BJDBC%E6%94%AF%E6%8C%81/" title="Spring之JDBC支持" target="_blank" rel="external">https://zhuyiting.xyz/2018/05/15/Spring%E4%B9%8BJDBC%E6%94%AF%E6%8C%81/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yimchengjie" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yimchengjie" target="_blank"><span class="text-dark">yanchengjie</span><small class="ml-1x">love and share</small></a></h3>
+        <div>Anything can go right will go right</div>
+      </div>
+    </figure>
+  </div>
 </div>
+
+
     </div>
   </article>
   
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/page/2/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next disabled">
-                <a href="javascript:;">
-                    下一页
-                    <i class="icon icon-angle-right"></i>                    
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 3 of 3</div>
-        </div>
-    </nav>
+  <section id="comments">
+  	
+
     
- 
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/05/21/Spring%E4%B9%8B%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" title="Spring之事务管理"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/05/06/Spring%E4%B9%8B%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2AOP/" title="Spring之面向切面AOP"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -536,6 +535,32 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 <script src="/js/insight.js"></script>
 
 
+
+
+
+   
+
+
+
+
+   
+    
+<script src="//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'Spring之JDBC支持', 
+  owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'yimchengjie.github.io',
+  oauth: {
+    client_id: '5357d42fc4697dd63264',
+    client_secret: 'de58f57f595c5efd724c391370688331b810f100',
+  }
+})
+gitment.render('comments')
+</script>
 
 
 
