@@ -4,7 +4,7 @@
   <url>
     <loc>https://zhuyiting.xyz/2018/06/06/SSM%25E6%25A1%2586%25E6%259E%25B6%25E6%2595%25B4%25E5%2590%2588/</loc>
     
-    <lastmod>2019-11-11T07:49:38.232Z</lastmod>
+    <lastmod>2019-11-11T07:52:28.242Z</lastmod>
     
   </url>
   
@@ -352,13 +352,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/tags/index.html</loc>
-    
-    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/repository/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
@@ -366,14 +359,21 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/tags/index.html</loc>
+    
+    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
