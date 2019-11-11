@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zhuyiting.xyz/2019/11/01/Spring%E4%B9%8BSpringMVC/</loc>
-    <lastmod>2019-11-01</lastmod>
+    <loc>https://zhuyiting.xyz/2018/06/06/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</loc>
+    <lastmod>2019-11-11</lastmod>
+  </url>  <url>
+    <loc>https://zhuyiting.xyz/2018/05/29/Spring%E4%B9%8BSpringMVC/</loc>
+    <lastmod>2019-11-02</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2018/05/21/Spring%E4%B9%8B%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2019-11-01</lastmod>
