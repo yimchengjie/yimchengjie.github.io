@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2018/07/25/SpringBoot-Mybatis%25E4%25B9%258B%25E5%258A%25A8%25E6%2580%2581SQL/</loc>
+    
+    <lastmod>2019-11-12T08:59:30.892Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/07/12/SpringBoot-MyBatis%25E6%2595%25B4%25E5%2590%2588/</loc>
     
     <lastmod>2019-11-12T08:26:54.786Z</lastmod>
@@ -366,13 +373,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/tags/index.html</loc>
-    
-    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/repository/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
@@ -380,14 +380,21 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/tags/index.html</loc>
+    
+    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
