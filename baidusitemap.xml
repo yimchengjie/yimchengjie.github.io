@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zhuyiting.xyz/2018/07/03/SpringBoot%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2019-11-12</lastmod>
+  </url>  <url>
     <loc>https://zhuyiting.xyz/2018/07/25/SpringBoot-Mybatis%E4%B9%8B%E5%8A%A8%E6%80%81SQL/</loc>
     <lastmod>2019-11-12</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2018/07/12/SpringBoot-MyBatis%E6%95%B4%E5%90%88/</loc>
-    <lastmod>2019-11-12</lastmod>
-  </url>  <url>
-    <loc>https://zhuyiting.xyz/2019/07/03/SpringBoot%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2019-11-12</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2018/06/16/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</loc>
