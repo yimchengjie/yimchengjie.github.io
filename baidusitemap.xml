@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zhuyiting.xyz/2018/08/13/HTML5%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-11-13</lastmod>
+  </url>  <url>
+    <loc>https://zhuyiting.xyz/2018/04/03/GitHub%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-11-12</lastmod>
+  </url>  <url>
     <loc>https://zhuyiting.xyz/2018/07/03/SpringBoot%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2019-11-12</lastmod>
   </url>  <url>
@@ -65,9 +71,6 @@
     <lastmod>2019-10-25</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2019/10/24/TED%E4%B8%8D%E5%BF%B5%E8%BF%87%E5%BE%80,%E4%B8%8D%E6%83%A7%E5%B0%86%E6%9D%A5/</loc>
-    <lastmod>2019-10-24</lastmod>
-  </url>  <url>
-    <loc>https://zhuyiting.xyz/2018/04/03/GitHub%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2018/03/05/Ajax/</loc>
