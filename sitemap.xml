@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2018/09/15/Vue%25E5%259F%25BA%25E6%259C%25AC%25E6%258C%2587%25E4%25BB%25A4/</loc>
+    
+    <lastmod>2019-11-14T01:13:00.390Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/09/30/Vue%25E7%25BB%2584%25E4%25BB%25B6%25E5%259F%25BA%25E7%25A1%2580/</loc>
+    
+    <lastmod>2019-11-14T01:06:08.165Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/09/25/ES6%25E5%259F%25BA%25E7%25A1%2580/</loc>
+    
+    <lastmod>2019-11-13T07:35:52.317Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/10/13/webpack%25E5%259F%25BA%25E7%25A1%2580/</loc>
+    
+    <lastmod>2019-11-13T06:58:29.081Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/09/13/Vue%25E6%25A6%2582%25E8%25BF%25B0/</loc>
+    
+    <lastmod>2019-11-13T02:42:44.609Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/08/13/HTML5%25E5%259F%25BA%25E7%25A1%2580/</loc>
     
     <lastmod>2019-11-13T02:27:06.896Z</lastmod>
@@ -380,14 +415,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
