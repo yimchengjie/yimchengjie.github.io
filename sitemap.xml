@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2018/12/16/Vue%25E9%25A1%25B9%25E7%259B%25AE%25E6%2590%25AD%25E5%25BB%25BA/</loc>
+    
+    <lastmod>2019-11-14T07:13:41.079Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/11/02/Vue%25E8%25B7%25AF%25E7%2594%25B1/</loc>
+    
+    <lastmod>2019-11-14T06:54:13.067Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/10/20/Vue%25E5%25AE%259E%25E4%25BE%258B%25E8%25AF%25A6%25E8%25A7%25A3/</loc>
+    
+    <lastmod>2019-11-14T06:21:17.945Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/11/14/Vue%25E7%259A%2584Ajax-axios/</loc>
+    
+    <lastmod>2019-11-14T03:36:06.444Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/06/16/SSM%25E6%25A1%2586%25E6%259E%25B6%25E6%2595%25B4%25E5%2590%2588/</loc>
     
     <lastmod>2019-11-14T02:02:43.526Z</lastmod>
@@ -79,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E9%2585%258D%25E7%25BD%25AE%25E6%2596%2587%25E4%25BB%25B6/</loc>
     
     <lastmod>2019-11-14T02:02:04.316Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E9%2585%258D%25E7%25BD%25AE%25E6%2596%2587%25E4%25BB%25B6/</loc>
+    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
     
     <lastmod>2019-11-14T02:02:04.316Z</lastmod>
     
@@ -415,14 +443,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
