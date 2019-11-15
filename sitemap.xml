@@ -2,9 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2019/11/15/%25E7%25BA%25BF%25E7%25A8%258B%25E6%25B1%25A0%25E5%258E%259F%25E7%2590%2586%25E5%258F%258A%25E5%25BA%2594%25E7%2594%25A8/</loc>
+    
+    <lastmod>2019-11-15T02:46:07.031Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/01/29/%25E7%25BA%25BF%25E7%25A8%258B%25E5%25B0%2581%25E9%2597%25AD%25E4%25B9%258BThreadLocal%25E5%2592%258C%25E6%25A0%2588%25E5%25B0%2581%25E9%2597%25AD/</loc>
+    
+    <lastmod>2019-11-15T02:27:43.214Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/01/23/Java%25E7%25BA%25BF%25E7%25A8%258B%25E9%2580%259A%25E4%25BF%25A1/</loc>
+    
+    <lastmod>2019-11-15T02:25:07.635Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/01/09/Java%25E7%25BA%25BF%25E7%25A8%258B%25E7%258A%25B6%25E6%2580%2581%25E5%2592%258C%25E7%25BA%25BF%25E7%25A8%258B%25E4%25B8%25AD%25E6%25AD%25A2/</loc>
+    
+    <lastmod>2019-11-15T02:21:05.454Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/01/15/CPU%25E5%25A4%259A%25E7%25BA%25A7%25E7%25BC%2593%25E5%25AD%2598/</loc>
+    
+    <lastmod>2019-11-15T02:19:15.043Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/17/Java%25E7%25A8%258B%25E5%25BA%258F%25E8%25BF%2590%25E8%25A1%258C%25E5%25A0%2586%25E6%25A0%2588%25E5%2588%2586%25E6%259E%2590/</loc>
+    
+    <lastmod>2019-11-15T01:18:27.838Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/06/16/SSM%25E6%25A1%2586%25E6%259E%25B6%25E6%2595%25B4%25E5%2590%2588/</loc>
+    
+    <lastmod>2019-11-15T01:11:42.039Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
+    
+    <lastmod>2019-11-15T01:11:34.104Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/12/16/Vue%25E9%25A1%25B9%25E7%259B%25AE%25E6%2590%25AD%25E5%25BB%25BA/</loc>
     
-    <lastmod>2019-11-14T07:13:41.079Z</lastmod>
+    <lastmod>2019-11-14T13:07:35.167Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2017/12/15/JSP/</loc>
+    
+    <lastmod>2019-11-14T12:17:04.282Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2017/11/25/SteamAPI/</loc>
+    
+    <lastmod>2019-11-14T12:12:26.980Z</lastmod>
     
   </url>
   
@@ -26,13 +96,6 @@
     <loc>https://zhuyiting.xyz/2018/11/14/Vue%25E7%259A%2584Ajax-axios/</loc>
     
     <lastmod>2019-11-14T03:36:06.444Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/06/16/SSM%25E6%25A1%2586%25E6%259E%25B6%25E6%2595%25B4%25E5%2590%2588/</loc>
-    
-    <lastmod>2019-11-14T02:02:43.526Z</lastmod>
     
   </url>
   
@@ -114,13 +177,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
-    
-    <lastmod>2019-11-14T02:02:04.316Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/2018/08/14/jQuery%25E7%25AC%2594%25E8%25AE%25B0/</loc>
     
     <lastmod>2019-11-14T01:43:12.146Z</lastmod>
@@ -187,13 +243,6 @@
     <loc>https://zhuyiting.xyz/2018/04/25/idea%25E6%2596%25B0%25E5%25BB%25BAmaven%25E9%25A1%25B9%25E7%259B%25AE/</loc>
     
     <lastmod>2019-10-29T09:04:02.785Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/17/Java%25E7%25A8%258B%25E5%25BA%258F%25E8%25BF%2590%25E8%25A1%258C%25E5%25A0%2586%25E6%25A0%2588%25E5%2588%2586%25E6%259E%2590/</loc>
-    
-    <lastmod>2019-10-29T03:14:26.018Z</lastmod>
     
   </url>
   
@@ -289,13 +338,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2017/12/15/JSP/</loc>
-    
-    <lastmod>2019-10-20T14:03:32.230Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/2017/12/06/Servlet/</loc>
     
     <lastmod>2019-10-20T14:03:11.936Z</lastmod>
@@ -313,13 +355,6 @@
     <loc>https://zhuyiting.xyz/2017/11/30/Java%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B/</loc>
     
     <lastmod>2019-10-20T13:59:32.466Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2017/11/25/SteamAPI/</loc>
-    
-    <lastmod>2019-10-20T13:58:59.770Z</lastmod>
     
   </url>
   
@@ -429,14 +464,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/repository/index.html</loc>
+    <loc>https://zhuyiting.xyz/tags/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/tags/index.html</loc>
+    <loc>https://zhuyiting.xyz/repository/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
     
