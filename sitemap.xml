@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E6%2598%25A0%25E5%25B0%2584%25E6%2596%2587%25E4%25BB%25B6/</loc>
+    
+    <lastmod>2019-11-15T05:20:50.196Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
+    
+    <lastmod>2019-11-15T05:20:47.912Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E9%2585%258D%25E7%25BD%25AE%25E6%2596%2587%25E4%25BB%25B6/</loc>
+    
+    <lastmod>2019-11-15T05:20:45.299Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/06/16/SSM%25E6%25A1%2586%25E6%259E%25B6%25E6%2595%25B4%25E5%2590%2588/</loc>
+    
+    <lastmod>2019-11-15T05:20:38.223Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2017/12/23/%25E4%25BC%259A%25E8%25AF%259D%25E8%25B7%259F%25E8%25B8%25AA(%25E5%2589%258D%25E5%2590%258E%25E7%25AB%25AF%25E4%25BA%25A4%25E4%25BA%2592)/</loc>
     
     <lastmod>2019-11-15T05:17:53.904Z</lastmod>
@@ -163,13 +191,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/06/16/SSM%25E6%25A1%2586%25E6%259E%25B6%25E6%2595%25B4%25E5%2590%2588/</loc>
-    
-    <lastmod>2019-11-15T04:55:29.005Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/2018/07/03/SpringBoot%25E5%2585%25A5%25E9%2597%25A8/</loc>
     
     <lastmod>2019-11-15T04:55:25.369Z</lastmod>
@@ -236,27 +257,6 @@
     <loc>https://zhuyiting.xyz/2017/12/06/Servlet/</loc>
     
     <lastmod>2019-11-15T04:54:55.569Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E6%2598%25A0%25E5%25B0%2584%25E6%2596%2587%25E4%25BB%25B6/</loc>
-    
-    <lastmod>2019-11-15T04:54:47.265Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E9%2585%258D%25E7%25BD%25AE%25E6%2596%2587%25E4%25BB%25B6/</loc>
-    
-    <lastmod>2019-11-15T04:54:44.829Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
-    
-    <lastmod>2019-11-15T04:54:37.768Z</lastmod>
     
   </url>
   

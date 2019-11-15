@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2019-11-15</lastmod>
+  </url>  <url>
+    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2019-11-15</lastmod>
+  </url>  <url>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%E4%B9%8BXML%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2019-11-15</lastmod>
+  </url>  <url>
+    <loc>https://zhuyiting.xyz/2018/06/16/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</loc>
+    <lastmod>2019-11-15</lastmod>
+  </url>  <url>
     <loc>https://zhuyiting.xyz/2017/12/23/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/</loc>
     <lastmod>2019-11-15</lastmod>
   </url>  <url>
@@ -70,9 +82,6 @@
     <loc>https://zhuyiting.xyz/2017/11/25/SteamAPI/</loc>
     <lastmod>2019-11-15</lastmod>
   </url>  <url>
-    <loc>https://zhuyiting.xyz/2018/06/16/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</loc>
-    <lastmod>2019-11-15</lastmod>
-  </url>  <url>
     <loc>https://zhuyiting.xyz/2018/07/03/SpringBoot%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2019-11-15</lastmod>
   </url>  <url>
@@ -101,15 +110,6 @@
     <lastmod>2019-11-15</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2017/12/06/Servlet/</loc>
-    <lastmod>2019-11-15</lastmod>
-  </url>  <url>
-    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2019-11-15</lastmod>
-  </url>  <url>
-    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%E4%B9%8BXML%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2019-11-15</lastmod>
-  </url>  <url>
-    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2019-11-15</lastmod>
   </url>  <url>
     <loc>https://zhuyiting.xyz/2018/01/19/MVC%E6%A8%A1%E5%BC%8F/</loc>
