@@ -22,17 +22,17 @@
 <meta name="keywords" content="并发编程,JavaSE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程池原理及应用">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;02&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
 <meta property="og:description" content="一、为什么要使用线程池在一些需要使用线程去处理任务的业务场景中，如果每一个任务都创建一个线程去处理，任务处理完过后，把这个线程销毁，这样会产生大量的线程创建、销毁的资源开销，Java中更是如此，虚拟机将试图跟踪每一个对象。以便可以在对象销毁后进行垃圾回收。所以提高服务程序效率的一个手段就是尽可能降低创建和销毁对象的次数。使用线程池能够有效的控制这种线程的创建和销毁，而且能够对创建的线程进行有效的管">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0.png">
-<meta property="og:updated_time" content="2019-11-15T02:46:07.031Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;02&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;02&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0.png">
+<meta property="og:updated_time" content="2019-11-15T02:47:59.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;02&#x2F;15&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8&#x2F;%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2019/02/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -245,7 +245,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -257,21 +257,6 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/" class="title">线程池原理及应用</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-11-15T02:31:21.000Z" itemprop="datePublished">2019-11-15</time>
-              </p>
-            </div>
-          </li>
-          
           <li>
             
             <div class="item-inner">
@@ -332,6 +317,21 @@
             </div>
           </li>
           
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/">后端技术栈</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/" class="title">JVM指令手册</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-30T07:18:00.000Z" itemprop="datePublished">2019-07-30</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
@@ -369,8 +369,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/" class="article-date">
-	  <time datetime="2019-11-15T02:31:21.000Z" itemprop="datePublished">2019-11-15</time>
+	<a href="/2019/02/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/" class="article-date">
+	  <time datetime="2019-02-15T02:31:21.000Z" itemprop="datePublished">2019-02-15</time>
 	</a>
 </span>
         
@@ -388,7 +388,7 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/02/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
@@ -425,7 +425,7 @@
 </li>
 </ol>
 <h3 id="三、Java线程池的运行原理"><a href="#三、Java线程池的运行原理" class="headerlink" title="三、Java线程池的运行原理"></a>三、Java线程池的运行原理</h3><h4 id="1-线程池的参数属性介绍"><a href="#1-线程池的参数属性介绍" class="headerlink" title="1. 线程池的参数属性介绍"></a>1. 线程池的参数属性介绍</h4><p><strong>核心线程数corePoolSize</strong>：核心线程池数量。<br>提交一个任务的时候，会对线程池里面的当前存活线程数量和这个corePoolSize进行比较，不同的情况下会有不同的操作。<br><strong>最大线程数maximumPoolSize</strong>：线程池所能创建的线程的最大数量。<br><strong>空闲线程的超时时间keepAliveTime</strong>：如果线程池当前的线程数大于corePoolSize，并且这些线程中是有空闲线程的，也就是说这些线程没有在执行任务，那么空闲时间超过keepAliveTime时间，这些线程也会被销毁，指代前线程代数等于corePoolsize，这时即便有空闲线程并且超时了，也不会进行线程销毁。<br><strong>任务队列workQueue</strong>：这是一个阻塞队列，用于存储提交的任务。<br><strong>线程工厂threadFactory</strong>：线程池会使用这个工厂类来创建线程，用户可以自己实现。<br><strong>任务的拒绝处理handler（RejectedExeutionHandler）</strong>：在线程数已经达到了最大线程数，而且任务队列也满了以后，提交的任务会使用这个handler来处理，用户也可以自己实现。默认是抛出一个异常RejectedExecutionException。</p>
-<h4 id="2-线程池运行原理分析"><a href="#2-线程池运行原理分析" class="headerlink" title="2. 线程池运行原理分析"></a>2. 线程池运行原理分析</h4><p>分析当用户提交一个任务使，线程池内部使如何运行的。<br><img src="/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86.png" alt="线程池原理"></p>
+<h4 id="2-线程池运行原理分析"><a href="#2-线程池运行原理分析" class="headerlink" title="2. 线程池运行原理分析"></a>2. 线程池运行原理分析</h4><p>分析当用户提交一个任务使，线程池内部使如何运行的。<br><img src="/2019/02/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86.png" alt="线程池原理"></p>
 <ol>
 <li>创建一个线程池，在还没有任务提交的时候，默认线程池里面是没有线程的。当然，可以调用prestartCoreThread方法，来预先创建一个核心线程。</li>
 <li>线程池里面还没有线程或者线程池里面存活的线程数小于核心线程数corePoolSize时，这时对于一个新提交的任务，线程池会创建一个线程去处理提交的任务。当线程池里面存活的线程数小于等于核心线程数corePoolSize时，线程池里面的线程会一直存活着，就算空闲时间超过了keepAliveTime，线程也不会被销毁，而是一直阻塞在那里一直等待任务队列的任务来执行。</li>
@@ -433,7 +433,7 @@
 <li>当线程池里面存活的线程数已经等于corePoolSize了，并且任务队列也满了，这里假设maximumPoolSize&gt;corePoolSize（如果等于的话，就直接拒绝了），这时如果再来新的任务，线程池就会继续创建新的线程来处理新任务，直到线程数达到maximumPoolSize，就不会再创建了。这些新创建的线程执行完了当前任务后，再任务队列里面还有任务的时候也不会销毁，而是去任务队列拿任务出来执行。在当前线程数大于corePoolSize过后，线程执行完当前任务，会有一个判断当前线程是否需要销毁的逻辑；如果能从任务队列中拿到任务，那么继续执行，如果拿任务时阻塞（说明队列中没有任务），那超过keepAliveTime时间就直接返回null并且销毁当前线程，直到线程池里面的线程数等于corePoolSize之后才不会进行线程销毁。</li>
 <li>如果当前线程数达到了maximumPoolSize，并且任务队列也满了，这种情况下还有新的任务过来，那就直接采用拒绝的处理器进行执行，默认的处理器逻辑时抛出一个RejectedExcutionException异常。你也可以指定其他的处理器，或者自定义一个拒绝处理器来实现拒绝逻辑的处理（比如把任务存储起来）。JDK提供了四种拒绝策略处理类；<br>AbortPolicy（抛出一个异常，默认的），<br>DiscardPolicy（直接丢弃任务），<br>DiscardOldestPolicy（丢弃队列里最老的任务，将当前这个任务继续提交给线程池），<br>CallerRunPolicy（交给线程池调用的所在线程进行处理）。</li>
 </ol>
-<p><img src="/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0.png" alt="图解线程池"></p>
+<p><img src="/2019/02/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0.png" alt="图解线程池"></p>
 <h4 id="3-线程池包含以下四个基本组成部分："><a href="#3-线程池包含以下四个基本组成部分：" class="headerlink" title="3. 线程池包含以下四个基本组成部分："></a><strong>3. 线程池包含以下四个基本组成部分：</strong></h4><ol>
 <li><strong>线程池管理器（ThreadPool）</strong>：用于创建并管理线程池。包含创建线程池，销毁线程池，<br>加入新任务；</li>
 <li><strong>工作线程（PoolWorker）</strong>：线程池中线程，在没有任务时处于等待状态。能够循环的运行<br>任务。</li>
@@ -461,7 +461,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/" title="线程池原理及应用" target="_blank" rel="external">https://zhuyiting.xyz/2019/11/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/</a>
+      <a href="https://zhuyiting.xyz/2019/02/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/" title="线程池原理及应用" target="_blank" rel="external">https://zhuyiting.xyz/2019/02/15/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -507,9 +507,13 @@
   
   <ul class="pager pull-left">
     
+    <li class="prev">
+      <a href="/2019/07/30/JVM%E6%8C%87%E4%BB%A4%E6%89%8B%E5%86%8C/" title="JVM指令手册"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
     
     <li class="next">
-      <a href="/2019/10/29/%E5%85%9A%E7%9A%84%E6%9C%89%E5%85%B3%E7%90%86%E8%AE%BA%E5%92%8C%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3/" title="党的有关理论和习近平新时代中国特色社会主义思想"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/01/29/%E7%BA%BF%E7%A8%8B%E5%B0%81%E9%97%AD%E4%B9%8BThreadLocal%E5%92%8C%E6%A0%88%E5%B0%81%E9%97%AD/" title="线程封闭之ThreadLocal和栈封闭"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
