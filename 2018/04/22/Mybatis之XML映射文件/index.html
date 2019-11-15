@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="ycjBlog">
 <meta property="og:description" content="Mybatis之XML映射文件MyBatis 的真正强大在于它的映射语句，这是它的魔力所在。由于它的异常强大，映射器的 XML 文件就显得相对简单。 SQL 映射文件只有很少的几个顶级元素（按照应被定义的顺序列出）：  cache – 对给定命名空间的缓存配置。 cache-ref – 对其他命名空间缓存配置的引用。 resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T05:22:36.909Z">
+<meta property="og:updated_time" content="2019-11-15T05:29:58.803Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="https://zhuyiting.xyz/2018/04/22/Mybatis%E4%B9%8BXML%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/index.html">
@@ -340,6 +340,15 @@
 
   
   
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mybatis之XML映射文件"><span class="toc-number">1.</span> <span class="toc-text">Mybatis之XML映射文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-–-可被其他语句引用的可重用语句块。"><span class="toc-number">1.1.</span> <span class="toc-text">sql – 可被其他语句引用的可重用语句块。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CRUD语句"><span class="toc-number">1.2.</span> <span class="toc-text">CRUD语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#insert和update的子标签selectKey"><span class="toc-number">1.3.</span> <span class="toc-text">insert和update的子标签selectKey</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果映射"><span class="toc-number">1.4.</span> <span class="toc-text">结果映射</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高级结果映射"><span class="toc-number">1.5.</span> <span class="toc-text">高级结果映射</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存"><span class="toc-number">1.6.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态SQL"><span class="toc-number">1.7.</span> <span class="toc-text">动态SQL</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
 <main class="main" role="main">
   <div class="content">
   <article id="post-Mybatis之XML映射文件" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -489,6 +498,15 @@
       <a href="/2018/04/22/Mybatis%E4%B9%8BXML%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="Mybatis之XML配置文件"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
     
   </ul>
   

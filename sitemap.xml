@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2018/07/03/SpringBoot%25E5%2585%25A5%25E9%2597%25A8/</loc>
+    
+    <lastmod>2019-11-15T05:30:10.200Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E6%2598%25A0%25E5%25B0%2584%25E6%2596%2587%25E4%25BB%25B6/</loc>
+    
+    <lastmod>2019-11-15T05:29:58.803Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E9%2585%258D%25E7%25BD%25AE%25E6%2596%2587%25E4%25BB%25B6/</loc>
+    
+    <lastmod>2019-11-15T05:29:56.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
+    
+    <lastmod>2019-11-15T05:29:54.602Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/07/12/SpringBoot-Mybatis%25E6%2595%25B4%25E5%2590%2588/</loc>
+    
+    <lastmod>2019-11-15T05:27:52.219Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/06/16/SSM%25E6%25A1%2586%25E6%259E%25B6%25E6%2595%25B4%25E5%2590%2588/</loc>
     
     <lastmod>2019-11-15T05:22:50.764Z</lastmod>
@@ -12,34 +47,6 @@
     <loc>https://zhuyiting.xyz/2018/07/25/SpringBoot-Mybatis%25E4%25B9%258B%25E5%258A%25A8%25E6%2580%2581SQL/</loc>
     
     <lastmod>2019-11-15T05:22:47.142Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/07/12/SpringBoot-MyBatis%25E6%2595%25B4%25E5%2590%2588/</loc>
-    
-    <lastmod>2019-11-15T05:22:44.828Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E9%2585%258D%25E7%25BD%25AE%25E6%2596%2587%25E4%25BB%25B6/</loc>
-    
-    <lastmod>2019-11-15T05:22:36.915Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/21/Mybatis%25E5%2585%25A5%25E9%2597%25A8/</loc>
-    
-    <lastmod>2019-11-15T05:22:36.914Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/22/Mybatis%25E4%25B9%258BXML%25E6%2598%25A0%25E5%25B0%2584%25E6%2596%2587%25E4%25BB%25B6/</loc>
-    
-    <lastmod>2019-11-15T05:22:36.909Z</lastmod>
     
   </url>
   
@@ -201,13 +208,6 @@
     <loc>https://zhuyiting.xyz/2017/11/25/SteamAPI/</loc>
     
     <lastmod>2019-11-15T04:55:38.040Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/07/03/SpringBoot%25E5%2585%25A5%25E9%2597%25A8/</loc>
-    
-    <lastmod>2019-11-15T04:55:25.369Z</lastmod>
     
   </url>
   

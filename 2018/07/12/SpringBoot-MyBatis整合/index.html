@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>SpringBoot+MyBatis整合 | ycjBlog</title>
+  <title>SpringBoot+Mybatis整合 | ycjBlog</title>
   <meta name="description" content="SpringBoot+MyBatis整合以往我们需要用到MyBatis时,需要繁琐的xml配置,而且很容易造成spring和mybatis的jar冲突, 非常麻烦而在SpringBoot下,只需要添加mybatis的starter启动器,就能很方便的和spring整合了,无需xml配置 1. 添加mybatis的starter包12345678910&amp;lt;dependency&amp;gt;    &amp;l">
 <meta name="keywords" content="JavaWeb框架,Mybatis,SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot+MyBatis整合">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;07&#x2F;12&#x2F;SpringBoot-MyBatis%E6%95%B4%E5%90%88&#x2F;index.html">
+<meta property="og:title" content="SpringBoot+Mybatis整合">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;07&#x2F;12&#x2F;SpringBoot-Mybatis%E6%95%B4%E5%90%88&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
 <meta property="og:description" content="SpringBoot+MyBatis整合以往我们需要用到MyBatis时,需要繁琐的xml配置,而且很容易造成spring和mybatis的jar冲突, 非常麻烦而在SpringBoot下,只需要添加mybatis的starter启动器,就能很方便的和spring整合了,无需xml配置 1. 添加mybatis的starter包12345678910&amp;lt;dependency&amp;gt;    &amp;l">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;07&#x2F;12&#x2F;SpringBoot-MyBatis%E6%95%B4%E5%90%88&#x2F;success.png">
-<meta property="og:updated_time" content="2019-11-15T05:22:44.828Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;07&#x2F;12&#x2F;SpringBoot-Mybatis%E6%95%B4%E5%90%88&#x2F;success.png">
+<meta property="og:updated_time" content="2019-11-15T05:27:52.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;07&#x2F;12&#x2F;SpringBoot-MyBatis%E6%95%B4%E5%90%88&#x2F;success.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2018&#x2F;07&#x2F;12&#x2F;SpringBoot-Mybatis%E6%95%B4%E5%90%88&#x2F;success.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2018/07/12/SpringBoot-MyBatis%E6%95%B4%E5%90%88/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2018/07/12/SpringBoot-Mybatis%E6%95%B4%E5%90%88/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -353,14 +353,14 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-SpringBoot-MyBatis整合" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-SpringBoot-Mybatis整合" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      SpringBoot+MyBatis整合
+      SpringBoot+Mybatis整合
     </h1>
   
 
@@ -368,7 +368,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/07/12/SpringBoot-MyBatis%E6%95%B4%E5%90%88/" class="article-date">
+	<a href="/2018/07/12/SpringBoot-Mybatis%E6%95%B4%E5%90%88/" class="article-date">
 	  <time datetime="2018-07-12T06:25:16.000Z" itemprop="datePublished">2018-07-12</time>
 	</a>
 </span>
@@ -387,7 +387,7 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/12/SpringBoot-MyBatis%E6%95%B4%E5%90%88/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/12/SpringBoot-Mybatis%E6%95%B4%E5%90%88/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
@@ -404,7 +404,7 @@
 
 <h4 id="5-完善代码-service层和controller层"><a href="#5-完善代码-service层和controller层" class="headerlink" title="5. 完善代码,service层和controller层"></a>5. 完善代码,service层和controller层</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/userInfo.do"</span>)</span><br><span class="line"><span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; userInfo(User user)&#123;</span><br><span class="line">    List&lt;Map&lt;String, Object&gt;&gt; list=userService.userInfo(user);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h4><p><img src="/2018/07/12/SpringBoot-MyBatis%E6%95%B4%E5%90%88/success.png" alt="成功"></p>
+<h4 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h4><p><img src="/2018/07/12/SpringBoot-Mybatis%E6%95%B4%E5%90%88/success.png" alt="成功"></p>
 
       
     </div>
@@ -414,7 +414,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2018/07/12/SpringBoot-MyBatis%E6%95%B4%E5%90%88/" title="SpringBoot+MyBatis整合" target="_blank" rel="external">https://zhuyiting.xyz/2018/07/12/SpringBoot-MyBatis%E6%95%B4%E5%90%88/</a>
+      <a href="https://zhuyiting.xyz/2018/07/12/SpringBoot-Mybatis%E6%95%B4%E5%90%88/" title="SpringBoot+Mybatis整合" target="_blank" rel="external">https://zhuyiting.xyz/2018/07/12/SpringBoot-Mybatis%E6%95%B4%E5%90%88/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -557,7 +557,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'SpringBoot+MyBatis整合', 
+  id: 'SpringBoot+Mybatis整合', 
   owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
   repo: 'yimchengjie.github.io',
   oauth: {
