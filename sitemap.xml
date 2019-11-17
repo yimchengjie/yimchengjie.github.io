@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2019/02/23/%25E7%25BA%25BF%25E7%25A8%258B%25E5%25AE%2589%25E5%2585%25A8%25E4%25B9%258B%25E5%25A4%259A%25E7%25BA%25BF%25E7%25A8%258B%25E7%259A%2584%25E4%25B8%2589%25E5%25A4%25A7%25E7%2589%25B9%25E6%2580%25A7/</loc>
+    
+    <lastmod>2019-11-17T09:18:26.257Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/11/15/Java%25E9%2594%2581%25E4%25B8%258Esynchronized/</loc>
+    
+    <lastmod>2019-11-17T09:00:47.231Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/03/03/%25E4%25BA%2586%25E8%25A7%25A3CAS%25E6%2593%258D%25E4%25BD%259C/</loc>
+    
+    <lastmod>2019-11-15T06:13:58.958Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/03/03/%25E4%25BD%25BF%25E7%2594%25A8volatile%25E8%25A7%25A3%25E5%2586%25B3%25E5%258F%25AF%25E8%25A7%2581%25E6%2580%25A7%25E9%2597%25AE%25E9%25A2%2598%25E5%258F%258A%25E9%2598%25BB%25E6%25AD%25A2%25E6%258C%2587%25E4%25BB%25A4%25E9%2587%258D%25E6%258E%2592%25E5%25BA%258F/</loc>
+    
+    <lastmod>2019-11-15T06:12:46.188Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/02/19/JVM%25E5%2586%2585%25E5%25AD%2598%25E6%25A8%25A1%25E5%259E%258B%25E4%25B8%258E%25E5%2586%2585%25E5%25AD%2598%25E5%258C%25BA%25E5%259F%259F/</loc>
+    
+    <lastmod>2019-11-15T05:48:06.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/25/idea%25E6%2596%25B0%25E5%25BB%25BAmaven%25E9%25A1%25B9%25E7%259B%25AE/</loc>
+    
+    <lastmod>2019-11-15T05:34:05.624Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2018/04/10/maven%25E9%25A1%25B9%25E7%259B%25AE%25E6%259E%2584%25E5%25BB%25BA%25E5%25B7%25A5%25E5%2585%25B7/</loc>
+    
+    <lastmod>2019-11-15T05:33:56.498Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2018/07/03/SpringBoot%25E5%2585%25A5%25E9%2597%25A8/</loc>
     
     <lastmod>2019-11-15T05:30:10.200Z</lastmod>
@@ -156,49 +205,49 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/09/30/Vue%25E7%25BB%2584%25E4%25BB%25B6%25E5%259F%25BA%25E7%25A1%2580/</loc>
+    <loc>https://zhuyiting.xyz/2018/09/30/Vue/Vue%25E7%25BB%2584%25E4%25BB%25B6%25E5%259F%25BA%25E7%25A1%2580/</loc>
     
     <lastmod>2019-11-15T04:56:17.221Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/12/16/Vue%25E9%25A1%25B9%25E7%259B%25AE%25E6%2590%25AD%25E5%25BB%25BA/</loc>
+    <loc>https://zhuyiting.xyz/2018/12/16/Vue/Vue%25E9%25A1%25B9%25E7%259B%25AE%25E6%2590%25AD%25E5%25BB%25BA/</loc>
     
     <lastmod>2019-11-15T04:56:12.886Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/10/20/Vue%25E5%25AE%259E%25E4%25BE%258B%25E8%25AF%25A6%25E8%25A7%25A3/</loc>
+    <loc>https://zhuyiting.xyz/2018/10/20/Vue/Vue%25E5%25AE%259E%25E4%25BE%258B%25E8%25AF%25A6%25E8%25A7%25A3/</loc>
     
     <lastmod>2019-11-15T04:56:09.330Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/11/02/Vue%25E8%25B7%25AF%25E7%2594%25B1/</loc>
+    <loc>https://zhuyiting.xyz/2018/11/02/Vue/Vue%25E8%25B7%25AF%25E7%2594%25B1/</loc>
     
     <lastmod>2019-11-15T04:56:04.292Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/09/15/Vue%25E5%259F%25BA%25E6%259C%25AC%25E6%258C%2587%25E4%25BB%25A4/</loc>
+    <loc>https://zhuyiting.xyz/2018/09/15/Vue/Vue%25E5%259F%25BA%25E6%259C%25AC%25E6%258C%2587%25E4%25BB%25A4/</loc>
     
     <lastmod>2019-11-15T04:56:01.589Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/09/13/Vue%25E6%25A6%2582%25E8%25BF%25B0/</loc>
+    <loc>https://zhuyiting.xyz/2018/09/13/Vue/Vue%25E6%25A6%2582%25E8%25BF%25B0/</loc>
     
     <lastmod>2019-11-15T04:55:59.125Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/11/14/Vue%25E7%259A%2584Ajax-axios/</loc>
+    <loc>https://zhuyiting.xyz/2018/11/14/Vue/Vue%25E7%259A%2584Ajax-axios/</loc>
     
     <lastmod>2019-11-15T04:55:48.816Z</lastmod>
     
@@ -366,13 +415,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/2018/04/25/idea%25E6%2596%25B0%25E5%25BB%25BAmaven%25E9%25A1%25B9%25E7%259B%25AE/</loc>
-    
-    <lastmod>2019-11-15T04:51:04.687Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/2017/10/15/%25E6%25B7%25B1%25E5%2585%25A5%25E9%259D%25A2%25E5%2590%2591%25E5%25AF%25B9%25E8%25B1%25A1/</loc>
     
     <lastmod>2019-11-15T04:48:48.222Z</lastmod>
@@ -397,13 +439,6 @@
     <loc>https://zhuyiting.xyz/2018/03/31/Git%25E7%25AE%2580%25E5%258D%2595%25E6%2595%2599%25E7%25A8%258B/</loc>
     
     <lastmod>2019-11-15T04:39:01.250Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2018/04/10/maven%25E9%25A1%25B9%25E7%259B%25AE%25E6%259E%2584%25E5%25BB%25BA%25E5%25B7%25A5%25E5%2585%25B7/</loc>
-    
-    <lastmod>2019-11-15T04:38:52.092Z</lastmod>
     
   </url>
   

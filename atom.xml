@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhuyiting.xyz/"/>
-  <updated>2019-11-15T05:11:22.909Z</updated>
+  <updated>2019-11-17T09:00:47.231Z</updated>
   <id>https://zhuyiting.xyz/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java锁与synchronized</title>
+    <link href="https://zhuyiting.xyz/2019/11/15/Java%E9%94%81%E4%B8%8Esynchronized/"/>
+    <id>https://zhuyiting.xyz/2019/11/15/Java锁与synchronized/</id>
+    <published>2019-11-15T06:04:30.000Z</published>
+    <updated>2019-11-17T09:00:47.231Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Java锁与synchronized"><a href="#Java锁与synchronized" class="headerlink" title="Java锁与synchronized"></a>Java锁与synchronized</h2><h3 id="锁的概念"><a href="#锁的概念" class="headerlink" title="锁的概念"></a>锁的概念</h3><ol><li>自旋锁: 为了不放弃CPU执行事件,循环的使用CAS技术对数据尝试进行更新,直到成功,本质上是乐观锁的一种实现</li><li>悲观锁: 假定会发生并发冲突,同步所有对数据的相关的操作,从读数据就开始上锁</li><li>乐观锁: 假定没有冲突,在修改数据时如果发现数据和之前不一致,则读最新数据,再重试修改</li><li>独享锁(写): 给资源加上写锁,只有一个线程可以修改,其他线程排队</li><li>共享锁(读): 给资源加上读锁,其他线程只能加读锁,不能加写锁</li><li>可重入锁、不可重入锁: 线程拿到锁后可以、不可以重用锁资源</li><li>公平锁、不公平锁: 争抢锁的顺序,如先来后到则是公平锁</li></ol><h3 id="同步关键字synchronized："><a href="#同步关键字synchronized：" class="headerlink" title="同步关键字synchronized："></a>同步关键字synchronized：</h3><p>Java内置锁synchronized<br><strong>同步关键字synchronized属于悲观锁</strong><br>属于最基本的线程通信机制，基于对象监视器实现的。<br>Java中的每个对象都与一个监视器相关联，<br>一个线程可以锁定或解锁监视器，一次只有一个线程可以锁定监视器<br>特性：synchronized是一个可重入、独享、悲观锁</p><p>synchronized用于同步方法和代码块，执行完后自动释放锁</p><p><strong>锁的范围:</strong> 类锁,对象锁,锁消除,锁粗化(扩大锁范围)</p><h3 id="synchronized原理"><a href="#synchronized原理" class="headerlink" title="synchronized原理"></a>synchronized原理</h3><p>理解Java对象头与Monitor </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Java锁与synchronized&quot;&gt;&lt;a href=&quot;#Java锁与synchronized&quot; class=&quot;headerlink&quot; title=&quot;Java锁与synchronized&quot;&gt;&lt;/a&gt;Java锁与synchronized&lt;/h2&gt;&lt;h3 id=&quot;锁
+      
+    
+    </summary>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="Java锁" scheme="https://zhuyiting.xyz/tags/Java%E9%94%81/"/>
+    
+  </entry>
   
   <entry>
     <title>党的有关理论和习近平新时代中国特色社会主义思想</title>
@@ -143,6 +171,115 @@
     
     
       <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用volatile解决可见性问题及阻止指令重排序</title>
+    <link href="https://zhuyiting.xyz/2019/03/03/%E4%BD%BF%E7%94%A8volatile%E8%A7%A3%E5%86%B3%E5%8F%AF%E8%A7%81%E6%80%A7%E9%97%AE%E9%A2%98%E5%8F%8A%E9%98%BB%E6%AD%A2%E6%8C%87%E4%BB%A4%E9%87%8D%E6%8E%92%E5%BA%8F/"/>
+    <id>https://zhuyiting.xyz/2019/03/03/使用volatile解决可见性问题及阻止指令重排序/</id>
+    <published>2019-03-03T14:52:41.000Z</published>
+    <updated>2019-11-15T06:12:46.188Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="volatile解决可见性问题"><a href="#volatile解决可见性问题" class="headerlink" title="volatile解决可见性问题"></a>volatile解决可见性问题</h4><p>volatile关键字的作用之一，是系统每次使用被它修饰过的变量时都时直接从内存中提取，而不是从缓存Cache中提取，同时对于该变量的更改会马上刷新回主存，使得各个线程取出的值相同，这里的Cache可以理解为线程的工作内存。<br><strong>volatile可以解决可见性问题，但无法解决原子性问题</strong><br>（synchronized或其他的加锁，也能保证内存的可见性，但实现方式略有不同，<strong>volatile的使用成本更低，因为它不会引起线程上下文的切换和调度。</strong>）</p><h4 id="volatile原理"><a href="#volatile原理" class="headerlink" title="volatile原理"></a>volatile原理</h4><p>对于volatile修饰的变量的写操作会有一行以lock作为前缀的汇编代码。这个指令在多核处理器下会引发两件事，</p><ol><li>将当前处理器缓存行的数据写回到主内存；</li><li>这个写回内存的操作会使其他在CPU里缓存了该内存地址的数据无效(<strong>禁用缓存</strong>)<br>lock前缀的指令会锁住系统总线或者缓存，目的就是保证在同一时间只有一个CPU可以修改数据。</li></ol><h4 id="volatile解决指令重排序问题"><a href="#volatile解决指令重排序问题" class="headerlink" title="volatile解决指令重排序问题"></a>volatile解决指令重排序问题</h4><p>volatile的另外一个作用就是阻止指令重排序<br>JVM会在不改变数据依赖的前提下对指令进行任意排序以提高程序性能。如果不存在数据依赖性，处理器也可以改变语句对应机器指令的执行顺序；</p><p>volatile通过插入内存屏障来实现阻止指令重排序</p><p>happens-before原则：它保证了程序的有序性，它规定如果两个操作的执行顺序无法从happens-before原则中推出来，那么它们就不能保证有序性，可以随意进行重排序：</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;volatile解决可见性问题&quot;&gt;&lt;a href=&quot;#volatile解决可见性问题&quot; class=&quot;headerlink&quot; title=&quot;volatile解决可见性问题&quot;&gt;&lt;/a&gt;volatile解决可见性问题&lt;/h4&gt;&lt;p&gt;volatile关键字的作用之一，是
+      
+    
+    </summary>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="volatile" scheme="https://zhuyiting.xyz/tags/volatile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>了解CAS操作</title>
+    <link href="https://zhuyiting.xyz/2019/03/03/%E4%BA%86%E8%A7%A3CAS%E6%93%8D%E4%BD%9C/"/>
+    <id>https://zhuyiting.xyz/2019/03/03/了解CAS操作/</id>
+    <published>2019-03-03T06:13:07.000Z</published>
+    <updated>2019-11-15T06:13:58.958Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="CAS操作"><a href="#CAS操作" class="headerlink" title="CAS操作"></a>CAS操作</h3><p>Atomic相关的类采用CAS操作来实现原子性</p><p>CAS操作依赖底层硬件的CAS指令,CAS指令有两个步骤:冲突检测和更新操作,但是这两个步骤合起来成为    一个原子性操作</p><p>CAS指令需要3个操作数,:内存位置(V),旧的预期值(A),新值(B).CAS指令执行时,首先比较内存位置V处的值和A的值是否相等(冲突检测),如果相等,就用新值B覆盖A(更新操作),否则,就什么都不做,所以一般循环执行CAS操作,直到成功为止.</p><p>Unsafe类里面的compareAndSwapXXX 方法最后都会变成与硬件相关的CAS指令. 从Unsafe这个类名就可以看出, 作者不希望我们随便使用,因为这是不安全的,<br>为什么不安全:因为这个类可以直接操作内存;还有其他的一些底层操作, 比如将线程挂起,就是调用了Unsafe类的park方法</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;CAS操作&quot;&gt;&lt;a href=&quot;#CAS操作&quot; class=&quot;headerlink&quot; title=&quot;CAS操作&quot;&gt;&lt;/a&gt;CAS操作&lt;/h3&gt;&lt;p&gt;Atomic相关的类采用CAS操作来实现原子性&lt;/p&gt;
+&lt;p&gt;CAS操作依赖底层硬件的CAS指令,CAS指令有两个步
+      
+    
+    </summary>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线程安全之多线程的三大特性</title>
+    <link href="https://zhuyiting.xyz/2019/02/23/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/"/>
+    <id>https://zhuyiting.xyz/2019/02/23/线程安全之多线程的三大特性/</id>
+    <published>2019-02-23T05:48:46.000Z</published>
+    <updated>2019-11-17T09:18:26.257Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="线程安全之内存模型的三大特性"><a href="#线程安全之内存模型的三大特性" class="headerlink" title="线程安全之内存模型的三大特性"></a>线程安全之内存模型的三大特性</h3><h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程安全就是线程同步的意思，当一个线程对一个线程安全的方法或者语句进行访问的时候，其他的线程不能在对他进行操作了，必须等到这次访问结束以后才能对这个线程安全的方法进行访问。</p><p>多个线程同时运行时，这些线程可能会同时运行一个方法，如果每次运行的结果和单个线程运行的结果时一样的，而且其他的变量的值也和预期一样，就是线程安全的。线程安全的问题都是由全局变量及静态变量引起的。</p><p>若每个线程中对全局变量、静态变量只有读操作，而没有写操作，一般来说，这个全局变量时线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，否则就可能会影响线程安全。</p><h4 id="多线程带来的问题"><a href="#多线程带来的问题" class="headerlink" title="多线程带来的问题"></a>多线程带来的问题</h4><ol><li>要保证多线程情况执行的正确性</li><li>无法肉眼去检测程序的准确性</li><li>不同的运行平台有不同的表现</li><li>错误很难重现</li><li>要保证程序的正确性,又要保证性能</li></ol><h3 id="多线程编程中的三大特性-重要概念"><a href="#多线程编程中的三大特性-重要概念" class="headerlink" title="多线程编程中的三大特性(重要概念)"></a>多线程编程中的三大特性(重要概念)</h3><h4 id="1-原子性"><a href="#1-原子性" class="headerlink" title="1. 原子性:"></a><strong>1. 原子性:</strong></h4><p>Java内存模型保证了read，load，usee，assign，store，write，lock，unlock操作具有原子性，例如对一个int类型的变量执行assign赋值操作，这个操作就是原子性的。但Java内存模型允许虚拟机将没有被volatile修饰的64位数据（long，double）的读写操作划分为两次32位的操作来进行，即load，store，read和write操作可以不具备原子性。</p><p><strong>原子性</strong>是指该操作是不可再分的.不论是多核还是单核,具有原子性的量,同一时刻只能有一个线程来对它进行操作.<br><strong>竞态条件</strong>是指通过一个可能失效的观测结果来决定下一步的动作,比如A拿到数据n,将要执行++操作, 而B在A拿到数据后操作前, 做了一次n=n+1, 那么在A对n完成+1并写回n以后, B对n的操作就失效了.<br><strong>原子操作</strong>是一个步骤,也可以是多个步骤,但是其顺序是不可以被打乱的,也不可以被切割而只执行其中的一部分(不可中断性)<br>将操作视为一个整体,资源在该次操作中保持一致,这就是原子性的核心特征.<br>原子操作是不会被线程调度机制打断的操作;这种操作一旦开始,就一直运行到结束,中间不会有任何context switch(切换到另一个线程).</p><h4 id="2-可见性："><a href="#2-可见性：" class="headerlink" title="2. 可见性："></a><strong>2. 可见性：</strong></h4><p><strong>可见性：</strong> 可见性是指，当多个线程并发访问共享变量时，一个线程对共享变量的修改，其它线程能够立刻看到。</p><p>CPU从主存中读取数据的效率相对不高，现在主流的计算机中都会设有几级缓存，每个线程读取共享变量时，都会将该变量加载进其对应CPU的高速缓存中，修改变量后，CPU会立刻更新缓存，但并不一定会立即将其写回主存（写进主存的时间不可预期），此时其他线程（尤其时不再同一CPU上执行的线程）访问该变量时，从主存中读到的就是酒数据，而非第一个线程更新后的数据。</p><p>这点实在操作系统或者说时硬件层面的机制，所以很多应用开发人员经常会忽略。</p><p>可见性就是要让一个CPU核心对数据的修改，对其他CPU核心立即可见。<br>volatile关键词修饰的变量是指CPU从缓存读取数据时，其他CPU可见,然后都会从内存中读取数据</p><h4 id="3-有序性："><a href="#3-有序性：" class="headerlink" title="3. 有序性："></a><strong>3. 有序性：</strong></h4><p><strong>有序性:</strong> 是指在本线程内观察，所有操作都是有序的。在一个线程观察另一个线程，所有操作都是无序的，无序时因为发生了指令重排序。在java内存模型中，允许编译器和处理器对指令进行重排序，重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。<br>volatile关键字通过添加内存屏障的方式来禁止指令重排序，即重排序时不能把后面的指令放到内存屏障之前。<br>也可以用synchronized来保证有序性， 它保证每个时刻只有一个线程可以执行同步代码，相当于是让线程顺序执行同步代码。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;线程安全之内存模型的三大特性&quot;&gt;&lt;a href=&quot;#线程安全之内存模型的三大特性&quot; class=&quot;headerlink&quot; title=&quot;线程安全之内存模型的三大特性&quot;&gt;&lt;/a&gt;线程安全之内存模型的三大特性&lt;/h3&gt;&lt;h4 id=&quot;线程安全&quot;&gt;&lt;a href=&quot;#线
+      
+    
+    </summary>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="内存模型" scheme="https://zhuyiting.xyz/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM内存模型与内存区域</title>
+    <link href="https://zhuyiting.xyz/2019/02/19/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/"/>
+    <id>https://zhuyiting.xyz/2019/02/19/JVM内存模型与内存区域/</id>
+    <published>2019-02-19T05:38:15.000Z</published>
+    <updated>2019-11-15T05:48:06.270Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h3><p><img src="/2019/02/19/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png" alt="jvm内存模型"><br>1.类装载子系统把 .class 文件装载运行时数据区（内存模型）<br>2.执行引擎去数据区执行字节码文件</p><h3 id="JVM内存区域"><a href="#JVM内存区域" class="headerlink" title="JVM内存区域"></a>JVM内存区域</h3><h4 id="1-堆-共享"><a href="#1-堆-共享" class="headerlink" title="1. 堆(共享)"></a>1. <strong>堆(共享)</strong></h4><p><img src="/2019/02/19/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/%E5%A0%86%E5%86%85%E5%AD%98.png" alt="堆内存"><br>堆就是被所有线程共享的一块内存区域.这块内存区域的唯一目的就是存放内存实例.<br>几乎所有对象实例都在这里分配内存.<br>但不是所有对象都保存在堆中，如果java在必要的时候，可以把对象分配到栈中，从而自动<br>销毁对象，那必然能减少一些垃圾回收的开销，同时提高执行效率。<br>逃逸分析：它并不是直接优化代码的手段，而是为其他优化手段提高依据的分析技术，逃逸<br>分析的主要作用就是分析对象的作用域。<br>当一个对象在方法中被定义后，他可能被外部方法引用，例如作为调用参数传到其他方法，<br>这种行为叫做方法逃逸。甚至该对象可能被外部线程访问到，例如赋值被类变量或可以在其<br>他线程中访问的实例变量，称为线程逃逸，通过逃逸分析，把不逃逸的对象找出，并在栈中<br>分配内存，那他就可以随着方法桢出栈而销毁。这样大量的对象就不需要存放在堆中，垃圾<br>收集系统的压力也会变小很多。</p><p>线程共享的Java堆中可能还会为每个线程划分线程私有的分配缓冲区（Thread Local<br>Allocation Buffer，TLAB）,但存放的依旧是对象实例.对象被new出来的时候会同时生成一个<br>对象头信息,其中有一个类指针,指向方法区中的类元信息<br>对象创建的五种方式:</p><ol><li>new关键字(调用了构造方法)<br>User user=new User();</li><li>利用反射机制(调用了构造方法)<br>User user=User.class.newInstance();</li><li>利用Constructor类的newInstance()(调用了构造方法)<br>Constructor<User> constructor=User.class.getConstructor();<br>User user=constructor.newInstance();</User></li><li>使用clone方法(没有调用了构造方法)<br>User user2=user1.clone();</li><li>反序列化(没有调用了构造方法)<br>ObjectInputStream in=new ObjectInputStream(new FileInputStream(“user.obj”));<br>User user=(User) in.readObject();</li></ol><p><strong>对象创建的过程大致如下：</strong></p><ol><li>虚拟机遇到new指令，到常量池定位到到这个类的符号引用，</li><li>检查符号引用代表的类是否被加载、解析、初始化过，如果没有，那必须先执行相应<br>的类加载过程</li><li>虚拟机为对象分配内存</li><li>虚拟机将分配到的内存空间都初始化为0值</li><li>虚拟机对对象进行必要的设置</li><li>执行方法，成员变量进行初始化<br>新建出来的对象,存放在Eden,当Eden存满,会触发JVM的minor gc命令,会把Eden中没有引用的对象清理掉, 这些对象被转移到Survivor取,并且每经历一次minor gc 对象的分代年龄就会+1,当分代年龄达到15,就会存放到老年代中,当老年代中的对象存满时,会执行full gc,如果还是不能清理出内存空间,就会产生内存溢出</li></ol><h4 id="2-栈（线程栈-虚拟机栈）-私有"><a href="#2-栈（线程栈-虚拟机栈）-私有" class="headerlink" title="2. 栈（线程栈/虚拟机栈）(私有)"></a>2. <strong>栈（线程栈/虚拟机栈）(私有)</strong></h4><p>虚拟机栈符合栈数据结构的特征，先进后出（主方法进站子方法再进栈，先执行子方法，子方法执行完出栈，最后主方法再出栈）。<br>栈是线程私有的，每个线程有对应的独立栈区，它的生命周期与线程相同。栈是描述Java方法执行的内存模型，每个方法在执行的同时都会创建这个方法对应的栈帧，用于存储方法内部局部变量表、操作数栈、动态链接、方法出口等信息，每一个方法从调用到执行完的过程就对应着一个栈桢在栈中入栈到出栈的过程。</p><p><strong>栈帧内存模型：</strong></p><ol><li>局部变量表：存放了编译期可知的各种基本数据类型、以及对象变量和其对象的地址<br>(指向堆中), 内存空间在编译期间完成分配,当进入一个方法时,这个方法需要在帧中分配<br>多大的局部空间是完全确定的.</li><li>操作数栈：存放操作数,遇到运算符取数据</li><li>动态链接：存放线程中每个方法的指令码的内存地址</li><li>方法出口：方法执行完要返回到父方法(线程)中的哪一条指令</li></ol><h4 id="3-本地方法栈"><a href="#3-本地方法栈" class="headerlink" title="3. 本地方法栈"></a>3. <strong>本地方法栈</strong></h4><p>本地方法栈也是线程私有的,用于存放系统本地的方法,一般用于java访问系统中的c语言写的方法.</p><h4 id="4-方法区（元空间）-共享"><a href="#4-方法区（元空间）-共享" class="headerlink" title="4. 方法区（元空间）(共享)"></a>4. <strong>方法区（元空间）(共享)</strong></h4><p>方法区存放在系统内存中,不在jvm虚拟机的内存中.<br>方法区存放常量,静态变量以及类元信息(类的方法,类的属性)<br>运行时常量池是方法区的一部分,《Java虚拟机规范》对于方法区的管理是最宽松的，这个区域可以不用实现垃圾回收，对于内存策略，方法区的大小可以是固定的也可以是可扩展的，不同的虚拟机对于方法区有不同的实现，HotSpot虚拟机在Java 8之前，方法区仅仅是逻辑上的空间，物理上位于堆中的永久代中。Java 8中HotSpot虚拟机移除了堆中的永久代，使<br>用本地内存存储类元信息，称为元空间</p><h4 id="5-程序计数器-私有"><a href="#5-程序计数器-私有" class="headerlink" title="5. 程序计数器(私有)"></a>5. <strong>程序计数器(私有)</strong></h4><p>程序计数器是线程私有的。存放线程正在执行或者将要执行的JVM指令存放的对应地址。</p><h4 id="6-直接内存"><a href="#6-直接内存" class="headerlink" title="6.直接内存"></a>6.<strong>直接内存</strong></h4><p>直接内存并不是虚拟机运行时数据区的一部分,也不是虚拟机规范中定义的内存区域,但也被频繁使用.</p><h3 id="JVM内存间交互操作"><a href="#JVM内存间交互操作" class="headerlink" title="JVM内存间交互操作"></a>JVM内存间交互操作</h3><p>Java内存模型中定义了8个操作来完成主内存和工作内存的交互操作.<br><img src="/2019/02/19/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/jvm%E5%86%85%E5%AD%98%E6%93%8D%E4%BD%9C.png" alt="jvm内存操作"></p><ol><li>read：把一个变量的值从主内存传输到工作内存中</li><li>load：在read之后执行，把read得到的值放入工作内存的变量副本中</li><li>use：把工作内存中一个变量的值传递给执行引擎</li><li>assign：把一个从执行引擎接收到的值赋给工作内存的变量</li><li>store：把工作内存的一个变量的值传送到主内存中</li><li>write：在store之后执行，把store得到的值放入主内存的变量中</li><li>lock：作用于主内存的变量</li><li>unlock</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;JVM内存模型&quot;&gt;&lt;a href=&quot;#JVM内存模型&quot; class=&quot;headerlink&quot; title=&quot;JVM内存模型&quot;&gt;&lt;/a&gt;JVM内存模型&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2019/02/19/JVM%E5%86%85%E5%AD%98%E6%A8%
+      
+    
+    </summary>
+    
+    
+      <category term="JVM" scheme="https://zhuyiting.xyz/categories/JVM/"/>
+    
+    
+      <category term="JVM并发编程" scheme="https://zhuyiting.xyz/tags/JVM%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -289,12 +426,12 @@
   
   <entry>
     <title>Vue项目搭建</title>
-    <link href="https://zhuyiting.xyz/2018/12/16/Vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
-    <id>https://zhuyiting.xyz/2018/12/16/Vue项目搭建/</id>
+    <link href="https://zhuyiting.xyz/2018/12/16/Vue/Vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    <id>https://zhuyiting.xyz/2018/12/16/Vue/Vue项目搭建/</id>
     <published>2018-12-16T11:39:42.000Z</published>
     <updated>2019-11-15T04:56:12.886Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Vue项目实战"><a href="#Vue项目实战" class="headerlink" title="Vue项目实战"></a>Vue项目实战</h2><p>做一个简单的Vue前端项目,练习与巩固知识点,做一个总结</p><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p>node环境<br>github+git项目管理</p><h4 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h4><ol><li><p>在github上创建一个仓库,作为本次项目仓库<br>然后clone到本地</p></li><li><p>命令行工具初始化一个Vue项目<br>前提:先安装好vue脚手架(全局), 可以使用vue命令<br>进入项目根目录,然后执行<code>vue init webpack</code>初始化一个vue</p></li><li><p>尝试启动项目<br>运行<code>npm run dev</code>命令,访问成功,一个vue的demo创建完成</p></li></ol><h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p><strong>src项目源代码结构</strong><br>业务开发根目录<br><img src="/2018/12/16/Vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png" alt="项目结构"></p><ul><li>main.js — 项目入口文件</li><li>App.vue — 项目原始根组件</li><li>router<ul><li>index.js — 项目路由</li></ul></li><li>components — 项目中的组件</li><li>assests — 项目中的图片资源文件</li></ul><p><strong>config配置文件夹</strong></p><ul><li>index.js — 基础配置文件</li><li>dev.env.js — 开发环境</li><li>prod.env.js — 上线环境</li></ul><p><strong>build项目打包的webpack的配置内容</strong><br>一般也不需要修改</p><h4 id="vue文件结构"><a href="#vue文件结构" class="headerlink" title=".vue文件结构"></a>.vue文件结构</h4><p>.vue是一种单文件组件</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Vue单组件文件 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 组件模板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./assets/logo.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 组件逻辑 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">'App'</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 组件样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#app</span> &#123;</span></span><br><span class="line">  font-family: 'Avenir', Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#2c3e50</span>;</span></span><br><span class="line">  margin-top: 60px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><h4 id="引入fastclick第三方模块"><a href="#引入fastclick第三方模块" class="headerlink" title="引入fastclick第三方模块"></a>引入fastclick第三方模块</h4><p>引入fastclick包解决有些浏览器延迟300ms响应click事件的问题<br><code>npm install fastclick --save</code></p><h4 id="引入Element模板库"><a href="#引入Element模板库" class="headerlink" title="引入Element模板库"></a>引入Element模板库</h4><p><code>npm i element-ui -S</code> npm安装,这样可以和webpack更好的结合<br>然后在main.js中导入</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入element</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span></span><br><span class="line"><span class="comment">// 全局使用</span></span><br><span class="line">Vue.use(ElementUI);</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="Vue项目实战"><a href="#Vue项目实战" class="headerlink" title="Vue项目实战"></a>Vue项目实战</h2><p>做一个简单的Vue前端项目,练习与巩固知识点,做一个总结</p><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p>node环境<br>github+git项目管理</p><h4 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h4><ol><li><p>在github上创建一个仓库,作为本次项目仓库<br>然后clone到本地</p></li><li><p>命令行工具初始化一个Vue项目<br>前提:先安装好vue脚手架(全局), 可以使用vue命令<br>进入项目根目录,然后执行<code>vue init webpack</code>初始化一个vue</p></li><li><p>尝试启动项目<br>运行<code>npm run dev</code>命令,访问成功,一个vue的demo创建完成</p></li></ol><h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p><strong>src项目源代码结构</strong><br>业务开发根目录<br><img src="/2018/12/16/Vue/Vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png" alt="项目结构"></p><ul><li>main.js — 项目入口文件</li><li>App.vue — 项目原始根组件</li><li>router<ul><li>index.js — 项目路由</li></ul></li><li>components — 项目中的组件</li><li>assests — 项目中的图片资源文件</li></ul><p><strong>config配置文件夹</strong></p><ul><li>index.js — 基础配置文件</li><li>dev.env.js — 开发环境</li><li>prod.env.js — 上线环境</li></ul><p><strong>build项目打包的webpack的配置内容</strong><br>一般也不需要修改</p><h4 id="vue文件结构"><a href="#vue文件结构" class="headerlink" title=".vue文件结构"></a>.vue文件结构</h4><p>.vue是一种单文件组件</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Vue单组件文件 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 组件模板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./assets/logo.png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 组件逻辑 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">'App'</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 组件样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#app</span> &#123;</span></span><br><span class="line">  font-family: 'Avenir', Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#2c3e50</span>;</span></span><br><span class="line">  margin-top: 60px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><h4 id="引入fastclick第三方模块"><a href="#引入fastclick第三方模块" class="headerlink" title="引入fastclick第三方模块"></a>引入fastclick第三方模块</h4><p>引入fastclick包解决有些浏览器延迟300ms响应click事件的问题<br><code>npm install fastclick --save</code></p><h4 id="引入Element模板库"><a href="#引入Element模板库" class="headerlink" title="引入Element模板库"></a>引入Element模板库</h4><p><code>npm i element-ui -S</code> npm安装,这样可以和webpack更好的结合<br>然后在main.js中导入</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入element</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span></span><br><span class="line"><span class="comment">// 全局使用</span></span><br><span class="line">Vue.use(ElementUI);</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -318,8 +455,8 @@
   
   <entry>
     <title>Vue的Ajax(axios)</title>
-    <link href="https://zhuyiting.xyz/2018/11/14/Vue%E7%9A%84Ajax-axios/"/>
-    <id>https://zhuyiting.xyz/2018/11/14/Vue的Ajax-axios/</id>
+    <link href="https://zhuyiting.xyz/2018/11/14/Vue/Vue%E7%9A%84Ajax-axios/"/>
+    <id>https://zhuyiting.xyz/2018/11/14/Vue/Vue的Ajax-axios/</id>
     <published>2018-11-14T03:15:38.000Z</published>
     <updated>2019-11-15T04:55:48.816Z</updated>
     
@@ -346,8 +483,8 @@
   
   <entry>
     <title>Vue路由</title>
-    <link href="https://zhuyiting.xyz/2018/11/02/Vue%E8%B7%AF%E7%94%B1/"/>
-    <id>https://zhuyiting.xyz/2018/11/02/Vue路由/</id>
+    <link href="https://zhuyiting.xyz/2018/11/02/Vue/Vue%E8%B7%AF%E7%94%B1/"/>
+    <id>https://zhuyiting.xyz/2018/11/02/Vue/Vue路由/</id>
     <published>2018-11-02T02:51:54.000Z</published>
     <updated>2019-11-15T04:56:04.292Z</updated>
     
@@ -374,8 +511,8 @@
   
   <entry>
     <title>Vue实例详解</title>
-    <link href="https://zhuyiting.xyz/2018/10/20/Vue%E5%AE%9E%E4%BE%8B%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://zhuyiting.xyz/2018/10/20/Vue实例详解/</id>
+    <link href="https://zhuyiting.xyz/2018/10/20/Vue/Vue%E5%AE%9E%E4%BE%8B%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://zhuyiting.xyz/2018/10/20/Vue/Vue实例详解/</id>
     <published>2018-10-20T02:20:51.000Z</published>
     <updated>2019-11-15T04:56:09.330Z</updated>
     
@@ -425,146 +562,6 @@
       <category term="webpack" scheme="https://zhuyiting.xyz/tags/webpack/"/>
     
       <category term="打包管理" scheme="https://zhuyiting.xyz/tags/%E6%89%93%E5%8C%85%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue组件基础</title>
-    <link href="https://zhuyiting.xyz/2018/09/30/Vue%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/"/>
-    <id>https://zhuyiting.xyz/2018/09/30/Vue组件基础/</id>
-    <published>2018-09-30T07:33:56.000Z</published>
-    <updated>2019-11-15T04:56:17.221Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><h4 id="1-什么是组件"><a href="#1-什么是组件" class="headerlink" title="1. 什么是组件"></a>1. 什么是组件</h4><p>组件是可重复使用的Vue实例,开发中可以把经常重复的功能封装为组件.<br>组件可以将整个页面尽显模块化分割.<br>组件分为全局组件和局部组件.</p><h4 id="2-基本实例"><a href="#2-基本实例" class="headerlink" title="2. 基本实例"></a>2. 基本实例</h4><p>全局组件的创建方式</p><ol><li>使用Vue.extend来创建全局的Vue组件 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    // 使用组件,直接把组件的名字以HTML标签形式引入</span><br><span class="line">    //注意: HTML大小写忽略,所以驼峰命名失效,要采用 xxx-xxx来代替xxxXxx</span><br><span class="line">    <span class="tag">&lt;<span class="name">my-con1</span>&gt;</span><span class="tag">&lt;/<span class="name">my-con1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 注册组件Vue.component('组件名称',组件对象)</span></span></span><br><span class="line"><span class="actionscript">  Vue.component(<span class="string">'myCon1'</span>,Vue.extend(&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 使用Vue.extend创建全局组件</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 通过template属性指定组件要展示的HTML结构</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    template: '<span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是使用Vue.extend创建的组件<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>'</span></span></span><br><span class="line">  &#125;)</span><br><span class="line">  )</span><br><span class="line"><span class="actionscript">  <span class="comment">// 创建Vue实例</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;&#125;);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个名为 button-counter 的新组件</span></span><br><span class="line"><span class="comment">//使用Vue.component函数创建组件,该函数有两个参数, 第一个是组件的名称,第二个是以对象的形式,描述一个组件</span></span><br><span class="line"><span class="comment">//因为组件是可复用的Vue实例,所以与new Vue接收相同的选项</span></span><br><span class="line">Vue.component(<span class="string">'button-counter'</span>, &#123; </span><br><span class="line">  data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      count: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  template: <span class="string">'&lt;button v-on:click="count++"&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li><li> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-con3</span>&gt;</span><span class="tag">&lt;/<span class="name">my-con3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"tmp1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>在Vue实例外部定义组件,使用template标签,这种方式有代码提示,好用,推荐<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 注册组件Vue.component('组件名称',组件对象)</span></span></span><br><span class="line"><span class="actionscript">  Vue.component(<span class="string">'myCon3'</span>,&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 使用Vue.extend创建全局组件</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 通过template属性指定组件要展示的HTML结构</span></span></span><br><span class="line"><span class="actionscript">    template: <span class="string">'#tmp1'</span></span></span><br><span class="line">  &#125;)</span><br><span class="line"><span class="actionscript">  <span class="comment">// 创建Vue实例</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;&#125;);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol><p>局部组件,在Vue实例内部的components方法内创建,只有这个Vue实例可以使用</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">my-con</span>&gt;</span><span class="tag">&lt;/<span class="name">my-con</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"tmp1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>在Vue实例外部定义组件,使用template标签,这种方式有代码提示,好用,推荐<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line">    components:&#123;</span><br><span class="line">      myCon:&#123;</span><br><span class="line"><span class="actionscript">        template:<span class="string">'#tmp1'</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>注意: 无论使用什么方式, 模板最外层只能用一个根标签包含</strong></p><h4 id="3-组件复用"><a href="#3-组件复用" class="headerlink" title="3. 组件复用"></a>3. 组件复用</h4><p>组件的优点在于重复利用<br>注意:复用组件内的data必须是一个函数,如果是一个对象,组件之间会相互影响(多个组件会共用一个对象),使用函-数会分别管理数据<br>vue提供component标签来有用组件</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"tmp1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>在Vue实例外部定义组件,使用template标签,这种方式有代码提示,好用,推荐<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"tmp1"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><h4 id="4-组件之间的通信"><a href="#4-组件之间的通信" class="headerlink" title="4. 组件之间的通信"></a>4. 组件之间的通信</h4><p>组件也需要数据的通信,而vue中子组件默认无法访问父组件的数据</p><h5 id="父子组件之props"><a href="#父子组件之props" class="headerlink" title="父子组件之props"></a>父子组件之props</h5><p>props是一个单向的数据流,只允许父组件向子组件传值,可以是数值、字符、布尔值、数值、对象。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">com1</span> <span class="attr">v-bind:parentmsg</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"tmp1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; parentmsg &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">    el:<span class="string">'#app'</span>,</span></span><br><span class="line">    data:&#123;</span><br><span class="line"><span class="actionscript">      msg:<span class="string">'hello'</span></span></span><br><span class="line">    &#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">      com1:&#123;</span><br><span class="line"><span class="actionscript">        template:<span class="string">"#tmp1"</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 定义一个参数接收</span></span></span><br><span class="line"><span class="actionscript">        props:[<span class="string">'parentmsg'</span>]</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;组件基础&quot;&gt;&lt;a href=&quot;#组件基础&quot; class=&quot;headerlink&quot; title=&quot;组件基础&quot;&gt;&lt;/a&gt;组件基础&lt;/h2&gt;&lt;h4 id=&quot;1-什么是组件&quot;&gt;&lt;a href=&quot;#1-什么是组件&quot; class=&quot;headerlink&quot; title=&quot;1. 
-      
-    
-    </summary>
-    
-    
-      <category term="Vue.js" scheme="https://zhuyiting.xyz/categories/Vue-js/"/>
-    
-    
-      <category term="前端框架" scheme="https://zhuyiting.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="Vue.js" scheme="https://zhuyiting.xyz/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6基础</title>
-    <link href="https://zhuyiting.xyz/2018/09/25/ES6%E5%9F%BA%E7%A1%80/"/>
-    <id>https://zhuyiting.xyz/2018/09/25/ES6基础/</id>
-    <published>2018-09-25T06:06:54.000Z</published>
-    <updated>2019-11-15T05:12:20.931Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ES6基础"><a href="#ES6基础" class="headerlink" title="ES6基础"></a>ES6基础</h2><p>ES6全称ECMAScript6.0 是JavaScript的下一个版本标准,但现在已经有很多浏览器支持了ES6</p><p>JavaScript只是Oracle公司注册的一个商标,它的正式名称就是ECMAScript</p><h4 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h4><p>ES6新增了两个重要的关键字:<code>let</code>和<code>const</code><br><code>let</code>声明的变量只在let所在代码块有效<br><code>const</code>声明一个只读常量,不可修改</p><h4 id="变量的结构赋值"><a href="#变量的结构赋值" class="headerlink" title="变量的结构赋值"></a>变量的结构赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es5中对变量的赋值</span></span><br><span class="line"><span class="keyword">var</span> data = &#123;<span class="attr">userName</span>: <span class="string">'aaaa'</span>, <span class="attr">password</span>: <span class="number">123456</span>&#125;</span><br><span class="line"><span class="keyword">var</span> userName = data.userName</span><br><span class="line"><span class="keyword">var</span> password = data.password</span><br><span class="line"><span class="built_in">console</span>.log(userName)</span><br><span class="line"><span class="built_in">console</span>.log(password)</span><br><span class="line"><span class="keyword">var</span> data1 = [<span class="string">'aaaa'</span>, <span class="number">123456</span>]</span><br><span class="line"><span class="keyword">var</span> userName1 = data1[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">var</span> password1 = data1[<span class="number">1</span>]</span><br><span class="line"><span class="built_in">console</span>.log(userName1)</span><br><span class="line"><span class="built_in">console</span>.log(password1)</span><br><span class="line"></span><br><span class="line"><span class="comment">//es6中的解构赋值</span></span><br><span class="line"><span class="keyword">const</span> &#123;userName, password&#125; = &#123;<span class="attr">userName</span>: <span class="string">'aaaa'</span>, <span class="attr">password</span>: <span class="number">123456</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(userName)</span><br><span class="line"><span class="built_in">console</span>.log(password)</span><br><span class="line"><span class="keyword">const</span> [userName1, password1] = [<span class="string">'aaaa'</span>, <span class="number">123456</span>]</span><br><span class="line"><span class="built_in">console</span>.log(userName1)</span><br><span class="line"><span class="built_in">console</span>.log(password1)</span><br></pre></td></tr></table></figure><h4 id="ES6模块化"><a href="#ES6模块化" class="headerlink" title="ES6模块化"></a>ES6模块化</h4><p>ES6 引入了模块化，其设计思想是在编译时就能确定模块的依赖关系，以及输入和输出的变量。<br>ES6 的模块化分为导出（export） 与导入（import）两个模块。</p><ul><li>import命令特性<ul><li><strong>只读</strong>:可以改写 import 变量类型为对象的属性值，不能改写 import 变量类型为基本类型的值。</li><li><strong>单例模式</strong></li><li><strong>静态执行模式</strong>:不支持import的值为变量或者表达式</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;ES6基础&quot;&gt;&lt;a href=&quot;#ES6基础&quot; class=&quot;headerlink&quot; title=&quot;ES6基础&quot;&gt;&lt;/a&gt;ES6基础&lt;/h2&gt;&lt;p&gt;ES6全称ECMAScript6.0 是JavaScript的下一个版本标准,但现在已经有很多浏览器支持了ES6&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://zhuyiting.xyz/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="https://zhuyiting.xyz/tags/JavaScript/"/>
-    
-      <category term="ES6" scheme="https://zhuyiting.xyz/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue基本指令</title>
-    <link href="https://zhuyiting.xyz/2018/09/15/Vue%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4/"/>
-    <id>https://zhuyiting.xyz/2018/09/15/Vue基本指令/</id>
-    <published>2018-09-15T11:40:33.000Z</published>
-    <updated>2019-11-15T04:56:01.589Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Vue基本指令"><a href="#Vue基本指令" class="headerlink" title="Vue基本指令"></a>Vue基本指令</h2><h4 id="1-v-cloak"><a href="#1-v-cloak" class="headerlink" title="1:v-cloak"></a>1:v-cloak</h4><p>能够解决插值表达式闪烁问题</p><h4 id="2-v-text"><a href="#2-v-text" class="headerlink" title="2:v-text"></a>2:v-text</h4><p>和<code></code>功能一样,但是没有闪烁问题<br><code></code>可以在插值前后有内容,v-text会覆盖元素中原本的内容</p><h4 id="3-v-html"><a href="#3-v-html" class="headerlink" title="3:v-html"></a>3:v-html</h4><p>将数据已HTML格式输出</p><h4 id="4-v-bind"><a href="#4-v-bind" class="headerlink" title="4:v-bind"></a>4:v-bind</h4><p>v-bind: 是Vue中提供的用于绑定属性的指令<br>v-bind可以缩写为<code>:</code><br>用法:</p><ul><li>v-bind:title(需要绑定的属性)</li><li>可简写为:title(需要绑定的属性)</li><li>绑定元素设置class样式<ol><li>用数组<code>:class=&quot;[&#39;class1&#39;,&#39;class2&#39;]&quot;</code></li><li>三元表达式<code>:class=&quot;[&#39;class1&#39;,&#39;class2&#39;,flag?&#39;class3&#39;:&#39;&#39;]&quot;</code></li><li>数组中嵌套对象<code>:class=&quot;[&#39;class1&#39;,&#39;class2&#39;,{&#39;class3&#39;:boolean}]&quot;</code></li><li>直接使用对象<code>:class=&quot;{class1:true,class2:true,class3:false}&quot;</code>(可以在data中定义<code>classobj:{class1:true,class2:true,class3:false}</code>然后在属性中直接饮用<code>:class=&quot;classobj&quot;</code>)</li></ol></li></ul><h4 id="5-v-on"><a href="#5-v-on" class="headerlink" title="5:v-on"></a>5:v-on</h4><p>v-on:是Vue中提供的用于绑定事件的指令<br>v-on可以缩写为<code>@</code><br>用法:</p><ul><li>v-on:click=”show”<br>需要在Vue对象中定义show方法<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">method:&#123;</span><br><span class="line">    show:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>时间修饰符<ol><li>.stop:阻止冒泡;</li><li>.prevent:阻止默认事件的发生;</li><li>.capture:捕获冒泡,有该修饰符的dom元素会先执行，如果有多个，从外到内依次执行，然后再按自然顺序执行触发的事件。 </li><li>.self:将事件绑定到自身,只有自身能被触发,通常用于避免冒泡事件的影响;</li><li>.once:设置事件只能触发一次,比如按钮的点击;</li><li>.passive:用于对DOM的默认事件进行性能优化,比如超出最大范围的滚动条滚动;</li><li>.native:把vue组件转化成一个普通的HTML标签,对普通的HTML标签是没有任何作用的;</li></ol></li></ul><h4 id="6-v-modle"><a href="#6-v-modle" class="headerlink" title="6:v-modle"></a>6:v-modle</h4><p>v-modle:是Vue中用于数据双向绑定的指令<br><strong>注意:</strong> <strong><em>只能运用在表单元素中</em></strong>    </p><p>v-bind只能实现数据单向绑定,从M=&gt;V</p><h4 id="7-v-for"><a href="#7-v-for" class="headerlink" title="7:v-for"></a>7:v-for</h4><p>v-for是循环迭代指令</p><ul><li>用法:<ol><li>迭代数组<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item i) in list"</span>&gt;</span></span><br><span class="line">          索引:&#123;&#123;i&#125;&#125;----姓名:&#123;&#123;item.name&#125;&#125;----年龄:&#123;&#123;item.age&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  ```    </span><br><span class="line">2. 迭代对象中的属性</span><br><span class="line">  ```html</span><br><span class="line">  <span class="comment">&lt;!-- 循环遍历对象的属性 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(val,key,i) in list"</span>&gt;</span></span><br><span class="line">      &#123;&#123;val&#125;&#125;---&#123;&#123;key&#125;&#125;---&#123;&#123;i&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li>迭代数字<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"i in 10"</span>&gt;</span>&#123;&#123;i&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol></li><li>v-for中key的使用注意(key相当于主键,是唯一的)<ol><li>v-for循环时,key属性只能用number或者string</li><li>key在使用的时候必须使用v-bind绑定来指定key的值</li></ol></li></ul><h4 id="8-v-if"><a href="#8-v-if" class="headerlink" title="8:v-if"></a>8:v-if</h4><p>v-if是条件渲染指令,v-if有更高的切换渲染开销.如果在运行时条件不太可能改变，则使用 v-if 较好.</p><ul><li>用法  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app-3"</span>&gt;</span><br><span class="line">    &lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;现在你看到我了&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure></li></ul><h4 id="9-v-show"><a href="#9-v-show" class="headerlink" title="9:v-show"></a>9:v-show</h4><p>v-show有更高的初始渲染开销</p><ul><li>用法  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-show=<span class="string">"ifShow"</span>&gt;</span><br><span class="line">    show</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Vue基本指令&quot;&gt;&lt;a href=&quot;#Vue基本指令&quot; class=&quot;headerlink&quot; title=&quot;Vue基本指令&quot;&gt;&lt;/a&gt;Vue基本指令&lt;/h2&gt;&lt;h4 id=&quot;1-v-cloak&quot;&gt;&lt;a href=&quot;#1-v-cloak&quot; class=&quot;header
-      
-    
-    </summary>
-    
-    
-      <category term="Vue.js" scheme="https://zhuyiting.xyz/categories/Vue-js/"/>
-    
-    
-      <category term="前端框架" scheme="https://zhuyiting.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="Vue.js" scheme="https://zhuyiting.xyz/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue概述</title>
-    <link href="https://zhuyiting.xyz/2018/09/13/Vue%E6%A6%82%E8%BF%B0/"/>
-    <id>https://zhuyiting.xyz/2018/09/13/Vue概述/</id>
-    <published>2018-09-13T02:37:09.000Z</published>
-    <updated>2019-11-15T04:55:59.125Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="什么是Vue-js"><a href="#什么是Vue-js" class="headerlink" title="什么是Vue.js"></a>什么是Vue.js</h3><ul><li>Vue.js是目前最火的前端框架,React是最流行的一个前端框架(React除了开发网站,还可以开发手机APP,Vue语法也可以用于手机开发,需要借助于Weex)</li><li>Vue.js是前端的主流框架之一,和Angular.js,React.js一起,并成为前端三大主流框架</li><li>Vue.js是一套构建用户界面的框架,<strong>只关注视图层</strong>,它易于上手,还便于第三方库或既有项目整合.(Vue有配套的第三方类库,可以整合起来做大型项目的开发)</li><li>前端的主要工作,负责MVC中的V层,主要工作就是制作前端页面效果.</li></ul><h3 id="为什么要学习前端框架"><a href="#为什么要学习前端框架" class="headerlink" title="为什么要学习前端框架"></a>为什么要学习前端框架</h3><ul><li>提高开发效率<ul><li>提高开发效率的发展历程:原生JS-&gt;jQuery类库-&gt;前端模板引擎-&gt;Angular.js/Vue.js(能够帮助我们减少不必要的DOM操作,提高渲染效率;双向数据绑带[通过框架提供的指令,前端程序员只需要关心业务逻辑,不必关心DOM是如何渲染了]);</li><li>在Vue.js中,一个核心的概念,就是让用户不再操作DOM元素,解放了用户的双手,让程序员可以更多的关注业务逻辑</li></ul></li></ul><h3 id="框架和库的区别"><a href="#框架和库的区别" class="headerlink" title="框架和库的区别"></a>框架和库的区别</h3><ul><li>框架: 是一套完整的解决方案;对项目的侵入性较大,项目如果需要更换框架,则需要重新架构整个项目.<ul><li>node中的express</li></ul></li><li>库: 提供某一个小功能,对项目的侵入性小,如果某个库无法完成某些需求,可以很容易的切换到其他库实现需求.</li></ul><h3 id="后端-Node-中的MVC与前端中的MVVM之间的区别"><a href="#后端-Node-中的MVC与前端中的MVVM之间的区别" class="headerlink" title="后端(Node)中的MVC与前端中的MVVM之间的区别"></a>后端(Node)中的MVC与前端中的MVVM之间的区别</h3><ul><li>MVC是后端的分层开发概念</li><li>MVVM是前端视图层的概念,主要关注与视图层分层,也就是说:MVVM把前端的视图层,把每个页面分成了M,V和VM层,VM是MVVM思想的核心,因为VM层是M与V之间的调度者.<ul><li>M保存的是每个页面中单独的数据</li><li>V就是每个页面的HTML结构</li><li>VM是一个调度者,分割了V和M,每当V层需要获取或保存数据的时候,都需要VM做中间处理.</li><li>前端页面使用MVVM的思想,主要是为了使开发更方便,VM提供了数据的双向绑定<br><img src="/2018/09/13/Vue%E6%A6%82%E8%BF%B0/MVC%E4%B8%8EMVVM.png" alt="mvc与mvvm"></li></ul></li></ul><h3 id="Vue中和MVVM之间的对应关系"><a href="#Vue中和MVVM之间的对应关系" class="headerlink" title="Vue中和MVVM之间的对应关系"></a>Vue中和MVVM之间的对应关系</h3>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 1.导入Vue的包 --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">      </span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- MVVM中的V层 --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- new的Vue实例,会控制这个元素中的内容 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 2.创建一个Vue的实例</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 当我们导入包之后,在浏览器的内存中,就多了一个Vue的构造函数</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 这个vue对象就是MVVM中的调度者</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 其中的date就是MVVM中的M 数据</span></span></span><br><span class="line"><span class="actionscript">          <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">              el:<span class="string">'#app'</span>, <span class="comment">//标书,当前我们new的这个vue实例,要控制页面上的哪个区域</span></span></span><br><span class="line"><span class="actionscript">              data:&#123; <span class="comment">//data属性中,存放的是el中要用到的数据</span></span></span><br><span class="line"><span class="actionscript">                  msg:<span class="string">"Hello Vue.js"</span> <span class="comment">//通过Vue提供的指令,很方便的就能把数据渲染到页面上,程序员不需要操作DOM元素了</span></span></span><br><span class="line">              &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;什么是Vue-js&quot;&gt;&lt;a href=&quot;#什么是Vue-js&quot; class=&quot;headerlink&quot; title=&quot;什么是Vue.
-      
-    
-    </summary>
-    
-    
-      <category term="Vue.js" scheme="https://zhuyiting.xyz/categories/Vue-js/"/>
-    
-    
-      <category term="前端框架" scheme="https://zhuyiting.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="Vue.js" scheme="https://zhuyiting.xyz/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery笔记</title>
-    <link href="https://zhuyiting.xyz/2018/08/14/jQuery%E7%AC%94%E8%AE%B0/"/>
-    <id>https://zhuyiting.xyz/2018/08/14/jQuery笔记/</id>
-    <published>2018-08-14T01:40:22.000Z</published>
-    <updated>2019-11-15T04:53:44.046Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念:"></a>1. 概念:</h3><p>jQuery是一个优秀的JavaScript库,而非JavaScript,它是轻量级的库.</p><h3 id="2-作用"><a href="#2-作用" class="headerlink" title="2. 作用"></a>2. 作用</h3><p>jQuery使用户能更方便的处理HTML、events、实现动画效果,并且方便的为网站提供Ajax交互,</p><h3 id="3-优势"><a href="#3-优势" class="headerlink" title="3. 优势"></a>3. 优势</h3><p>它的文档说明齐全,而且应用详细,同时还有很多成熟的插件可供选择</p><h3 id="4-核心概念"><a href="#4-核心概念" class="headerlink" title="4. 核心概念"></a>4. 核心概念</h3><p>write less,do more</p><h3 id="5-语法"><a href="#5-语法" class="headerlink" title="5. 语法"></a>5. 语法</h3><ul><li><strong>jQuery入口函数</strong><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 执行代码</span></span><br><span class="line">&#125;);</span><br><span class="line">或者</span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 执行代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对比JavaScript入口函数:</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 执行代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><strong>jQuery选择器</strong><blockquote><ol><li>元素选择器<br><code>$(&quot;p&quot;)</code></li><li>#id选择器<br><code>$(&quot;#id&quot;)</code></li><li>.class选择器<br><code>$(&quot;.class&quot;)</code></li></ol></blockquote></li><li><strong>DOM操作</strong>   </li></ul><p>捕获和设置</p><blockquote><ol><li><code>text()</code> - 设置或返回所选元素的文本内容</li><li><code>html()</code> - 设置或返回所选元素的内容(包含HTML标签)</li><li><code>val()</code> - 设置或返回表单字段的值 </li><li><code>attr()</code> - 获取属性</li></ol></blockquote><p>添加和删除HTML元素</p><blockquote><ol><li><code>append()</code> - 在被选元素的结尾插入内容</li><li><code>prepend()</code> - 在被选元素的开头插入内容</li><li><code>after()</code> - 在被选元素之后插入内容</li><li><code>before()</code> - 在被选元素之前插入内容</li><li><code>remove()</code> - 删除被选元素（及其子元素）</li><li><code>empty()</code> - 从被选元素中删除子元素</li></ol></blockquote><p>获取和操作CSS</p><blockquote><ol><li><code>addClass()</code> - 向被选元素添加一个或多个类</li><li><code>removeClass()</code> - 从被选元素删除一个或多个类</li><li><code>toggleClass()</code> - 对被选元素进行添加/删除类的切换操作</li><li><code>css()</code> - 设置或返回样式属性</li></ol></blockquote><p>遍历DOM树</p><blockquote><ol><li><code>parent()</code> - 方法返回被选元素的直接父元素。</li><li><code>parents()</code> - 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。</html></li><li><code>parentsUntil()</code> - 方法返回介于两个给定元素之间的所有祖先元素。</li><li><code>children()</code> - 方法返回被选元素的所有直接子元素。</li><li><code>find()</code> - 方法返回被选元素的后代元素，一路向下直到最后一个后代。</li><li><code>siblings()</code> - 方法返回被选元素的所有同胞元素。</li><li><code>next()</code> - 方法返回被选元素的下一个同胞元素。</li><li><code>nextAll()</code> - 方法返回被选元素的所有跟随的同胞元素。</li><li><code>nextUntil()</code> - 方法返回介于两个给定参数之间的所有跟随的同胞元素。</li><li><code>prev() , prevAll() , prevUntil()</code> - 方法的工作方式与上面的方法类似，只不过方向相反而已：它们返回的是前面的同胞元素（在 DOM 树中沿着同胞之前元素遍历，而不是之后元素遍历）。</li></ol></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;jQuery&quot;&gt;&lt;a href=&quot;#jQuery&quot; class=&quot;headerlink&quot; title=&quot;jQuery&quot;&gt;&lt;/a&gt;jQuery&lt;/h2&gt;&lt;h3 id=&quot;1-概念&quot;&gt;&lt;a href=&quot;#1-概念&quot; class=&quot;headerlink&quot; title=&quot;1
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://zhuyiting.xyz/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="https://zhuyiting.xyz/tags/JavaScript/"/>
-    
-      <category term="jQuery" scheme="https://zhuyiting.xyz/tags/jQuery/"/>
     
   </entry>
   
