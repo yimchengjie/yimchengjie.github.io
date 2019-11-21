@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhuyiting.xyz/2019/04/19/Java%25E5%25B9%25B6%25E5%258F%2591%25E7%25BC%2596%25E7%25A8%258B/%25E5%25B9%25B6%25E5%258F%2591%25E5%25B7%25A5%25E5%2585%25B7%25E7%25B1%25BB/</loc>
+    
+    <lastmod>2019-11-21T09:12:27.929Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/02/15/Java%25E5%25B9%25B6%25E5%258F%2591%25E7%25BC%2596%25E7%25A8%258B/%25E7%25BA%25BF%25E7%25A8%258B%25E6%25B1%25A0%25E5%258E%259F%25E7%2590%2586%25E5%258F%258A%25E5%25BA%2594%25E7%2594%25A8/</loc>
+    
+    <lastmod>2019-11-21T08:47:29.804Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhuyiting.xyz/2019/04/11/Java%25E5%25B9%25B6%25E5%258F%2591%25E7%25BC%2596%25E7%25A8%258B/%25E5%25B9%25B6%25E5%258F%2591%25E5%25AE%25B9%25E5%2599%25A8%25E7%25B1%25BB/</loc>
     
-    <lastmod>2019-11-20T04:02:03.938Z</lastmod>
+    <lastmod>2019-11-21T06:41:27.319Z</lastmod>
     
   </url>
   
@@ -222,13 +236,6 @@
     <loc>https://zhuyiting.xyz/2019/01/29/Java%25E5%25B9%25B6%25E5%258F%2591%25E7%25BC%2596%25E7%25A8%258B/%25E7%25BA%25BF%25E7%25A8%258B%25E5%25B0%2581%25E9%2597%25AD%25E4%25B9%258BThreadLocal%25E5%2592%258C%25E6%25A0%2588%25E5%25B0%2581%25E9%2597%25AD/</loc>
     
     <lastmod>2019-11-15T05:12:05.574Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2019/02/15/Java%25E5%25B9%25B6%25E5%258F%2591%25E7%25BC%2596%25E7%25A8%258B/%25E7%25BA%25BF%25E7%25A8%258B%25E6%25B1%25A0%25E5%258E%259F%25E7%2590%2586%25E5%258F%258A%25E5%25BA%2594%25E7%2594%25A8/</loc>
-    
-    <lastmod>2019-11-15T05:11:56.984Z</lastmod>
     
   </url>
   
@@ -492,13 +499,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/repository/index.html</loc>
-    
-    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhuyiting.xyz/tags/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.898Z</lastmod>
@@ -506,14 +506,21 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/repository/index.html</loc>
+    
+    <lastmod>2019-10-18T08:58:07.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
