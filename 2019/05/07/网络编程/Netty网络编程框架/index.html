@@ -26,10 +26,10 @@
 <meta property="og:site_name" content="ycjBlog">
 <meta property="og:description" content="Netty网络编程框架Netty是一个高性能、高可扩展性的异步事件驱动的网络应用程序框架，它极大的简化了TCP和UDP客户端和服务器开发等网络编程 Netty支持BIO、NIO，支持各种协议 Reactor线程模型Reactor模型也叫Dispatcher模式,服务器接收多路请求,并同步反派给请求对应的线程 Netty线程模型Netty线程模型基于主从Reactor线程模型,有多个Reactor">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;05&#x2F;07&#x2F;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6&#x2F;netty%E6%B5%81%E7%A8%8B.png">
-<meta property="og:updated_time" content="2019-11-22T09:30:41.332Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;05&#x2F;07&#x2F;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6&#x2F;netty%E6%B5%81%E7%A8%8B.jpg">
+<meta property="og:updated_time" content="2019-11-25T05:34:33.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;05&#x2F;07&#x2F;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6&#x2F;netty%E6%B5%81%E7%A8%8B.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;05&#x2F;07&#x2F;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6&#x2F;netty%E6%B5%81%E7%A8%8B.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="https://zhuyiting.xyz/2019/05/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/index.html">
   
@@ -404,11 +404,12 @@
 <li><strong>Selector</strong>: 实现I/O多路复用,一个Selector线程可以监听多个线程的Channel事件</li>
 <li><strong>NioEventLoop</strong>: 类似线程池,维护了一个线程和任务队列,支持异步提交执行,线程启动时,会调用run()方法,执行IO任务和非IO任务</li>
 <li><strong>NioEventLoopGroup</strong>: 用于管理eventLoop的生命周期,可以理解为大线程池,内部维护了一组小线程池</li>
-<li><strong>ChannelHandler</strong>: 处理IO事件或者拦截IO操作,并转发到ChannelPipeline(业务处理链)中</li>
+<li><strong>ChannelHandler</strong>: 处理IO事件或者拦截IO操作,并转发到ChannelPipeline(业务处理链)中<br>Handler可以被共享,但是要注意防止共享变量,比如解码器是不能被共享的<br>耗时的业务不要放在Handler,要单独交给指定的线程池中</li>
 <li><strong>ChannelHandlerContext</strong>: 保存Channel相关的上下文信息,每一个ChannelHandlerContext关联一个ChannelHandler</li>
-<li><strong>ChannelPipline</strong>: 业务处理链,保存了ChannelHandler的List,用于处理或拦截Channel的入站事件或者出站操作.</li>
+<li><strong>ChannelPipline</strong>: 责任链,业务处理链,保存了ChannelHandler的List,用于处理或拦截Channel的入站事件或者出站操作.</li>
 </ul>
-<p><img src="/2019/05/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/netty%E6%B5%81%E7%A8%8B.png" alt="netty流程"></p>
+<p><img src="/2019/05/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/netty%E6%B5%81%E7%A8%8B.jpg" alt="netty流程"></p>
+<p><a href="https://luan.ma/post/netty-flow/" target="_blank" rel="noopener">netty服务端处理用户请求流程图解</a></p>
 
       
     </div>
