@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zhuyiting.xyz/2019/07/13/JavaWeb%25E6%25A1%2586%25E6%259E%25B6/%25E6%25B7%25B1%25E5%2585%25A5%25E7%2590%2586%25E8%25A7%25A3SpringAOP/</loc>
+    <loc>https://zhuyiting.xyz/2019/07/21/JavaWeb%25E6%25A1%2586%25E6%259E%25B6/%25E6%25B7%25B1%25E5%2585%25A5%25E7%2590%2586%25E8%25A7%25A3SpringAOP/</loc>
     
-    <lastmod>2019-12-26T09:11:13.240Z</lastmod>
+    <lastmod>2019-12-26T09:12:34.938Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhuyiting.xyz/2019/07/10/JavaWeb%25E6%25A1%2586%25E6%259E%25B6/SpringIoC%25E8%25AF%25A6%25E8%25A7%25A3/</loc>
+    
+    <lastmod>2019-12-26T09:12:31.112Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>https://zhuyiting.xyz/2019/07/02/%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F/%25E4%25BB%25A3%25E7%2590%2586%25E6%25A8%25A1%25E5%25BC%258F/</loc>
     
     <lastmod>2019-12-26T08:41:46.372Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhuyiting.xyz/2019/07/03/JavaWeb%25E6%25A1%2586%25E6%259E%25B6/SpringIoC%25E8%25AF%25A6%25E8%25A7%25A3/</loc>
-    
-    <lastmod>2019-12-26T08:29:27.036Z</lastmod>
     
   </url>
   
@@ -618,14 +618,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/links/index.html</loc>
+    <loc>https://zhuyiting.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zhuyiting.xyz/categories/index.html</loc>
+    <loc>https://zhuyiting.xyz/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     

@@ -22,16 +22,16 @@
 <meta name="keywords" content="JavaWeb框架,Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解SpringAOP">
-<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;07&#x2F;13&#x2F;JavaWeb%E6%A1%86%E6%9E%B6&#x2F;%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;07&#x2F;21&#x2F;JavaWeb%E6%A1%86%E6%9E%B6&#x2F;%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
 <meta property="og:description" content="深入理解 SpringAOPAOP 是指在程序运行期间动态的将某段代码切入到指定方法指定位置进行运行的编程方式 SpringAOP 的底层其实就是动态代理 Spring 是如何使用动态代理的 将业务组件和切面组件添加到容器中, 创建对象的时候, 根据切入点表达式拦截的类, 加入通知,生成代理对象. 如果目标对象有实现接口就用 JDK 代理, 反之就用 CGLIB 代理.  SpringAOP 注解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;07&#x2F;13&#x2F;JavaWeb%E6%A1%86%E6%9E%B6&#x2F;%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP&#x2F;AnnotationAwareAspectJAutoProxyCreator%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png">
-<meta property="og:updated_time" content="2019-12-26T09:11:13.240Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;07&#x2F;21&#x2F;JavaWeb%E6%A1%86%E6%9E%B6&#x2F;%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP&#x2F;AnnotationAwareAspectJAutoProxyCreator%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png">
+<meta property="og:updated_time" content="2019-12-26T09:12:34.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;07&#x2F;13&#x2F;JavaWeb%E6%A1%86%E6%9E%B6&#x2F;%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP&#x2F;AnnotationAwareAspectJAutoProxyCreator%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zhuyiting.xyz&#x2F;2019&#x2F;07&#x2F;21&#x2F;JavaWeb%E6%A1%86%E6%9E%B6&#x2F;%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP&#x2F;AnnotationAwareAspectJAutoProxyCreator%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhuyiting.xyz/2019/07/13/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/index.html">
+  <link rel="canonical" href="https://zhuyiting.xyz/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/index.html">
   
     <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
   
@@ -368,8 +368,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/07/13/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/" class="article-date">
-	  <time datetime="2019-07-13T13:30:45.000Z" itemprop="datePublished">2019-07-13</time>
+	<a href="/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/" class="article-date">
+	  <time datetime="2019-07-21T13:30:45.000Z" itemprop="datePublished">2019-07-21</time>
 	</a>
 </span>
         
@@ -387,7 +387,7 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/13/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
@@ -408,7 +408,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *代码跟进演示</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//出发点</span></span><br><span class="line"><span class="meta">@EnableAspectJAutoProxy</span></span><br><span class="line"><span class="comment">//跟进</span></span><br><span class="line"><span class="meta">@Import</span>(&#123;AspectJAutoProxyRegistrar.class&#125;)</span><br><span class="line"><span class="comment">//点进AspectJAutoProxyRegistrar</span></span><br><span class="line">AopConfigUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary(registry);</span><br><span class="line"><span class="comment">//点进registerAspectJAnnotationAutoProxyCreatorIfNecessary方法</span></span><br><span class="line"><span class="keyword">return</span> registerAspectJAnnotationAutoProxyCreatorIfNecessary(registry, (Object)<span class="keyword">null</span>);</span><br><span class="line"><span class="comment">//点进registerAspectJAnnotationAutoProxyCreatorIfNecessary</span></span><br><span class="line"><span class="keyword">return</span> registerOrEscalateApcAsRequired(AnnotationAwareAspectJAutoProxyCreator.class, registry, source);</span><br><span class="line"><span class="comment">//点进AnnotationAwareAspectJAutoProxyCreator</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="2-AnnotationAwareAspectJAutoProxyCreator-创建过程"><a href="#2-AnnotationAwareAspectJAutoProxyCreator-创建过程" class="headerlink" title="2. AnnotationAwareAspectJAutoProxyCreator 创建过程"></a>2. AnnotationAwareAspectJAutoProxyCreator 创建过程</h4><p><img src="/2019/07/13/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/AnnotationAwareAspectJAutoProxyCreator%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="AnnotationAwareAspectJAutoProxyCreator继承关系"></p>
+<h4 id="2-AnnotationAwareAspectJAutoProxyCreator-创建过程"><a href="#2-AnnotationAwareAspectJAutoProxyCreator-创建过程" class="headerlink" title="2. AnnotationAwareAspectJAutoProxyCreator 创建过程"></a>2. AnnotationAwareAspectJAutoProxyCreator 创建过程</h4><p><img src="/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/AnnotationAwareAspectJAutoProxyCreator%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="AnnotationAwareAspectJAutoProxyCreator继承关系"></p>
 <p>主要关注的是它继承了BeanFactoryAware和BeanPostProcessor接口,</p>
 <p>所以它的创建是在BeanFactory进行初始化,注册BeanPostProcessor阶段(也就是BeanFactoryPostProcessor注册完成之后)</p>
 <p>registerBeanPostProcessors(beanFactory);注册 BeanPostProcessor 来处理拦截 bean 的创建(在bean创建前后执行)；</p>
@@ -494,7 +494,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhuyiting.xyz/2019/07/13/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/" title="深入理解SpringAOP" target="_blank" rel="external">https://zhuyiting.xyz/2019/07/13/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/</a>
+      <a href="https://zhuyiting.xyz/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/" title="深入理解SpringAOP" target="_blank" rel="external">https://zhuyiting.xyz/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -546,7 +546,7 @@
     
     
     <li class="next">
-      <a href="/2019/07/03/JavaWeb%E6%A1%86%E6%9E%B6/SpringIoC%E8%AF%A6%E8%A7%A3/" title="SpringIoC详解"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/07/10/JavaWeb%E6%A1%86%E6%9E%B6/SpringIoC%E8%AF%A6%E8%A7%A3/" title="SpringIoC详解"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
