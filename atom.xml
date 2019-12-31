@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://zhuyiting.xyz/"/>
-  <updated>2019-12-26T09:12:34.938Z</updated>
-  <id>https://zhuyiting.xyz/</id>
+  <link href="https://yimchengjie.github.io/"/>
+  <updated>2019-12-31T09:13:48.233Z</updated>
+  <id>https://yimchengjie.github.io/</id>
   
   <author>
     <name>yanchengjie</name>
@@ -17,9 +17,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ActiveMQ高可用集群方案</title>
+    <link href="https://yimchengjie.github.io/2019/08/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/ActiveMQ%E9%AB%98%E5%8F%AF%E7%94%A8%E9%9B%86%E7%BE%A4%E6%96%B9%E6%A1%88/"/>
+    <id>https://yimchengjie.github.io/2019/08/03/消息中间件/ActiveMQ高可用集群方案/</id>
+    <published>2019-08-03T08:25:10.000Z</published>
+    <updated>2019-12-31T09:13:48.233Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ActiveMQ高可用集群方案"><a href="#ActiveMQ高可用集群方案" class="headerlink" title="ActiveMQ高可用集群方案"></a>ActiveMQ高可用集群方案</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;ActiveMQ高可用集群方案&quot;&gt;&lt;a href=&quot;#ActiveMQ高可用集群方案&quot; class=&quot;headerlink&quot; title=&quot;ActiveMQ高可用集群方案&quot;&gt;&lt;/a&gt;ActiveMQ高可用集群方案&lt;/h2&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+      <category term="ActiveMQ" scheme="https://yimchengjie.github.io/tags/ActiveMQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ActiveMQ支持的协议</title>
+    <link href="https://yimchengjie.github.io/2019/07/30/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/ActiveMQ%E6%94%AF%E6%8C%81%E7%9A%84%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://yimchengjie.github.io/2019/07/30/消息中间件/ActiveMQ支持的协议/</id>
+    <published>2019-07-30T11:40:31.000Z</published>
+    <updated>2019-12-31T09:13:13.890Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ActiveMQ支持的协议"><a href="#ActiveMQ支持的协议" class="headerlink" title="ActiveMQ支持的协议"></a>ActiveMQ支持的协议</h2><p>ActiveMQ支持多种协议传输和传输方式,允许客户端使用多种协议连接.</p><p>ActiveMQ支持的协议: AUTO、OpenWire、AMQP、Stomp、MQTT等<br>在<code>${ACTIVE_HOME}/conf/activemq.xml</code>中, 通过配置<code>&lt;transportConnectors&gt;</code>就可以使用多种传输方式(==注意配置文件中可能会用到转义字符串, 比如&amp;要用&amp;来表示==)</p><p>ActiveMQ支持的基础传输方式有: VM、TCP、SSL、UDP、Peer、Multicast、HTTP(S)等</p><p>由于TCP的稳定性, 它也是ActiveMQ中最常用的一种传输方式. 在默认的设置中, TCP连接的端口为61616</p><h3 id="OpenWire协议"><a href="#OpenWire协议" class="headerlink" title="OpenWire协议"></a>OpenWire协议</h3><p>OpenWire协议是Apache的一种跨语言的协议,允许从不同的语言和平台访问ActiveMQ<br>默认就是使用这种协议, 功能很全面</p><p>OpenWire支持TCP、SSL、NIO、UDP、VM等传输方式，但URL只配置传输方式时，默认就是使用OpenWire协议</p><h3 id="MQTT协议"><a href="#MQTT协议" class="headerlink" title="MQTT协议"></a>MQTT协议</h3><p>全称Message Queuing Telemetry Transport，即消息队列遥测传输，由IBM开发， 已成为物联网通信的标准</p><p>它结构简单，相比其他的协议更加轻量级</p><h4 id="发布-订阅模型"><a href="#发布-订阅模型" class="headerlink" title="发布-订阅模型"></a>发布-订阅模型</h4><p>MQTT协议使用发布-订阅模型<br>提供者发布消息到主题topic上, 只要订阅了这个topic的消费者,都能收到这条消息</p><p>消费者无法收到启动前topic上的消息</p><h4 id="MQTT中的服务质量-QoS"><a href="#MQTT中的服务质量-QoS" class="headerlink" title="MQTT中的服务质量(QoS)"></a>MQTT中的服务质量(QoS)</h4><p>服务质量(QoS)级别 是一种关于发送者和接受者之间信息传递的保证协议</p><p>MQTT支持三种QoS<br>至多一次(0)客户端只发布一次消息到服务器<br>至少一次(1)客户端发送消息,直到服务器返回成功<br>只有一次(2)在(1)的前提下, 客户端继续发送, 客户端查看是否存在, 有就删除</p><p>QoS是的在不可靠的网络下进行通信变得更加简单,因为即使是在非常不可靠的网络下,协议也可以掌控是否需要重发消息, 并保证消息到达</p><h4 id="ActiveMQ中使用MQTT协议"><a href="#ActiveMQ中使用MQTT协议" class="headerlink" title="ActiveMQ中使用MQTT协议"></a>ActiveMQ中使用MQTT协议</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//发布者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MqttProducer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> qos = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String broker = <span class="string">"tcp://activemq.tony.com:1883"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String userName = <span class="string">"admin"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String passWord = <span class="string">"admin"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> MqttClient <span class="title">connect</span><span class="params">(String clientId, String userName,String password)</span> <span class="keyword">throws</span> MqttException </span>&#123;</span><br><span class="line">        MemoryPersistence persistence = <span class="keyword">new</span> MemoryPersistence();</span><br><span class="line">        MqttConnectOptions connOpts = <span class="keyword">new</span> MqttConnectOptions();</span><br><span class="line">        connOpts.setCleanSession(<span class="keyword">true</span>);</span><br><span class="line">        connOpts.setUserName(userName);</span><br><span class="line">        connOpts.setPassword(password.toCharArray());</span><br><span class="line">        connOpts.setConnectionTimeout(<span class="number">10</span>);</span><br><span class="line">        connOpts.setKeepAliveInterval(<span class="number">20</span>);</span><br><span class="line">        <span class="comment">// connOpts.setServerURIs(uris);  //这个是mqtt客户端实现的负载均衡和容错</span></span><br><span class="line">        <span class="comment">// String[] uris = &#123;"tcp://10.100.124.206:1883","tcp://10.100.124.207:1883"&#125;;</span></span><br><span class="line">        MqttClient mqttClient = <span class="keyword">new</span> MqttClient(broker, clientId, persistence);</span><br><span class="line">        mqttClient.setCallback(<span class="keyword">new</span> PushCallback(<span class="string">"test"</span>));</span><br><span class="line">        mqttClient.connect(connOpts);</span><br><span class="line">        <span class="keyword">return</span> mqttClient;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">pub</span><span class="params">(MqttClient sampleClient, String msg, String topic)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        MqttMessage message = <span class="keyword">new</span> MqttMessage(msg.getBytes());</span><br><span class="line">        message.setQos(qos);</span><br><span class="line">        message.setRetained(<span class="keyword">false</span>);</span><br><span class="line">        sampleClient.publish(topic, message);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">publish</span><span class="params">(String str, String clientId, String topic)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        MqttClient mqttClient = connect(clientId, userName, passWord);</span><br><span class="line">        <span class="keyword">if</span> (mqttClient != <span class="keyword">null</span>) &#123;</span><br><span class="line">            pub(mqttClient, str, topic);</span><br><span class="line">            System.out.println(<span class="string">"pub--&gt;"</span> + str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mqttClient != <span class="keyword">null</span>) &#123;</span><br><span class="line">            mqttClient.disconnect();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        publish(<span class="string">"message content"</span>, <span class="string">"producer-client-id-0"</span>, <span class="string">"x/y/z"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PushCallback</span> <span class="keyword">implements</span> <span class="title">MqttCallback</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String threadId;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PushCallback</span><span class="params">(String threadId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.threadId = threadId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">connectionLost</span><span class="params">(Throwable cause)</span> </span>&#123;</span><br><span class="line">        cause.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deliveryComplete</span><span class="params">(IMqttDeliveryToken token)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"服务器是否正确接收---------"</span> + token.isComplete());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">messageArrived</span><span class="params">(String topic, MqttMessage message)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String msg = <span class="keyword">new</span> String(message.getPayload());</span><br><span class="line">        System.out.println(threadId + <span class="string">" "</span> + msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//消费者</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MqttConsumer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> qos = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String broker = <span class="string">"tcp://activemq.tony.com:1883"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String userName = <span class="string">"admin"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String passWord = <span class="string">"admin"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> MqttClient <span class="title">connect</span><span class="params">(String clientId)</span> <span class="keyword">throws</span> MqttException </span>&#123;</span><br><span class="line">        MemoryPersistence persistence = <span class="keyword">new</span> MemoryPersistence();</span><br><span class="line">        MqttConnectOptions connOpts = <span class="keyword">new</span> MqttConnectOptions();</span><br><span class="line">        connOpts.setCleanSession(<span class="keyword">false</span>);</span><br><span class="line">        connOpts.setUserName(userName);</span><br><span class="line">        connOpts.setPassword(passWord.toCharArray());</span><br><span class="line">        connOpts.setConnectionTimeout(<span class="number">10</span>);</span><br><span class="line">        connOpts.setKeepAliveInterval(<span class="number">20</span>);</span><br><span class="line">        MqttClient mqttClient = <span class="keyword">new</span> MqttClient(broker, clientId, persistence);</span><br><span class="line">        mqttClient.connect(connOpts);</span><br><span class="line">        <span class="keyword">return</span> mqttClient;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sub</span><span class="params">(MqttClient mqttClient, String topic)</span> <span class="keyword">throws</span> MqttException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] Qos = &#123;qos&#125;;</span><br><span class="line">        String[] topics = &#123;topic&#125;;</span><br><span class="line">        mqttClient.subscribe(topics, Qos, <span class="keyword">new</span> IMqttMessageListener[]&#123;(s, mqttMessage) -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">"收到新消息"</span> + s + <span class="string">" &gt; "</span> + mqttMessage.toString());</span><br><span class="line">        &#125;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">runsub</span><span class="params">(String clientId, String topic)</span> <span class="keyword">throws</span> MqttException </span>&#123;</span><br><span class="line">        MqttClient mqttClient = connect(clientId);</span><br><span class="line">        <span class="keyword">if</span> (mqttClient != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sub(mqttClient, topic);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> MqttException </span>&#123;</span><br><span class="line">        runsub(<span class="string">"consumer-client-id-1"</span>, <span class="string">"x/y/z"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="AUTO协议"><a href="#AUTO协议" class="headerlink" title="AUTO协议"></a>AUTO协议</h3><p>AUTO自动检测协议,可以自动检测ActiveMQ支持的所有协议, 允许使用各种协议的客户端,使用同一个传输</p><h3 id="Stomp协议"><a href="#Stomp协议" class="headerlink" title="Stomp协议"></a>Stomp协议</h3><p>可以使用webSocket传输协议</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;ActiveMQ支持的协议&quot;&gt;&lt;a href=&quot;#ActiveMQ支持的协议&quot; class=&quot;headerlink&quot; title=&quot;ActiveMQ支持的协议&quot;&gt;&lt;/a&gt;ActiveMQ支持的协议&lt;/h2&gt;&lt;p&gt;ActiveMQ支持多种协议传输和传输方式,允许客户
+      
+    
+    </summary>
+    
+    
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+      <category term="ActiveMQ" scheme="https://yimchengjie.github.io/tags/ActiveMQ/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深入理解SpringAOP</title>
-    <link href="https://zhuyiting.xyz/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/"/>
-    <id>https://zhuyiting.xyz/2019/07/21/JavaWeb框架/深入理解SpringAOP/</id>
+    <link href="https://yimchengjie.github.io/2019/07/21/JavaWeb%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3SpringAOP/"/>
+    <id>https://yimchengjie.github.io/2019/07/21/JavaWeb框架/深入理解SpringAOP/</id>
     <published>2019-07-21T13:30:45.000Z</published>
     <updated>2019-12-26T09:12:34.938Z</updated>
     
@@ -35,19 +91,19 @@
     </summary>
     
     
-      <category term="JavaWeb框架" scheme="https://zhuyiting.xyz/categories/JavaWeb%E6%A1%86%E6%9E%B6/"/>
+      <category term="JavaWeb框架" scheme="https://yimchengjie.github.io/categories/JavaWeb%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="JavaWeb框架" scheme="https://zhuyiting.xyz/tags/JavaWeb%E6%A1%86%E6%9E%B6/"/>
+      <category term="JavaWeb框架" scheme="https://yimchengjie.github.io/tags/JavaWeb%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="Spring" scheme="https://zhuyiting.xyz/tags/Spring/"/>
+      <category term="Spring" scheme="https://yimchengjie.github.io/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>SpringIoC详解</title>
-    <link href="https://zhuyiting.xyz/2019/07/10/JavaWeb%E6%A1%86%E6%9E%B6/SpringIoC%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://zhuyiting.xyz/2019/07/10/JavaWeb框架/SpringIoC详解/</id>
+    <link href="https://yimchengjie.github.io/2019/07/10/JavaWeb%E6%A1%86%E6%9E%B6/SpringIoC%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://yimchengjie.github.io/2019/07/10/JavaWeb框架/SpringIoC详解/</id>
     <published>2019-07-10T08:30:45.000Z</published>
     <updated>2019-12-26T09:12:31.112Z</updated>
     
@@ -63,19 +119,19 @@
     </summary>
     
     
-      <category term="JavaWeb框架" scheme="https://zhuyiting.xyz/categories/JavaWeb%E6%A1%86%E6%9E%B6/"/>
+      <category term="JavaWeb框架" scheme="https://yimchengjie.github.io/categories/JavaWeb%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="JavaWeb框架" scheme="https://zhuyiting.xyz/tags/JavaWeb%E6%A1%86%E6%9E%B6/"/>
+      <category term="JavaWeb框架" scheme="https://yimchengjie.github.io/tags/JavaWeb%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="Spring" scheme="https://zhuyiting.xyz/tags/Spring/"/>
+      <category term="Spring" scheme="https://yimchengjie.github.io/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>代理模式</title>
-    <link href="https://zhuyiting.xyz/2019/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://zhuyiting.xyz/2019/07/02/设计模式/代理模式/</id>
+    <link href="https://yimchengjie.github.io/2019/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://yimchengjie.github.io/2019/07/02/设计模式/代理模式/</id>
     <published>2019-07-02T11:35:45.000Z</published>
     <updated>2019-12-26T08:41:46.372Z</updated>
     
@@ -91,21 +147,21 @@
     </summary>
     
     
-      <category term="设计模式" scheme="https://zhuyiting.xyz/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://yimchengjie.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="设计模式" scheme="https://zhuyiting.xyz/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://yimchengjie.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>ActiveMQ入门</title>
-    <link href="https://zhuyiting.xyz/2019/06/30/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/ActiveMQ%E5%85%A5%E9%97%A8/"/>
-    <id>https://zhuyiting.xyz/2019/06/30/消息中间件/ActiveMQ入门/</id>
+    <link href="https://yimchengjie.github.io/2019/06/30/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/ActiveMQ%E5%85%A5%E9%97%A8/"/>
+    <id>https://yimchengjie.github.io/2019/06/30/消息中间件/ActiveMQ入门/</id>
     <published>2019-06-30T14:10:45.000Z</published>
-    <updated>2019-12-23T01:40:26.127Z</updated>
+    <updated>2019-12-31T09:12:58.760Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="ActiveMQ入门"><a href="#ActiveMQ入门" class="headerlink" title="ActiveMQ入门"></a>ActiveMQ入门</h2><p>ActiveMQ是Apache出品, 是一个完全支持JMS1.1和J2EE 1.4规范的JMS Provider实现<br>尽管JMS已经出台很久, 但在J2EE中仍然扮演者重要角色</p><h3 id="ActiveMQ特性"><a href="#ActiveMQ特性" class="headerlink" title="ActiveMQ特性"></a>ActiveMQ特性</h3><ol><li>支持多种编程语言</li><li>支持多种传输协议</li><li>支持多种持久化方式(文件系统/数据库)</li></ol><h3 id="ActiveMQ的安装"><a href="#ActiveMQ的安装" class="headerlink" title="ActiveMQ的安装"></a>ActiveMQ的安装</h3><ol><li>从官网下载ActiveMQ</li><li>利用Xftp将文件传到服务器</li><li>解压到<code>/var</code>目录下</li><li>修改文件名为<code>activemq</code></li></ol><h3 id="ActiveMQ启动"><a href="#ActiveMQ启动" class="headerlink" title="ActiveMQ启动"></a>ActiveMQ启动</h3><p>在activemq文件下使用命令<code>./bin/activemq start</code> 后台启动ActiveMQ</p><p>但最好是将ActiveMQ作为一个服务来启动,这样可以使activemq在系统启动时自动启动</p><h4 id="创建ActiveMQ服务"><a href="#创建ActiveMQ服务" class="headerlink" title="创建ActiveMQ服务"></a>创建ActiveMQ服务</h4><ol><li><p>使用vim创建一个服务文件<br><code>vi /usr/lib/systemd/system/activemq.service</code></p></li><li><p>输入内容</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=ActiveMQ service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/var/activemq/bin/activemq start</span><br><span class="line">ExecStop=/var/activemq/bin/activemq stop</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=9</span><br><span class="line">StandardOutput=syslog</span><br><span class="line">StandardError=syslog</span><br><span class="line">SyslogIdentifier=activemq</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></li><li><p>修改<code>/var/activemq/bin/env</code>文件<br> 将JAVA_HOME的注释删除,然后填入系统jdk的安装路径</p></li><li><p>启动ActiveMQ服务<br> 使用<code>systemctl start activemq</code>来启动服务</p></li><li><p>查看服务状态<br> 使用命令<code>systemctl status activemq</code></p></li><li><p>设置开机自动启动<br> <code>ln -s /usr/lib/systemd/system/activemq.service/etc/systemd/system/multi-user.target.wants/activemq.service</code><br> <code>systemctl enable activemq</code></p></li><li><p>在防火墙添加ActiveMQ的Web管理端口和通讯端口</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#Web管理端口默认为8161,通讯端口默认为61616</span><br><span class="line">ufw allow 8161</span><br><span class="line">ufw allow 61616</span><br><span class="line"># 部分服务器需要在对应的服务提供商管理页面修改出入站规则</span><br></pre></td></tr></table></figure></li><li><p>浏览器访问<code>http://服务IP:8161/admin</code>进入管理平台<br>账户默认:admin<br>密码默认:admin</p></li></ol><h4 id="Web管理平台配置"><a href="#Web管理平台配置" class="headerlink" title="Web管理平台配置"></a>Web管理平台配置</h4><p>ActiveMQ的Web管理平台是基于jetty运行,因此在/var/activemq/conf目录可以查看jetty的配置文件</p><p>在<code>/var/activemq/conf/jetty.xml</code>文件中,可以进行修改端口,密码等内容</p><h3 id="使用ActiveMQ"><a href="#使用ActiveMQ" class="headerlink" title="使用ActiveMQ"></a>使用ActiveMQ</h3><p>在Java中使用</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.activemq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activemq-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.15.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在Spring中使用</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.3.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.activemq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activemq-broker<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.15.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>geronimo-jms_1.1_spec<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.apache.geronimo.specs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="ActiveMQ支持的协议"><a href="#ActiveMQ支持的协议" class="headerlink" title="ActiveMQ支持的协议"></a>ActiveMQ支持的协议</h3><p>ActiveMQ支持多种协议传输和传输方式,允许客户端使用多种协议连接.</p><p>ActiveMQ支持的协议: AUTO、OpenWire、AMQP、Stomp、MQTT等<br>在${ACTIVE_HOME}/conf/activemq.xml中, 通过配置<code>&lt;transportConnectors&gt;</code>就可以使用多种传输方式</p><p>ActiveMQ支持的基础传输方式有: VM、TCP、SSL、UDP、Peer、Multicast、HTTP(S)等\</p><p>由于TCP的稳定性, 它也是ActiveMQ中最常用的一种协议. 在默认的设置中, TCP连接的端口为61616</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="ActiveMQ入门"><a href="#ActiveMQ入门" class="headerlink" title="ActiveMQ入门"></a>ActiveMQ入门</h2><p>ActiveMQ是Apache出品, 是一个完全支持JMS1.1和J2EE 1.4规范的JMS Provider实现<br>尽管JMS已经出台很久, 但在J2EE中仍然扮演者重要角色</p><h3 id="ActiveMQ特性"><a href="#ActiveMQ特性" class="headerlink" title="ActiveMQ特性"></a>ActiveMQ特性</h3><ol><li>支持多种编程语言</li><li>支持多种传输协议</li><li>支持多种持久化方式(文件系统/数据库)</li></ol><h3 id="ActiveMQ的安装"><a href="#ActiveMQ的安装" class="headerlink" title="ActiveMQ的安装"></a>ActiveMQ的安装</h3><ol><li>从官网下载ActiveMQ</li><li>利用Xftp将文件传到服务器</li><li>解压到<code>/var</code>目录下</li><li>修改文件名为<code>activemq</code></li></ol><h3 id="ActiveMQ启动"><a href="#ActiveMQ启动" class="headerlink" title="ActiveMQ启动"></a>ActiveMQ启动</h3><p>在activemq文件下使用命令<code>./bin/activemq start</code> 后台启动ActiveMQ</p><p>但最好是将ActiveMQ作为一个服务来启动,这样可以使activemq在系统启动时自动启动</p><h4 id="创建ActiveMQ服务"><a href="#创建ActiveMQ服务" class="headerlink" title="创建ActiveMQ服务"></a>创建ActiveMQ服务</h4><ol><li><p>使用vim创建一个服务文件<br><code>vi /usr/lib/systemd/system/activemq.service</code></p></li><li><p>输入内容</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=ActiveMQ service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/var/activemq/bin/activemq start</span><br><span class="line">ExecStop=/var/activemq/bin/activemq stop</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=9</span><br><span class="line">StandardOutput=syslog</span><br><span class="line">StandardError=syslog</span><br><span class="line">SyslogIdentifier=activemq</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></li><li><p>修改<code>/var/activemq/bin/env</code>文件<br> 将JAVA_HOME的注释删除,然后填入系统jdk的安装路径</p></li><li><p>启动ActiveMQ服务<br> 使用<code>systemctl start activemq</code>来启动服务</p></li><li><p>查看服务状态<br> 使用命令<code>systemctl status activemq</code></p></li><li><p>设置开机自动启动<br> <code>ln -s /usr/lib/systemd/system/activemq.service/etc/systemd/system/multi-user.target.wants/activemq.service</code><br> <code>systemctl enable activemq</code></p></li><li><p>在防火墙添加ActiveMQ的Web管理端口和通讯端口</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#Web管理端口默认为8161,通讯端口默认为61616</span><br><span class="line">ufw allow 8161</span><br><span class="line">ufw allow 61616</span><br><span class="line"># 部分服务器需要在对应的服务提供商管理页面修改出入站规则</span><br></pre></td></tr></table></figure></li><li><p>浏览器访问<code>http://服务IP:8161/admin</code>进入管理平台<br>账户默认:admin<br>密码默认:admin</p></li></ol><h4 id="Web管理平台配置"><a href="#Web管理平台配置" class="headerlink" title="Web管理平台配置"></a>Web管理平台配置</h4><p>ActiveMQ的Web管理平台是基于jetty运行,因此在/var/activemq/conf目录可以查看jetty的配置文件</p><p>在<code>/var/activemq/conf/jetty.xml</code>文件中,可以进行修改端口,密码等内容</p><h3 id="使用ActiveMQ"><a href="#使用ActiveMQ" class="headerlink" title="使用ActiveMQ"></a>使用ActiveMQ</h3><p>在Java中使用</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.activemq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activemq-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.15.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 简单生产者</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Producer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> ProducerThread(<span class="string">"tcp://119.3.218.159:61616"</span>, <span class="string">"queue1"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ProducerThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">        String brokerUrl;</span><br><span class="line">        String destinationUrl;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// brokerUrl中间件url地址, destinationUrl队列url</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ProducerThread</span><span class="params">(String brokerUrl, String destinationUrl)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.brokerUrl = brokerUrl;</span><br><span class="line">            <span class="keyword">this</span>.destinationUrl = destinationUrl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            ActiveMQConnectionFactory connectionFactory;</span><br><span class="line">            Connection conn;</span><br><span class="line">            Session session;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">// 1、创建连接工厂</span></span><br><span class="line">                connectionFactory = <span class="keyword">new</span> ActiveMQConnectionFactory(brokerUrl);</span><br><span class="line">                <span class="comment">// 2、创建连接对象md</span></span><br><span class="line">                conn = connectionFactory.createConnection();</span><br><span class="line">                conn.start();</span><br><span class="line">                <span class="comment">// 3、创建会话</span></span><br><span class="line">                session = conn.createSession(<span class="keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">                <span class="comment">// 4、创建点对点发送的目标</span></span><br><span class="line">                Destination destination = session.createQueue(destinationUrl);</span><br><span class="line">                <span class="comment">// 5、创建生产者消息</span></span><br><span class="line">                MessageProducer producer = session.createProducer(destination);</span><br><span class="line">                <span class="comment">// 设置生产者的模式，有两种可选 持久化 / 不持久化</span></span><br><span class="line">                producer.setDeliveryMode(DeliveryMode.PERSISTENT);</span><br><span class="line">                <span class="comment">// 6、创建一条文本消息</span></span><br><span class="line">                String text = <span class="string">"Hello world!"</span>;</span><br><span class="line">                TextMessage message = session.createTextMessage(text);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1</span>; i++) &#123;</span><br><span class="line">                    <span class="comment">// 7、发送消息</span></span><br><span class="line">                    producer.send(message);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 8、 关闭连接</span></span><br><span class="line">                session.close();</span><br><span class="line">                conn.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (JMSException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 简单消费者</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// http://activemq.apache.org/consumer-features.html</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> ConsumerThread(<span class="string">"tcp://119.3.218.159:61616"</span>, <span class="string">"queue1"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> ConsumerThread(<span class="string">"tcp://119.3.218.159:61616"</span>, <span class="string">"queue1"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ConsumerThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String brokerUrl;</span><br><span class="line">        String destinationUrl;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ConsumerThread</span><span class="params">(String brokerUrl, String destinationUrl)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.brokerUrl = brokerUrl;</span><br><span class="line">            <span class="keyword">this</span>.destinationUrl = destinationUrl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            ActiveMQConnectionFactory connectionFactory;</span><br><span class="line">            Connection conn;</span><br><span class="line">            Session session;</span><br><span class="line">            MessageConsumer consumer;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">// brokerURL http://activemq.apache.org/connection-configuration-uri.html</span></span><br><span class="line">                <span class="comment">// 1、创建连接工厂</span></span><br><span class="line">                connectionFactory = <span class="keyword">new</span> ActiveMQConnectionFactory(<span class="keyword">this</span>.brokerUrl);</span><br><span class="line">                <span class="comment">// 2、创建连接对象</span></span><br><span class="line">                conn = connectionFactory.createConnection();</span><br><span class="line">                conn.start(); <span class="comment">// 一定要启动</span></span><br><span class="line">                <span class="comment">// 3、创建会话（可以创建一个或者多个session）</span></span><br><span class="line">                session = conn.createSession(<span class="keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">                <span class="comment">// 4、创建点对点接收的目标，queue - 点对点</span></span><br><span class="line">                Destination destination = session.createQueue(destinationUrl);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 5、创建消费者消息 http://activemq.apache.org/destination-options.html</span></span><br><span class="line">                consumer = session.createConsumer(destination);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 6、接收消息(没有消息就持续等待)</span></span><br><span class="line">                Message message = consumer.receive();</span><br><span class="line">                <span class="keyword">if</span> (message <span class="keyword">instanceof</span> TextMessage) &#123;</span><br><span class="line">                    System.out.println(<span class="string">"收到文本消息："</span> + ((TextMessage) message).getText());</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.println(message);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                consumer.close();</span><br><span class="line">                session.close();</span><br><span class="line">                conn.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (JMSException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在Spring中使用</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jms<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.3.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.activemq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activemq-broker<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.15.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>geronimo-jms_1.1_spec<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.apache.geronimo.specs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="web控制台"><a href="#web控制台" class="headerlink" title="web控制台"></a>web控制台</h3><p>activemq支持web控制台<br><code>http://host:8161/admin</code> 默认账号admin,密码admin</p>]]></content>
     
     <summary type="html">
     
@@ -117,19 +173,19 @@
     </summary>
     
     
-      <category term="消息中间件" scheme="https://zhuyiting.xyz/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     
-      <category term="消息中间件" scheme="https://zhuyiting.xyz/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
-      <category term="ActiveMQ" scheme="https://zhuyiting.xyz/tags/ActiveMQ/"/>
+      <category term="ActiveMQ" scheme="https://yimchengjie.github.io/tags/ActiveMQ/"/>
     
   </entry>
   
   <entry>
     <title>JDK内置命令工具</title>
-    <link href="https://zhuyiting.xyz/2019/06/27/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/%E5%86%85%E5%AD%98%E7%88%86%E7%82%B8CPU100%25%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
-    <id>https://zhuyiting.xyz/2019/06/27/Java系统调优/内存爆炸CPU100%问题分析/</id>
+    <link href="https://yimchengjie.github.io/2019/06/27/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/%E5%86%85%E5%AD%98%E7%88%86%E7%82%B8CPU100%25%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
+    <id>https://yimchengjie.github.io/2019/06/27/Java系统调优/内存爆炸CPU100%问题分析/</id>
     <published>2019-06-27T13:36:45.000Z</published>
     <updated>2019-12-22T06:45:07.428Z</updated>
     
@@ -145,25 +201,25 @@
     </summary>
     
     
-      <category term="Java系统调优" scheme="https://zhuyiting.xyz/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
+      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
     
     
-      <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
+      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
     
-      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
+      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
-      <category term="JDK" scheme="https://zhuyiting.xyz/tags/JDK/"/>
+      <category term="JDK" scheme="https://yimchengjie.github.io/tags/JDK/"/>
     
   </entry>
   
   <entry>
     <title>分布式消息中间件</title>
-    <link href="https://zhuyiting.xyz/2019/06/27/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    <id>https://zhuyiting.xyz/2019/06/27/消息中间件/分布式消息中间件/</id>
+    <link href="https://yimchengjie.github.io/2019/06/27/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    <id>https://yimchengjie.github.io/2019/06/27/消息中间件/分布式消息中间件/</id>
     <published>2019-06-27T13:36:45.000Z</published>
-    <updated>2019-12-22T11:48:47.197Z</updated>
+    <updated>2019-12-31T08:24:25.990Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="分布式消息中间件"><a href="#分布式消息中间件" class="headerlink" title="分布式消息中间件"></a>分布式消息中间件</h2><p><strong>生产者</strong>(客户端)–发送消息–&gt;<strong>消息中间件</strong>–分发消息–&gt;<strong>消费者</strong>(服务器)</p><h3 id="什么是消息中间件"><a href="#什么是消息中间件" class="headerlink" title="什么是消息中间件"></a>什么是消息中间件</h3><ol><li>利用高效可靠的消息传递机制进行平台无关的数据交互;<br> 把用户消息暂存到消息中间件, 消息中间件在把消息分发到对应分布式模块</li><li>基于数据通信来集成分布式系统<br> 分布式系统之间完全通过数据来连接,后台系统之间不需要接口调用</li><li>通过提供消息传递和消息队列模型, 它可以在分布式环境下扩展进程间的通信<br> 跨系统跨进程通信</li></ol><h4 id="消息中间件的应用场景"><a href="#消息中间件的应用场景" class="headerlink" title="消息中间件的应用场景"></a>消息中间件的应用场景</h4><p>跨系统数据传递、高并发流量削峰填谷、数据异步处理…等等</p><h4 id="常用的消息中间件"><a href="#常用的消息中间件" class="headerlink" title="常用的消息中间件"></a>常用的消息中间件</h4><p>ActiveMQ、RabbitMQ、Kafka、RocketMQ</p><h3 id="消息中间件的核心设计"><a href="#消息中间件的核心设计" class="headerlink" title="消息中间件的核心设计"></a>消息中间件的核心设计</h3><h4 id="消息中间件的本质"><a href="#消息中间件的本质" class="headerlink" title="消息中间件的本质"></a>消息中间件的本质</h4><p>一种具备<strong>接收请求、保存数据、发送数据</strong>等功能的网络应用；和一般网络应用的区别是它主要负责数据的接收和传递，所以性能一般高于普通程序</p><h4 id="消息中间件的5大核心组成"><a href="#消息中间件的5大核心组成" class="headerlink" title="消息中间件的5大核心组成"></a>消息中间件的5大核心组成</h4><h5 id="1-协议"><a href="#1-协议" class="headerlink" title="1. 协议"></a>1. 协议</h5><p>计算机之间通信共同遵循的一组约定<br>协议三要素:</p><ol><li>语法</li><li>语义</li><li>时序</li></ol><p><strong>消息中间件常用的协议:</strong> OpenWire、AMQP、MQTT、Kafka、OpenMessage(国内发起)</p><h5 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h5><p>简单来说就是将数据存入磁盘,而不是在内存中,不会因为服务器宕机而丢失数据,能够让数据永久保存就叫持久化</p><p>常用持久化方式就是文件系统</p><h5 id="3-消息分发机制"><a href="#3-消息分发机制" class="headerlink" title="3. 消息分发机制"></a>3. 消息分发机制</h5><p>为什么要有消息分发策略</p><ol><li>消息要被特定的系统接收到, 其他的系统不需要接收</li><li>试错机制:后台出错,需要重新发送消息</li></ol><p>要解决的问题:</p><ol><li>消息传递是推还是拉</li><li>是主动分发还是轮询分发</li><li>有无重发功能</li></ol><h5 id="4-高可用设计"><a href="#4-高可用设计" class="headerlink" title="4. 高可用设计"></a>4. 高可用设计</h5><p>指服务可用性,保持能够使用的状态, 避免服务中断.消息中间件可以使用集群部署, 来达到高可用</p><p>分布式消息中间件实现方式:</p><ol><li>Master-Slave主从共享数据<br>服务器共用同一份数据</li><li>Master-Slave主从同步部署方式<br>主服务器同步数据到所有服务器</li><li>Broker-Cluster多主集群同步<br>所有服务器都可以进行同步数据</li><li>Broker-Cluster多主集群转发<br>只同步数据信息,不同步数据内容, 服务器将请求转发给存有消息内容的服务器</li><li>Master-Slave与Broker-Cluster结合<br>分区同步数据</li></ol><h5 id="5-高可靠设计"><a href="#5-高可靠设计" class="headerlink" title="5. 高可靠设计"></a>5. 高可靠设计</h5><p>消息传输可靠:通过协议保证系统数据解析的正确性<br>消息存储可靠:通过持久化保证存储消息的可靠性</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="分布式消息中间件"><a href="#分布式消息中间件" class="headerlink" title="分布式消息中间件"></a>分布式消息中间件</h2><p><strong>生产者</strong>(客户端)–发送消息–&gt;<strong>消息中间件</strong>–分发消息–&gt;<strong>消费者</strong>(服务器)</p><h3 id="什么是消息中间件"><a href="#什么是消息中间件" class="headerlink" title="什么是消息中间件"></a>什么是消息中间件</h3><ol><li>利用高效可靠的消息传递机制进行平台无关的数据交互;<br> 把用户消息暂存到消息中间件, 消息中间件在把消息分发到对应分布式模块</li><li>基于数据通信来集成分布式系统<br> 分布式系统之间完全通过数据来连接,后台系统之间不需要接口调用</li><li>通过提供消息传递和消息队列模型, 它可以在分布式环境下扩展进程间的通信<br> 跨系统跨进程通信</li></ol><h4 id="消息中间件的应用场景"><a href="#消息中间件的应用场景" class="headerlink" title="消息中间件的应用场景"></a>消息中间件的应用场景</h4><p>跨系统数据传递、高并发流量削峰填谷、数据异步处理…等等</p><h4 id="常用的消息中间件"><a href="#常用的消息中间件" class="headerlink" title="常用的消息中间件"></a>常用的消息中间件</h4><p>ActiveMQ、RabbitMQ、Kafka、RocketMQ</p><h3 id="消息中间件的核心设计"><a href="#消息中间件的核心设计" class="headerlink" title="消息中间件的核心设计"></a>消息中间件的核心设计</h3><h4 id="消息中间件的本质"><a href="#消息中间件的本质" class="headerlink" title="消息中间件的本质"></a>消息中间件的本质</h4><p>一种具备<strong>接收请求、保存数据、发送数据</strong>等功能的网络应用；和一般网络应用的区别是它主要负责数据的接收和传递，所以性能一般高于普通程序</p><h4 id="消息中间件的5大核心组成"><a href="#消息中间件的5大核心组成" class="headerlink" title="消息中间件的5大核心组成"></a>消息中间件的5大核心组成</h4><h5 id="1-协议"><a href="#1-协议" class="headerlink" title="1. 协议"></a>1. 协议</h5><p>计算机之间通信共同遵循的一组约定<br>协议三要素:</p><ol><li>语法</li><li>语义</li><li>时序</li></ol><p><strong>消息中间件常用的协议:</strong> OpenWire、AMQP、MQTT、Kafka、OpenMessage(由国内发起)</p><h5 id="2-持久化机制"><a href="#2-持久化机制" class="headerlink" title="2. 持久化机制"></a>2. 持久化机制</h5><p>简单来说就是将数据存入磁盘,而不是在内存中,不会因为服务器宕机而丢失数据,能够让数据永久保存就叫持久化</p><p>常用持久化方式就是文件系统</p><h5 id="3-消息分发机制"><a href="#3-消息分发机制" class="headerlink" title="3. 消息分发机制"></a>3. 消息分发机制</h5><p>为什么要有消息分发策略</p><ol><li>消息要被特定的系统接收到, 其他的系统不需要接收</li><li>试错机制:后台出错,需要重新发送消息</li></ol><p>要解决的问题:</p><ol><li>消息传递是推还是拉</li><li>是主动分发还是轮询分发</li><li>有无重发功能</li></ol><h5 id="4-高可用设计"><a href="#4-高可用设计" class="headerlink" title="4. 高可用设计"></a>4. 高可用设计</h5><p>指服务可用性,保持能够使用的状态, 避免服务中断.消息中间件可以使用集群部署, 来达到高可用</p><p>分布式消息中间件实现方式:</p><ol><li>Master-Slave主从共享数据<br>服务器共用同一份数据</li><li>Master-Slave主从同步部署方式<br>主服务器同步数据到所有服务器</li><li>Broker-Cluster多主集群同步<br>所有服务器都可以进行同步数据</li><li>Broker-Cluster多主集群转发<br>只同步数据信息,不同步数据内容, 服务器将请求转发给存有消息内容的服务器</li><li>Master-Slave与Broker-Cluster结合<br>分区同步数据</li></ol><h5 id="5-高可靠设计"><a href="#5-高可靠设计" class="headerlink" title="5. 高可靠设计"></a>5. 高可靠设计</h5><p>消息传输可靠:通过协议保证系统数据解析的正确性<br>消息存储可靠:通过持久化保证存储消息的可靠性</p>]]></content>
     
     <summary type="html">
     
@@ -175,17 +231,17 @@
     </summary>
     
     
-      <category term="消息中间件" scheme="https://zhuyiting.xyz/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     
-      <category term="消息中间件" scheme="https://zhuyiting.xyz/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>JVM参数以及调优</title>
-    <link href="https://zhuyiting.xyz/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%8F%82%E6%95%B0%E4%BB%A5%E5%8F%8A%E8%B0%83%E4%BC%98/"/>
-    <id>https://zhuyiting.xyz/2019/06/18/Java系统调优/JVM参数以及调优/</id>
+    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%8F%82%E6%95%B0%E4%BB%A5%E5%8F%8A%E8%B0%83%E4%BC%98/"/>
+    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JVM参数以及调优/</id>
     <published>2019-06-18T06:56:05.000Z</published>
     <updated>2019-12-20T06:17:18.579Z</updated>
     
@@ -201,19 +257,19 @@
     </summary>
     
     
-      <category term="Java系统调优" scheme="https://zhuyiting.xyz/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
+      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
     
     
-      <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
+      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
     
-      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
+      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>JDK内置命令工具</title>
-    <link href="https://zhuyiting.xyz/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JDK%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
-    <id>https://zhuyiting.xyz/2019/06/18/Java系统调优/JDK内置命令工具/</id>
+    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JDK%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
+    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JDK内置命令工具/</id>
     <published>2019-06-18T06:56:05.000Z</published>
     <updated>2019-12-19T11:09:06.563Z</updated>
     
@@ -229,21 +285,21 @@
     </summary>
     
     
-      <category term="Java系统调优" scheme="https://zhuyiting.xyz/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
+      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
     
     
-      <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
+      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
     
-      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
+      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
-      <category term="JDK" scheme="https://zhuyiting.xyz/tags/JDK/"/>
+      <category term="JDK" scheme="https://yimchengjie.github.io/tags/JDK/"/>
     
   </entry>
   
   <entry>
     <title>JVM垃圾回收机制</title>
-    <link href="https://zhuyiting.xyz/2019/06/10/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/"/>
-    <id>https://zhuyiting.xyz/2019/06/10/Java系统调优/JVM垃圾回收机制/</id>
+    <link href="https://yimchengjie.github.io/2019/06/10/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/"/>
+    <id>https://yimchengjie.github.io/2019/06/10/Java系统调优/JVM垃圾回收机制/</id>
     <published>2019-06-10T09:23:11.000Z</published>
     <updated>2019-12-19T08:46:04.819Z</updated>
     
@@ -259,19 +315,19 @@
     </summary>
     
     
-      <category term="Java系统调优" scheme="https://zhuyiting.xyz/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
+      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
     
     
-      <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
+      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
     
-      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
+      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>类加载机制</title>
-    <link href="https://zhuyiting.xyz/2019/06/03/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
-    <id>https://zhuyiting.xyz/2019/06/03/Java系统调优/类加载机制/</id>
+    <link href="https://yimchengjie.github.io/2019/06/03/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    <id>https://yimchengjie.github.io/2019/06/03/Java系统调优/类加载机制/</id>
     <published>2019-06-03T02:53:51.000Z</published>
     <updated>2019-12-19T08:19:01.020Z</updated>
     
@@ -287,19 +343,19 @@
     </summary>
     
     
-      <category term="Java系统调优" scheme="https://zhuyiting.xyz/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
+      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
     
     
-      <category term="JVM" scheme="https://zhuyiting.xyz/tags/JVM/"/>
+      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
     
-      <category term="Java" scheme="https://zhuyiting.xyz/tags/Java/"/>
+      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Netty网络编程框架</title>
-    <link href="https://zhuyiting.xyz/2019/05/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
-    <id>https://zhuyiting.xyz/2019/05/07/网络编程/Netty网络编程框架/</id>
+    <link href="https://yimchengjie.github.io/2019/05/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Netty%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/"/>
+    <id>https://yimchengjie.github.io/2019/05/07/网络编程/Netty网络编程框架/</id>
     <published>2019-05-07T12:59:55.000Z</published>
     <updated>2019-11-25T05:34:33.617Z</updated>
     
@@ -315,19 +371,19 @@
     </summary>
     
     
-      <category term="网络编程" scheme="https://zhuyiting.xyz/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://yimchengjie.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="网络编程" scheme="https://zhuyiting.xyz/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://yimchengjie.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Netty" scheme="https://zhuyiting.xyz/tags/Netty/"/>
+      <category term="Netty" scheme="https://yimchengjie.github.io/tags/Netty/"/>
     
   </entry>
   
   <entry>
     <title>NIO网络编程</title>
-    <link href="https://zhuyiting.xyz/2019/04/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/NIO%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    <id>https://zhuyiting.xyz/2019/04/30/网络编程/NIO网络编程/</id>
+    <link href="https://yimchengjie.github.io/2019/04/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/NIO%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>https://yimchengjie.github.io/2019/04/30/网络编程/NIO网络编程/</id>
     <published>2019-04-30T14:19:55.000Z</published>
     <updated>2019-11-23T06:37:07.488Z</updated>
     
@@ -345,17 +401,17 @@
     </summary>
     
     
-      <category term="网络编程" scheme="https://zhuyiting.xyz/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://yimchengjie.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="网络编程" scheme="https://zhuyiting.xyz/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://yimchengjie.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>BIO网络编程</title>
-    <link href="https://zhuyiting.xyz/2019/04/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/BIO%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    <id>https://zhuyiting.xyz/2019/04/30/网络编程/BIO网络编程/</id>
+    <link href="https://yimchengjie.github.io/2019/04/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/BIO%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>https://yimchengjie.github.io/2019/04/30/网络编程/BIO网络编程/</id>
     <published>2019-04-30T11:29:55.000Z</published>
     <updated>2019-11-22T05:58:00.704Z</updated>
     
@@ -372,17 +428,17 @@
     </summary>
     
     
-      <category term="网络编程" scheme="https://zhuyiting.xyz/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://yimchengjie.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="网络编程" scheme="https://zhuyiting.xyz/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://yimchengjie.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>网络协议</title>
-    <link href="https://zhuyiting.xyz/2019/04/27/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
-    <id>https://zhuyiting.xyz/2019/04/27/网络编程/网络协议/</id>
+    <link href="https://yimchengjie.github.io/2019/04/27/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://yimchengjie.github.io/2019/04/27/网络编程/网络协议/</id>
     <published>2019-04-27T05:25:11.000Z</published>
     <updated>2019-11-23T09:26:07.106Z</updated>
     
@@ -398,17 +454,17 @@
     </summary>
     
     
-      <category term="网络编程" scheme="https://zhuyiting.xyz/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://yimchengjie.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="网络协议" scheme="https://zhuyiting.xyz/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+      <category term="网络协议" scheme="https://yimchengjie.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
     
   </entry>
   
   <entry>
     <title>并发工具类</title>
-    <link href="https://zhuyiting.xyz/2019/04/19/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    <id>https://zhuyiting.xyz/2019/04/19/Java并发编程/并发工具类/</id>
+    <link href="https://yimchengjie.github.io/2019/04/19/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://yimchengjie.github.io/2019/04/19/Java并发编程/并发工具类/</id>
     <published>2019-04-19T10:17:31.000Z</published>
     <updated>2019-11-22T03:45:42.938Z</updated>
     
@@ -424,19 +480,19 @@
     </summary>
     
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="并发工具类" scheme="https://zhuyiting.xyz/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+      <category term="并发工具类" scheme="https://yimchengjie.github.io/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
   </entry>
   
   <entry>
     <title>并发容器类</title>
-    <link href="https://zhuyiting.xyz/2019/04/11/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB/"/>
-    <id>https://zhuyiting.xyz/2019/04/11/Java并发编程/并发容器类/</id>
+    <link href="https://yimchengjie.github.io/2019/04/11/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8%E7%B1%BB/"/>
+    <id>https://yimchengjie.github.io/2019/04/11/Java并发编程/并发容器类/</id>
     <published>2019-04-11T14:17:53.000Z</published>
     <updated>2019-11-21T06:41:27.319Z</updated>
     
@@ -452,19 +508,19 @@
     </summary>
     
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java集合容器" scheme="https://zhuyiting.xyz/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/"/>
+      <category term="Java集合容器" scheme="https://yimchengjie.github.io/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/"/>
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>AQS抽象队列同步器详解</title>
-    <link href="https://zhuyiting.xyz/2019/03/25/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/AQS%E6%8A%BD%E8%B1%A1%E9%98%9F%E5%88%97%E5%90%8C%E6%AD%A5%E5%99%A8%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://zhuyiting.xyz/2019/03/25/Java并发编程/AQS抽象队列同步器详解/</id>
+    <link href="https://yimchengjie.github.io/2019/03/25/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/AQS%E6%8A%BD%E8%B1%A1%E9%98%9F%E5%88%97%E5%90%8C%E6%AD%A5%E5%99%A8%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://yimchengjie.github.io/2019/03/25/Java并发编程/AQS抽象队列同步器详解/</id>
     <published>2019-03-25T14:17:53.000Z</published>
     <updated>2019-11-19T03:30:55.661Z</updated>
     
@@ -480,21 +536,21 @@
     </summary>
     
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Java锁" scheme="https://zhuyiting.xyz/tags/Java%E9%94%81/"/>
+      <category term="Java锁" scheme="https://yimchengjie.github.io/tags/Java%E9%94%81/"/>
     
-      <category term="AQS" scheme="https://zhuyiting.xyz/tags/AQS/"/>
+      <category term="AQS" scheme="https://yimchengjie.github.io/tags/AQS/"/>
     
   </entry>
   
   <entry>
     <title>Lock锁</title>
-    <link href="https://zhuyiting.xyz/2019/03/17/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Lock%E9%94%81/"/>
-    <id>https://zhuyiting.xyz/2019/03/17/Java并发编程/Lock锁/</id>
+    <link href="https://yimchengjie.github.io/2019/03/17/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Lock%E9%94%81/"/>
+    <id>https://yimchengjie.github.io/2019/03/17/Java并发编程/Lock锁/</id>
     <published>2019-03-17T10:17:53.000Z</published>
     <updated>2019-11-19T01:23:04.453Z</updated>
     
@@ -510,68 +566,12 @@
     </summary>
     
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Java锁" scheme="https://zhuyiting.xyz/tags/Java%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java锁与synchronized</title>
-    <link href="https://zhuyiting.xyz/2019/03/15/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E9%94%81%E4%B8%8Esynchronized/"/>
-    <id>https://zhuyiting.xyz/2019/03/15/Java并发编程/Java锁与synchronized/</id>
-    <published>2019-03-15T06:04:30.000Z</published>
-    <updated>2019-11-19T01:26:04.326Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Java锁与synchronized"><a href="#Java锁与synchronized" class="headerlink" title="Java锁与synchronized"></a>Java锁与synchronized</h2><p>Java内置锁synchronized是一把互斥锁, 这意味这同时只有一个线程能够进入锁</p><h3 id="锁的概念"><a href="#锁的概念" class="headerlink" title="锁的概念"></a>锁的概念</h3><ol><li>自旋锁: 为了不放弃CPU执行事件,循环的使用CAS技术对数据尝试进行更新,直到成功,本质上是乐观锁的一种实现</li><li>悲观锁: 假定会发生并发冲突,同步所有对数据的相关的操作,从读数据就开始上锁</li><li>乐观锁: 假定没有冲突,在修改数据时如果发现数据和之前不一致,则读最新数据,再重试修改</li><li>独享锁(写): 给资源加上写锁,只有一个线程可以修改,其他线程排队</li><li>共享锁(读): 给资源加上读锁,其他线程只能加读锁,不能加写锁</li><li>可重入锁、不可重入锁: 线程拿到锁后可以、不可以重用锁资源</li><li>公平锁、不公平锁: 争抢锁的顺序,如先来后到则是公平锁</li></ol><p><strong>注意</strong>:不同的锁应对不同的场景,没有优劣之分,只有最适合场景的锁.</p><h3 id="同步关键字synchronized："><a href="#同步关键字synchronized：" class="headerlink" title="同步关键字synchronized："></a>同步关键字synchronized：</h3><p>Java内置锁synchronized<br><strong>同步关键字synchronized属于悲观锁</strong><br>属于最基本的线程通信机制，基于对象监视器实现的。<br>Java中的每个对象都与一个监视器相关联，<br>一个线程可以锁定或解锁监视器，一次只有一个线程可以锁定监视器<br>特性：synchronized是一个可重入、独享、悲观锁</p><p>synchronized用于同步方法和代码块，执行完后自动释放锁</p><h4 id="锁的范围"><a href="#锁的范围" class="headerlink" title="锁的范围:"></a><strong>锁的范围:</strong></h4><p>修饰类或静态方法,<strong>类锁</strong>, 同步的内容是class对象和静态方法</p><p>修饰非静态方法或者this,<strong>对象锁</strong>,同步的内容是单个对象资源</p><h3 id="synchronized原理"><a href="#synchronized原理" class="headerlink" title="synchronized原理"></a>synchronized原理</h3><h4 id="理解Java对象头与Monitor"><a href="#理解Java对象头与Monitor" class="headerlink" title="理解Java对象头与Monitor"></a>理解Java对象头与Monitor</h4><p>对象在内存中，有一块对象头区域，它是实现synchronized的基础，</p><p><strong>对象头区域</strong>有两个部分：<br>第一部分(markword)，存放<strong>hashCode值</strong>、<strong>锁状态</strong>、<strong>GC标志</strong>等信息<br>第二部分，存放<strong>类型指针</strong>，指向类元数据，表名该对象属于哪个类</p><p>第一部分除了锁状态，Java6还新增了轻量级锁和偏向锁。<br>synchronized属于重量级锁</p><h5 id="锁状态"><a href="#锁状态" class="headerlink" title="锁状态"></a>锁状态</h5><p>对象头中的锁状态，存放这锁的信息</p><ol><li><p>有一个<strong>线程ID</strong><br>是标记线程对象的<br>线程中也有一个锁记录,来标记到锁</p></li><li><p>有一个<strong>锁状态位</strong><br>标记当前锁的状态<br>01:unlocked(未锁定)<br>00:轻量级锁<br>10:重量级锁<br>11:要被GC回收<br><u>线程可以通过CAS机制来修改锁的状态位</u></p></li><li><p>有一个<strong>偏向锁锁状态位</strong><br>偏向锁锁状态位只有一位<br>0/1: 开启或者关闭</p></li><li><p>有一个<strong>锁监视器标志位</strong></p></li></ol><p><strong>锁监视器标志位</strong>中指针指向<strong>Monitor对象（锁监视器）</strong>的起始地址<br>每个对象都有一个<strong>Monitor对象（锁监视器）</strong>与其关联</p><h5 id="Monitor对象（锁监视器）"><a href="#Monitor对象（锁监视器）" class="headerlink" title="Monitor对象（锁监视器）"></a>Monitor对象（锁监视器）</h5><p>Monitor对象（锁监视器）中有一个指针，指向持有它的线程(_owner)<br>Monitor对象还拥有两个队列， 一个是<strong>线程排队队列(_EntryList)</strong>，一个是<strong>线程阻塞队列(_WaitList)</strong>。</p><p>当持有它的对象释放它的时候，指针会重制，指向等待队列中的下一个线程，</p><p>当线程执行wait时,它会进入阻塞队列_WaitList,唤醒后,进入排队队列_EntryList</p><p>synchronized就是通过这种方法来实现锁的， 这也是为什么Java中任意对象都可以是锁的原因。<br>监视器跟对象共同的生命周期,但是在没有开启重量级锁之前,监视器是空对象,_owner在开启重量级锁后才会指向线程</p><h3 id="偏向锁、轻量级锁、自旋锁、锁消除"><a href="#偏向锁、轻量级锁、自旋锁、锁消除" class="headerlink" title="偏向锁、轻量级锁、自旋锁、锁消除"></a>偏向锁、轻量级锁、自旋锁、锁消除</h3><p><strong>偏向锁</strong><br>偏向锁就是，当一个线程获得了锁，就会进入偏向模式，当这个线程再次请求锁时，无需再做任何同步操作，即可获取锁(<strong>本质可以理解为单线程情况无锁</strong>)<br><u>(因为当只有一个线程反复操作锁的时候,不应该反复加锁, 这是额外的消耗,是需要尽量降低的)</u></p><p>当一个线程来获取锁,并不会第一时间修改锁状态位,而是先修改偏向锁的标志位,偏向锁默认为1 即开启状态,还有一个线程标记,指向获取偏向锁的线程,线程要获取偏向锁,修改线程标记指向自己, 操作成功即得到锁,第二次再来访问锁时,比较当前的线程标记是否是自己,如果是,就直接访问. 但如果是第二个线程想要来获取锁,发现线程标记不是自己,就会锁升级到轻量级锁,升级后,偏向锁改为0,即关闭偏向锁</p><p>但是对于锁竞争比较激烈的场合，偏向锁就失效了，当每次申请锁的线程都是不相同的,每个线程都获得了偏向锁,就没有了偏向锁的效果了</p><p>偏向锁失败后，会升级为轻量级锁</p><p><strong>轻量级锁</strong><br>当一个线程进入锁,有线程来争抢锁时,偏向锁升级为轻量级锁<br>来争抢的线程会进入自旋,即循坏等待锁被释放,即<strong>自旋锁</strong></p><p>轻量级锁所适应的场景是线程交替执行同步块的场合</p><p>如果存在同一时间多个线程访问同一锁的场合，就会导致轻量级锁膨胀为重量级锁。</p><p><strong>重量级锁</strong><br>重量级锁即synchronized实现的锁, 启用锁监视器Monitor对象<br>线程自旋次数增加后升级到重量级锁, 停止自旋, 监视器启动, 监视器中的_owner属性指向当前占有锁的线程,</p><p><u>锁升级是单向的,即从低到高,从轻到重,锁的等级是通过对象中的锁信息里的状态位来标识,而多线程争抢锁,就会改变这个状态位</u></p><p><strong>锁消除</strong><br>锁消除即消除不必要的锁,或者缩小锁的范围</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Java锁与synchronized&quot;&gt;&lt;a href=&quot;#Java锁与synchronized&quot; class=&quot;headerlink&quot; title=&quot;Java锁与synchronized&quot;&gt;&lt;/a&gt;Java锁与synchronized&lt;/h2&gt;&lt;p&gt;Java内置
-      
-    
-    </summary>
-    
-    
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="Java锁" scheme="https://zhuyiting.xyz/tags/Java%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用volatile解决可见性问题及阻止指令重排序</title>
-    <link href="https://zhuyiting.xyz/2019/03/03/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E4%BD%BF%E7%94%A8volatile%E8%A7%A3%E5%86%B3%E5%8F%AF%E8%A7%81%E6%80%A7%E9%97%AE%E9%A2%98%E5%8F%8A%E9%98%BB%E6%AD%A2%E6%8C%87%E4%BB%A4%E9%87%8D%E6%8E%92%E5%BA%8F/"/>
-    <id>https://zhuyiting.xyz/2019/03/03/Java并发编程/使用volatile解决可见性问题及阻止指令重排序/</id>
-    <published>2019-03-03T14:52:41.000Z</published>
-    <updated>2019-11-18T01:24:38.529Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="volatile解决可见性问题"><a href="#volatile解决可见性问题" class="headerlink" title="volatile解决可见性问题"></a>volatile解决可见性问题</h4><p>volatile关键字的作用之一，是系统每次使用被它修饰过的变量时都时直接从内存中提取，而不是从缓存Cache中提取，同时对于该变量的更改会马上刷新回主存，使得各个线程取出的值相同，这里的Cache可以理解为线程的工作内存。<br><strong>volatile可以解决可见性问题，但无法解决原子性问题</strong><br>（synchronized或其他的加锁，也能保证内存的可见性，但实现方式略有不同，<strong>volatile的使用成本更低，因为它不会引起线程上下文的切换和调度。</strong>）</p><h4 id="volatile原理"><a href="#volatile原理" class="headerlink" title="volatile原理"></a>volatile原理</h4><p>对于volatile修饰的变量的写操作会有一行以lock作为前缀的汇编代码。这个指令在多核处理器下会引发两件事，</p><ol><li>将当前处理器缓存行的数据写回到主内存；</li><li>这个写回内存的操作会使其他在CPU里缓存了该内存地址的数据无效(<strong>禁用缓存</strong>)<br>lock前缀的指令会锁住系统总线或者缓存，目的就是保证在同一时间只有一个CPU可以修改数据。</li></ol><h4 id="volatile解决指令重排序问题"><a href="#volatile解决指令重排序问题" class="headerlink" title="volatile解决指令重排序问题"></a>volatile解决指令重排序问题</h4><p>volatile的另外一个作用就是阻止指令重排序<br>JVM会在不改变数据依赖的前提下对指令进行任意排序以提高程序性能。如果不存在数据依赖性，处理器也可以改变语句对应机器指令的执行顺序；</p><p>volatile通过插入内存屏障来实现阻止指令重排序</p><p>happens-before原则：它保证了程序的有序性，它规定如果两个操作的执行顺序无法从happens-before原则中推出来，那么它们就不能保证有序性，可以随意进行重排序：</p><p><strong>总结:</strong> volatile可以保证可见性和有序性,但不能保证原子性.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;volatile解决可见性问题&quot;&gt;&lt;a href=&quot;#volatile解决可见性问题&quot; class=&quot;headerlink&quot; title=&quot;volatile解决可见性问题&quot;&gt;&lt;/a&gt;volatile解决可见性问题&lt;/h4&gt;&lt;p&gt;volatile关键字的作用之一，是
-      
-    
-    </summary>
-    
-    
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Java并发编程" scheme="https://zhuyiting.xyz/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="volatile" scheme="https://zhuyiting.xyz/tags/volatile/"/>
+      <category term="Java锁" scheme="https://yimchengjie.github.io/tags/Java%E9%94%81/"/>
     
   </entry>
   
