@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yimchengjie.github.io/"/>
-  <updated>2019-12-31T09:13:48.233Z</updated>
+  <updated>2020-01-01T09:20:39.530Z</updated>
   <id>https://yimchengjie.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>6大设计原则</title>
+    <link href="https://yimchengjie.github.io/2019/08/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/6%E5%A4%A7%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
+    <id>https://yimchengjie.github.io/2019/08/10/设计模式/6大设计原则/</id>
+    <published>2019-08-10T04:45:11.000Z</published>
+    <updated>2020-01-01T09:20:39.530Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="6大设计原则"><a href="#6大设计原则" class="headerlink" title="6大设计原则"></a>6大设计原则</h2><h3 id="1-单一职责原则"><a href="#1-单一职责原则" class="headerlink" title="1. 单一职责原则"></a>1. 单一职责原则</h3><p>SRP(Single Responsiblity Principle)</p><p><strong>核心定义</strong>:一个接口或者一个类或者一个方法,只负责一件事;</p><p>就像流水线生产,分工合作, 每个人只负责一件事情, 一个人不能负责太多事情, 否则效率低下,而且可能会出问题</p><p>在java程序中, 特别要注意接口的设计, 要遵循单一职责原则, 定义所有实现类通用的职责, 不能把实现类特有的职责放在接口上,否则所有实现类都会受到影响; 但要注意, 要根据业务合理划分责任, 过于细分,会导致类的数量非常庞大, 而且需要相互的耦合, 造成不必要的负责度</p><h3 id="2-里式替换原则"><a href="#2-里式替换原则" class="headerlink" title="2. 里式替换原则"></a>2. 里式替换原则</h3><p>LSP(Liskov Substitution Principle)</p><p><strong>核心定义</strong>:子类应该是可以替换父类,并且在所有使用父类的地方都能够换成子类;</p><p>在java中,子类必须完全实现父类的方法;父类出现的地方换成子类,程序依然能正常运行;子类可以在父类基础上增加新的行为.</p><h3 id="3-依赖倒置原则"><a href="#3-依赖倒置原则" class="headerlink" title="3. 依赖倒置原则"></a>3. 依赖倒置原则</h3><p>DIP(Dependence Inversion Principle)</p><p><strong>核心定义</strong>:就是面向接口(或抽象类)编程,各个模块之间不能直接进行依赖, 要通过接口的方式,使各个模块相互独立</p><p>在java中,每个类都尽量继承一个接口;依赖的变量尽量使用接口而不是实现类(比如service依赖dao层,在service接口定义中,只是用dao接口而不是dao实现类);如果基类是抽象类或类,且实现了一些方法,那么尽量不要覆写基类的方法;</p><h3 id="4-接口隔离原则"><a href="#4-接口隔离原则" class="headerlink" title="4. 接口隔离原则"></a>4. 接口隔离原则</h3><p>ISP(Interface Segregation Principle)</p><p><strong>核心定义</strong>:接口的方法要少,类之间的关系要建立在最小接口上;这个单一职责要区分开, 单一职责讲的是类的业务功能单一</p><p>在java中体现为接口的拆分,接口方法尽量定义的少,不要定义没意义的接口</p><h3 id="5-开放封闭原则"><a href="#5-开放封闭原则" class="headerlink" title="5. 开放封闭原则"></a>5. 开放封闭原则</h3><p>OCP(Open Close Principle)</p><p><strong>核心定义</strong>:一个模块的扩展性方面应该是开放的, 而在更改性方面应该是封闭的</p><p>一个网络模块, 原来只有服务端功能,现在要加入客户端功能,那么在不需要修改服务端代码的前提下, 就能扩展客户端, 这样就是前后端分离,在设计之初, 将服务端和客户端分开</p><h3 id="6-迪米特法则"><a href="#6-迪米特法则" class="headerlink" title="6. 迪米特法则"></a>6. 迪米特法则</h3><p>LOD(Law Of Demter)</p><p><strong>核心定义</strong>:一个类应该对自己需要耦合或者调用的类保持最少的了解,也就是低耦合,高内聚</p><p>类与类之间不能有过多的耦合,在系统设计时,不要让一个类依赖太多其他的类, 尽量减少依赖关系</p><h2 id="设计模式概览"><a href="#设计模式概览" class="headerlink" title="设计模式概览"></a>设计模式概览</h2><h3 id="1-创建型模式"><a href="#1-创建型模式" class="headerlink" title="1. 创建型模式"></a>1. 创建型模式</h3><p>用于描述”怎样创建对象”,它的主要特点是”将对象的创建与使用分离”</p><p>有<strong>单例</strong>,<strong>原型</strong>,<strong>工厂方法</strong>,<strong>抽象工厂</strong>,<strong>建造者</strong> 5种创造型模式</p><h3 id="2-结构型模式"><a href="#2-结构型模式" class="headerlink" title="2. 结构型模式"></a>2. 结构型模式</h3><p>用于描述”如何将对象按某种布局组成更大的结构”</p><p>有<strong>代理</strong>,<strong>适配器</strong>,<strong>桥接</strong>,<strong>装饰</strong>,<strong>外观</strong>,<strong>享元</strong>,<strong>组合</strong> 7种结构型模式</p><h3 id="3-行为型模式"><a href="#3-行为型模式" class="headerlink" title="3. 行为型模式"></a>3. 行为型模式</h3><p>用于描述”类或对象之间怎么相互协作共同完成单个对象无法单独完成的任务,以及怎么样分配职责”</p><p>有<strong>模板方法</strong>,<strong>策略</strong>,<strong>命令</strong>,<strong>责任链</strong>,<strong>状态</strong>,<strong>观察者</strong>,<strong>中介者</strong>,<strong>迭代器</strong>,<strong>访问者</strong>,<strong>备忘录</strong>,<strong>解释器</strong> 11种行为型模式</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;6大设计原则&quot;&gt;&lt;a href=&quot;#6大设计原则&quot; class=&quot;headerlink&quot; title=&quot;6大设计原则&quot;&gt;&lt;/a&gt;6大设计原则&lt;/h2&gt;&lt;h3 id=&quot;1-单一职责原则&quot;&gt;&lt;a href=&quot;#1-单一职责原则&quot; class=&quot;headerlink&quot; 
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://yimchengjie.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="https://yimchengjie.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ActiveMQ高可用集群方案</title>
     <link href="https://yimchengjie.github.io/2019/08/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/ActiveMQ%E9%AB%98%E5%8F%AF%E7%94%A8%E9%9B%86%E7%BE%A4%E6%96%B9%E6%A1%88/"/>
     <id>https://yimchengjie.github.io/2019/08/03/消息中间件/ActiveMQ高可用集群方案/</id>
     <published>2019-08-03T08:25:10.000Z</published>
-    <updated>2019-12-31T09:13:48.233Z</updated>
+    <updated>2020-01-01T07:41:26.936Z</updated>
     
     <content type="html"><![CDATA[<h2 id="ActiveMQ高可用集群方案"><a href="#ActiveMQ高可用集群方案" class="headerlink" title="ActiveMQ高可用集群方案"></a>ActiveMQ高可用集群方案</h2>]]></content>
     
@@ -133,7 +159,7 @@
     <link href="https://yimchengjie.github.io/2019/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
     <id>https://yimchengjie.github.io/2019/07/02/设计模式/代理模式/</id>
     <published>2019-07-02T11:35:45.000Z</published>
-    <updated>2019-12-26T08:41:46.372Z</updated>
+    <updated>2020-01-01T07:41:26.948Z</updated>
     
     <content type="html"><![CDATA[<h2 id="代理模式-Proxy"><a href="#代理模式-Proxy" class="headerlink" title="代理模式(Proxy)"></a>代理模式(Proxy)</h2><p>Proxy-代理模式是指为其他对象提供一种代理,来控制对这个对象的访问</p><p>即对A对象进行代理后, 本来A对象的功能交给代理B来做; 代理就是原实例前后添加一层处理.</p><h3 id="为什么使用代理模式"><a href="#为什么使用代理模式" class="headerlink" title="为什么使用代理模式"></a>为什么使用代理模式</h3><ul><li>授权机制: 不同级别的用户对于同一对象的访问权限是不同的, 要用代理实现对不同用户的访问权限的控制</li><li>某个客户端不能直接操作一个对象, 但又要和那个对象互动, 也要通过代理实现间接互动</li><li>代理类为委托类预处理消息,过滤消息,把消息传递给委托类, 以及事后对返回结果的处理等.</li></ul><h3 id="3种代理模式"><a href="#3种代理模式" class="headerlink" title="3种代理模式"></a>3种代理模式</h3><h4 id="1-静态代理"><a href="#1-静态代理" class="headerlink" title="1. 静态代理"></a>1. 静态代理</h4><p>实现步骤</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一步:创建服务类接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">login</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二步:实现服务接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"登录"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三步:创建代理类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceProxy</span> <span class="keyword">implements</span> <span class="title">UserService</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserService</span><span class="params">(<span class="keyword">final</span> UserService userService)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userService=userService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"准备登录"</span>);</span><br><span class="line">        userService.login();</span><br><span class="line">        System.out.println(<span class="string">"登录完成"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第四步:测试运行</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        UserService userService=<span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        UserServiceProxy userServiceProxy=<span class="keyword">new</span> UserServiceProxy(userService);</span><br><span class="line">        userServiceProxy.login();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>静态代理可以做到符合开闭原则的对目标对象进行功能扩展, 但是工作量大, 要给每个对象创建代理类, 而且不易管理, 接口发生改变, 代理类也要改变</p><h4 id="2-JDK动态代理"><a href="#2-JDK动态代理" class="headerlink" title="2. JDK动态代理"></a>2. JDK动态代理</h4><p>动态代理中, 不需要手动创建代理类了, 只要编写一个动态处理器就OK了</p><p>实现步骤</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一步:编写动态代理</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicProxyHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object object;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DynamicProxyHandler</span><span class="params">(<span class="keyword">final</span> Object object)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.object=object;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy,Method method,Object[] agrs)</span><span class="keyword">throws</span> Throwable</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"准备"</span>);</span><br><span class="line">        Object result=method.invoke(Object,args);</span><br><span class="line">        System.out.println(<span class="string">"完成"</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二步:编写测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicProxyTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        UserService userService=<span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        UserService userServiceProxy=(UserService)Proxy.newProxyInstnce(UserService.class.getClassLoader(),<span class="keyword">new</span> Class[]&#123;UserService.class&#125;,<span class="keyword">new</span> DynamicProxyHandler(userService));</span><br><span class="line">        userServiceProxy.login();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="3-CGLIB代理"><a href="#3-CGLIB代理" class="headerlink" title="3. CGLIB代理"></a>3. CGLIB代理</h4><p>JDK实现动态代理需要实现类通过接口定义业务的方法, 对于没有接口的类就不能实现代理.这就需要CGLIB了</p><p>实现步骤</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一步:创建CGLIB代理类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CglibProxy</span> <span class="keyword">implements</span> <span class="title">MethodInterceptor</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getInstance</span><span class="params">(<span class="keyword">final</span> Object</span></span></span><br><span class="line"><span class="function"><span class="params">    target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target=target;</span><br><span class="line">        Enhancer enhancer=<span class="keyword">new</span> Enhancer();</span><br><span class="line">        enhancer.setSuperclass(This.target.getClass());</span><br><span class="line">        enhancer.setCallback(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">return</span> enhancer.create();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">intercept</span><span class="params">(Object object, Method method, Object[] args,MeyhodProxy methodProxy)</span><span class="keyword">throws</span> Throwable</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"准备"</span>);</span><br><span class="line">        Object result=method.invoke(object,args);</span><br><span class="line">        System.out.println(<span class="string">"结束"</span>);</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二步:创建测试类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CglibDynamicProxyTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        UserService userService=<span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        CglibProxy cglibProxy=<span class="keyword">new</span> CglibProxy();</span><br><span class="line">        UserService userServiceProxy=(UserService)cglibProxy.getInstance(userService1;)</span><br><span class="line">        userServiceProxy.login();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>CGLIB代理比JDK代理的性能更高,但是CGLIB比JDK创建代理的耗时要更高,所以单例对象CGLIB更合适, 反之JDK更合适.</p><p><img src="/2019/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/CGLIB%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="CGLIB动态代理执行流程"></p>]]></content>
     
@@ -239,34 +265,6 @@
   </entry>
   
   <entry>
-    <title>JVM参数以及调优</title>
-    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%8F%82%E6%95%B0%E4%BB%A5%E5%8F%8A%E8%B0%83%E4%BC%98/"/>
-    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JVM参数以及调优/</id>
-    <published>2019-06-18T06:56:05.000Z</published>
-    <updated>2019-12-20T06:17:18.579Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="JVM参数以及调优"><a href="#JVM参数以及调优" class="headerlink" title="JVM参数以及调优"></a>JVM参数以及调优</h2><h3 id="JVM调优基本概念"><a href="#JVM调优基本概念" class="headerlink" title="JVM调优基本概念"></a>JVM调优基本概念</h3><ol><li>堆大小调整</li><li>垃圾收集器调整</li><li>JIT编译器</li></ol><p>大多数调优选项都与调整堆大小和根据情况选择最合适的垃圾收集器有关.</p><h4 id="调优的主要目标"><a href="#调优的主要目标" class="headerlink" title="调优的主要目标"></a>调优的主要目标</h4><p><strong>响应性:</strong> 应用程序或系统对请求的数据进行响应的速度, 对于响应性要求高的程序,重点是在短时间内做出回应, 不接受长暂停.</p><p><strong>吞吐量:</strong> 侧重于在特定时间段内最大化应用程序的工作量. 高暂停是可接受的.</p><p><strong>系统瓶颈核心还是在应用代码, 一般情况下无需过多调优, JVM本身在不断优化.</strong></p><h3 id="GC调优思路"><a href="#GC调优思路" class="headerlink" title="GC调优思路"></a>GC调优思路</h3><ol><li>分析场景</li><li>确定目标<br>内存占用、低延时、吞吐量</li><li>收集日志<br>通过参数配置收集GC日志; 通过JVM分析GC状态看GC状态</li><li>分析日志<br>使用工具辅助分析日志, 查看GC次数, GC时间</li><li>调整参数<br>切换垃圾收集器或者调整垃圾收集器参数</li></ol><h4 id="通用GC参数"><a href="#通用GC参数" class="headerlink" title="通用GC参数"></a>通用GC参数</h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;JVM参数以及调优&quot;&gt;&lt;a href=&quot;#JVM参数以及调优&quot; class=&quot;headerlink&quot; title=&quot;JVM参数以及调优&quot;&gt;&lt;/a&gt;JVM参数以及调优&lt;/h2&gt;&lt;h3 id=&quot;JVM调优基本概念&quot;&gt;&lt;a href=&quot;#JVM调优基本概念&quot; class
-      
-    
-    </summary>
-    
-    
-      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
-    
-    
-      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
-    
-      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JDK内置命令工具</title>
     <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JDK%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
     <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JDK内置命令工具/</id>
@@ -293,6 +291,34 @@
       <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
       <category term="JDK" scheme="https://yimchengjie.github.io/tags/JDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM参数以及调优</title>
+    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%8F%82%E6%95%B0%E4%BB%A5%E5%8F%8A%E8%B0%83%E4%BC%98/"/>
+    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JVM参数以及调优/</id>
+    <published>2019-06-18T06:56:05.000Z</published>
+    <updated>2019-12-20T06:17:18.579Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="JVM参数以及调优"><a href="#JVM参数以及调优" class="headerlink" title="JVM参数以及调优"></a>JVM参数以及调优</h2><h3 id="JVM调优基本概念"><a href="#JVM调优基本概念" class="headerlink" title="JVM调优基本概念"></a>JVM调优基本概念</h3><ol><li>堆大小调整</li><li>垃圾收集器调整</li><li>JIT编译器</li></ol><p>大多数调优选项都与调整堆大小和根据情况选择最合适的垃圾收集器有关.</p><h4 id="调优的主要目标"><a href="#调优的主要目标" class="headerlink" title="调优的主要目标"></a>调优的主要目标</h4><p><strong>响应性:</strong> 应用程序或系统对请求的数据进行响应的速度, 对于响应性要求高的程序,重点是在短时间内做出回应, 不接受长暂停.</p><p><strong>吞吐量:</strong> 侧重于在特定时间段内最大化应用程序的工作量. 高暂停是可接受的.</p><p><strong>系统瓶颈核心还是在应用代码, 一般情况下无需过多调优, JVM本身在不断优化.</strong></p><h3 id="GC调优思路"><a href="#GC调优思路" class="headerlink" title="GC调优思路"></a>GC调优思路</h3><ol><li>分析场景</li><li>确定目标<br>内存占用、低延时、吞吐量</li><li>收集日志<br>通过参数配置收集GC日志; 通过JVM分析GC状态看GC状态</li><li>分析日志<br>使用工具辅助分析日志, 查看GC次数, GC时间</li><li>调整参数<br>切换垃圾收集器或者调整垃圾收集器参数</li></ol><h4 id="通用GC参数"><a href="#通用GC参数" class="headerlink" title="通用GC参数"></a>通用GC参数</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;JVM参数以及调优&quot;&gt;&lt;a href=&quot;#JVM参数以及调优&quot; class=&quot;headerlink&quot; title=&quot;JVM参数以及调优&quot;&gt;&lt;/a&gt;JVM参数以及调优&lt;/h2&gt;&lt;h3 id=&quot;JVM调优基本概念&quot;&gt;&lt;a href=&quot;#JVM调优基本概念&quot; class
+      
+    
+    </summary>
+    
+    
+      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
+    
+    
+      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
+    
+      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
   </entry>
   
@@ -544,34 +570,6 @@
       <category term="Java锁" scheme="https://yimchengjie.github.io/tags/Java%E9%94%81/"/>
     
       <category term="AQS" scheme="https://yimchengjie.github.io/tags/AQS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lock锁</title>
-    <link href="https://yimchengjie.github.io/2019/03/17/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Lock%E9%94%81/"/>
-    <id>https://yimchengjie.github.io/2019/03/17/Java并发编程/Lock锁/</id>
-    <published>2019-03-17T10:17:53.000Z</published>
-    <updated>2019-11-19T01:23:04.453Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h3><p>Lock是一个锁的接口， 提供获取锁和解锁的方法（lock，trylock，unlock）<br>是一种用代码实现的锁<br><strong>注意:</strong>当Lock没有指向unlock释放锁的时候,即为可重入锁,其他线程在锁没有释放的时候还是无法获取锁,即使没有线程在使用锁, 但还是有一个线程在占用锁<br><strong>ReentrantLock</strong>是Lock接口的一个实现类， 它实现了Lock中的方法， 但是使用Lock的时候必须注意它不会像synchronized执行完后或者抛出异常后自动释放锁， 而是需要你主动释放锁， 所以我们必须在使用Lock时加上try{}catch{}finally{}块，并且在finally中释放占用的锁资源。</p><p>使用Lock和synchronized最大的区别就是当<strong>使用synchroniized时一个线程抢占资源，其他线程必须等待</strong>，而<strong>使用Lock，一个线程抢占到锁资源，其他的线程可以不等待或者设置等待时间</strong>， 实在抢不到可以去做其他的业务逻辑</p><h4 id="ReadWriteLock读写锁"><a href="#ReadWriteLock读写锁" class="headerlink" title="ReadWriteLock读写锁"></a><strong>ReadWriteLock读写锁</strong></h4><p>它可以实现读写锁， 当读取的时候线程会获得read锁， 其他线程也可以获取read锁，同时并发的去读取，但是写程序运行获取到write锁时， 其他线程是不能进行操作的，因为write是排它锁，而上面介绍的两种Lock和synchronized不管是read还是write没有抢到锁的线程都会被阻塞或者中断，ReadWriteLock也是个接口，里面定义了两种方法readLock()和writeLock()，他的一个实现类是ReentrantReadWriteLock是ReadWriteLock的实现类<br><strong>注意</strong>读锁被占用的时候,写锁不能被占用</p><h3 id="小记"><a href="#小记" class="headerlink" title="小记:"></a><strong>小记:</strong></h3><p><strong>Lock比内置锁更具灵活性,可以设置方法不去等待锁,做其他的逻辑操作. 它具备和内置锁同样的内存语义</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Lock&quot;&gt;&lt;a href=&quot;#Lock&quot; class=&quot;headerlink&quot; title=&quot;Lock&quot;&gt;&lt;/a&gt;Lock&lt;/h3&gt;&lt;p&gt;Lock是一个锁的接口， 提供获取锁和解锁的方法（lock，trylock，unlock）&lt;br&gt;是一种用代码实现的锁&lt;br
-      
-    
-    </summary>
-    
-    
-      <category term="Java并发编程" scheme="https://yimchengjie.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Java并发编程" scheme="https://yimchengjie.github.io/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="Java锁" scheme="https://yimchengjie.github.io/tags/Java%E9%94%81/"/>
     
   </entry>
   

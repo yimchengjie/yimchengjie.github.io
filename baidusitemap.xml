@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yimchengjie.github.io/2019/08/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/6%E5%A4%A7%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</loc>
+    <lastmod>2020-01-01</lastmod>
+  </url>  <url>
+    <loc>https://yimchengjie.github.io/2019/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2020-01-01</lastmod>
+  </url>  <url>
     <loc>https://yimchengjie.github.io/2019/08/03/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/ActiveMQ%E9%AB%98%E5%8F%AF%E7%94%A8%E9%9B%86%E7%BE%A4%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2019-12-31</lastmod>
+    <lastmod>2020-01-01</lastmod>
   </url>  <url>
     <loc>https://yimchengjie.github.io/2019/07/30/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/ActiveMQ%E6%94%AF%E6%8C%81%E7%9A%84%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2019-12-31</lastmod>
@@ -20,9 +26,6 @@
     <lastmod>2019-12-26</lastmod>
   </url>  <url>
     <loc>https://yimchengjie.github.io/2019/07/10/JavaWeb%E6%A1%86%E6%9E%B6/SpringIoC%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2019-12-26</lastmod>
-  </url>  <url>
-    <loc>https://yimchengjie.github.io/2019/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2019-12-26</lastmod>
   </url>  <url>
     <loc>https://yimchengjie.github.io/2018/06/16/JavaWeb%E6%A1%86%E6%9E%B6/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</loc>
