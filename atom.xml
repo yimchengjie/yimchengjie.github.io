@@ -291,6 +291,36 @@
   </entry>
   
   <entry>
+    <title>JDK内置命令工具</title>
+    <link href="https://yimchengjie.github.io/2019/06/27/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/%E5%86%85%E5%AD%98%E7%88%86%E7%82%B8CPU100%25%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
+    <id>https://yimchengjie.github.io/2019/06/27/Java系统调优/内存爆炸CPU100%问题分析/</id>
+    <published>2019-06-27T13:36:45.000Z</published>
+    <updated>2019-12-22T06:45:07.428Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="内存爆炸和CPU100-问题分析"><a href="#内存爆炸和CPU100-问题分析" class="headerlink" title="内存爆炸和CPU100%问题分析"></a>内存爆炸和CPU100%问题分析</h2><p>当线上的系统突然请求缓慢, CPU100%, 内存占用巨大, 当JVM出现问题时,应该如何排查问题呢</p><h3 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h3><ol><li><p>登录服务器, 使用<code>top</code>命令查看系统资源使用情况<br>一般出问题时java程序的占用是最高的</p></li><li><p>找到CPU或者内存占用高的java进程PID, 使用命令<code>top -Hp 进程ID</code>, <strong>查询该进程中线程的运行情况</strong></p></li><li><p>使用<code>printf &quot;%x\n&quot; 线程ID</code><strong>查看线程PID的16进制</strong>形式<br> 因为在java日志中记录的PID是16进制的形式</p></li><li><p><code>jstack 进程ID &gt; ./threadDump.log</code> <strong>打印JVM堆栈信息</strong>到文件threadDump.log中<br>在该堆栈信息文件中,找到第3步的线程, 查看具体信息</p></li><li><p>使用<code>jstat -gcutil 进程号 统计间隔时间 统计次数</code><strong>查看GC的变化情况</strong>, 当发现<code>FGC</code>的值一直增大时, 继续使用<code>jmap -heap 进程ID</code> 查看进程堆内存的情况, 特别是老年代的使用情况.<br>老年代内存占用达到阈值时就会触发Full GC</p></li><li><p><code>jmap -dump:format=b,file=filename 进程ID</code> ,导出Java进程下内存堆到文件中, 再把内存镜像dump文件传到本地, 利用工具进行分析<br>可以使用<code>jhat</code>、<code>VisualVM</code>等工具分析dump文件</p></li></ol><h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><h4 id="Full-GC次数过多"><a href="#Full-GC次数过多" class="headerlink" title="Full GC次数过多"></a>Full GC次数过多</h4><ol><li>jstat命令发现GC次数很多,并且不断增加</li><li>分析dump文件,查看具体对象的内存占用情况<br>如果内存占用情况不多, 说明代码中频繁使用了System.gc()</li></ol><h4 id="代码中消耗CPU的操作太多"><a href="#代码中消耗CPU的操作太多" class="headerlink" title="代码中消耗CPU的操作太多"></a>代码中消耗CPU的操作太多</h4><p>比如复杂的算法,递归的循环等,甚至是代码BUG</p><h4 id="锁的使用不正确-造成死锁"><a href="#锁的使用不正确-造成死锁" class="headerlink" title="锁的使用不正确, 造成死锁"></a>锁的使用不正确, 造成死锁</h4><p>分析JVM堆栈信息,看是否有死锁deadlock</p><h4 id="不定期的接口耗时现象"><a href="#不定期的接口耗时现象" class="headerlink" title="不定期的接口耗时现象"></a>不定期的接口耗时现象</h4><p>这主要是因为不定期的高并发带来的问题, 要通过压测工具不断加大访问力度, 发现某个接口某个位置响应缓慢, 再查看堆栈日志, 发现大量线程被阻塞在同一位置, 就能查到我们哪个业务代码出了问题</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;内存爆炸和CPU100-问题分析&quot;&gt;&lt;a href=&quot;#内存爆炸和CPU100-问题分析&quot; class=&quot;headerlink&quot; title=&quot;内存爆炸和CPU100%问题分析&quot;&gt;&lt;/a&gt;内存爆炸和CPU100%问题分析&lt;/h2&gt;&lt;p&gt;当线上的系统突然请求缓慢, 
+      
+    
+    </summary>
+    
+    
+      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
+    
+    
+      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
+    
+      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
+    
+      <category term="JDK" scheme="https://yimchengjie.github.io/tags/JDK/"/>
+    
+  </entry>
+  
+  <entry>
     <title>分布式消息中间件</title>
     <link href="https://yimchengjie.github.io/2019/06/27/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     <id>https://yimchengjie.github.io/2019/06/27/消息中间件/分布式消息中间件/</id>
@@ -318,18 +348,18 @@
   
   <entry>
     <title>JDK内置命令工具</title>
-    <link href="https://yimchengjie.github.io/2019/06/27/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/%E5%86%85%E5%AD%98%E7%88%86%E7%82%B8CPU100%25%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
-    <id>https://yimchengjie.github.io/2019/06/27/Java系统调优/内存爆炸CPU100%问题分析/</id>
-    <published>2019-06-27T13:36:45.000Z</published>
-    <updated>2019-12-22T06:45:07.428Z</updated>
+    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JDK%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
+    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JDK内置命令工具/</id>
+    <published>2019-06-18T06:56:05.000Z</published>
+    <updated>2019-12-19T11:09:06.563Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="内存爆炸和CPU100-问题分析"><a href="#内存爆炸和CPU100-问题分析" class="headerlink" title="内存爆炸和CPU100%问题分析"></a>内存爆炸和CPU100%问题分析</h2><p>当线上的系统突然请求缓慢, CPU100%, 内存占用巨大, 当JVM出现问题时,应该如何排查问题呢</p><h3 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h3><ol><li><p>登录服务器, 使用<code>top</code>命令查看系统资源使用情况<br>一般出问题时java程序的占用是最高的</p></li><li><p>找到CPU或者内存占用高的java进程PID, 使用命令<code>top -Hp 进程ID</code>, <strong>查询该进程中线程的运行情况</strong></p></li><li><p>使用<code>printf &quot;%x\n&quot; 线程ID</code><strong>查看线程PID的16进制</strong>形式<br> 因为在java日志中记录的PID是16进制的形式</p></li><li><p><code>jstack 进程ID &gt; ./threadDump.log</code> <strong>打印JVM堆栈信息</strong>到文件threadDump.log中<br>在该堆栈信息文件中,找到第3步的线程, 查看具体信息</p></li><li><p>使用<code>jstat -gcutil 进程号 统计间隔时间 统计次数</code><strong>查看GC的变化情况</strong>, 当发现<code>FGC</code>的值一直增大时, 继续使用<code>jmap -heap 进程ID</code> 查看进程堆内存的情况, 特别是老年代的使用情况.<br>老年代内存占用达到阈值时就会触发Full GC</p></li><li><p><code>jmap -dump:format=b,file=filename 进程ID</code> ,导出Java进程下内存堆到文件中, 再把内存镜像dump文件传到本地, 利用工具进行分析<br>可以使用<code>jhat</code>、<code>VisualVM</code>等工具分析dump文件</p></li></ol><h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><h4 id="Full-GC次数过多"><a href="#Full-GC次数过多" class="headerlink" title="Full GC次数过多"></a>Full GC次数过多</h4><ol><li>jstat命令发现GC次数很多,并且不断增加</li><li>分析dump文件,查看具体对象的内存占用情况<br>如果内存占用情况不多, 说明代码中频繁使用了System.gc()</li></ol><h4 id="代码中消耗CPU的操作太多"><a href="#代码中消耗CPU的操作太多" class="headerlink" title="代码中消耗CPU的操作太多"></a>代码中消耗CPU的操作太多</h4><p>比如复杂的算法,递归的循环等,甚至是代码BUG</p><h4 id="锁的使用不正确-造成死锁"><a href="#锁的使用不正确-造成死锁" class="headerlink" title="锁的使用不正确, 造成死锁"></a>锁的使用不正确, 造成死锁</h4><p>分析JVM堆栈信息,看是否有死锁deadlock</p><h4 id="不定期的接口耗时现象"><a href="#不定期的接口耗时现象" class="headerlink" title="不定期的接口耗时现象"></a>不定期的接口耗时现象</h4><p>这主要是因为不定期的高并发带来的问题, 要通过压测工具不断加大访问力度, 发现某个接口某个位置响应缓慢, 再查看堆栈日志, 发现大量线程被阻塞在同一位置, 就能查到我们哪个业务代码出了问题</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="JDK内置命令工具"><a href="#JDK内置命令工具" class="headerlink" title="JDK内置命令工具"></a>JDK内置命令工具</h2><h3 id="javap命令"><a href="#javap命令" class="headerlink" title="javap命令"></a>javap命令</h3><p>java反编译工具, 主要用于根据Java字节码文件反汇编为Java源代码文件.</p><h3 id="jps命令"><a href="#jps命令" class="headerlink" title="jps命令"></a>jps命令</h3><p>显示当前所有java进程pid的命令</p><h3 id="jstat命令"><a href="#jstat命令" class="headerlink" title="jstat命令"></a>jstat命令</h3><p>监视Java虚拟机统计信息</p><h3 id="jcmd命令"><a href="#jcmd命令" class="headerlink" title="jcmd命令"></a>jcmd命令</h3><p>可以替代jps工具查看本地的jvm信息</p><h3 id="jinfo命令"><a href="#jinfo命令" class="headerlink" title="jinfo命令"></a>jinfo命令</h3><p>可以查看运行中的jvm的全部参数, 还可以设置部分参数</p><h3 id="jhat"><a href="#jhat" class="headerlink" title="jhat"></a>jhat</h3><p>分析java堆的命令,可以将堆中的对象以html的形式展现出来,支持对象查询语言SQL</p><h3 id="jmap"><a href="#jmap" class="headerlink" title="jmap"></a>jmap</h3><p>打印出java进程内存中对象的情况,或者将JVM中的堆,以二进制输出成文本</p><h3 id="jstack"><a href="#jstack" class="headerlink" title="jstack"></a>jstack</h3><p>用于打印出给定的java进程ID或core file或远程调试服务的堆栈信息, 如果在64位机器, 需要指定选项<code>-J-d64</code></p><h3 id="Jconsole"><a href="#Jconsole" class="headerlink" title="Jconsole"></a>Jconsole</h3><p>可视化的监视管理控制台</p><h3 id="JvisualVM"><a href="#JvisualVM" class="headerlink" title="JvisualVM"></a>JvisualVM</h3><p>可视化的JVM监控工具</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;内存爆炸和CPU100-问题分析&quot;&gt;&lt;a href=&quot;#内存爆炸和CPU100-问题分析&quot; class=&quot;headerlink&quot; title=&quot;内存爆炸和CPU100%问题分析&quot;&gt;&lt;/a&gt;内存爆炸和CPU100%问题分析&lt;/h2&gt;&lt;p&gt;当线上的系统突然请求缓慢, 
+        &lt;h2 id=&quot;JDK内置命令工具&quot;&gt;&lt;a href=&quot;#JDK内置命令工具&quot; class=&quot;headerlink&quot; title=&quot;JDK内置命令工具&quot;&gt;&lt;/a&gt;JDK内置命令工具&lt;/h2&gt;&lt;h3 id=&quot;javap命令&quot;&gt;&lt;a href=&quot;#javap命令&quot; class=&quot;he
       
     
     </summary>
@@ -371,36 +401,6 @@
       <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
     
       <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JDK内置命令工具</title>
-    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JDK%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
-    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JDK内置命令工具/</id>
-    <published>2019-06-18T06:56:05.000Z</published>
-    <updated>2019-12-19T11:09:06.563Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="JDK内置命令工具"><a href="#JDK内置命令工具" class="headerlink" title="JDK内置命令工具"></a>JDK内置命令工具</h2><h3 id="javap命令"><a href="#javap命令" class="headerlink" title="javap命令"></a>javap命令</h3><p>java反编译工具, 主要用于根据Java字节码文件反汇编为Java源代码文件.</p><h3 id="jps命令"><a href="#jps命令" class="headerlink" title="jps命令"></a>jps命令</h3><p>显示当前所有java进程pid的命令</p><h3 id="jstat命令"><a href="#jstat命令" class="headerlink" title="jstat命令"></a>jstat命令</h3><p>监视Java虚拟机统计信息</p><h3 id="jcmd命令"><a href="#jcmd命令" class="headerlink" title="jcmd命令"></a>jcmd命令</h3><p>可以替代jps工具查看本地的jvm信息</p><h3 id="jinfo命令"><a href="#jinfo命令" class="headerlink" title="jinfo命令"></a>jinfo命令</h3><p>可以查看运行中的jvm的全部参数, 还可以设置部分参数</p><h3 id="jhat"><a href="#jhat" class="headerlink" title="jhat"></a>jhat</h3><p>分析java堆的命令,可以将堆中的对象以html的形式展现出来,支持对象查询语言SQL</p><h3 id="jmap"><a href="#jmap" class="headerlink" title="jmap"></a>jmap</h3><p>打印出java进程内存中对象的情况,或者将JVM中的堆,以二进制输出成文本</p><h3 id="jstack"><a href="#jstack" class="headerlink" title="jstack"></a>jstack</h3><p>用于打印出给定的java进程ID或core file或远程调试服务的堆栈信息, 如果在64位机器, 需要指定选项<code>-J-d64</code></p><h3 id="Jconsole"><a href="#Jconsole" class="headerlink" title="Jconsole"></a>Jconsole</h3><p>可视化的监视管理控制台</p><h3 id="JvisualVM"><a href="#JvisualVM" class="headerlink" title="JvisualVM"></a>JvisualVM</h3><p>可视化的JVM监控工具</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;JDK内置命令工具&quot;&gt;&lt;a href=&quot;#JDK内置命令工具&quot; class=&quot;headerlink&quot; title=&quot;JDK内置命令工具&quot;&gt;&lt;/a&gt;JDK内置命令工具&lt;/h2&gt;&lt;h3 id=&quot;javap命令&quot;&gt;&lt;a href=&quot;#javap命令&quot; class=&quot;he
-      
-    
-    </summary>
-    
-    
-      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
-    
-    
-      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
-    
-      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
-    
-      <category term="JDK" scheme="https://yimchengjie.github.io/tags/JDK/"/>
     
   </entry>
   
