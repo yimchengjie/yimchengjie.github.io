@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yimchengjie.github.io/"/>
-  <updated>2020-01-05T03:06:23.672Z</updated>
+  <updated>2020-01-07T13:37:32.997Z</updated>
   <id>https://yimchengjie.github.io/</id>
   
   <author>
@@ -15,6 +15,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>享元模式</title>
+    <link href="https://yimchengjie.github.io/2019/11/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://yimchengjie.github.io/2019/11/08/设计模式/享元模式/</id>
+    <published>2019-11-08T12:58:21.000Z</published>
+    <updated>2020-01-07T13:37:32.997Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h2><p>属于结构型模式</p><p>又叫共享模式, 共享系统对象</p><h3 id="为什么使用享元模式"><a href="#为什么使用享元模式" class="headerlink" title="为什么使用享元模式"></a>为什么使用享元模式</h3><p>解决重复对象的内存浪费的问题</p><p>常用场景为数据库连接池</p><h3 id="使用享元模式"><a href="#使用享元模式" class="headerlink" title="使用享元模式"></a>使用享元模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Pool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">connect</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PoolObj</span> <span class="keyword">implements</span> <span class="title">Pool</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String db;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PoolObj</span><span class="params">(String db)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.db = db;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">connect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"连接 "</span>+db);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PoolFactory</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> HashMap&lt;String,Pool&gt; pools=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Pool <span class="title">getPool</span><span class="params">(String db)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pools.get(db)!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> pools.get(db);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            Pool pool=<span class="keyword">new</span> PoolObj(db);</span><br><span class="line">            pools.put(db,pool);</span><br><span class="line">            <span class="keyword">return</span> pool;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printMapCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(pools.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFlyWeight</span><span class="params">()</span></span>&#123;</span><br><span class="line">    PoolFactory poolFactory=<span class="keyword">new</span> PoolFactory();</span><br><span class="line">    Pool pool1=poolFactory.getPool(<span class="string">"mysql"</span>);</span><br><span class="line">    Pool pool2=poolFactory.getPool(<span class="string">"oracle"</span>);</span><br><span class="line">    pool1.connect();</span><br><span class="line">    pool2.connect();</span><br><span class="line">    Pool pool3=poolFactory.getPool(<span class="string">"mysql"</span>);</span><br><span class="line">    Pool pool4=poolFactory.getPool(<span class="string">"oracle"</span>);</span><br><span class="line">    pool3.connect();</span><br><span class="line">    pool4.connect();</span><br><span class="line"></span><br><span class="line">    poolFactory.printMapCount();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;享元模式&quot;&gt;&lt;a href=&quot;#享元模式&quot; class=&quot;headerlink&quot; title=&quot;享元模式&quot;&gt;&lt;/a&gt;享元模式&lt;/h2&gt;&lt;p&gt;属于结构型模式&lt;/p&gt;
+&lt;p&gt;又叫共享模式, 共享系统对象&lt;/p&gt;
+&lt;h3 id=&quot;为什么使用享元模式&quot;&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://yimchengjie.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="https://yimchengjie.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>外观模式</title>
+    <link href="https://yimchengjie.github.io/2019/10/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://yimchengjie.github.io/2019/10/30/设计模式/外观模式/</id>
+    <published>2019-10-30T12:31:05.000Z</published>
+    <updated>2020-01-07T13:37:21.551Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h2><p>属于结构型模式</p><p>外观模式其实就是将一段代码中不变的部分提炼出来,做成一个接口暴露给用户</p><h3 id="为什么使用外观模式"><a href="#为什么使用外观模式" class="headerlink" title="为什么使用外观模式"></a>为什么使用外观模式</h3><p>降低访问复杂系统的内部子系统时的复杂度,减少系统相互依赖。提高灵活性.提高安全性</p><h3 id="使用外观模式"><a href="#使用外观模式" class="headerlink" title="使用外观模式"></a>使用外观模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将一些列方法封装成接口暴露给用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Facade</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> DeviceA deviceA=<span class="keyword">new</span> DeviceA();</span><br><span class="line">    <span class="keyword">private</span> DeviceB deviceB=<span class="keyword">new</span> DeviceB();</span><br><span class="line">    <span class="keyword">private</span> DeviceC deviceC=<span class="keyword">new</span> DeviceC();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methed</span><span class="params">()</span></span>&#123;</span><br><span class="line">        deviceA.method();</span><br><span class="line">        deviceB.method();</span><br><span class="line">        deviceC.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeviceA</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"执行DeviceA的方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeviceB</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"执行DeviceB的方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeviceC</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"执行DeviceC的方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFacade</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Facade facade = <span class="keyword">new</span> Facade();</span><br><span class="line">    facade.methed();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;外观模式&quot;&gt;&lt;a href=&quot;#外观模式&quot; class=&quot;headerlink&quot; title=&quot;外观模式&quot;&gt;&lt;/a&gt;外观模式&lt;/h2&gt;&lt;p&gt;属于结构型模式&lt;/p&gt;
+&lt;p&gt;外观模式其实就是将一段代码中不变的部分提炼出来,做成一个接口暴露给用户&lt;/p&gt;
+&lt;h3 id=
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://yimchengjie.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="https://yimchengjie.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL数据库之索引</title>
+    <link href="https://yimchengjie.github.io/2019/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E7%B4%A2%E5%BC%95/"/>
+    <id>https://yimchengjie.github.io/2019/10/28/数据库/MySQL数据库之索引/</id>
+    <published>2019-10-28T11:21:16.000Z</published>
+    <updated>2020-01-07T12:27:49.440Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MySQL数据库之索引"><a href="#MySQL数据库之索引" class="headerlink" title="MySQL数据库之索引"></a>MySQL数据库之索引</h2><p>MySQL索引的简历对于MySQL的高效运行至关重要,索引可以大大提高MySQL检索速度</p><p>索引分单列索引和组合索引。单列索引，即一个索引只包含单个列，一个表可以有多个单列索引，但这不是组合索引。组合索引，即一个索引包含多个列。</p><p>实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录。所以建立索引会占用磁盘空间的索引文件。</p><p>对表中数据增删改时,索引也要进行相应维护</p><h3 id="索引的使用"><a href="#索引的使用" class="headerlink" title="索引的使用"></a>索引的使用</h3><ol><li><p>在创建表的时候创建索引</p> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> book(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    author <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    info <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="literal">NULL</span>,</span><br><span class="line">    <span class="keyword">INDEX</span>(author)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li><li><p>CREATE INDEX直接创建索引</p> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> index_name <span class="keyword">ON</span> table_name (column_list)</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> <span class="keyword">INDEX</span> index_name <span class="keyword">ON</span> table_name (column_list)</span><br></pre></td></tr></table></figure></li><li><p>删除索引</p> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> index_name <span class="keyword">on</span> table_name ;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> <span class="keyword">index</span> index_name ;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> primary <span class="keyword">key</span> ;</span><br></pre></td></tr></table></figure></li><li><p>组合索引和前缀索引</p> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 使用column_list1(4)建立column_list1的前4位的索引</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">INDEX</span> index_name (column_list1(<span class="number">4</span>),column_list2,column_list3);</span><br></pre></td></tr></table></figure></li></ol><h3 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h3><h4 id="不走索引的情况"><a href="#不走索引的情况" class="headerlink" title="不走索引的情况"></a>不走索引的情况</h4><ol><li>索引列参与到计算式</li><li>索引列参与到函数运算</li><li>正则表达式匹配</li><li>条件中带or</li><li>like ‘%XX%’</li><li>where中有不等号</li></ol><p>注意: like’XXX%’ 走索引</p><p>索引虽然大大提高了查询速度, 但是降低了更新速度;</p><h3 id="索引技巧"><a href="#索引技巧" class="headerlink" title="索引技巧"></a>索引技巧</h3><ol><li>只要列中有NULL值, 索引就无效</li><li>使用短索引,对长字段建索引时使用前缀建立</li><li>ORDER BY中的列不会使用索引</li><li>使用like语句走索引要用’XXX%’</li><li>不要在列上运算</li><li>索引要建立在经常进行select操作的字段上</li><li>索引要建立在值相对唯一的字段上</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;MySQL数据库之索引&quot;&gt;&lt;a href=&quot;#MySQL数据库之索引&quot; class=&quot;headerlink&quot; title=&quot;MySQL数据库之索引&quot;&gt;&lt;/a&gt;MySQL数据库之索引&lt;/h2&gt;&lt;p&gt;MySQL索引的简历对于MySQL的高效运行至关重要,索引可以大大提
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://yimchengjie.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yimchengjie.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL数据库之事务</title>
+    <link href="https://yimchengjie.github.io/2019/10/22/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E4%BA%8B%E5%8A%A1/"/>
+    <id>https://yimchengjie.github.io/2019/10/22/数据库/MySQL数据库之事务/</id>
+    <published>2019-10-22T10:23:20.000Z</published>
+    <updated>2020-01-07T11:19:50.959Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MySQL数据库之事务"><a href="#MySQL数据库之事务" class="headerlink" title="MySQL数据库之事务"></a>MySQL数据库之事务</h2><p>MySQL事务主要用于处理操作量大的一系列操作;比如在人员管理系统中,删除一个人员的同时还要删除人员的基本资料,也要删除一些其他相关的信息,这样的数据库操作就叫事务.</p><h3 id="MySQL事务处理的两种方式"><a href="#MySQL事务处理的两种方式" class="headerlink" title="MySQL事务处理的两种方式"></a>MySQL事务处理的两种方式</h3><ol><li>用BEGIN(开始一个事务),ROLLBACK(事务回滚),COMMIT(事务确认)实现</li><li>用SET来改变MySQL的自动提交模式</li></ol><h3 id="实现事务管理"><a href="#实现事务管理" class="headerlink" title="实现事务管理"></a>实现事务管理</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟一次转账</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  Connection conn = <span class="keyword">null</span>;</span><br><span class="line">  PreparedStatement ps = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">      conn = DBUtils.getConnection();</span><br><span class="line">      <span class="comment">//这里关闭自动事务提交, 相当于开启事务 begin ,并且需要手动提交</span></span><br><span class="line">      conn.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">      <span class="comment">//用户A转出100</span></span><br><span class="line">      ps = conn.prepareStatement(<span class="string">"update account set money=money-100 where name='A'"</span>);</span><br><span class="line">      ps.executeUpdate();</span><br><span class="line">      <span class="comment">//模拟异常</span></span><br><span class="line">      <span class="keyword">int</span> i = <span class="number">10</span>/<span class="number">0</span>;</span><br><span class="line">      <span class="comment">//用户B转入100</span></span><br><span class="line">      ps = conn.prepareStatement(<span class="string">"update account set money=money+100 where name='B'"</span>);</span><br><span class="line">      ps.executeUpdate();</span><br><span class="line">      <span class="comment">//提交事务</span></span><br><span class="line">      conn.commit();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//事务回滚</span></span><br><span class="line">        conn.rollback();</span><br><span class="line">      &#125; <span class="keyword">catch</span> (SQLException e1) &#123;</span><br><span class="line">        e1.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      DBUtils.close(conn, ps, <span class="keyword">null</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Mybatis中的事务管理"><a href="#Mybatis中的事务管理" class="headerlink" title="Mybatis中的事务管理"></a>Mybatis中的事务管理</h3><p>Mybatis的事务在环境配置中, 环境配置传入SqlSessionFactory工厂</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">environment</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 使用JDBC开启事务 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"jdbc"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br></pre></td></tr></table></figure><p>开启事务后,Mybatis会创建一个TransactionFactory 事务工厂<br>Mybatis中Transaction(事务)是由TransactionFactory(事务工厂)创建的</p><p>事务由Connection实例管理</p><h3 id="Spring-Mybatis实现事务管理"><a href="#Spring-Mybatis实现事务管理" class="headerlink" title="Spring+Mybatis实现事务管理"></a>Spring+Mybatis实现事务管理</h3><p>使用Managed事务管理,Mybatis对事务的创建提交回滚没有实现,是交给容器来实现的</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Mybatis配置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">environment</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Mybatis中开启Managed事务管理 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"managed"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line"><span class="comment">&lt;!-- Spring配置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:annotation-driven</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transactionManager"</span></span></span><br><span class="line"><span class="tag"><span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SpringBoot开启事务</span></span><br><span class="line"><span class="meta">@EnableTransactionManagement</span> <span class="comment">//开始事务</span></span><br></pre></td></tr></table></figure><p>抽离出事务Service,使用@Transational注解事务方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransationalService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    Service service</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Transactional</span>(rollbackFor = Exception.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transationMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="comment">// 调用其他增删改查, 组成一个事务</span></span><br><span class="line">        service.select();</span><br><span class="line">        service.update();</span><br><span class="line">        service.delete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;MySQL数据库之事务&quot;&gt;&lt;a href=&quot;#MySQL数据库之事务&quot; class=&quot;headerlink&quot; title=&quot;MySQL数据库之事务&quot;&gt;&lt;/a&gt;MySQL数据库之事务&lt;/h2&gt;&lt;p&gt;MySQL事务主要用于处理操作量大的一系列操作;比如在人员管理系统中
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://yimchengjie.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yimchengjie.github.io/tags/MySQL/"/>
+    
+      <category term="Mybatis" scheme="https://yimchengjie.github.io/tags/Mybatis/"/>
+    
+  </entry>
   
   <entry>
     <title>组合模式</title>
@@ -402,25 +512,6 @@
   </entry>
   
   <entry>
-    <title>ActiveMQ入门</title>
-    <link href="https://yimchengjie.github.io/2019/06/30/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8BUNION/"/>
-    <id>https://yimchengjie.github.io/2019/06/30/数据库/MySQL数据库之UNION/</id>
-    <published>2019-06-30T14:10:45.000Z</published>
-    <updated>2020-01-07T07:53:09.010Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="https://yimchengjie.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="https://yimchengjie.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JDK内置命令工具</title>
     <link href="https://yimchengjie.github.io/2019/06/27/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/%E5%86%85%E5%AD%98%E7%88%86%E7%82%B8CPU100%25%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
     <id>https://yimchengjie.github.io/2019/06/27/Java系统调优/内存爆炸CPU100%问题分析/</id>
@@ -473,92 +564,6 @@
     
     
       <category term="消息中间件" scheme="https://yimchengjie.github.io/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JVM参数以及调优</title>
-    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%8F%82%E6%95%B0%E4%BB%A5%E5%8F%8A%E8%B0%83%E4%BC%98/"/>
-    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JVM参数以及调优/</id>
-    <published>2019-06-18T06:56:05.000Z</published>
-    <updated>2019-12-20T06:17:18.579Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="JVM参数以及调优"><a href="#JVM参数以及调优" class="headerlink" title="JVM参数以及调优"></a>JVM参数以及调优</h2><h3 id="JVM调优基本概念"><a href="#JVM调优基本概念" class="headerlink" title="JVM调优基本概念"></a>JVM调优基本概念</h3><ol><li>堆大小调整</li><li>垃圾收集器调整</li><li>JIT编译器</li></ol><p>大多数调优选项都与调整堆大小和根据情况选择最合适的垃圾收集器有关.</p><h4 id="调优的主要目标"><a href="#调优的主要目标" class="headerlink" title="调优的主要目标"></a>调优的主要目标</h4><p><strong>响应性:</strong> 应用程序或系统对请求的数据进行响应的速度, 对于响应性要求高的程序,重点是在短时间内做出回应, 不接受长暂停.</p><p><strong>吞吐量:</strong> 侧重于在特定时间段内最大化应用程序的工作量. 高暂停是可接受的.</p><p><strong>系统瓶颈核心还是在应用代码, 一般情况下无需过多调优, JVM本身在不断优化.</strong></p><h3 id="GC调优思路"><a href="#GC调优思路" class="headerlink" title="GC调优思路"></a>GC调优思路</h3><ol><li>分析场景</li><li>确定目标<br>内存占用、低延时、吞吐量</li><li>收集日志<br>通过参数配置收集GC日志; 通过JVM分析GC状态看GC状态</li><li>分析日志<br>使用工具辅助分析日志, 查看GC次数, GC时间</li><li>调整参数<br>切换垃圾收集器或者调整垃圾收集器参数</li></ol><h4 id="通用GC参数"><a href="#通用GC参数" class="headerlink" title="通用GC参数"></a>通用GC参数</h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;JVM参数以及调优&quot;&gt;&lt;a href=&quot;#JVM参数以及调优&quot; class=&quot;headerlink&quot; title=&quot;JVM参数以及调优&quot;&gt;&lt;/a&gt;JVM参数以及调优&lt;/h2&gt;&lt;h3 id=&quot;JVM调优基本概念&quot;&gt;&lt;a href=&quot;#JVM调优基本概念&quot; class
-      
-    
-    </summary>
-    
-    
-      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
-    
-    
-      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
-    
-      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JDK内置命令工具</title>
-    <link href="https://yimchengjie.github.io/2019/06/18/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JDK%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
-    <id>https://yimchengjie.github.io/2019/06/18/Java系统调优/JDK内置命令工具/</id>
-    <published>2019-06-18T06:56:05.000Z</published>
-    <updated>2019-12-19T11:09:06.563Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="JDK内置命令工具"><a href="#JDK内置命令工具" class="headerlink" title="JDK内置命令工具"></a>JDK内置命令工具</h2><h3 id="javap命令"><a href="#javap命令" class="headerlink" title="javap命令"></a>javap命令</h3><p>java反编译工具, 主要用于根据Java字节码文件反汇编为Java源代码文件.</p><h3 id="jps命令"><a href="#jps命令" class="headerlink" title="jps命令"></a>jps命令</h3><p>显示当前所有java进程pid的命令</p><h3 id="jstat命令"><a href="#jstat命令" class="headerlink" title="jstat命令"></a>jstat命令</h3><p>监视Java虚拟机统计信息</p><h3 id="jcmd命令"><a href="#jcmd命令" class="headerlink" title="jcmd命令"></a>jcmd命令</h3><p>可以替代jps工具查看本地的jvm信息</p><h3 id="jinfo命令"><a href="#jinfo命令" class="headerlink" title="jinfo命令"></a>jinfo命令</h3><p>可以查看运行中的jvm的全部参数, 还可以设置部分参数</p><h3 id="jhat"><a href="#jhat" class="headerlink" title="jhat"></a>jhat</h3><p>分析java堆的命令,可以将堆中的对象以html的形式展现出来,支持对象查询语言SQL</p><h3 id="jmap"><a href="#jmap" class="headerlink" title="jmap"></a>jmap</h3><p>打印出java进程内存中对象的情况,或者将JVM中的堆,以二进制输出成文本</p><h3 id="jstack"><a href="#jstack" class="headerlink" title="jstack"></a>jstack</h3><p>用于打印出给定的java进程ID或core file或远程调试服务的堆栈信息, 如果在64位机器, 需要指定选项<code>-J-d64</code></p><h3 id="Jconsole"><a href="#Jconsole" class="headerlink" title="Jconsole"></a>Jconsole</h3><p>可视化的监视管理控制台</p><h3 id="JvisualVM"><a href="#JvisualVM" class="headerlink" title="JvisualVM"></a>JvisualVM</h3><p>可视化的JVM监控工具</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;JDK内置命令工具&quot;&gt;&lt;a href=&quot;#JDK内置命令工具&quot; class=&quot;headerlink&quot; title=&quot;JDK内置命令工具&quot;&gt;&lt;/a&gt;JDK内置命令工具&lt;/h2&gt;&lt;h3 id=&quot;javap命令&quot;&gt;&lt;a href=&quot;#javap命令&quot; class=&quot;he
-      
-    
-    </summary>
-    
-    
-      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
-    
-    
-      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
-    
-      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
-    
-      <category term="JDK" scheme="https://yimchengjie.github.io/tags/JDK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JVM垃圾回收机制</title>
-    <link href="https://yimchengjie.github.io/2019/06/10/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/"/>
-    <id>https://yimchengjie.github.io/2019/06/10/Java系统调优/JVM垃圾回收机制/</id>
-    <published>2019-06-10T09:23:11.000Z</published>
-    <updated>2019-12-19T08:46:04.819Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="JVM垃圾回收机制"><a href="#JVM垃圾回收机制" class="headerlink" title="JVM垃圾回收机制"></a>JVM垃圾回收机制</h2><h3 id="自动垃圾收集"><a href="#自动垃圾收集" class="headerlink" title="自动垃圾收集"></a>自动垃圾收集</h3><p>自动垃圾收集是<strong>查看堆内存</strong>,<strong>识别正在使用哪些对象</strong>以及<strong>哪些对象未被删除</strong>以及<strong>删除未使用对象</strong>的过程</p><p>正在使用的对象是指,程序的某些部分仍然维护指向该对象的指针<br>未使用的对象是指,程序的任何部分都不再引用的对象,因此需要回收未引用对象的内存</p><p>自动垃圾收集机制也是java非常重要的一大特性</p><h3 id="如何确定内存需要被回收"><a href="#如何确定内存需要被回收" class="headerlink" title="如何确定内存需要被回收"></a>如何确定内存需要被回收</h3><p>第一步,称为<strong>标记</strong>.这是垃圾收集器识别哪些内存正在使用而哪些不在使用的</p><h4 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h4><p>就是将对象及其引用关系看做一个图,选定<strong>活动的对象</strong>作为GC Roots;<br>然后跟踪引用链,如果一个对象和GC Roots之间没有连通性,也就是不存在引用,那么可以认为是可回收对象.</p><h5 id="可以用作GC-Root的对象"><a href="#可以用作GC-Root的对象" class="headerlink" title="可以用作GC Root的对象"></a>可以用作GC Root的对象</h5><ol><li>虚拟机栈中正在引用的对象</li><li>本地方法栈中正在引用的对象</li><li>静态属性引用的对象</li><li>方法区常量引用的对象</li></ol><h5 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h5><ol><li>强引用:最常见的普通对象引用,只要还有强引用指向一个对象,就不会回收(new出来的对象)</li><li>软引用:JVM认为内存不足,才会去试图回收软引用指向的对象.(缓存场景)</li><li>弱引用:虽然是引用,但随时可能被回收掉</li><li>虚引用:不能通过它访问对象. 通常是在GC时做一些操作</li></ol><h5 id="可达性级别"><a href="#可达性级别" class="headerlink" title="可达性级别"></a>可达性级别</h5><ol><li>强可达:一个对象可以有一个或多个线程可以通过各种引用访问</li><li>软可达:只能通过软引用才能访问</li><li>弱引用:只能通过弱引用访问</li><li>幻象可达:不存在其他引用,并且finalize过了,只有虚引用指向它</li><li>不可达:意味着可以被GC了</li></ol><h3 id="怎么清楚垃圾"><a href="#怎么清楚垃圾" class="headerlink" title="怎么清楚垃圾"></a>怎么清楚垃圾</h3><p>第二步, 定义如何清除垃圾</p><h4 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h4><h5 id="标记-清除-mark-sweep-算法"><a href="#标记-清除-mark-sweep-算法" class="headerlink" title="标记-清除(mark-sweep)算法"></a>标记-清除(mark-sweep)算法</h5><p>首先标识出所有要回收的对象,然后清除,标记-清除算法效率优先,有内存碎片化问题,不适合特别大的堆;分代收集算法基本基于标记-清除算法的思路改进.</p><h5 id="复制-Copying-算法"><a href="#复制-Copying-算法" class="headerlink" title="复制(Copying)算法"></a>复制(Copying)算法</h5><p>划分两块同等大小的区域,收集时将活着的对象复制到另一块区域. 拷贝过程中将对象顺序放置,就可以避免内存碎片化. 复制+预留内存, 有一定的资源浪费.</p><h5 id="标记-整理-mark-compact"><a href="#标记-整理-mark-compact" class="headerlink" title="标记-整理(mark-compact)"></a>标记-整理(mark-compact)</h5><p>类似于标记-清除,但是为了避免内存碎片化,会在清理过程中将对象移动,已确保对象占用连续的内存空间.</p><h5 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h5><p>当前商业虚拟机常用的算法,根据对象存活周期的不同,将内存划分为几块,一般是把堆划分为新生代和老年代,这样就可以根据各个年代的特点采用最适合的收集算发.<br>在新生代中,每次垃圾收集都有大量对象死去,少量存活,就用复制算法,只需要付出少量存活对象的复制成本就可以完成收集,<br>而老年代中因为对象存活率高,没有额外的空间对它进行分配担保,必须使用标记-清除或者标记-整理算法来回收,不需要大量的移动对象.</p><p>新对象会被分配到新生代(Eden),如果超过<code>-XX:+PretenureSizeThreshold</code>:设置的大对象直接进入老年代的阈值, 直接存放到老年代</p><h3 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h3><h4 id="串行收集器Serial"><a href="#串行收集器Serial" class="headerlink" title="串行收集器Serial"></a>串行收集器Serial</h4><h5 id="Serial-GC-XX-UseSerialGC"><a href="#Serial-GC-XX-UseSerialGC" class="headerlink" title="-Serial GC -XX:UseSerialGC"></a>-Serial GC -XX:UseSerialGC</h5><p>单个线程来执行所有垃圾收集工作,适合单处理器机器,Glient模式下JVM的默认选项</p><h5 id="Serial-Old-XX-UseSeriaOldlGC"><a href="#Serial-Old-XX-UseSeriaOldlGC" class="headerlink" title="-Serial Old -XX:UseSeriaOldlGC"></a>-Serial Old -XX:UseSeriaOldlGC</h5><p>Serial的老年代版本,可以在老年代使用, 它采用了标记-整理(Mark-Compact)算法,区别于新生代的复制算法</p><h4 id="并行收集器Parallel"><a href="#并行收集器Parallel" class="headerlink" title="并行收集器Parallel"></a>并行收集器Parallel</h4><h5 id="Parallel-GC-XX-UseParallelGC"><a href="#Parallel-GC-XX-UseParallelGC" class="headerlink" title="-Parallel GC -XX:+UseParallelGC"></a>-Parallel GC -XX:+UseParallelGC</h5><h5 id="Parallel-Old-GC-XX-UseParallelGC"><a href="#Parallel-Old-GC-XX-UseParallelGC" class="headerlink" title="-Parallel Old GC -XX:+UseParallelGC"></a>-Parallel Old GC -XX:+UseParallelGC</h5><p>server模式JVM的默认GC选择,整体算法和Serial类似,区别是新生代和老年代GC都是并行进行;<br>可以设置GC时间或吞吐量等,可以自动进行适应性调整Eden,Survivor大小和MaxTenuringThreshold的值.</p><p>也称为吞吐量优先的GC: 吞吐量=用户代码运行时间/(用户代码运行时间+GC时间)</p><p>-XX:ParallelGCThreads: 设置用于垃圾回收的线程数. 通常和CPU数相等<br>-XX:MaxGCPauseMills: 设置最大垃圾收集停顿时间. 值是大于0的整数.<br>-XX:GCTimeRatio: 设置吞吐量大小,它的值是一个0-100之间的整数.<br>-XX:+UseAdaptiveSizePolicy: 打开自适应GC策略. 以达到在堆大小,吞吐量和停顿时间之间的平衡点</p><h5 id="ParNew-GC-XX-UseParNewGC"><a href="#ParNew-GC-XX-UseParNewGC" class="headerlink" title="-ParNew GC -XX:+UseParNewGC"></a>-ParNew GC -XX:+UseParNewGC</h5><p>新生代GC的实现, 它实际是Serial GC的多线程版本. 可以控制线程数量, 参数: -XX:ParallelGCThreads<br>最常见的场景是配合老年代的CMS GC工作. 参数: -XX:+UseConcMarkSweepGC</p><h4 id="并发收集器CMS-Concurrent-Mark-Sweep"><a href="#并发收集器CMS-Concurrent-Mark-Sweep" class="headerlink" title="并发收集器CMS(Concurrent Mark Sweep)"></a>并发收集器CMS(Concurrent Mark Sweep)</h4><h5 id="CMS-GC-XX-UseConcMarkSweepGC"><a href="#CMS-GC-XX-UseConcMarkSweepGC" class="headerlink" title="-CMS GC -XX:+UseConcMarkSweepGC"></a>-CMS GC -XX:+UseConcMarkSweepGC</h5><p>专用老年代,基于标记-清除算法,设计目标是尽量减少停顿时间.<br>但会占用更多的CPU资源,并和用户线程争抢</p><h5 id="G1-XX-UseG1GC"><a href="#G1-XX-UseG1GC" class="headerlink" title="-G1 -XX:+UseG1GC"></a>-G1 -XX:+UseG1GC</h5><p>针对大堆内存设计的收集器,兼顾吞吐量和停顿时间, JDK9后为默认选项, 目标是替代GMC;<br>G1将堆分为多个固定大小, 堆之间是复制算法, 但整体上可以理解为标记-整理算法,可以有效避免内存碎片化.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;JVM垃圾回收机制&quot;&gt;&lt;a href=&quot;#JVM垃圾回收机制&quot; class=&quot;headerlink&quot; title=&quot;JVM垃圾回收机制&quot;&gt;&lt;/a&gt;JVM垃圾回收机制&lt;/h2&gt;&lt;h3 id=&quot;自动垃圾收集&quot;&gt;&lt;a href=&quot;#自动垃圾收集&quot; class=&quot;head
-      
-    
-    </summary>
-    
-    
-      <category term="Java系统调优" scheme="https://yimchengjie.github.io/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/"/>
-    
-    
-      <category term="JVM" scheme="https://yimchengjie.github.io/tags/JVM/"/>
-    
-      <category term="Java" scheme="https://yimchengjie.github.io/tags/Java/"/>
     
   </entry>
   
