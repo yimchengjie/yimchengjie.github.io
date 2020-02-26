@@ -18,15 +18,15 @@
   
   
   <title>Java输入输出 | ycjBlog</title>
-  <meta name="description" content="第1节:文件 File类型   java.io.File类的对象可以表示文件和目录，在程序中一个File类对象可以代表一个文件或目录 当创建一个File对象后，就可以利用它来对文件或目录的属性进行操作，如：文件名、最后修改日期、文件大小等等 需要注意的是，File对象并不能直接对文件内容进行读&#x2F;写操作，只能查看文件的属性  第2节:输出输出流 输入输出流的概念与作用   流的特点: 流是一串连续不">
+  <meta name="description" content="第 1 节:文件 File 类型   java.io.File类的对象可以表示文件和目录，在程序中一个 File 类对象可以代表一个文件或目录 当创建一个 File 对象后，就可以利用它来对文件或目录的属性进行操作，如：文件名、最后修改日期、文件大小等等 需要注意的是，File 对象并不能直接对文件内容进行读&#x2F;写操作，只能查看文件的属性  第 2 节:输出输出流 输入输出流的概念与作用  流的特点">
 <meta name="keywords" content="JavaSE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java输入输出">
 <meta property="og:url" content="https:&#x2F;&#x2F;yimchengjie.github.io&#x2F;2017&#x2F;11&#x2F;14&#x2F;JavaSE&#x2F;Java%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA&#x2F;index.html">
 <meta property="og:site_name" content="ycjBlog">
-<meta property="og:description" content="第1节:文件 File类型   java.io.File类的对象可以表示文件和目录，在程序中一个File类对象可以代表一个文件或目录 当创建一个File对象后，就可以利用它来对文件或目录的属性进行操作，如：文件名、最后修改日期、文件大小等等 需要注意的是，File对象并不能直接对文件内容进行读&#x2F;写操作，只能查看文件的属性  第2节:输出输出流 输入输出流的概念与作用   流的特点: 流是一串连续不">
+<meta property="og:description" content="第 1 节:文件 File 类型   java.io.File类的对象可以表示文件和目录，在程序中一个 File 类对象可以代表一个文件或目录 当创建一个 File 对象后，就可以利用它来对文件或目录的属性进行操作，如：文件名、最后修改日期、文件大小等等 需要注意的是，File 对象并不能直接对文件内容进行读&#x2F;写操作，只能查看文件的属性  第 2 节:输出输出流 输入输出流的概念与作用  流的特点">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T05:13:13.187Z">
+<meta property="og:updated_time" content="2020-02-26T15:46:35.930Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="https://yimchengjie.github.io/2017/11/14/JavaSE/Java%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html">
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/">JavaEE</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaSE/">JavaSE</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Java并发编程</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/">Java开发框架</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/">Java系统调优</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">分布式开发技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/">消息中间件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/">缓存中间件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%85%B7/">项目工具</a><span class="category-list-count">5</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/">JavaEE</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaSE/">JavaSE</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Java并发编程</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/">Java开发框架</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98/">Java系统调优</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">分布式开发技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%B9%E5%99%A8%E5%8C%96%E6%8A%80%E6%9C%AF/">容器化技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/">消息中间件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/">缓存中间件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%85%B7/">项目工具</a><span class="category-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -223,7 +223,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AQS/" rel="tag">AQS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMQ/" rel="tag">ActiveMQ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dubbo/" rel="tag">Dubbo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpClient/" rel="tag">HttpClient</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/" rel="tag">JDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/" rel="tag">JSP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaEE/" rel="tag">JavaEE</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaSE/" rel="tag">JavaSE</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="tag">Java并发编程</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" rel="tag">Java开发框架</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="tag">Java异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%88%AC%E8%99%AB/" rel="tag">Java爬虫</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%94%81/" rel="tag">Java锁</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/" rel="tag">Java集合容器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jsoup/" rel="tag">Jsoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Netty/" rel="tag">Netty</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NoSQL/" rel="tag">NoSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMQ%E5%85%A5%E9%97%A8/" rel="tag">RabbitMQ入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selenium/" rel="tag">Selenium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Session/" rel="tag">Session</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/" rel="tag">SpringCloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebMagic/" rel="tag">WebMagic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zookeeper/" rel="tag">Zookeeper</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/" rel="tag">cache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/" rel="tag">interface</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile/" rel="tag">volatile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" rel="tag">代码托管</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" rel="tag">内存屏障</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" rel="tag">内存模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" rel="tag">分布式开发技术</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag">前端框架</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">包管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/" rel="tag">原子性</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">并发工具类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" rel="tag">异步请求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%93%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">打包管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">时间复杂度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">消息中间件</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">版本控制</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">空间复杂度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">缓存中间件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" rel="tag">网络协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AQS/" rel="tag">AQS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMQ/" rel="tag">ActiveMQ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dubbo/" rel="tag">Dubbo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpClient/" rel="tag">HttpClient</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/" rel="tag">JDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/" rel="tag">JSP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaEE/" rel="tag">JavaEE</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaSE/" rel="tag">JavaSE</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="tag">Java并发编程</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" rel="tag">Java开发框架</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="tag">Java异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%88%AC%E8%99%AB/" rel="tag">Java爬虫</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%94%81/" rel="tag">Java锁</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/" rel="tag">Java集合容器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jsoup/" rel="tag">Jsoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Netty/" rel="tag">Netty</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NoSQL/" rel="tag">NoSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMQ%E5%85%A5%E9%97%A8/" rel="tag">RabbitMQ入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selenium/" rel="tag">Selenium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Session/" rel="tag">Session</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/" rel="tag">SpringCloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebMagic/" rel="tag">WebMagic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zookeeper/" rel="tag">Zookeeper</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/" rel="tag">cache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/" rel="tag">interface</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile/" rel="tag">volatile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" rel="tag">代码托管</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" rel="tag">内存屏障</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" rel="tag">内存模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" rel="tag">分布式开发技术</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag">前端框架</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">包管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/" rel="tag">原子性</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">并发工具类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" rel="tag">异步请求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%93%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">打包管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">时间复杂度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">消息中间件</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">版本控制</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">空间复杂度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">缓存中间件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" rel="tag">网络协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -233,7 +233,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/AQS/" style="font-size: 13px;">AQS</a> <a href="/tags/ActiveMQ/" style="font-size: 13.09px;">ActiveMQ</a> <a href="/tags/Ajax/" style="font-size: 13px;">Ajax</a> <a href="/tags/Cookie/" style="font-size: 13px;">Cookie</a> <a href="/tags/Dubbo/" style="font-size: 13.09px;">Dubbo</a> <a href="/tags/ES6/" style="font-size: 13px;">ES6</a> <a href="/tags/Git/" style="font-size: 13.09px;">Git</a> <a href="/tags/HTML/" style="font-size: 13px;">HTML</a> <a href="/tags/HttpClient/" style="font-size: 13px;">HttpClient</a> <a href="/tags/IDE/" style="font-size: 13px;">IDE</a> <a href="/tags/JDK/" style="font-size: 13.09px;">JDK</a> <a href="/tags/JPA/" style="font-size: 13px;">JPA</a> <a href="/tags/JSP/" style="font-size: 13.27px;">JSP</a> <a href="/tags/JVM/" style="font-size: 13.45px;">JVM</a> <a href="/tags/Java/" style="font-size: 13.36px;">Java</a> <a href="/tags/JavaEE/" style="font-size: 13.64px;">JavaEE</a> <a href="/tags/JavaSE/" style="font-size: 14px;">JavaSE</a> <a href="/tags/JavaScript/" style="font-size: 13.09px;">JavaScript</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" style="font-size: 13.82px;">Java并发编程</a> <a href="/tags/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" style="font-size: 13.91px;">Java开发框架</a> <a href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 13px;">Java异常处理</a> <a href="/tags/Java%E7%88%AC%E8%99%AB/" style="font-size: 13.36px;">Java爬虫</a> <a href="/tags/Java%E9%94%81/" style="font-size: 13.18px;">Java锁</a> <a href="/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/" style="font-size: 13.09px;">Java集合容器</a> <a href="/tags/Jsoup/" style="font-size: 13px;">Jsoup</a> <a href="/tags/Lambda/" style="font-size: 13px;">Lambda</a> <a href="/tags/MongoDB/" style="font-size: 13px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13.09px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 13.55px;">Mybatis</a> <a href="/tags/Netty/" style="font-size: 13px;">Netty</a> <a href="/tags/NoSQL/" style="font-size: 13px;">NoSQL</a> <a href="/tags/RabbitMQ%E5%85%A5%E9%97%A8/" style="font-size: 13px;">RabbitMQ入门</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Selenium/" style="font-size: 13px;">Selenium</a> <a href="/tags/Servlet/" style="font-size: 13.09px;">Servlet</a> <a href="/tags/Session/" style="font-size: 13px;">Session</a> <a href="/tags/Spring/" style="font-size: 13.73px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 13.18px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 13px;">SpringCloud</a> <a href="/tags/SpringMVC/" style="font-size: 13.09px;">SpringMVC</a> <a href="/tags/Vue-js/" style="font-size: 13.55px;">Vue.js</a> <a href="/tags/WebMagic/" style="font-size: 13px;">WebMagic</a> <a href="/tags/Zookeeper/" style="font-size: 13px;">Zookeeper</a> <a href="/tags/cache/" style="font-size: 13px;">cache</a> <a href="/tags/interface/" style="font-size: 13px;">interface</a> <a href="/tags/jQuery/" style="font-size: 13px;">jQuery</a> <a href="/tags/maven/" style="font-size: 13.09px;">maven</a> <a href="/tags/volatile/" style="font-size: 13px;">volatile</a> <a href="/tags/webpack/" style="font-size: 13px;">webpack</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" style="font-size: 13px;">代码托管</a> <a href="/tags/%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" style="font-size: 13px;">内存屏障</a> <a href="/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" style="font-size: 13px;">内存模型</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" style="font-size: 13.27px;">分布式开发技术</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" style="font-size: 13.55px;">前端框架</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 13px;">包管理</a> <a href="/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/" style="font-size: 13px;">原子性</a> <a href="/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 13px;">并发工具类</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" style="font-size: 13px;">异步请求</a> <a href="/tags/%E6%89%93%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 13px;">打包管理</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 13px;">时间复杂度</a> <a href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 13.27px;">消息中间件</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13.45px;">爬虫</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 13.09px;">版本控制</a> <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 13px;">空间复杂度</a> <a href="/tags/%E7%BA%BF%E7%A8%8B/" style="font-size: 13px;">线程</a> <a href="/tags/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 13px;">缓存中间件</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 13px;">网络协议</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="font-size: 13.18px;">网络编程</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.73px;">设计模式</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 13px;">面向对象</a>
+      <a href="/tags/AQS/" style="font-size: 13px;">AQS</a> <a href="/tags/ActiveMQ/" style="font-size: 13.09px;">ActiveMQ</a> <a href="/tags/Ajax/" style="font-size: 13px;">Ajax</a> <a href="/tags/Cookie/" style="font-size: 13px;">Cookie</a> <a href="/tags/Docker/" style="font-size: 13px;">Docker</a> <a href="/tags/Dubbo/" style="font-size: 13.09px;">Dubbo</a> <a href="/tags/ES6/" style="font-size: 13px;">ES6</a> <a href="/tags/Git/" style="font-size: 13.09px;">Git</a> <a href="/tags/HTML/" style="font-size: 13px;">HTML</a> <a href="/tags/HttpClient/" style="font-size: 13px;">HttpClient</a> <a href="/tags/IDE/" style="font-size: 13px;">IDE</a> <a href="/tags/JDK/" style="font-size: 13.09px;">JDK</a> <a href="/tags/JPA/" style="font-size: 13px;">JPA</a> <a href="/tags/JSP/" style="font-size: 13.27px;">JSP</a> <a href="/tags/JVM/" style="font-size: 13.45px;">JVM</a> <a href="/tags/Java/" style="font-size: 13.36px;">Java</a> <a href="/tags/JavaEE/" style="font-size: 13.64px;">JavaEE</a> <a href="/tags/JavaSE/" style="font-size: 14px;">JavaSE</a> <a href="/tags/JavaScript/" style="font-size: 13.09px;">JavaScript</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" style="font-size: 13.82px;">Java并发编程</a> <a href="/tags/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" style="font-size: 13.91px;">Java开发框架</a> <a href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 13px;">Java异常处理</a> <a href="/tags/Java%E7%88%AC%E8%99%AB/" style="font-size: 13.36px;">Java爬虫</a> <a href="/tags/Java%E9%94%81/" style="font-size: 13.18px;">Java锁</a> <a href="/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/" style="font-size: 13.09px;">Java集合容器</a> <a href="/tags/Jsoup/" style="font-size: 13px;">Jsoup</a> <a href="/tags/Lambda/" style="font-size: 13px;">Lambda</a> <a href="/tags/MongoDB/" style="font-size: 13px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13.09px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 13.55px;">Mybatis</a> <a href="/tags/Netty/" style="font-size: 13px;">Netty</a> <a href="/tags/NoSQL/" style="font-size: 13px;">NoSQL</a> <a href="/tags/RabbitMQ%E5%85%A5%E9%97%A8/" style="font-size: 13px;">RabbitMQ入门</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Selenium/" style="font-size: 13px;">Selenium</a> <a href="/tags/Servlet/" style="font-size: 13.09px;">Servlet</a> <a href="/tags/Session/" style="font-size: 13px;">Session</a> <a href="/tags/Spring/" style="font-size: 13.73px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 13.18px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 13px;">SpringCloud</a> <a href="/tags/SpringMVC/" style="font-size: 13.09px;">SpringMVC</a> <a href="/tags/Vue-js/" style="font-size: 13.55px;">Vue.js</a> <a href="/tags/WebMagic/" style="font-size: 13px;">WebMagic</a> <a href="/tags/Zookeeper/" style="font-size: 13px;">Zookeeper</a> <a href="/tags/cache/" style="font-size: 13px;">cache</a> <a href="/tags/interface/" style="font-size: 13px;">interface</a> <a href="/tags/jQuery/" style="font-size: 13px;">jQuery</a> <a href="/tags/maven/" style="font-size: 13.09px;">maven</a> <a href="/tags/volatile/" style="font-size: 13px;">volatile</a> <a href="/tags/webpack/" style="font-size: 13px;">webpack</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" style="font-size: 13px;">代码托管</a> <a href="/tags/%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" style="font-size: 13px;">内存屏障</a> <a href="/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" style="font-size: 13px;">内存模型</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" style="font-size: 13.27px;">分布式开发技术</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" style="font-size: 13.55px;">前端框架</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 13px;">包管理</a> <a href="/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/" style="font-size: 13px;">原子性</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 13px;">容器</a> <a href="/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 13px;">并发工具类</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" style="font-size: 13px;">异步请求</a> <a href="/tags/%E6%89%93%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 13px;">打包管理</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 13px;">时间复杂度</a> <a href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 13.27px;">消息中间件</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13.45px;">爬虫</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 13.09px;">版本控制</a> <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 13px;">空间复杂度</a> <a href="/tags/%E7%BA%BF%E7%A8%8B/" style="font-size: 13px;">线程</a> <a href="/tags/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 13px;">缓存中间件</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 13px;">网络协议</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="font-size: 13.18px;">网络编程</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.73px;">设计模式</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 13px;">面向对象</a>
     </div>
   </div>
 
@@ -242,7 +242,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -254,21 +254,6 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/02/24/%E5%AE%B9%E5%99%A8%E8%AF%9D%E6%8A%80%E6%9C%AF/Docker%E5%85%A5%E9%97%A8%E7%AF%87/" class="title">容器话技术/Docker入门篇</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-02-24T13:54:56.793Z" itemprop="datePublished">2020-02-24</time>
-              </p>
-            </div>
-          </li>
-          
           <li>
             
             <div class="item-inner">
@@ -329,6 +314,21 @@
             </div>
           </li>
           
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/01/03/%E6%95%B0%E6%8D%AE%E5%BA%93/NoSQL%E4%B9%8BMongoDB/" class="title">NoSQL之MongoDB</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-01-03T09:21:16.000Z" itemprop="datePublished">2020-01-03</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
@@ -344,7 +344,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#第1节-文件"><span class="toc-number">1.</span> <span class="toc-text">第1节:文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第2节-输出输出流"><span class="toc-number">2.</span> <span class="toc-text">第2节:输出输出流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第3节-对象序列化"><span class="toc-number">3.</span> <span class="toc-text">第3节:对象序列化</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#第-1-节-文件"><span class="toc-number">1.</span> <span class="toc-text">第 1 节:文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第-2-节-输出输出流"><span class="toc-number">2.</span> <span class="toc-text">第 2 节:输出输出流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第-3-节-对象序列化"><span class="toc-number">3.</span> <span class="toc-text">第 3 节:对象序列化</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -391,17 +391,16 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="第1节-文件"><a href="#第1节-文件" class="headerlink" title="第1节:文件"></a>第1节:文件</h4><ol>
-<li><strong>File类型</strong></li>
+        <h4 id="第-1-节-文件"><a href="#第-1-节-文件" class="headerlink" title="第 1 节:文件"></a>第 1 节:文件</h4><ol>
+<li><strong>File 类型</strong></li>
 </ol>
 <ul>
-<li><code>java.io.File</code>类的对象可以表示文件和目录，在程序中一个File类对象可以代表一个文件或目录</li>
-<li>当创建一个File对象后，就可以利用它来对文件或目录的属性进行操作，如：文件名、最后修改日期、文件大小等等</li>
-<li>需要注意的是，File对象并不能直接对文件内容进行读/写操作，只能查看文件的属性</li>
+<li><code>java.io.File</code>类的对象可以表示文件和目录，在程序中一个 File 类对象可以代表一个文件或目录</li>
+<li>当创建一个 File 对象后，就可以利用它来对文件或目录的属性进行操作，如：文件名、最后修改日期、文件大小等等</li>
+<li>需要注意的是，File 对象并不能直接对文件内容进行读/写操作，只能查看文件的属性</li>
 </ul>
-<h4 id="第2节-输出输出流"><a href="#第2节-输出输出流" class="headerlink" title="第2节:输出输出流"></a>第2节:输出输出流</h4><ol>
-<li><strong>输入输出流的概念与作用</strong></li>
-</ol>
+<h4 id="第-2-节-输出输出流"><a href="#第-2-节-输出输出流" class="headerlink" title="第 2 节:输出输出流"></a>第 2 节:输出输出流</h4><ol>
+<li><p><strong>输入输出流的概念与作用</strong></p>
 <ul>
 <li>流的特点:<ul>
 <li>流是一串连续不断的数据的集合,只能先读取前面的数据后，再读取后面的数据。不管写入时是将数据分多次写入，还是作为一个整体一次写入，读取时的效果都是完全一样的</li>
@@ -409,189 +408,182 @@
 </li>
 <li>输入流：从外存读取数据到内存，输出流：将数据从内存写到外存中</li>
 </ul>
-<ol start="2">
-<li><strong>Java中输入输出流的类型</strong></li>
-</ol>
+</li>
+<li><p><strong>Java 中输入输出流的类型</strong></p>
 <ul>
 <li>对于输入和输出流，由于传输格式的不同，又分为字节流和字符流：</li>
 </ul>
-<ol start="3">
-<li><strong>Java的输入输出流的继承树</strong></li>
-</ol>
-<ul>
-<li>Java I/O主要包括:<ul>
-<li><strong>流式部分</strong>:IO的主体部分；</li>
-<li><strong>非流式部分</strong>:主要包含一些辅助流式部分的类，如：File类、<code>RandomAccessFile</code>类和<code>FileDescriptor</code>等类；</li>
-<li><strong>其他类</strong>:文件读取部分的与安全相关的类，如：<code>SerializablePermissio</code>n类，以及与本地操作系统相关的文件系统的类，如：<code>FileSystem</code>类和<code>Win32FileSystem</code>类和<code>WinNTFileSystem</code>类。</li>
-</ul>
 </li>
-</ul>
-<ol start="4">
-<li><strong>字节输出流</strong></li>
-</ol>
+<li><p><strong>Java 的输入输出流的继承树</strong></p>
 <ul>
-<li>OutputStream提供了3个write方法来做数据的输出，这个是和InputStream是相对应的</li>
-</ul>
-<ol start="5">
-<li><strong>OutputStream</strong></li>
-</ol>
-<ul>
-<li>OutputStream是一个抽象类，提供了Java向流中以字节为单位写入数据的公开接口，大部分字节输出流都继承自OutputStream类</li>
-</ul>
-<ol start="6">
-<li><strong>DataOutput</strong></li>
-</ol>
-<ul>
-<li>DataOutput接口规定一组操作，用于直接向流中写入基本类型的数据和字符串：<ul>
-<li>DataInput对基本数据类型的写入分别提供了不同的方法，方法名满足<code>writeXXX()</code>的规律,如<code>writeInt()</code>表示向流中写入一个int型数据，写入字符串的方法为<code>writeUTF()</code></li>
-</ul>
-</li>
-</ul>
-<ol start="7">
-<li><strong>常见字节输出流工具的作用与使用</strong></li>
-</ol>
-<ul>
-<li>FileOutputStream类用来处理以文件作为数据输出目的数据流；一个表示文件名的字符串，也可以是File或FileDescriptor对象。</li>
-<li>创建一个文件流对象有以下方法:<ul>
-<li>方式1：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">File f=<span class="keyword">new</span> File(“d:/abc.txt”);</span><br><span class="line">FileOutputStream out=<span class="keyword">new</span> FileOutputStream (f);</span><br></pre></td></tr></table></figure></li>
-<li>方式2：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream out=<span class="keyword">new</span> FileOutputStream(“d:/abc.txt”);</span><br></pre></td></tr></table></figure></li>
-<li>方式3：构造函数将 FileDescriptor()对象作为其参数。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileDescriptor() fd=<span class="keyword">new</span> FileDescriptor();</span><br><span class="line">FileOutputStream f2=<span class="keyword">new</span> FileOutputStream(fd);</span><br></pre></td></tr></table></figure></li>
-<li>方式4：构造函数将文件名作为其第一参数，将布尔值作为第二参数。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream f=<span class="keyword">new</span> FileOutputStream(“d:/abc.txt”,<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<ol start="8">
-<li><strong>字节输入流</strong></li>
-</ol>
-<ul>
-<li>InputStream是输入字节数据用的类，所以InputStream类提供了3种重载的read方法.</li>
-</ul>
-<ol start="9">
-<li><strong>InputStream</strong></li>
-</ol>
-<ul>
-<li>InputStream也是一个抽象类，提供了Java中从流中以字节为单位读取数据的公开接口，大部分字节输入流都继承自InputStream类</li>
-</ul>
-<ol start="10">
-<li><strong>DataInput</strong></li>
-</ol>
-<ul>
-<li>DataInput接口规定一组操作，用于以一种与机器无关（当前操作系统等）的方式，直接在流中读取基本类型的数据和字符串：</li>
-<li>DataInput对基本数据类型的读取分别提供了不同的方法，方法名满足readXXX()的规律,如readInt()表示从流中读取一个int型数据读取字符串的方法为readUTF()</li>
-</ul>
-<ol start="11">
-<li><strong>常见的字节输入流工具的作用与使用</strong></li>
-</ol>
-<ul>
-<li>FileInputStream类是InputStream类的子类，用来处理以文件作为数据输入源的数据流。<ul>
-<li>使用方法:<ul>
-<li>方式1：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   File fin=<span class="keyword">new</span> File(“d:/abc.txt”);</span><br><span class="line">FileInputStream in=<span class="keyword">new</span> FileInputStream(fin);</span><br></pre></td></tr></table></figure></li>
-<li>方式2：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream in=<span class="keyword">new</span> FileInputStream(“d: /abc.txt”;</span><br></pre></td></tr></table></figure></li>
-<li>方式3：构造函数将 FileDescriptor()对象作为其参数。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileDescriptor() fd=<span class="keyword">new</span> FileDescriptor();</span><br><span class="line">FileInputStream f2=<span class="keyword">new</span> FileInputStream(fd);</span><br></pre></td></tr></table></figure></li>
+<li>Java I/O 主要包括:<ul>
+<li><strong>流式部分</strong>:IO 的主体部分；</li>
+<li><strong>非流式部分</strong>:主要包含一些辅助流式部分的类，如：File 类、<code>RandomAccessFile</code>类和<code>FileDescriptor</code>等类；</li>
+<li><strong>其他类</strong>:文件读取部分的与安全相关的类，如：<code>SerializablePermissio</code>n 类，以及与本地操作系统相关的文件系统的类，如：<code>FileSystem</code>类和<code>Win32FileSystem</code>类和<code>WinNTFileSystem</code>类。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>程序对应的基本输入为键盘输入，基本输出为显示器输出。Java中，System类的in和out两个成员代表了基本输入输出的抽象</li>
-</ul>
-<p><strong>System.in</strong>:基本输入，对应InputStream<br><strong>System.out</strong>:基本输出，对应PrintStream    </p>
+<li><p><strong>字节输出流</strong></p>
 <ul>
-<li><strong>RandomAccessFile</strong><ul>
-<li>RandomAccessFile类可以在文件中==任何位置==查找或写入数据</li>
-<li>RandomAccessFile==同时实现了DataInput和DataOutput接口==</li>
+<li>OutputStream 提供了 3 个 write 方法来做数据的输出，这个是和 InputStream 是相对应的</li>
+</ul>
+</li>
+<li><p><strong>OutputStream</strong></p>
+<ul>
+<li>OutputStream 是一个抽象类，提供了 Java 向流中以字节为单位写入数据的公开接口，大部分字节输出流都继承自 OutputStream 类</li>
+</ul>
+</li>
+<li><p><strong>DataOutput</strong></p>
+<ul>
+<li>DataOutput 接口规定一组操作，用于直接向流中写入基本类型的数据和字符串：<ul>
+<li>DataInput 对基本数据类型的写入分别提供了不同的方法，方法名满足<code>writeXXX()</code>的规律,如<code>writeInt()</code>表示向流中写入一个 int 型数据，写入字符串的方法为<code>writeUTF()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>常见字节输出流工具的作用与使用</strong></p>
+<ul>
+<li><p>FileOutputStream 类用来处理以文件作为数据输出目的数据流；一个表示文件名的字符串，也可以是 File 或 FileDescriptor 对象。</p>
+</li>
+<li><p>创建一个文件流对象有以下方法:</p>
+<ul>
+<li><p>方式 1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">File f=<span class="keyword">new</span> File(“d:/abc.txt”);</span><br><span class="line">FileOutputStream out=<span class="keyword">new</span> FileOutputStream (f);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式 2：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream out=<span class="keyword">new</span> FileOutputStream(“d:/abc.txt”);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式 3：构造函数将 FileDescriptor()对象作为其参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileDescriptor() fd=<span class="keyword">new</span> FileDescriptor();</span><br><span class="line">FileOutputStream f2=<span class="keyword">new</span> FileOutputStream(fd);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式 4：构造函数将文件名作为其第一参数，将布尔值作为第二参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream f=<span class="keyword">new</span> FileOutputStream(“d:/abc.txt”,<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>字节输入流</strong></p>
+<ul>
+<li>InputStream 是输入字节数据用的类，所以 InputStream 类提供了 3 种重载的 read 方法.</li>
+</ul>
+</li>
+<li><p><strong>InputStream</strong></p>
+<ul>
+<li>InputStream 也是一个抽象类，提供了 Java 中从流中以字节为单位读取数据的公开接口，大部分字节输入流都继承自 InputStream 类</li>
+</ul>
+</li>
+<li><p><strong>DataInput</strong></p>
+<ul>
+<li>DataInput 接口规定一组操作，用于以一种与机器无关（当前操作系统等）的方式，直接在流中读取基本类型的数据和字符串：</li>
+<li>DataInput 对基本数据类型的读取分别提供了不同的方法，方法名满足 readXXX()的规律,如 readInt()表示从流中读取一个 int 型数据读取字符串的方法为 readUTF()</li>
+</ul>
+</li>
+<li><p><strong>常见的字节输入流工具的作用与使用</strong></p>
+<ul>
+<li><p>FileInputStream 类是 InputStream 类的子类，用来处理以文件作为数据输入源的数据流。</p>
+<ul>
+<li><p>使用方法:</p>
+<ul>
+<li>方式 1：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">File fin=<span class="keyword">new</span> File(“d:/abc.txt”);</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方式 2：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream in=<span class="keyword">new</span> FileInputStream(“d: /abc.txt”);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方式 3:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileDescriptor() fd=<span class="keyword">new</span> FileDescriptor();</span><br><span class="line">FileInputStream f2=<span class="keyword">new</span> FileInputStream(fd);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>程序对应的基本输入为键盘输入，基本输出为显示器输出。Java 中，System 类的 in 和 out 两个成员代表了基本输入输出的抽象<br><strong>System.in</strong>:基本输入，对应 InputStream<br><strong>System.out</strong>:基本输出，对应 PrintStream</p>
+</li>
+<li><p><strong>RandomAccessFile</strong></p>
+<ul>
+<li>RandomAccessFile 类可以在文件中==任何位置==查找或写入数据</li>
+<li>RandomAccessFile==同时实现了 DataInput 和 DataOutput 接口==</li>
 <li>磁盘文件都是可以随机访问的， 但是从网络而来的数据流却不是</li>
 </ul>
 </li>
 </ul>
-<ol start="12">
-<li><strong>ByteArrayOutpuStream/ByteArrayInputStream</strong></li>
-</ol>
+</li>
+<li><p><strong>ByteArrayOutpuStream/ByteArrayInputStream</strong></p>
 <ul>
-<li>一对输入输出工具为我们提供了在内存中利用byte[]进行缓冲流操作的工具</li>
-<li>ByteArrayOutputStream提供工具将内存中以串行序列存在的流式数据以一个字节为单位进行切分，形成一个byte[]数组</li>
-<li>而ByteArrayInputStream则正好相反，提供工具将内存中的byte[]数组中的数据进行串行序列化拼接，形成一个可供操作的流式数据</li>
-<li>从功能上看，ByteArrayOutpuStream可以将任意数据组合转换为byte[]，而ByteArrayInputStream可以将这个数组还原，从而以流的形式读取任意数据组合</li>
-</ul>
-<ol start="13">
-<li><strong>字符输出流</strong></li>
-</ol>
-<ul>
-<li>考虑到Java是跨平台的语言，要经常操作Unicode编码的文件，使用基于字符为读、写基本单元的字符流操作文件是有必要的,以字符为单位进行数据输出的工具继承自Writer</li>
-</ul>
-<ol start="14">
-<li><strong>字符输出流的统一数据写入方法</strong></li>
-</ol>
-<ul>
-<li>Writer和OutputStream类似也提供了统一的往流中写入数据的方法，和OutputStream不同的是，写入数据的单位由字节变成了字符</li>
-</ul>
-<ol start="15">
-<li><strong>字符输出流工具的作用与使用</strong></li>
-</ol>
-<ul>
-<li>FileWriter类称为文件写入流，以字符流的形式对文件进行写操作</li>
-<li>FileWriter将逐个向文件写入字符，效率比较低下，因此一般将该类对象包装到缓冲流中进行操作</li>
-<li>还可以使用PrintWriter对流进行包装，提供更方便的字符输出格式控制</li>
-</ul>
-<ol start="16">
-<li><strong>字符输入流</strong></li>
-</ol>
-<ul>
-<li>以字符为单位进行数据读取的工具继承自Reader，Reader会将读取到的数据按照标准的规则转换为Java字符串对象</li>
-</ul>
-<ol start="17">
-<li><strong>字符输入流的统一数据读取方法</strong></li>
-</ol>
-<ul>
-<li>字符输入流Reader也提供的统一读取数据的方法（和InputStream不同，实际开发时更多的调用不同Reader提供的特殊读取方法，如BufferedReader的readLine()，能够简化操作）</li>
-</ul>
-<ol start="18">
-<li><strong>常见的字符输入流工具的作用与使用</strong></li>
-</ol>
-<ul>
-<li>FileReader类称为文件读取流，允许以字符流的形式对文件进行读操作</li>
-<li>与FileWriter相似，该类将从文件中逐个地读取字符，效率比较低下，因此一般也将该类对象包装到缓冲流中进行操作</li>
-</ul>
-<ol start="19">
-<li><strong>字节流与字符流的适配器</strong></li>
-</ol>
-<ul>
-<li>在某些时候虽然我们操作的是字符串，但是不得不面对数据来源是InputStream（字节输入流）的情况，在这种情况下，Java提供了将InputStream和Reader之间进行转换的工具，事实上，字节输出流和字符输出流之间也存在这种工具，称为：字节流与字符流的适配器：<ul>
-<li>InputStreamReader：<ul>
-<li>字节流通向字符流的桥梁，它使用指定的 charset 读取字节并将其解码为字符。它使用的字符集可以由名称指定或显式给定，或者可以接受平台默认的字符集</li>
-<li>每次调用 InputStreamReader 中的一个 read() 方法都会导致从底层输入流读取一个或多个字节。要启用从字节到字符的有效转换，可以提前从底层流读取更多的字节，使其超过满足当前读取操作所需的字节</li>
+<li>一对输入输出工具为我们提供了在内存中利用 byte[]进行缓冲流操作的工具</li>
+<li>ByteArrayOutputStream 提供工具将内存中以串行序列存在的流式数据以一个字节为单位进行切分，形成一个 byte[]数组</li>
+<li>而 ByteArrayInputStream 则正好相反，提供工具将内存中的 byte[]数组中的数据进行串行序列化拼接，形成一个可供操作的流式数据</li>
+<li>从功能上看，ByteArrayOutpuStream 可以将任意数据组合转换为 byte[]，而 ByteArrayInputStream 可以将这个数组还原，从而以流的形式读取任意数据组合</li>
 </ul>
 </li>
-<li>OutputStreamWriter： <ul>
-<li>字符流通向字节流的桥梁，使用指定的 charset 将要写入流中的字符编码成字节。它使用的字符集可以由名称指定或显式给定，否则将接受平台默认的字符集</li>
-<li>每次调用 write() 方法都会导致在给定字符（或字符集）上调用编码转换器。在写入底层输出流之前，得到的这些字节将在缓冲区中累积。可以指定此缓冲区的大小，不过，默认的缓冲区对多数用途来说已足够大。注意，传递给 write() 方法的字符没有缓冲</li>
+<li><p><strong>字符输出流</strong></p>
+<ul>
+<li>考虑到 Java 是跨平台的语言，要经常操作 Unicode 编码的文件，使用基于字符为读、写基本单元的字符流操作文件是有必要的,以字符为单位进行数据输出的工具继承自 Writer</li>
+</ul>
+</li>
+<li><p><strong>字符输出流的统一数据写入方法</strong></p>
+<ul>
+<li>Writer 和 OutputStream 类似也提供了统一的往流中写入数据的方法，和 OutputStream 不同的是，写入数据的单位由字节变成了字符</li>
+</ul>
+</li>
+<li><p><strong>字符输出流工具的作用与使用</strong></p>
+<ul>
+<li>FileWriter 类称为文件写入流，以字符流的形式对文件进行写操作</li>
+<li>FileWriter 将逐个向文件写入字符，效率比较低下，因此一般将该类对象包装到缓冲流中进行操作</li>
+<li>还可以使用 PrintWriter 对流进行包装，提供更方便的字符输出格式控制</li>
+</ul>
+</li>
+<li><p><strong>字符输入流</strong></p>
+<ul>
+<li>以字符为单位进行数据读取的工具继承自 Reader，Reader 会将读取到的数据按照标准的规则转换为 Java 字符串对象</li>
+</ul>
+</li>
+<li><p><strong>字符输入流的统一数据读取方法</strong></p>
+<ul>
+<li>字符输入流 Reader 也提供的统一读取数据的方法（和 InputStream 不同，实际开发时更多的调用不同 Reader 提供的特殊读取方法，如 BufferedReader 的 readLine()，能够简化操作）</li>
+</ul>
+</li>
+<li><p><strong>常见的字符输入流工具的作用与使用</strong></p>
+<ul>
+<li>FileReader 类称为文件读取流，允许以字符流的形式对文件进行读操作</li>
+<li>与 FileWriter 相似，该类将从文件中逐个地读取字符，效率比较低下，因此一般也将该类对象包装到缓冲流中进行操作</li>
+</ul>
+</li>
+<li><p><strong>字节流与字符流的适配器</strong></p>
+<ul>
+<li>在某些时候虽然我们操作的是字符串，但是不得不面对数据来源是 InputStream（字节输入流）的情况，在这种情况下，Java 提供了将 InputStream 和 Reader 之间进行转换的工具，事实上，字节输出流和字符输出流之间也存在这种工具，称为：字节流与字符流的适配器：<ul>
+<li>InputStreamReader： + 字节流通向字符流的桥梁，它使用指定的 charset 读取字节并将其解码为字符。它使用的字符集可以由名称指定或显式给定，或者可以接受平台默认的字符集 + 每次调用 InputStreamReader 中的一个 read() 方法都会导致从底层输入流读取一个或多个字节。要启用从字节到字符的有效转换，可以提前从底层流读取更多的字节，使其超过满足当前读取操作所需的字节 + OutputStreamWriter： + 字符流通向字节流的桥梁，使用指定的 charset 将要写入流中的字符编码成字节。它使用的字符集可以由名称指定或显式给定，否则将接受平台默认的字符集 + 每次调用 write() 方法都会导致在给定字符（或字符集）上调用编码转换器。在写入底层输出流之前，得到的这些字节将在缓冲区中累积。可以指定此缓冲区的大小，不过，默认的缓冲区对多数用途来说已足够大。注意，传递给 write() 方法的字符没有缓冲</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<h4 id="第3节-对象序列化"><a href="#第3节-对象序列化" class="headerlink" title="第3节:对象序列化"></a>第3节:对象序列化</h4><p>Java平台允许我们在内存中创建可复用的Java对象，但一般情况下，只有当JVM处于运行时，这些对象才可能存在，即，这些对象的生命周期不会比JVM的生命周期更长。但在现实应用中，就可能要求在JVM停止运行之后能够保存(持久化)指定的对象，并在将来重新读取被保存的对象。Java对象序列化就能够帮助我们实现该功能</p>
+</ol>
+<h4 id="第-3-节-对象序列化"><a href="#第-3-节-对象序列化" class="headerlink" title="第 3 节:对象序列化"></a>第 3 节:对象序列化</h4><p>Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情况下，只有当 JVM 处于运行时，这些对象才可能存在，即，这些对象的生命周期不会比 JVM 的生命周期更长。但在现实应用中，就可能要求在 JVM 停止运行之后能够保存(持久化)指定的对象，并在将来重新读取被保存的对象。Java 对象序列化就能够帮助我们实现该功能</p>
 <ol>
-<li>对象序列化的作用</li>
-</ol>
+<li><p>对象序列化的作用</p>
 <ul>
-<li>使用Java对象序列化，在保存对象时，会把其状态保存为一组字节，在未来，再将这些字节组装成对象。必须注意地是，对象序列化保存的是对象的”状态”，即它的成员变量。由此可知，对象序列化不会关注类中的静态变量</li>
-<li>除了在持久化对象时会用到对象序列化之外，在网络中传递对象时，也会用到对象序列化。Java序列化API为处理对象序列化提供了一个标准机制</li>
+<li>使用 Java 对象序列化，在保存对象时，会把其状态保存为一组字节，在未来，再将这些字节组装成对象。必须注意地是，对象序列化保存的是对象的”状态”，即它的成员变量。由此可知，对象序列化不会关注类中的静态变量</li>
+<li>除了在持久化对象时会用到对象序列化之外，在网络中传递对象时，也会用到对象序列化。Java 序列化 API 为处理对象序列化提供了一个标准机制</li>
 </ul>
-<ol start="2">
-<li>序列化接口</li>
-</ol>
+</li>
+<li><p>序列化接口</p>
 <ul>
-<li>在Java中，只要一个类实现了<code>java.io.Serializable</code>接口，那么它就可以被序列化</li>
+<li>在 Java 中，只要一个类实现了<code>java.io.Serializable</code>接口，那么它就可以被序列化</li>
 <li><code>java.io.Serializable</code>是一个标识接口，即意味着它仅仅是为了说明类的可序列化属性，接口没有包含任何需要子类实现的抽象方法</li>
 </ul>
-<ol start="3">
-<li>对象序列化和反序列化</li>
-</ol>
+</li>
+<li><p>对象序列化和反序列化</p>
 <ul>
-<li>将对象的状态信息保存到流中的操作，称为序列化，可以使用Java提供的工具<code>ObjectOutputStream. writeObject(Serializable obj)</code>来完成</li>
-<li>从流中读取对心状态信息的操作称为反序列化，可以使用Java提供的工具<code>ObjectInputStream.readObject()</code>来完成</li>
+<li>将对象的状态信息保存到流中的操作，称为序列化，可以使用 Java 提供的工具<code>ObjectOutputStream. writeObject(Serializable obj)</code>来完成</li>
+<li>从流中读取对心状态信息的操作称为反序列化，可以使用 Java 提供的工具<code>ObjectInputStream.readObject()</code>来完成</li>
 </ul>
+</li>
+</ol>
 
       
     </div>
