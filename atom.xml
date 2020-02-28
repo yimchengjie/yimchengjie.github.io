@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yimchengjie.github.io/"/>
-  <updated>2020-02-27T12:27:22.503Z</updated>
+  <updated>2020-02-28T08:35:01.365Z</updated>
   <id>https://yimchengjie.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Electron+Vue入门</title>
+    <link href="https://yimchengjie.github.io/2020/02/07/Vue.js/Electron+Vue%E5%85%A5%E9%97%A8/"/>
+    <id>https://yimchengjie.github.io/2020/02/07/Vue.js/Electron+Vue入门/</id>
+    <published>2020-02-07T08:24:19.000Z</published>
+    <updated>2020-02-28T08:35:01.365Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Electron-Vue入门"><a href="#Electron-Vue入门" class="headerlink" title="Electron+Vue入门"></a>Electron+Vue入门</h2><hr><h3 id="了解Electron"><a href="#了解Electron" class="headerlink" title="了解Electron"></a>了解Electron</h3><p>Electron是由Github开发，<strong>用HTML，CSS和JavaScript来构建跨平台桌面应用程序</strong>的一个开源库。 Electron通过将Chromium和Node.js合并到同一个运行时环境中，并将其打包为Mac，Windows和Linux系统下的应用来实现这一目的。</p><p>Electron使用Web页面来作为桌面应用的GUI,所以可以把它看作成一个被 JavaScript 控制的，精简版的 Chromium 浏览器</p><h3 id="Electron-Vue结合使用"><a href="#Electron-Vue结合使用" class="headerlink" title="Electron+Vue结合使用"></a>Electron+Vue结合使用</h3><p>Vue的开发环境,node.js,npm就可以进行Electron开发</p><h4 id="使用Electron-vue框架"><a href="#使用Electron-vue框架" class="headerlink" title="使用Electron-vue框架"></a>使用Electron-vue框架</h4><p>Electron-vue是基于electron和vue结合搭建的开发脚手架</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Electron-Vue入门&quot;&gt;&lt;a href=&quot;#Electron-Vue入门&quot; class=&quot;headerlink&quot; title=&quot;Electron+Vue入门&quot;&gt;&lt;/a&gt;Electron+Vue入门&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;了解Electron&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="Vue.js" scheme="https://yimchengjie.github.io/categories/Vue-js/"/>
+    
+    
+      <category term="前端框架" scheme="https://yimchengjie.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="Electron" scheme="https://yimchengjie.github.io/tags/Electron/"/>
+    
+      <category term="Vue.js" scheme="https://yimchengjie.github.io/tags/Vue-js/"/>
+    
+  </entry>
   
   <entry>
     <title>Shiro权限管理</title>
@@ -548,33 +579,6 @@
         &lt;h2 id=&quot;桥接模式&quot;&gt;&lt;a href=&quot;#桥接模式&quot; class=&quot;headerlink&quot; title=&quot;桥接模式&quot;&gt;&lt;/a&gt;桥接模式&lt;/h2&gt;&lt;p&gt;属于结构型模式&lt;/p&gt;
 &lt;p&gt;桥接模式将抽象和实现分离开来,各自独立,但能动态的结合;&lt;/p&gt;
 &lt;h3 id=&quot;为什么使用桥
-      
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="https://yimchengjie.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="https://yimchengjie.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>适配器模式</title>
-    <link href="https://yimchengjie.github.io/2019/09/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://yimchengjie.github.io/2019/09/21/设计模式/适配器模式/</id>
-    <published>2019-09-21T04:51:31.000Z</published>
-    <updated>2020-01-04T09:13:11.365Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h2><p>属于结构型模式</p><p>适配器模式将两个不兼容的类通过适配器能够做到兼容;<br>用户调用适配器转化后的接口方法, 适配器再调用被适配者的接口方法;<br>用户只要关心适配器暴露的接口方法</p><h3 id="为什么使用适配器模式"><a href="#为什么使用适配器模式" class="headerlink" title="为什么使用适配器模式"></a>为什么使用适配器模式</h3><p>现实中,存在很多的适配器, 比如电源适配器; 让原本不能直接兼容的两个对象, 通过适配器进行兼容</p><h3 id="使用适配器模式"><a href="#使用适配器模式" class="headerlink" title="使用适配器模式"></a>使用适配器模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 被适配者, 比如插座 交流220V</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adaptee</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">output</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">220</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 适配器 电源适配器 转化成低压直流电</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(Adaptee adaptee)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"输入电压: "</span>+adaptee.output());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">output</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"输出电压: "</span>+<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用者  需要充电的电池</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Battery</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">charging</span><span class="params">(Adapter adapter)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (adapter.output()==<span class="number">5</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"充电"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"不适配"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;适配器模式&quot;&gt;&lt;a href=&quot;#适配器模式&quot; class=&quot;headerlink&quot; title=&quot;适配器模式&quot;&gt;&lt;/a&gt;适配器模式&lt;/h2&gt;&lt;p&gt;属于结构型模式&lt;/p&gt;
-&lt;p&gt;适配器模式将两个不兼容的类通过适配器能够做到兼容;&lt;br&gt;用户调用适配器转化后的接口方
       
     
     </summary>
