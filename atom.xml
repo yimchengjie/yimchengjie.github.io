@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yimchengjie.github.io/"/>
-  <updated>2020-03-20T10:57:42.792Z</updated>
+  <updated>2020-06-01T15:33:03.574Z</updated>
   <id>https://yimchengjie.github.io/</id>
   
   <author>
@@ -15,6 +15,89 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java线程间通信</title>
+    <link href="https://yimchengjie.github.io/2020/05/31/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E7%BA%BF%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
+    <id>https://yimchengjie.github.io/2020/05/31/Java并发编程/Java线程间通信/</id>
+    <published>2020-05-31T08:03:31.000Z</published>
+    <updated>2020-06-01T15:33:03.574Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Java线程间通信"><a href="#Java线程间通信" class="headerlink" title="Java线程间通信"></a>Java线程间通信</h2><h3 id="synchronized同步关键字"><a href="#synchronized同步关键字" class="headerlink" title="synchronized同步关键字"></a>synchronized同步关键字</h3><p>使用synchronized关键字,同步线程,可以让线程按照一定顺序去执行;</p><p>synchronized关键字,线程需要不断尝试获取锁,这会耗费CPU资源</p><h3 id="等待-通知-wait-notify"><a href="#等待-通知-wait-notify" class="headerlink" title="等待/通知-wait()/notify()"></a>等待/通知-wait()/notify()</h3><p>Java线程的等待/通知机制,是使用Object类的wait()方法和notify(),notifyAll()方法;</p><p>当一个线程A获取锁,并开始执行,业务执行完成后调用notifyAll()和wait()方法,使自己进入等待状态,并唤醒其他线程,被唤醒的线程B就会获取锁, 并执行;</p><p>wait()和notify()是针对锁对象, 而不是线程的方法, 是锁来调用wait()和notify()</p><h3 id="信号量通信volatile关键字"><a href="#信号量通信volatile关键字" class="headerlink" title="信号量通信volatile关键字"></a>信号量通信volatile关键字</h3><p>volatile关键字保证数据的可见性, 如果一个变量使用了volatile关键字, 那么它一改变, 其他线程的内存就会立马更新成改变后的数据。</p><h3 id="join-方法"><a href="#join-方法" class="headerlink" title="join()方法"></a>join()方法</h3><p>join()方法是Thread的一个实例方法,它的作用是使当前所在的线程等待调用join()方法的线程执行完后在执行。</p><p>比如子线程有许多耗时操作， 而主线程要获取子线程得到的数据， 那就需要让主线程去等待子线程。</p><h3 id="ThreadLocal类"><a href="#ThreadLocal类" class="headerlink" title="ThreadLocal类"></a>ThreadLocal类</h3><p>使用ThreadLocal在线程中创建线程本地变量，内部是一个Map来维护数据，ThreadLocal可以让每个线程都拥有自己独立的ThreadLocal副本，使每个线程可以访问自己的独立副本变量。</p><p>使用时，可以利用构造方法，给多个线程传递同一个ThreadLocal实例， 多个线程会创建出独立的副本， 而不影响其他线程中的ThreadLocal。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Java线程间通信&quot;&gt;&lt;a href=&quot;#Java线程间通信&quot; class=&quot;headerlink&quot; title=&quot;Java线程间通信&quot;&gt;&lt;/a&gt;Java线程间通信&lt;/h2&gt;&lt;h3 id=&quot;synchronized同步关键字&quot;&gt;&lt;a href=&quot;#synchron
+      
+    
+    </summary>
+    
+    
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java并发编程" scheme="https://yimchengjie.github.io/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka入门</title>
+    <link href="https://yimchengjie.github.io/2020/05/27/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/Kafka%E5%85%A5%E9%97%A8/"/>
+    <id>https://yimchengjie.github.io/2020/05/27/消息中间件/Kafka入门/</id>
+    <published>2020-05-27T09:26:17.000Z</published>
+    <updated>2020-05-31T08:03:08.382Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Kafka入门"><a href="#Kafka入门" class="headerlink" title="Kafka入门"></a>Kafka入门</h2><p>Kafka是一款分布式、分区的、多副本的、多订阅者的，基于Zookeeper协调的分布式日志系统（MQ系统），主要应用场景为日志收集系统和消息系统。</p><h2 id="Kafka术语概述"><a href="#Kafka术语概述" class="headerlink" title="Kafka术语概述"></a>Kafka术语概述</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Kafka入门&quot;&gt;&lt;a href=&quot;#Kafka入门&quot; class=&quot;headerlink&quot; title=&quot;Kafka入门&quot;&gt;&lt;/a&gt;Kafka入门&lt;/h2&gt;&lt;p&gt;Kafka是一款分布式、分区的、多副本的、多订阅者的，基于Zookeeper协调的分布式日志系统（M
+      
+    
+    </summary>
+    
+    
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+      <category term="消息中间件" scheme="https://yimchengjie.github.io/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+      <category term="Kafka" scheme="https://yimchengjie.github.io/tags/Kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贝叶斯分类器的Java实现</title>
+    <link href="https://yimchengjie.github.io/2020/03/30/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8%E7%9A%84Java%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://yimchengjie.github.io/2020/03/30/自然语言处理/贝叶斯分类器的Java实现/</id>
+    <published>2020-03-30T12:38:54.000Z</published>
+    <updated>2020-04-12T15:55:25.344Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="贝叶斯分类器的Java实现"><a href="#贝叶斯分类器的Java实现" class="headerlink" title="贝叶斯分类器的Java实现"></a>贝叶斯分类器的Java实现</h2><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;贝叶斯分类器的Java实现&quot;&gt;&lt;a href=&quot;#贝叶斯分类器的Java实现&quot; class=&quot;headerlink&quot; title=&quot;贝叶斯分类器的Java实现&quot;&gt;&lt;/a&gt;贝叶斯分类器的Java实现&lt;/h2&gt;&lt;hr&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="自然语言处理" scheme="https://yimchengjie.github.io/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
+    
+    
+      <category term="自然语言处理" scheme="https://yimchengjie.github.io/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
+    
+      <category term="NLP" scheme="https://yimchengjie.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>朴素贝叶斯分类器</title>
@@ -49,9 +132,9 @@
     <link href="https://yimchengjie.github.io/2020/03/16/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%8602/"/>
     <id>https://yimchengjie.github.io/2020/03/16/Java面试专题/面试题集02/</id>
     <published>2020-03-16T11:07:00.000Z</published>
-    <updated>2020-03-16T14:37:01.750Z</updated>
+    <updated>2020-06-01T15:38:54.506Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="面试题集02"><a href="#面试题集02" class="headerlink" title="面试题集02"></a>面试题集02</h2><hr><ol><li><p><strong>RESTful调用和RPC调用有什么区别?如果让你设计一个RPC服务治理框架,你会设计那些模块?是否了解过Service Mesh,如果了解Service Mesh是用来解决什么问题的?</strong></p><p> RESTful是表达性状态传递, 是一种软件架构风格.REST通过Http协议定义的动词方法(GET-查,PUT-改,DELETE-删,POST-增)来表示对资源的操作,用唯一的URL地址作为资源的标识符, 基于Http协议,但是Http调用效率低.RESTful也是RPC,只是消息的组织方式和协议不同<br> RPC是远程过程调用, 它的意图是像调用本地方法一样调用远程服务,RPC调用基于TCP/UDP连接,使用XML-RPC或者JSON-RPC或者SOAP(基于XML数据的Http协议)等,这使得RPC调用效率更高, 减少网络开销,RPC是基于方法而不是资源的,在本地使用代理,通过序列化与反序列化,将服务当做本地方法来调用.</p><p> 设计一个RPC服务治理框架,分为两个部分,RPC部分有接口描述语言(描述接口的统一标识符),客户端,服务端,协议层(JSON-RPC),数据传输层(socket);服务治理部分有注册中心,服务监控,服务容灾,服务鉴权(用户认证)</p><p> Service Mesh即服务网络, 是为了处理服务间通信,屏蔽分布式系统通信的复杂性,解决跨语言远程调用,实现语言无关, 对应用透明,组件可以单独升级而不必升级服务.</p></li><li><p><strong>请描述避免多线程竞争时有哪些手段?</strong></p><p> 多线程竞争是指,多线程同时访问一个资源,即所谓的线程安全问题<br> 解决多线程安全问题的方法: 不可变对象, 互斥锁, ThreadLocal对象, CAS</p></li><li><p><strong>请简述HTTP的5个常用Method及其含义,以及5个常用的Status Code及其含义,HTTP和HTTPS的区别是什么,简述一下HTTPS的原理.</strong></p><p> POST: 增<br> DELETE: 删<br> PUT: 改<br> GET: 查<br> OPTIONS: 可用性检查</p><p> 100: 握手成功<br> 200: 请求处理成功<br> 300: 重定向<br> 400: 服务器无资源<br> 500: 服务器无法正常响应</p><p> HTTP是一种超文本网络传输协议,一个HTTP协议数据包包含: 请求/响应行,请求/响应头,空行,请求/响应正文.<br> HTTPS在HTTP的基础上增加了数据加密,在数据传输之前进行加密<br> HTTPS=HTTP+SSL<br> HTTPS协议先与服务器建立连接, 然后服务器发送公钥到客户端,客户端验证合法后,客户端根据公钥生成加密密钥,然后对数据进行加密,再将加密后数据发给服务器,服务器用私钥对其进行解密.</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="面试题集02"><a href="#面试题集02" class="headerlink" title="面试题集02"></a>面试题集02</h2><hr><ol><li><p><strong>RESTful调用和RPC调用有什么区别?如果让你设计一个RPC服务治理框架,你会设计那些模块?是否了解过Service Mesh,如果了解Service Mesh是用来解决什么问题的?</strong></p><p> RESTful是表达性状态传递, 是一种软件架构风格.REST通过Http协议定义的动词方法(GET-查,PUT-改,DELETE-删,POST-增)来表示对资源的操作,用唯一的URL地址作为资源的标识符, 基于Http协议,但是Http调用效率低.RESTful也是RPC,只是消息的组织方式和协议不同<br> RPC是远程过程调用, 它的意图是像调用本地方法一样调用远程服务,RPC调用基于TCP/UDP连接,使用XML-RPC或者JSON-RPC或者SOAP(基于XML数据的Http协议)等,这使得RPC调用效率更高, 减少网络开销,RPC是基于方法而不是资源的,在本地使用代理,通过序列化与反序列化,将服务当做本地方法来调用.</p><p> 设计一个RPC服务治理框架,分为两个部分,RPC部分有接口描述语言(描述接口的统一标识符),客户端,服务端,协议层(JSON-RPC),数据传输层(socket);服务治理部分有注册中心,服务监控,服务容灾,服务鉴权(用户认证)</p><p> Service Mesh即服务网络, 是为了处理服务间通信,屏蔽分布式系统通信的复杂性,解决跨语言远程调用,实现语言无关, 对应用透明,组件可以单独升级而不必升级服务.</p></li><li><p><strong>请描述避免多线程竞争时有哪些手段?</strong></p><p> 多线程竞争是指,多线程同时访问一个资源,即所谓的线程安全问题<br> 解决多线程安全问题的方法: 不可变对象, 互斥锁, ThreadLocal对象, CAS</p></li><li><p><strong>请简述HTTP的5个常用Method及其含义,以及5个常用的Status Code及其含义,HTTP和HTTPS的区别是什么,简述一下HTTPS的原理.</strong></p><p> POST: 增<br> DELETE: 删<br> PUT: 改<br> GET: 查<br> OPTIONS: 可用性检查</p><p> 100: 握手成功<br> 200: 请求处理成功<br> 300: 重定向<br> 400: 服务器无资源<br> 500: 服务器无法正常响应</p><p> HTTP是一种超文本网络传输协议,一个HTTP协议数据包包含: 请求/响应行,请求/响应头,空行,请求/响应正文.<br> HTTPS在HTTP的基础上增加了数据加密,在数据传输之前进行加密<br> HTTPS=HTTP+SSL<br> HTTPS协议先与服务器建立连接, 然后服务器发送公钥到客户端,客户端验证合法后,客户端根据公钥生成加密密钥,然后对数据进行加密,再将加密后数据发给服务器,服务器用私钥对其进行解密.</p></li><li><p><strong>JAVA中如何确保N个线程可以访问N个资源，但同时又不导致死锁？</strong></p><p> 使用多线程的时候，一种非常简单的避免死锁的方式就是：指定获取锁的顺序，并强制线程按照指定的顺序获取锁。因此，如果所有的线程都是以同样的顺序加锁和释放锁，就不会出现死锁了。</p></li></ol>]]></content>
     
     <summary type="html">
     
@@ -304,9 +387,9 @@
     
       <category term="前端框架" scheme="https://yimchengjie.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="Electron" scheme="https://yimchengjie.github.io/tags/Electron/"/>
-    
       <category term="Vue.js" scheme="https://yimchengjie.github.io/tags/Vue-js/"/>
+    
+      <category term="Electron" scheme="https://yimchengjie.github.io/tags/Electron/"/>
     
   </entry>
   
@@ -514,94 +597,6 @@
       <category term="Java爬虫" scheme="https://yimchengjie.github.io/tags/Java%E7%88%AC%E8%99%AB/"/>
     
       <category term="Jsoup" scheme="https://yimchengjie.github.io/tags/Jsoup/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NoSQL之MongoDB</title>
-    <link href="https://yimchengjie.github.io/2020/01/03/%E6%95%B0%E6%8D%AE%E5%BA%93/NoSQL%E4%B9%8BMongoDB/"/>
-    <id>https://yimchengjie.github.io/2020/01/03/数据库/NoSQL之MongoDB/</id>
-    <published>2020-01-03T09:21:16.000Z</published>
-    <updated>2020-02-26T14:54:20.170Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="NoSQL-之-MongoDB"><a href="#NoSQL-之-MongoDB" class="headerlink" title="NoSQL 之 MongoDB"></a>NoSQL 之 MongoDB</h2><hr><p>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p><h3 id="安装-MongoDB"><a href="#安装-MongoDB" class="headerlink" title="安装 MongoDB"></a>安装 MongoDB</h3><p>以 Ubuntu 为例</p><p><code>sudo apt install mongodb</code>–安装命令</p><p><code>systemctl status mongodb</code>–检查服务</p><h3 id="概念解析"><a href="#概念解析" class="headerlink" title="概念解析"></a>概念解析</h3><table><thead><tr><th>SQL 术语</th><th>MongoDB 术语</th><th>说明</th></tr></thead><tbody><tr><td>database</td><td>database</td><td>数据库</td></tr><tr><td>table</td><td>collection</td><td>表/集合</td></tr><tr><td>row</td><td>document</td><td>记录行/文档</td></tr><tr><td>column</td><td>field</td><td>字段/域</td></tr><tr><td>index</td><td>index</td><td>索引</td></tr><tr><td>table joins</td><td>-</td><td>连表查询/MongoDB 不支持</td></tr><tr><td>primary key</td><td>primary key</td><td>主键,MongoDB 自动将_id 字段设置为主键</td></tr></tbody></table><h3 id="MongoDB-Java"><a href="#MongoDB-Java" class="headerlink" title="MongoDB Java"></a>MongoDB Java</h3><p>在 Java 中使用 MongoDB</p><p>直接使用 Spring Data MongoDB</p><ol><li><p>添加 spring-boot-starter-data-mongodb 包</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-mongodb<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>配置 application.properties</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># user:用户名,</span><br><span class="line"># mongo1.example.com:host地址,</span><br><span class="line"># 27017:端口号</span><br><span class="line"># test:数据库名</span><br><span class="line">spring.data.mongodb.uri=mongodb:<span class="comment">//user:secret@mongo1.example.com:27017/test</span></span><br></pre></td></tr></table></figure></li><li><p>使用 MongoTemplate</p></li></ol><p>MongoTemplate 提供了增删改查的方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SpiderApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MongoTemplate mongoTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        MongoCollection mongoCollection = mongoTemplate.getCollection(<span class="string">"weibo"</span>);</span><br><span class="line">        String index=mongoCollection.createIndex(<span class="keyword">new</span> Document().append(<span class="string">"text"</span>, <span class="number">1</span>));</span><br><span class="line">        Long count=mongoCollection.countDocuments();</span><br><span class="line">        mongoTemplate.createCollection(<span class="string">""</span>);</span><br><span class="line">        System.out.println(index+<span class="string">"  "</span>+count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;NoSQL-之-MongoDB&quot;&gt;&lt;a href=&quot;#NoSQL-之-MongoDB&quot; class=&quot;headerlink&quot; title=&quot;NoSQL 之 MongoDB&quot;&gt;&lt;/a&gt;NoSQL 之 MongoDB&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;MongoDB 将数据存储
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="https://yimchengjie.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="NoSQL" scheme="https://yimchengjie.github.io/tags/NoSQL/"/>
-    
-      <category term="MongoDB" scheme="https://yimchengjie.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HttpClient技术入门</title>
-    <link href="https://yimchengjie.github.io/2019/12/30/%E7%88%AC%E8%99%AB/HttpClient%E6%8A%80%E6%9C%AF%E5%85%A5%E9%97%A8/"/>
-    <id>https://yimchengjie.github.io/2019/12/30/爬虫/HttpClient技术入门/</id>
-    <published>2019-12-30T12:05:53.000Z</published>
-    <updated>2020-02-21T17:58:15.697Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="HttpClient技术入门"><a href="#HttpClient技术入门" class="headerlink" title="HttpClient技术入门"></a>HttpClient技术入门</h2><p>网络爬虫通常都是使用Http协议访问互联网,所以HttpClient这个同样是Http协议的客户端技术就被运用到了爬虫技术中<br>只需要在maven引入HttpClient就可以使用</p><h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1.创建HttpClient对象(Default默认设置的)</span></span><br><span class="line">    CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line">    <span class="comment">// 2.创建请求对象,需要Url参数</span></span><br><span class="line">    HttpGet httpGet = <span class="keyword">new</span> HttpGet(<span class="string">"https://www.baidu.com"</span>);</span><br><span class="line">    <span class="comment">// 3.发起请求,接收响应</span></span><br><span class="line">    CloseableHttpResponse httpResponse = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        httpResponse = httpClient.execute(httpGet);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 4.解析请求,获取数据</span></span><br><span class="line">    <span class="comment">// 4.1 判断状态码</span></span><br><span class="line">    <span class="keyword">if</span> (httpResponse.getStatusLine().getStatusCode() == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="comment">// 4.2 获取主体数据</span></span><br><span class="line">        HttpEntity httpEntity = httpResponse.getEntity();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 4.3 数据转码</span></span><br><span class="line">            String context = EntityUtils.toString(httpEntity,<span class="string">"utf-8"</span>);</span><br><span class="line">            System.out.println(context);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><h4 id="1-构建HTTP请求"><a href="#1-构建HTTP请求" class="headerlink" title="1. 构建HTTP请求"></a>1. 构建HTTP请求</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line">HttpGet httpGet = <span class="keyword">new</span> HttpGet(<span class="string">"https://www.baidu.com"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二</span></span><br><span class="line">URI uri = <span class="keyword">new</span> URIBuilder().setScheme(<span class="string">"http"</span>)</span><br><span class="line">                          .setHost(<span class="string">"https://www.baidu.com"</span>)</span><br><span class="line">                          .setPath(<span class="string">"/s"</span>)</span><br><span class="line">                          .setParameter(<span class="string">"ie"</span>,<span class="string">"utf-8"</span>)</span><br><span class="line">                          .setParameter(<span class="string">"f"</span>,<span class="string">"8"</span>)</span><br><span class="line">                          .setParameter(<span class="string">"rsv_bp"</span>,<span class="string">"1"</span>)</span><br><span class="line">                          .setParameter(<span class="string">"tn"</span>,<span class="string">"80035161_2_dg"</span>)</span><br><span class="line">                          .build();</span><br><span class="line">HttpGet httpGet = <span class="keyword">new</span> HttpGet(uri);</span><br></pre></td></tr></table></figure><h4 id="2-添加消息头"><a href="#2-添加消息头" class="headerlink" title="2. 添加消息头"></a>2. 添加消息头</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HttpResponse response = <span class="keyword">new</span> BasicHttpResponse(HttpVersion.HTTP_1_1,HttpStatus.SC_OK,<span class="string">"OK"</span>);</span><br><span class="line">response.addHeader(<span class="string">"Set-Cookie"</span>,<span class="string">"c1=a; path=/; domain=localhost"</span>);</span><br><span class="line">response.addHeader(<span class="string">"Set-Cookie"</span>,<span class="string">"c2=b; path=\"/\", c3=c; domain=\"localhost\""</span>);</span><br><span class="line">Header h1 = response.getFirstHeader(<span class="string">"Set-Cookie"</span>);</span><br><span class="line">Header h2 = response.getLastHeader(<span class="string">"Set-Cookie"</span>);</span><br><span class="line">Header[] hs = response.getHeaders(<span class="string">"Set-Cookie"</span>);</span><br></pre></td></tr></table></figure><h4 id="3-生成HTTP实体"><a href="#3-生成HTTP实体" class="headerlink" title="3. 生成HTTP实体"></a>3. 生成HTTP实体</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. String类型的实体</span></span><br><span class="line">StringEntity myEntity = <span class="keyword">new</span> StringEntity(<span class="string">"important message"</span>,ContentType.create(<span class="string">"text/plain"</span>,<span class="string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. File类型实体</span></span><br><span class="line">File file = <span class="keyword">new</span> File(<span class="string">"onefile.txt"</span>);</span><br><span class="line">FileEntity entity = <span class="keyword">new</span> FileEntity(file,contentType.create(<span class="string">"text/plain"</span>,<span class="string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 表单实体</span></span><br><span class="line">List&lt;NameValuePair&gt; formparam = <span class="keyword">new</span> ArrayList&lt;NameValuePair&gt;();</span><br><span class="line">formparam.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">"param1"</span>,<span class="string">"value1"</span>));</span><br><span class="line">formparam.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">"param2"</span>,<span class="string">"value2"</span>));</span><br><span class="line">UrlEncodeFormEntity entity = <span class="keyword">new</span> UrlEncodedFormEntity(formparam,Consts.UTF_8);</span><br></pre></td></tr></table></figure><h4 id="4-配置请求信息"><a href="#4-配置请求信息" class="headerlink" title="4. 配置请求信息"></a>4. 配置请求信息</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置请求信息</span></span><br><span class="line">RequestConfig requestConfig = RequestConfig.custom()</span><br><span class="line">        .setConnectTimeout(<span class="number">1000</span>)   <span class="comment">// 创建连接的最长时间</span></span><br><span class="line">        .setConnectionRequestTimeout(<span class="number">500</span>)    <span class="comment">// 设置获取连接的最长时间</span></span><br><span class="line">        .setSocketTimeout(<span class="number">10</span>*<span class="number">1000</span>)    <span class="comment">// 设置数据传输的最长时间</span></span><br><span class="line">        .build();</span><br><span class="line"><span class="comment">// 添加配置对象</span></span><br><span class="line">httpGet.setConfig(requestConfig);</span><br></pre></td></tr></table></figure><h3 id="连接池的应用"><a href="#连接池的应用" class="headerlink" title="连接池的应用"></a>连接池的应用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 创建连接池管理器</span></span><br><span class="line">    PoolingHttpClientConnectionManager poolingHttpClientConnectionManager = <span class="keyword">new</span> PoolingHttpClientConnectionManager();</span><br><span class="line">    <span class="comment">// 2. 使用连接池管理器发起请求</span></span><br><span class="line">    doGet(poolingHttpClientConnectionManager,<span class="string">"https://www.baidu.com/s"</span>,<span class="string">"wt"</span>,<span class="string">"httpclient"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">doGet</span><span class="params">(PoolingHttpClientConnectionManager poolingHttpClientConnectionManager,String url,String...param)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 从连接池中获取HttpClient</span></span><br><span class="line">    CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(poolingHttpClientConnectionManager).build();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2.1 创建URI对象(带参的URL)</span></span><br><span class="line">    URIBuilder uriBuilder;</span><br><span class="line">    HttpGet httpGet = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        uriBuilder = <span class="keyword">new</span> URIBuilder(url);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;(i+<span class="number">1</span>)&lt;param.length;i+=<span class="number">2</span>)</span><br><span class="line">            uriBuilder.setParameter(param[i],param[i+<span class="number">1</span>]);</span><br><span class="line">        httpGet = <span class="keyword">new</span> HttpGet(uriBuilder.build());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (URISyntaxException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 3.发起请求,接收响应</span></span><br><span class="line">    CloseableHttpResponse httpResponse = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        httpResponse = httpClient.execute(httpGet);</span><br><span class="line">        <span class="comment">// 4.解析请求,获取数据</span></span><br><span class="line">        <span class="comment">// 4.1 判断状态码</span></span><br><span class="line">        <span class="keyword">if</span> (httpResponse.getStatusLine().getStatusCode() == <span class="number">200</span>)&#123;</span><br><span class="line">            <span class="comment">// 4.2 获取主体数据</span></span><br><span class="line">            HttpEntity httpEntity = httpResponse.getEntity();</span><br><span class="line">            <span class="comment">// 4.3 数据转码</span></span><br><span class="line">            String context = EntityUtils.toString(httpEntity,<span class="string">"utf-8"</span>);</span><br><span class="line">            System.out.println(context);</span><br><span class="line">            <span class="keyword">return</span> context;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">        <span class="comment">// 关闭资源</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            httpResponse.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 交给连接池管理, 不用关闭</span></span><br><span class="line"><span class="comment">        try &#123;</span></span><br><span class="line"><span class="comment">            httpClient.close();</span></span><br><span class="line"><span class="comment">        &#125; catch (IOException e) &#123;</span></span><br><span class="line"><span class="comment">            e.printStackTrace();</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;HttpClient技术入门&quot;&gt;&lt;a href=&quot;#HttpClient技术入门&quot; class=&quot;headerlink&quot; title=&quot;HttpClient技术入门&quot;&gt;&lt;/a&gt;HttpClient技术入门&lt;/h2&gt;&lt;p&gt;网络爬虫通常都是使用Http协议访问互联网,
-      
-    
-    </summary>
-    
-    
-      <category term="爬虫" scheme="https://yimchengjie.github.io/categories/%E7%88%AC%E8%99%AB/"/>
-    
-    
-      <category term="爬虫" scheme="https://yimchengjie.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Java爬虫" scheme="https://yimchengjie.github.io/tags/Java%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="HttpClient" scheme="https://yimchengjie.github.io/tags/HttpClient/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初探Java爬虫</title>
-    <link href="https://yimchengjie.github.io/2019/12/27/%E7%88%AC%E8%99%AB/%E5%88%9D%E6%8E%A2Java%E7%88%AC%E8%99%AB/"/>
-    <id>https://yimchengjie.github.io/2019/12/27/爬虫/初探Java爬虫/</id>
-    <published>2019-12-27T13:09:53.000Z</published>
-    <updated>2020-02-21T17:58:58.259Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="初探Java爬虫"><a href="#初探Java爬虫" class="headerlink" title="初探Java爬虫"></a>初探Java爬虫</h2><p>既然学的是Java,那就用Java来学爬虫.</p><h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">spiderDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 爬取的目标url</span></span><br><span class="line">        String url = <span class="string">"https://www.baidu.com"</span>;</span><br><span class="line">        <span class="comment">// 空字符串,用于后续接收内容</span></span><br><span class="line">        StringBuffer result = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        BufferedReader in = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">// 将字符串url转换成URL类型</span></span><br><span class="line">            URL readUrl = <span class="keyword">new</span> URL(url);</span><br><span class="line">            <span class="comment">// 进行链接初始化</span></span><br><span class="line">            URLConnection connection = readUrl.openConnection();</span><br><span class="line">            <span class="comment">// 开始连接</span></span><br><span class="line">            connection.connect();</span><br><span class="line">            <span class="comment">// 创建一个输入流来读取响应内容</span></span><br><span class="line">            in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(connection.getInputStream()));</span><br><span class="line">            <span class="comment">// 创建读取临时变量(读取缓存)</span></span><br><span class="line">            String tempStr = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">while</span> ((tempStr = in.readLine())!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                result.append(tempStr);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"爬取结束"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>程序运行结果<br><img src="/2019/12/27/%E7%88%AC%E8%99%AB/%E5%88%9D%E6%8E%A2Java%E7%88%AC%E8%99%AB/%E7%88%AC%E5%8F%96%E7%BB%93%E6%9D%9F.png" alt="爬取结束"></p><p>可以看到, 上述程序连接到URL,然后读取了响应, 也就是baidu首页的源码</p><p>那么如何获取更细的内容呢.</p><h3 id="正则表达式的应用"><a href="#正则表达式的应用" class="headerlink" title="正则表达式的应用"></a>正则表达式的应用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       SpiderDemo spiderDemo = <span class="keyword">new</span> SpiderDemo();</span><br><span class="line">       <span class="comment">// 爬取的目标url</span></span><br><span class="line">       String url = <span class="string">"https://www.baidu.com"</span>;</span><br><span class="line">       <span class="comment">// 将爬取功能封装</span></span><br><span class="line">       String result = spiderDemo.spiderMan(url);</span><br><span class="line">       <span class="comment">// 定义样式模板,匹配&lt;img&gt;标签</span></span><br><span class="line">       String patternStr = <span class="string">"&lt;img.*src\\s*=\\s*(.*?)[^&gt;]*?&gt;"</span>;</span><br><span class="line">       <span class="comment">// 要匹配的目标字符串</span></span><br><span class="line">       String targetStr = result;</span><br><span class="line">       <span class="comment">// 将样式模板字符串转型</span></span><br><span class="line">       Pattern pattern = Pattern.compile(patternStr);</span><br><span class="line">       <span class="comment">// 定义匹配对象进行匹配</span></span><br><span class="line">       Matcher matcher = pattern.matcher(targetStr);</span><br><span class="line">       <span class="comment">// 如果匹配成功</span></span><br><span class="line">       <span class="keyword">while</span> (matcher.find())&#123;</span><br><span class="line">           System.out.println(<span class="string">"匹配成功"</span>);</span><br><span class="line">           System.out.println(matcher.group());</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><p>正则表达式是爬虫获取精确内容的重要基础</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;初探Java爬虫&quot;&gt;&lt;a href=&quot;#初探Java爬虫&quot; class=&quot;headerlink&quot; title=&quot;初探Java爬虫&quot;&gt;&lt;/a&gt;初探Java爬虫&lt;/h2&gt;&lt;p&gt;既然学的是Java,那就用Java来学爬虫.&lt;/p&gt;
-&lt;h3 id=&quot;Demo&quot;&gt;&lt;a hr
-      
-    
-    </summary>
-    
-    
-      <category term="爬虫" scheme="https://yimchengjie.github.io/categories/%E7%88%AC%E8%99%AB/"/>
-    
-    
-      <category term="爬虫" scheme="https://yimchengjie.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Java爬虫" scheme="https://yimchengjie.github.io/tags/Java%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
