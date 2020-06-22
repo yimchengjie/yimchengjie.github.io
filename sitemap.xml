@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yimchengjie.github.io/2020/06/19/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593/MySQL%25E9%25AB%2598%25E7%25BA%25A7/</loc>
+    
+    <lastmod>2020-06-22T18:01:01.493Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yimchengjie.github.io/2020/05/27/%25E6%25B6%2588%25E6%2581%25AF%25E4%25B8%25AD%25E9%2597%25B4%25E4%25BB%25B6/Kafka%25E5%2585%25A5%25E9%2597%25A8/</loc>
     
     <lastmod>2020-06-17T20:34:31.971Z</lastmod>
@@ -884,14 +891,14 @@
   </url>
   
   <url>
-    <loc>https://yimchengjie.github.io/categories/index.html</loc>
+    <loc>https://yimchengjie.github.io/links/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yimchengjie.github.io/links/index.html</loc>
+    <loc>https://yimchengjie.github.io/categories/index.html</loc>
     
     <lastmod>2019-10-18T08:58:07.897Z</lastmod>
     

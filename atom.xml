@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yimchengjie.github.io/"/>
-  <updated>2020-06-01T15:33:03.574Z</updated>
+  <updated>2020-06-22T18:01:01.493Z</updated>
   <id>https://yimchengjie.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL高级</title>
+    <link href="https://yimchengjie.github.io/2020/06/19/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E9%AB%98%E7%BA%A7/"/>
+    <id>https://yimchengjie.github.io/2020/06/19/数据库/MySQL高级/</id>
+    <published>2020-06-19T08:33:20.000Z</published>
+    <updated>2020-06-22T18:01:01.493Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MySQL高级"><a href="#MySQL高级" class="headerlink" title="MySQL高级"></a>MySQL高级</h2><h3 id="MySQL逻辑架构"><a href="#MySQL逻辑架构" class="headerlink" title="MySQL逻辑架构"></a>MySQL逻辑架构</h3><p>MySQL的架构可以分为四层: 1. <strong>连接层</strong>; 2. <strong>服务层</strong>(进行SQL语句相关操作); 3. <strong>引擎层</strong>(支持<strong>可插拔</strong>的引擎); 4. <strong>存储层</strong></p><h4 id="MyISAM引擎和InnoDB引擎的对比"><a href="#MyISAM引擎和InnoDB引擎的对比" class="headerlink" title="MyISAM引擎和InnoDB引擎的对比"></a>MyISAM引擎和InnoDB引擎的对比</h4><table><thead><tr><th align="center">—</th><th align="center">MyISAM</th><th align="center">InnoDB</th></tr></thead><tbody><tr><td align="center">主键,外键</td><td align="center">不支持</td><td align="center">支持</td></tr><tr><td align="center">事务</td><td align="center">不支持</td><td align="center">支持</td></tr><tr><td align="center">锁</td><td align="center">支持表级锁,即锁住整个表</td><td align="center">支持行级锁,对同表的其他行没有影响,<strong>适合高并发</strong></td></tr><tr><td align="center">缓存</td><td align="center">只缓存索引,不缓存真实数据</td><td align="center">不仅缓存索引, 还会缓存真实数据,所以对内存需求高</td></tr><tr><td align="center">表空间</td><td align="center">小</td><td align="center">大</td></tr><tr><td align="center">关注点</td><td align="center">性能</td><td align="center">事务</td></tr></tbody></table><h4 id="SQL语句的执行流程"><a href="#SQL语句的执行流程" class="headerlink" title="SQL语句的执行流程"></a>SQL语句的执行流程</h4><p>SQL的执行是从FROM开始的</p><p>以查询语句为例</p><ol><li>检查权限</li><li>查询缓存</li><li>缓存没命中, 分析器提取FROM查询表,提取SELECT语句类型,优化器决定判断条件的执行顺序,执行器执行SQL,调用引擎获取数据</li></ol><p>以更新(增,删,改)为例</p><ol><li>检查权限</li><li>查询缓存</li><li>调用引擎接口,修改数据,写入内存,记录日志</li><li>执行器接收通知,调用引擎,提交内容</li></ol><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h4 id="spring事务传播机制"><a href="#spring事务传播机制" class="headerlink" title="spring事务传播机制"></a>spring事务传播机制</h4><p>在spring的注解声明式事务中, 有四大重要属性 <strong>1. 事务的传播行为, 2. 事务的隔离级别, 3. 事务的超时值, 4. 事务的只读标志</strong>, 这些属性在TransactionDenfition接口中被定义</p><h5 id="spring中定义的7种事务传播行为"><a href="#spring中定义的7种事务传播行为" class="headerlink" title="spring中定义的7种事务传播行为"></a>spring中定义的7种事务传播行为</h5><p>事务传播行为指的是事务方法A被另一个事务方法B调用的时候,这个事务方法A应该如何进行</p><ol><li>PROPAGATION_REQUIRED: 表示当前方法必须运行在事务中,如果当前事务存在,方法会在该事务中进行, 如果不存在, 新建事务</li><li>PROPAGATION_SUPPORTS: 表示当前方法不需要事务上下文, 但是如果存在当前事务, 那么方法还是在事务中进行</li><li>PROPAGATION_MANDATORY: 表示该方法必须在事务中执行, 如果不存在事务, 抛出异常</li><li>PROPAGATION_REQUIRED_NEW: 表示当前方法必须运行在它自己的事务中,一个新的事务将被启动, 如果存在当前事务,在方法执行期间, 当前事务会被挂起, 先执行自己的事务</li><li>PROPAGATION_NOT_SUPPORTED: 表示该方法不应该运行在事务中,如果存在当前事务, 在该方法运行期间, 当前事务会被挂起.</li><li>PROPAGATION_NEVER: 表示当前方法不应该运行在事务上下文中, 如果当前正有一个事务在运行, 则会抛出异常</li><li>PROPAGATION_NESTED: 表示如果当前已经存在一个事务, 那么该方法会在嵌套事务内运行, 嵌套的事务可以独立于当前事务进行单独的提交或回滚. 如果当前事务不存在, 它会新建事务.</li></ol><h5 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h5><p>可重复读是mysql的默认事务隔离级别,它保证了不会脏读和不可重复读, 但是不能解决幻读.   还有其他三种, 分别是读未提交, 读已提交,和串行化.</p><h5 id="事务的只读标志"><a href="#事务的只读标志" class="headerlink" title="事务的只读标志"></a>事务的只读标志</h5><p>当方法被声明为readonly只读时, 相当于数据库开启了只读数据库, 这时候不会有其他修改操作, 保证了数据的一致性.</p><h3 id="MySQL之关系型数据库三大范式"><a href="#MySQL之关系型数据库三大范式" class="headerlink" title="MySQL之关系型数据库三大范式"></a>MySQL之关系型数据库三大范式</h3><ol><li>第一范式: 字段是原子性不可分的</li><li>第二范式: 有主键,非主键字段依赖主键</li><li>第三范式: 非主键字段之间不能相互依赖, 不存在传递依赖, 即数据不冗余</li></ol><h3 id="SQL调优"><a href="#SQL调优" class="headerlink" title="SQL调优"></a>SQL调优</h3><h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>索引一般可以加开数据的检索速度,加速表与表之间的链接</p><p>使用索引有以下几个原则:</p><ol><li>当插入数据为表数据的百分之10以上时, 要先删除索引提高插入效率, 然后在重建索引</li><li>避免在索引上使用函数以及计算, 如果索引使用了计算, 优化器将不再使用索引, 索引将失效</li><li>尽量避免在索引上使用not,!=,&lt;&gt;, 索引只知道什么在表中而不知道什么不在表中, 上述符号会进行全表扫描</li><li>检索中不要对索引进行处理, 比如TRIM, TO_DATE, 类型转换, 这会破坏索引</li><li>避免在索引上使用IS NULL 或 IS NOT NULL, 避免在索引上使用任何为空的列. 这样无法使用此索引.因为空值不在索引中</li></ol><h4 id="SQL语句优化"><a href="#SQL语句优化" class="headerlink" title="SQL语句优化"></a>SQL语句优化</h4><ol><li>建立合理的索引,首先考虑where,order by的列上建索引. 不要在索引上使用计算</li><li>WHERE中的链接顺序, 将过滤量大的条件写在where的末尾</li><li>在limit分页查询时, 可以记录上一页的最大值, 并使用最大值作为索引查询的参数. 因为索引并不知道第几条记录在哪, 它会重新计算一次</li><li>可以让数据部分冗余, 避免join查询</li><li>尽量不使用<code>SELECT *</code></li><li>使用JOIN代替子查询</li><li>使用联合UNION来代替临时表</li><li>可以适当反范式, 减少表的关联更好的优化查询效率,但会导致数据冗余, 修改需要更多代价</li><li>用EXISTS替代IN</li></ol><h3 id="B-树结构特点"><a href="#B-树结构特点" class="headerlink" title="B+树结构特点"></a>B+树结构特点</h3><ol><li>非叶子节点不保存数据</li><li>每个节点保存多个元素, 减少时间复杂度</li><li>所有的叶子节点构成有序链表, 便于范围查询</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;MySQL高级&quot;&gt;&lt;a href=&quot;#MySQL高级&quot; class=&quot;headerlink&quot; title=&quot;MySQL高级&quot;&gt;&lt;/a&gt;MySQL高级&lt;/h2&gt;&lt;h3 id=&quot;MySQL逻辑架构&quot;&gt;&lt;a href=&quot;#MySQL逻辑架构&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://yimchengjie.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yimchengjie.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Java线程间通信</title>
@@ -269,9 +295,9 @@
       <category term="算法与数据结构" scheme="https://yimchengjie.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://yimchengjie.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="树" scheme="https://yimchengjie.github.io/tags/%E6%A0%91/"/>
+    
+      <category term="数据结构" scheme="https://yimchengjie.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -359,9 +385,9 @@
     
       <category term="前端框架" scheme="https://yimchengjie.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="Vue.js" scheme="https://yimchengjie.github.io/tags/Vue-js/"/>
-    
       <category term="Electron" scheme="https://yimchengjie.github.io/tags/Electron/"/>
+    
+      <category term="Vue.js" scheme="https://yimchengjie.github.io/tags/Vue-js/"/>
     
   </entry>
   
@@ -507,9 +533,9 @@
       <category term="算法与数据结构" scheme="https://yimchengjie.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="线性表" scheme="https://yimchengjie.github.io/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    
       <category term="数据结构" scheme="https://yimchengjie.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="线性表" scheme="https://yimchengjie.github.io/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
     
   </entry>
   
@@ -569,35 +595,6 @@
       <category term="Java爬虫" scheme="https://yimchengjie.github.io/tags/Java%E7%88%AC%E8%99%AB/"/>
     
       <category term="Jsoup" scheme="https://yimchengjie.github.io/tags/Jsoup/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NoSQL之MongoDB</title>
-    <link href="https://yimchengjie.github.io/2020/01/03/%E6%95%B0%E6%8D%AE%E5%BA%93/NoSQL%E4%B9%8BMongoDB/"/>
-    <id>https://yimchengjie.github.io/2020/01/03/数据库/NoSQL之MongoDB/</id>
-    <published>2020-01-03T09:21:16.000Z</published>
-    <updated>2020-02-26T14:54:20.170Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="NoSQL-之-MongoDB"><a href="#NoSQL-之-MongoDB" class="headerlink" title="NoSQL 之 MongoDB"></a>NoSQL 之 MongoDB</h2><hr><p>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p><h3 id="安装-MongoDB"><a href="#安装-MongoDB" class="headerlink" title="安装 MongoDB"></a>安装 MongoDB</h3><p>以 Ubuntu 为例</p><p><code>sudo apt install mongodb</code>–安装命令</p><p><code>systemctl status mongodb</code>–检查服务</p><h3 id="概念解析"><a href="#概念解析" class="headerlink" title="概念解析"></a>概念解析</h3><table><thead><tr><th>SQL 术语</th><th>MongoDB 术语</th><th>说明</th></tr></thead><tbody><tr><td>database</td><td>database</td><td>数据库</td></tr><tr><td>table</td><td>collection</td><td>表/集合</td></tr><tr><td>row</td><td>document</td><td>记录行/文档</td></tr><tr><td>column</td><td>field</td><td>字段/域</td></tr><tr><td>index</td><td>index</td><td>索引</td></tr><tr><td>table joins</td><td>-</td><td>连表查询/MongoDB 不支持</td></tr><tr><td>primary key</td><td>primary key</td><td>主键,MongoDB 自动将_id 字段设置为主键</td></tr></tbody></table><h3 id="MongoDB-Java"><a href="#MongoDB-Java" class="headerlink" title="MongoDB Java"></a>MongoDB Java</h3><p>在 Java 中使用 MongoDB</p><p>直接使用 Spring Data MongoDB</p><ol><li><p>添加 spring-boot-starter-data-mongodb 包</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-mongodb<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>配置 application.properties</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># user:用户名,</span><br><span class="line"># mongo1.example.com:host地址,</span><br><span class="line"># 27017:端口号</span><br><span class="line"># test:数据库名</span><br><span class="line">spring.data.mongodb.uri=mongodb:<span class="comment">//user:secret@mongo1.example.com:27017/test</span></span><br></pre></td></tr></table></figure></li><li><p>使用 MongoTemplate</p></li></ol><p>MongoTemplate 提供了增删改查的方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SpiderApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MongoTemplate mongoTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        MongoCollection mongoCollection = mongoTemplate.getCollection(<span class="string">"weibo"</span>);</span><br><span class="line">        String index=mongoCollection.createIndex(<span class="keyword">new</span> Document().append(<span class="string">"text"</span>, <span class="number">1</span>));</span><br><span class="line">        Long count=mongoCollection.countDocuments();</span><br><span class="line">        mongoTemplate.createCollection(<span class="string">""</span>);</span><br><span class="line">        System.out.println(index+<span class="string">"  "</span>+count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;NoSQL-之-MongoDB&quot;&gt;&lt;a href=&quot;#NoSQL-之-MongoDB&quot; class=&quot;headerlink&quot; title=&quot;NoSQL 之 MongoDB&quot;&gt;&lt;/a&gt;NoSQL 之 MongoDB&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;MongoDB 将数据存储
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="https://yimchengjie.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="NoSQL" scheme="https://yimchengjie.github.io/tags/NoSQL/"/>
-    
-      <category term="MongoDB" scheme="https://yimchengjie.github.io/tags/MongoDB/"/>
     
   </entry>
   
