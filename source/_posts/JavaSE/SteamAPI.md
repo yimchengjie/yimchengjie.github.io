@@ -1,5 +1,5 @@
 ---
-title: SteamAPI
+title: 流式编程
 date: 2017-11-25 11:30
 categories:
   - JavaSE
@@ -7,6 +7,12 @@ tags:
   - JavaSE
 toc: true
 ---
+
+## 流式编程
+
+集合优化了对象的存储， 而流和对象的处理相关
+
+利用流， 我们无需迭代集合中的元素，就可以提取和操作他们，这些管道被组合在一起， 在流上形成一个操作管道
 
 ### Stream API
 
