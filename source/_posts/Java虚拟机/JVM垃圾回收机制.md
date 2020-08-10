@@ -1,7 +1,7 @@
 ---
 title: JVM垃圾回收机制
 categories:
-  - Java系统调优
+  - Java虚拟机
 tags:
   - Java
   - JVM

@@ -1,5 +1,5 @@
 ---
-title: SpringIoC详解
+title: 深入理解SpringIoC
 categories:
   - Java开发框架
 tags:
@@ -18,6 +18,8 @@ date: 2019-07-10 16:30:45
 
 早期基础容器, 可以理解成一个HashMap,key是BeanName,value是Bean实例.
 
+BeanFactory作为最顶层的一个接口类，它定义了IoC容器的基本功能规范
+
 #### ApplicationContext
 
 应用上下午,高级容器,相比BeanFactory功能全面很多
@@ -28,9 +30,26 @@ Bean对象在Spring中是以BeanDefinition来描述的
 
 Bean的解析主要就是对配置文件或者配置类的解析
 
+### Bean的生命周期
+
+1. Spring对bean进行实例化
+2. Spring将值和bean的引用注入到bean对应的属性中
+3. 如果bean实现了BeanNameAware接口，就将bean的ID传递给setBeanName（）方法
+4. 如果bean实现了BeanFactoryAware接口，就调用setBeanFactory()方法，将BeanFactory容器实例注入
+5. 如果bean实现了ApplicationContextAware接口，就调用setApplicationContext()方法，将bean所在的应用上下文的引用注入
+6. 如果bean实现了BeanPostProcessor接口，就调用postProcessBeforeInitialization()方法
+7. 如果bean实现了InitializingBean接口，就调用它们的afterPropertiesSet()方法，类似的如果bean使用了init-method声明初始化方法，该方法也会被调用
+8. 如果bean实现了BeanPostProcessor接口，就调用它们的postProcessAfterInitialization()方法
+9. 此时，bean准备就绪，已经可以被使用了，它们会一直驻留在应用上下文，知道应用上下文被销毁
+10. 如果bean实现了DisposableBean接口，将调用destroy()方法，类似的如果bean使用了destory-method声明了销毁方法，该方法也会被调用
+
 ### SpringIoC注解驱动初始化过程
 
 SpringIoC的初始化过程也是ApplicationContext容器的初始化过程
+
+在Spring中管理注解Bean的容器实现类有`AnnotationConfigApplicationContext` 和 `AnnotationConfigWebApplicationContex`
+
+这里以`AnnotationConfigApplicationContext`为例
 
 入口:`AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);`
 
@@ -298,26 +317,24 @@ SpringIoC的初始化过程也是ApplicationContext容器的初始化过程
 
         }
     }
+   ```
 
-   /*
-   * 对代码进行进一步跟进,看看每一步中都做了什么
-   */
-   /*
+   对代码进行进一步跟进,看看每一步中都做了什么:
     1. prepareRefresh()
-       1. this.startupDate = System.currentTimeMillis();设置启动时间
-       2. initPropertySources();自定义属性设置
-       3. getEnvironment().validateRequiredProperties();检验属性的合法性
-       4. earlyApplicationEvents = new LinkedHashSet();创建早期应用事件集合
+       1. this.startupDate = System.currentTimeMillis();**设置启动时间**
+       2. initPropertySources();**自定义属性设置**
+       3. getEnvironment().validateRequiredProperties();**检验属性的合法性**
+       4. earlyApplicationEvents = new LinkedHashSet();**创建早期应用事件集合**
     2. beanFactory = this.obtainFreshBeanFactory();
-       1. this.beanFactory.setSerializationId(this.getId());设置BeanFactoryID
+       1. this.beanFactory.setSerializationId(this.getId());**设置BeanFactoryID**
     3. prepareBeanFactory(beanFactory);
-       1. addBeanPostProcessor(new ApplicationContextAwareProcessor(this));添加一个ApplicationContextAwareProcessor
-       2. ignoreDependencyInterface(XXX.class); 设置忽略注入的接口实现类
-       3. registerResolvableDependency(XXX.class,beanFactory); 注册可解析的注入的组件
-       4. 添加编译时的AOP组件
-       5. 注册环境组件,系统属性组件,系统环境组件
+       1. addBeanPostProcessor(new ApplicationContextAwareProcessor(this));**添加一个ApplicationContextAwareProcessor**
+       2. ignoreDependencyInterface(XXX.class); **设置忽略注入的接口实现类**
+       3. registerResolvableDependency(XXX.class,beanFactory); **注册可解析的注入的组件**
+       4. **添加编译时的AOP组件**
+       5. **注册环境组件,系统属性组件,系统环境组件**
     4. postProcessBeanFactory(beanFactory);
-       1. 子类重写这个方法,在BeanFactory准备完成创建之前做最后的步骤
+       1. **子类重写这个方法,在BeanFactory准备完成创建之前做最后的步骤**
     5. invokeBeanFactoryPostProcessors(beanFactory);
        1. 执行BeanDefinitionRegistryPostProcessor
           1. 获取所有BeanDefinitionRegistryPostProcessor
@@ -344,7 +361,7 @@ SpringIoC的初始化过程也是ApplicationContext容器的初始化过程
        2. 判断容器是否有ApplicationEventMulticaster
        3. 如果有取用, 没有则创建SimpleApplicationEventMulticaster
        4. 将ApplicationEventMulticaster组件添加到BeanFactory
-    9. onRefresh();
+    9.  onRefresh();
        1.  留给子类,子类重写这个方法, 在容器刷新时可以自定义一些逻辑
     10. registerListeners();
         1.  获取容器中的ApplicationListener
@@ -374,8 +391,6 @@ SpringIoC的初始化过程也是ApplicationContext容器的初始化过程
         1.  初始化生命周期有关后置处理器
         2.  执行容器刷新完成事件
         3.  将ApplicationContext注册到视图中
-   */
-   ```
 
 #### 总结
 

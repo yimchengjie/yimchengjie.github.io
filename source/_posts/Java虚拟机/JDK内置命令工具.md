@@ -1,7 +1,7 @@
 ---
 title: JDK内置命令工具
 categories:
-  - Java系统调优
+  - Java虚拟机
 tags:
   - Java
   - JVM

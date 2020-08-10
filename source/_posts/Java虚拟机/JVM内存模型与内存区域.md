@@ -1,9 +1,9 @@
 ---
 title: JVM内存模型与内存区域
 categories:
-  - Java系统调优
+  - Java虚拟机
 tags:
-  - Java系统调优
+  - Java
   - JVM
 toc: true
 date: 2019-02-19 13:38:15

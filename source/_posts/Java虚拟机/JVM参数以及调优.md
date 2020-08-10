@@ -1,7 +1,7 @@
 ---
 title: JVM参数以及调优
 categories:
-  - Java系统调优
+  - Java虚拟机
 tags:
   - Java
   - JVM
