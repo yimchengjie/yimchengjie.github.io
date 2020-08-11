@@ -16,7 +16,27 @@ Lock 是一个锁的接口， 提供获取锁和解锁的方法（lock，trylock
 **注意:**当 Lock 没有指向 unlock 释放锁的时候,即为可重入锁,其他线程在锁没有释放的时候还是无法获取锁,即使没有线程在使用锁, 但还是有一个线程在占用锁
 **ReentrantLock**是 Lock 接口的一个实现类， 它实现了 Lock 中的方法， 但是使用 Lock 的时候必须注意它不会像 synchronized 执行完后或者抛出异常后自动释放锁， 而是需要你主动释放锁， 所以我们必须在使用 Lock 时加上 try{}catch{}finally{}块，并且在 finally 中释放占用的锁资源。
 
+使用事例：
+
+```java
+Lock lock = ...;
+if (lock.tryLock()) {
+    try {
+        // 需要加锁的代码
+    } finally {
+        lock.unlock();
+    }
+} else {
+    //加锁失败的操作
+}
+```
+
 使用 Lock 和 synchronized 最大的区别就是当**使用 synchroniized 时一个线程抢占资源，其他线程必须等待**，而**使用 Lock，一个线程抢占到锁资源，其他的线程可以不等待或者设置等待时间**， 实在抢不到可以去做其他的业务逻辑
+
+#### Condition
+
+Condition可以看做是Obejct类的wait()、notify()、notifyAll()方法的替代品，与Lock配合使用。
+当线程执行condition对象的await方法时，当前线程会立即释放锁，并进入对象的等待区，等待其它线程唤醒或中断。当执行signal方法时，会唤醒线程
 
 #### **ReadWriteLock 读写锁**
 
