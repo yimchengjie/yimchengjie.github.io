@@ -83,7 +83,7 @@ Buffer 可以直接获取直接内存
 ByteBuffer directByteBuffer=ByteBuffer.allocateDirect(n);
 内部有一个回收对象, 可以进行垃圾回收, 否则 JVM 的垃圾回收无法管理堆外内存
 
-否则使用 JVM 堆内存,写入时用堆内存会复制一份数据到堆外内存
+使用直接内存， 可以减少一次数据拷贝， 如果使用 JVM 堆内存,写入时用堆内存会复制一份数据到堆外内存。 因为JVM进行GC时会移动数据的位置， 导致IO写入异常
 
 #### Channel 通道
 
@@ -216,3 +216,4 @@ serverSocketChannel.close();
 
 1. Reactor: 负责响应 IO 事件,当检测到新的时间, 发送给相应的 Handler
 2. Handler: 执行处理
+ 
