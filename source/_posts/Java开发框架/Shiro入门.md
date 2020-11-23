@@ -34,3 +34,33 @@ Remember Me: 记住我,即登录后下次不需要重新登录
 **Subject**: 应用代码直接交互的对象是Subject, Shiro堆外的核心API就是Subject, Subject代表了当前用户
 **SecurityManager**: 安全管理器,所有的安全操作都交给SecurityManager交互, 它管理着所有的Subject, 它是Shrio的核心, 负责与其他组件交互.可以理解为SpringMVC中的DispatcherServlet
 **Realm**: Shiro从Realm获取安全数据(用户,角色,权限),SecurityManager从Realm中获取响应的用户进行比较然后确定用户是否合法,可以把Realm理解为DataSource
+
+### Shiro认证过程
+
+1. 创建SecurityManager
+2. Subject提交认证
+3. SecurityManager认证
+4. Authenticator认证
+5. Realm验证
+
+一个简单的demo
+
+```java
+@Test
+public void shiroTest(){
+    SimpleAccountRealm realm = new SimpleAccountRealm();
+    realm.addAccount("yanchengjie","123456");
+    DefaultSecurityManager securityManager = new DefaultSecurityManager();
+    securityManager.setRealm(realm);
+    SecurityUtils.setSecurityManager(securityManager);
+    Subject subject = SecurityUtils.getSubject();
+
+    UsernamePasswordToken token = new UsernamePasswordToken("yanchengjie", "123456");
+
+    subject.login(token);
+    System.out.println("isAuthenticated: "+ subject.isAuthenticated());
+
+    subject.logout();
+    System.out.println("isAuthenticated: "+ subject.isAuthenticated());
+}
+```
