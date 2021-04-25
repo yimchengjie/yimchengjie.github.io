@@ -1,5 +1,5 @@
 ---
-title: BIO网络编程
+title: BIO
 categories:
   - 网络编程
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Netty网络编程框架
+title: Netty框架
 categories:
   - 网络编程
 tags:

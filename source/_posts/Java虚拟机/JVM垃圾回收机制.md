@@ -117,7 +117,7 @@ Parallel Scavenge 收集器也是一个新生代垃圾收集器，同样使用�
 server模式JVM的默认GC选择,整体算法和Serial类似,区别是新生代和老年代GC都是并行进行;
 可以设置GC时间或吞吐量等,可以自动进行适应性调整Eden,Survivor大小和MaxTenuringThreshold的值.
 
-也称为吞吐量优先的GC: 吞吐量=用户代码运行时间/(用户代码运行时间+GC时间)
+也称为吞吐量优先的GC:                                                                                                                                          吞吐量=用户代码运行时间/(用户代码运行时间+GC时间)
 
 -XX:ParallelGCThreads: 设置用于垃圾回收的线程数. 通常和CPU数相等
 -XX:MaxGCPauseMills: 设置最大垃圾收集停顿时间. 值是大于0的整数.
