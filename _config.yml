@@ -96,11 +96,12 @@ theme: pure
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
+
   type: git
   repo: 
     github: git@github.com:yimchengjie/yimchengjie.github.io.git
-    gitee: git@gitee.com:yimchengjie/yimchengjie.git
-    coding: git@e.coding.net:yimchengjie/yimchengjie.git
+    # gitee: git@gitee.com:yimchengjie/yimchengjie.git
+    # coding: git@e.coding.net:yimchengjie/yimchengjie.git
   branch: master
   
 admin: 
