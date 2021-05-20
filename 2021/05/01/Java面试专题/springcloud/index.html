@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Java面试专题/springcloud | ycjBlog</title>
+  <meta name="description" content="为什么需要学习Spring Cloud不论是商业应用还是用户应用，在业务初期都很简单，我们通常会把它实现为单体结构的应用。但是，随着业务逐渐发展，产品思想会变得越来越复杂，单体结构的应用也会越来越复杂。这就会给应用带来如下的几个问题： 代码结构混乱：业务复杂，导致代码量很大，管理会越来越困难。同时，这也会给业务的快速迭代带来巨大挑战；开发效率变低：开发人员同时开发一套代码，很难避免代码冲突。开发过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试专题&#x2F;springcloud">
+<meta property="og:url" content="https:&#x2F;&#x2F;yimchengjie.github.io&#x2F;2021&#x2F;05&#x2F;01&#x2F;Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98&#x2F;springcloud&#x2F;index.html">
+<meta property="og:site_name" content="ycjBlog">
+<meta property="og:description" content="为什么需要学习Spring Cloud不论是商业应用还是用户应用，在业务初期都很简单，我们通常会把它实现为单体结构的应用。但是，随着业务逐渐发展，产品思想会变得越来越复杂，单体结构的应用也会越来越复杂。这就会给应用带来如下的几个问题： 代码结构混乱：业务复杂，导致代码量很大，管理会越来越困难。同时，这也会给业务的快速迭代带来巨大挑战；开发效率变低：开发人员同时开发一套代码，很难避免代码冲突。开发过">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-19T07:24:03.003Z">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://yimchengjie.github.io/2021/05/01/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/springcloud/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="ycjBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/yimchengjie" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">yanchengjie</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">love and share</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> jiaxing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/yimchengjie" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/">JavaEE</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaSE/">JavaSE</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Java并发编程</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/">Java开发框架</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/">Java虚拟机</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/">Java面试专题</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93/">代码之道</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">分布式开发技术</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%B9%E5%99%A8%E5%8C%96%E6%8A%80%E6%9C%AF/">容器化技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/">消息中间件</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/">缓存中间件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/">自然语言处理</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%85%B7/">项目工具</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AQS/" rel="tag">AQS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMQ/" rel="tag">ActiveMQ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dubbo/" rel="tag">Dubbo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/" rel="tag">Electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpClient/" rel="tag">HttpClient</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/" rel="tag">JDK</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/" rel="tag">JSP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaEE/" rel="tag">JavaEE</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaSE/" rel="tag">JavaSE</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="tag">Java并发编程</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" rel="tag">Java开发框架</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="tag">Java异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E7%88%AC%E8%99%AB/" rel="tag">Java爬虫</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%94%81/" rel="tag">Java锁</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/" rel="tag">Java集合容器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jsoup/" rel="tag">Jsoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kafka/" rel="tag">Kafka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Netty/" rel="tag">Netty</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NoSQL/" rel="tag">NoSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMQ/" rel="tag">RabbitMQ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Selenium/" rel="tag">Selenium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Session/" rel="tag">Session</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shiro/" rel="tag">Shiro</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/" rel="tag">SpringCloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebMagic/" rel="tag">WebMagic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zookeeper/" rel="tag">Zookeeper</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/" rel="tag">cache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interface/" rel="tag">interface</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile/" rel="tag">volatile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" rel="tag">代码托管</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" rel="tag">内存屏障</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" rel="tag">内存模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" rel="tag">分布式开发技术</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag">前端框架</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">包管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/" rel="tag">原子性</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" rel="tag">安全框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">并发工具类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" rel="tag">异步请求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%93%E5%8C%85%E7%AE%A1%E7%90%86/" rel="tag">打包管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">时间复杂度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" rel="tag">权限管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">消息中间件</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="tag">版本控制</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">空间复杂度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="tag">缓存中间件</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" rel="tag">网络协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" rel="tag">自然语言处理</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E6%9E%84/" rel="tag">重构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/AQS/" style="font-size: 13px;">AQS</a> <a href="/tags/ActiveMQ/" style="font-size: 13.08px;">ActiveMQ</a> <a href="/tags/Ajax/" style="font-size: 13px;">Ajax</a> <a href="/tags/Cookie/" style="font-size: 13px;">Cookie</a> <a href="/tags/Docker/" style="font-size: 13px;">Docker</a> <a href="/tags/Dubbo/" style="font-size: 13.08px;">Dubbo</a> <a href="/tags/ES6/" style="font-size: 13px;">ES6</a> <a href="/tags/Electron/" style="font-size: 13px;">Electron</a> <a href="/tags/Git/" style="font-size: 13.08px;">Git</a> <a href="/tags/HTML/" style="font-size: 13px;">HTML</a> <a href="/tags/HttpClient/" style="font-size: 13px;">HttpClient</a> <a href="/tags/IDE/" style="font-size: 13px;">IDE</a> <a href="/tags/JDK/" style="font-size: 13.17px;">JDK</a> <a href="/tags/JPA/" style="font-size: 13px;">JPA</a> <a href="/tags/JSP/" style="font-size: 13.25px;">JSP</a> <a href="/tags/JVM/" style="font-size: 13.5px;">JVM</a> <a href="/tags/Java/" style="font-size: 13.58px;">Java</a> <a href="/tags/JavaEE/" style="font-size: 13.5px;">JavaEE</a> <a href="/tags/JavaSE/" style="font-size: 14px;">JavaSE</a> <a href="/tags/JavaScript/" style="font-size: 13.08px;">JavaScript</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" style="font-size: 13.75px;">Java并发编程</a> <a href="/tags/Java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" style="font-size: 13.92px;">Java开发框架</a> <a href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 13px;">Java异常处理</a> <a href="/tags/Java%E7%88%AC%E8%99%AB/" style="font-size: 13.33px;">Java爬虫</a> <a href="/tags/Java%E9%94%81/" style="font-size: 13.17px;">Java锁</a> <a href="/tags/Java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/" style="font-size: 13.08px;">Java集合容器</a> <a href="/tags/Jsoup/" style="font-size: 13px;">Jsoup</a> <a href="/tags/Kafka/" style="font-size: 13px;">Kafka</a> <a href="/tags/Lambda/" style="font-size: 13px;">Lambda</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MongoDB/" style="font-size: 13px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13.42px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 13.67px;">Mybatis</a> <a href="/tags/NLP/" style="font-size: 13.33px;">NLP</a> <a href="/tags/Netty/" style="font-size: 13px;">Netty</a> <a href="/tags/NoSQL/" style="font-size: 13px;">NoSQL</a> <a href="/tags/RabbitMQ/" style="font-size: 13px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.17px;">Redis</a> <a href="/tags/Selenium/" style="font-size: 13px;">Selenium</a> <a href="/tags/Servlet/" style="font-size: 13.08px;">Servlet</a> <a href="/tags/Session/" style="font-size: 13px;">Session</a> <a href="/tags/Shiro/" style="font-size: 13.08px;">Shiro</a> <a href="/tags/Spring/" style="font-size: 13.83px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 13.17px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 13px;">SpringCloud</a> <a href="/tags/SpringMVC/" style="font-size: 13.08px;">SpringMVC</a> <a href="/tags/String/" style="font-size: 13px;">String</a> <a href="/tags/Vue-js/" style="font-size: 13.5px;">Vue.js</a> <a href="/tags/WebMagic/" style="font-size: 13px;">WebMagic</a> <a href="/tags/Zookeeper/" style="font-size: 13.08px;">Zookeeper</a> <a href="/tags/cache/" style="font-size: 13px;">cache</a> <a href="/tags/interface/" style="font-size: 13px;">interface</a> <a href="/tags/jQuery/" style="font-size: 13px;">jQuery</a> <a href="/tags/maven/" style="font-size: 13.08px;">maven</a> <a href="/tags/volatile/" style="font-size: 13px;">volatile</a> <a href="/tags/webpack/" style="font-size: 13px;">webpack</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1/" style="font-size: 13px;">代码托管</a> <a href="/tags/%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" style="font-size: 13px;">内存屏障</a> <a href="/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" style="font-size: 13px;">内存模型</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/" style="font-size: 13.33px;">分布式开发技术</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" style="font-size: 13.5px;">前端框架</a> <a href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 13px;">包管理</a> <a href="/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/" style="font-size: 13px;">原子性</a> <a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 13px;">安全框架</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 13px;">容器</a> <a href="/tags/%E5%B9%B6%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 13px;">并发工具类</a> <a href="/tags/%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/" style="font-size: 13px;">异步请求</a> <a href="/tags/%E6%89%93%E5%8C%85%E7%AE%A1%E7%90%86/" style="font-size: 13px;">打包管理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.17px;">数据结构</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 13px;">时间复杂度</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" style="font-size: 13px;">权限管理</a> <a href="/tags/%E6%A0%91/" style="font-size: 13px;">树</a> <a href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 13.58px;">消息中间件</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13.42px;">爬虫</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" style="font-size: 13.08px;">版本控制</a> <a href="/tags/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 13px;">空间复杂度</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 13px;">线性表</a> <a href="/tags/%E7%BA%BF%E7%A8%8B/" style="font-size: 13px;">线程</a> <a href="/tags/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 13.17px;">缓存中间件</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 13px;">网络协议</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="font-size: 13.17px;">网络编程</a> <a href="/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">自然语言处理</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%87%8D%E6%9E%84/" style="font-size: 13px;">重构</a> <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 13.08px;">面向对象</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 13.08px;">面试</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/20/%E5%8D%95%E6%B5%8B%E4%BA%8B%E4%BE%8B/" class="title">单测事例</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-20T09:53:27.399Z" itemprop="datePublished">2021-05-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">分布式开发技术</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/01/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/zookeeper%E4%B8%80%E8%87%B4%E6%80%A7/" class="title">zookeeper一致性</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-01T12:57:49.000Z" itemprop="datePublished">2021-05-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/01/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/springcloud/" class="title">Java面试专题/springcloud</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-01T05:18:23.170Z" itemprop="datePublished">2021-05-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/">Java虚拟机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/15/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/G1%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8%E7%89%B9%E6%80%A7/" class="title">G1垃圾回收器特性</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-15T06:56:05.000Z" itemprop="datePublished">2021-04-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/">消息中间件</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/01/05/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/RocketMQ%E4%BA%8B%E5%8A%A1%E6%9C%BA%E5%88%B6/" class="title">RocketMQ事务机制</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-01-05T02:36:45.000Z" itemprop="datePublished">2021-01-05</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Java面试专题/springcloud" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java面试专题/springcloud
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/05/01/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/springcloud/" class="article-date">
+	  <time datetime="2021-05-01T05:18:23.170Z" itemprop="datePublished">2021-05-01</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/05/01/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/springcloud/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="为什么需要学习Spring-Cloud"><a href="#为什么需要学习Spring-Cloud" class="headerlink" title="为什么需要学习Spring Cloud"></a>为什么需要学习Spring Cloud</h1><p><b>不论是商业应用还是用户应用，在业务初期都很简单，我们通常会把它实现为单<br>体结构的应用。但是，随着业务逐渐发展，产品思想会变得越来越复杂，单体结<br>构的应用也会越来越复杂。这就会给应用带来如下的几个问题：</b></p>
+<p>代码结构混乱：业务复杂，导致代码量很大，管理会越来越困难。同时，这也会<br>给业务的快速迭代带来巨大挑战；<br>开发效率变低：开发人员同时开发一套代码，很难避免代码冲突。开发过程会伴<br>随着不断解决冲突的过程，这会严重的影响开发效率；<br>排查解决问题成本高：线上业务发现 bug，修复 bug 的过程可能很简单。但<br>是，由于只有一套代码，需要重新编译、打包、上线，成本很高。<br>由于单体结构的应用随着系统复杂度的增高，会暴露出各种各样的问题。近些年<br>来，微服务架构逐渐取代了单体架构，且这种趋势将会越来越流行。Spring<br>Cloud是目前最常用的微服务开发框架，已经在企业级开发中大量的应用。</p>
+<h1 id="什么是Spring-Cloud"><a href="#什么是Spring-Cloud" class="headerlink" title="什么是Spring Cloud"></a>什么是Spring Cloud</h1><p>Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便利性巧妙<br>地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、智能路由、<br>消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格<br>做到一键启动和部署。Spring Cloud并没有重复制造轮子，它只是将各家公司<br>开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格<br>进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易<br>懂、易部署和易维护的分布式系统开发工具包。</p>
+<h1 id="设计目标与优缺点"><a href="#设计目标与优缺点" class="headerlink" title="设计目标与优缺点"></a>设计目标与优缺点</h1><h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><h4 id="协调各个微服务，简化分布式系统开发。"><a href="#协调各个微服务，简化分布式系统开发。" class="headerlink" title="协调各个微服务，简化分布式系统开发。"></a>协调各个微服务，简化分布式系统开发。</h4><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>微服务的框架那么多比如：dubbo、Kubernetes，为什么就要使用Spring<br>Cloud的呢？<br>优点：<br>产出于Spring大家族，Spring在企业级开发框架中无人能敌，来头很大，可以<br>保证后续的更新、完善<br>组件丰富，功能齐全。Spring Cloud 为微服务架构提供了非常完整的支持。例<br>如、配置管理、服务发现、断路器、微服务网关等；<br>Spring Cloud 社区活跃度很高，教程很丰富，遇到问题很容易找到解决方案<br>服务拆分粒度更细，耦合度比较低，有利于资源重复利用，有利于提高开发效率<br>可以更精准的制定优化服务方案，提高系统的可维护性<br>减轻团队的成本，可以并行开发，不用关注其他人怎么开发，先关注自己的开发<br>微服务可以是跨平台的，可以用任何一种语言开发<br>适于互联网时代，产品迭代周期更短<br>缺点：<br>微服务过多，治理成本高，不利于维护系统<br>分布式系统开发的成本高（容错，分布式事务等）对团队挑战大<br>总的来说优点大过于缺点，目前看来Spring Cloud是一套非常完善的分布式框<br>架，目前很多企业开始用微服务、Spring Cloud的优势是显而易见的。因此对</p>
+<p>于想研究微服务架构的同学来说，学习Spring Cloud是一个不错的选择。</p>
+<h1 id="Spring-Cloud发展前景"><a href="#Spring-Cloud发展前景" class="headerlink" title="Spring Cloud发展前景"></a>Spring Cloud发展前景</h1><p>Spring Cloud对于中小型互联网公司来说是一种福音，因为这类公司往往没有<br>实力或者没有足够的资金投入去开发自己的分布式系统基础设施，使用Spring<br>Cloud一站式解决方案能在从容应对业务发展的同时大大减少开发成本。同时，<br>随着近几年微服务架构和Docker容器概念的火爆，也会让Spring Cloud在未来<br>越来越“云”化的软件开发风格中立有一席之地，尤其是在五花八门的分布式解<br>决方案中提供了标准化的、全站式的技术方案，意义可能会堪比当年Servlet规<br>范的诞生，有效推进服务端软件系统技术水平的进步。</p>
+<h1 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h1><h1 id="主要项目"><a href="#主要项目" class="headerlink" title="主要项目"></a>主要项目</h1><p>Spring Cloud的子项目，大致可分成两类，一类是对现有成熟框架”Spring<br>Boot化”的封装和抽象，也是数量最多的项目；第二类是开发了一部分分布式系<br>统的基础设施的实现，如Spring Cloud Stream扮演的就是kafka, ActiveMQ这<br>样的角色。</p>
+<h2 id="Spring-Cloud-Config"><a href="#Spring-Cloud-Config" class="headerlink" title="Spring Cloud Config"></a>Spring Cloud Config</h2><p>集中配置管理工具，分布式系统中统一的外部配置管理，默认使用Git来存储配<br>置，可以支持客户端配置的刷新及加密、解密操作。</p>
+<h2 id="Spring-Cloud-Netflix"><a href="#Spring-Cloud-Netflix" class="headerlink" title="Spring Cloud Netflix"></a>Spring Cloud Netflix</h2><p>Netflix OSS 开源组件集成，包括Eureka、Hystrix、Ribbon、Feign、Zuul等<br>核心组件。<br>Eureka：服务治理组件，包括服务端的注册中心和客户端的服务发现机制；<br>Ribbon：负载均衡的服务调用组件，具有多种负载均衡调用策略；<br>Hystrix：服务容错组件，实现了断路器模式，为依赖服务的出错和延迟提供了<br>容错能力；<br>Feign：基于Ribbon和Hystrix的声明式服务调用组件；<br>Zuul：API网关组件，对请求提供路由及过滤功能。</p>
+<h2 id="Spring-Cloud-Bus"><a href="#Spring-Cloud-Bus" class="headerlink" title="Spring Cloud Bus"></a>Spring Cloud Bus</h2><h4 id="用于传播集群状态变化的消息总线，使用轻量级消息代理链接分布式系统中的节"><a href="#用于传播集群状态变化的消息总线，使用轻量级消息代理链接分布式系统中的节" class="headerlink" title="用于传播集群状态变化的消息总线，使用轻量级消息代理链接分布式系统中的节"></a>用于传播集群状态变化的消息总线，使用轻量级消息代理链接分布式系统中的节</h4><h4 id="点，可以用来动态刷新集群中的服务配置。"><a href="#点，可以用来动态刷新集群中的服务配置。" class="headerlink" title="点，可以用来动态刷新集群中的服务配置。"></a>点，可以用来动态刷新集群中的服务配置。</h4><h2 id="Spring-Cloud-Consul"><a href="#Spring-Cloud-Consul" class="headerlink" title="Spring Cloud Consul"></a>Spring Cloud Consul</h2><p>基于Hashicorp Consul的服务治理组件。</p>
+<h2 id="Spring-Cloud-Security"><a href="#Spring-Cloud-Security" class="headerlink" title="Spring Cloud Security"></a>Spring Cloud Security</h2><p>安全工具包，对Zuul代理中的负载均衡OAuth2客户端及登录认证进行支持。</p>
+<h2 id="Spring-Cloud-Sleuth"><a href="#Spring-Cloud-Sleuth" class="headerlink" title="Spring Cloud Sleuth"></a>Spring Cloud Sleuth</h2><p>Spring Cloud应用程序的分布式请求链路跟踪，支持使用Zipkin、HTrace和基<br>于日志（例如ELK）的跟踪。</p>
+<h2 id="Spring-Cloud-Stream"><a href="#Spring-Cloud-Stream" class="headerlink" title="Spring Cloud Stream"></a>Spring Cloud Stream</h2><h4 id="轻量级事件驱动微服务框架，可以使用简单的声明式模型来发送及接收消息，主"><a href="#轻量级事件驱动微服务框架，可以使用简单的声明式模型来发送及接收消息，主" class="headerlink" title="轻量级事件驱动微服务框架，可以使用简单的声明式模型来发送及接收消息，主"></a>轻量级事件驱动微服务框架，可以使用简单的声明式模型来发送及接收消息，主</h4><p>要实现为Apache Kafka及RabbitMQ。</p>
+<h2 id="Spring-Cloud-Task"><a href="#Spring-Cloud-Task" class="headerlink" title="Spring Cloud Task"></a>Spring Cloud Task</h2><h4 id="用于快速构建短暂、有限数据处理任务的微服务框架，用于向应用中添加功能性"><a href="#用于快速构建短暂、有限数据处理任务的微服务框架，用于向应用中添加功能性" class="headerlink" title="用于快速构建短暂、有限数据处理任务的微服务框架，用于向应用中添加功能性"></a>用于快速构建短暂、有限数据处理任务的微服务框架，用于向应用中添加功能性</h4><h4 id="和非功能性的特性。"><a href="#和非功能性的特性。" class="headerlink" title="和非功能性的特性。"></a>和非功能性的特性。</h4><h2 id="Spring-Cloud-Zookeeper"><a href="#Spring-Cloud-Zookeeper" class="headerlink" title="Spring Cloud Zookeeper"></a>Spring Cloud Zookeeper</h2><p>基于Apache Zookeeper的服务治理组件。</p>
+<h2 id="Spring-Cloud-Gateway"><a href="#Spring-Cloud-Gateway" class="headerlink" title="Spring Cloud Gateway"></a>Spring Cloud Gateway</h2><h4 id="API网关组件，对请求提供路由及过滤功能。"><a href="#API网关组件，对请求提供路由及过滤功能。" class="headerlink" title="API网关组件，对请求提供路由及过滤功能。"></a>API网关组件，对请求提供路由及过滤功能。</h4><h2 id="Spring-Cloud-OpenFeign"><a href="#Spring-Cloud-OpenFeign" class="headerlink" title="Spring Cloud OpenFeign"></a>Spring Cloud OpenFeign</h2><p>基于Ribbon和Hystrix的声明式服务调用组件，可以动态创建基于Spring MVC<br>注解的接口实现用于服务调用，在Spring Cloud 2.0中已经取代Feign成为了一<br>等公民。</p>
+<h1 id="Spring-Cloud的版本关系"><a href="#Spring-Cloud的版本关系" class="headerlink" title="Spring Cloud的版本关系"></a>Spring Cloud的版本关系</h1><p>Spring Cloud是一个由许多子项目组成的综合项目，各子项目有不同的发布节<br>奏。 为了管理Spring Cloud与各子项目的版本依赖关系，发布了一个清单，其<br>中包括了某个Spring Cloud版本对应的子项目版本。 为了避免Spring Cloud版<br>本号与子项目版本号混淆，Spring Cloud版本采用了名称而非版本号的命名，<br>这些版本的名字采用了伦敦地铁站的名字，根据字母表的顺序来对应版本时间顺<br>序，例如Angel是第一个版本，Brixton是第二个版本。 当Spring Cloud的发布<br>内容积累到临界点或者一个重大BUG被解决后，会发布一个”service<br>releases”版本，简称SRX版本，比如Greenwich.SR2就是Spring Cloud发布的<br>Greenwich版本的第2个SRX版本。目前Spring Cloud的最新版本是Hoxton。</p>
+<h2 id="Spring-Cloud和SpringBoot版本对应关系"><a href="#Spring-Cloud和SpringBoot版本对应关系" class="headerlink" title="Spring Cloud和SpringBoot版本对应关系"></a>Spring Cloud和SpringBoot版本对应关系</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Spring</span><br><span class="line">Cloud</span><br><span class="line">Version</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SpringBo</span><br><span class="line">ot</span><br><span class="line">Version</span><br><span class="line">Hoxton 2.2.x</span><br><span class="line">Greenwic</span><br><span class="line">h 2.1.x</span><br><span class="line">Finchley 2.0.x</span><br><span class="line">Edgware 1.5.x</span><br><span class="line">Dalston 1.5.x</span><br></pre></td></tr></table></figure>
+<h2 id="Spring-Cloud和各子项目版本对应关系"><a href="#Spring-Cloud和各子项目版本对应关系" class="headerlink" title="Spring Cloud和各子项目版本对应关系"></a>Spring Cloud和各子项目版本对应关系</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Compon</span><br><span class="line">ent</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Edgware.</span><br><span class="line">SR</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Greenwic</span><br><span class="line">h.SR</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">bus</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.3.4.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2.1.2.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud- 1.3.6.RELE2.1.2.RELE</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cloud-</span><br><span class="line">commons</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.3.6.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.2.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">config</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.4.7.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.3.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">netflix</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.4.7.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.2.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">security</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.2.4.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.3.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">consul</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.3.6.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.2.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">sleuth</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.3.6.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.1.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">stream</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ditmars.S</span><br><span class="line">R</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Fishtown.</span><br><span class="line">SR</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">zookeepe</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.2.3.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2.1.2.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.5.21.REL</span><br><span class="line">EASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.5.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">task</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.2.4.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1.2.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">gateway</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.0.3.RELE</span><br><span class="line">ASE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2.1.2.RELE</span><br><span class="line">ASE</span><br><span class="line">spring-</span><br><span class="line">cloud-</span><br><span class="line">openfeig</span><br><span class="line">n</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">暂无 2.1.2.RELEASE</span><br></pre></td></tr></table></figure>
+<p>注意：Hoxton版本是基于SpringBoot 2.2.x版本构建的，不适用于1.5.x版<br>本。随着2019年8月SpringBoot 1.5.x版本停止维护，Edgware版本也将停止<br>维护。</p>
+<h1 id="SpringBoot和SpringCloud的区别？"><a href="#SpringBoot和SpringCloud的区别？" class="headerlink" title="SpringBoot和SpringCloud的区别？"></a>SpringBoot和SpringCloud的区别？</h1><p>SpringBoot专注于快速方便的开发单个个体微服务。<br>SpringCloud是关注全局的微服务协调整理治理框架，它将SpringBoot开发的<br>一个个单体微服务整合并管理起来，</p>
+<h4 id="为各个微服务之间提供，配置管理、服务发现、断路器、路由、微代理、事件总"><a href="#为各个微服务之间提供，配置管理、服务发现、断路器、路由、微代理、事件总" class="headerlink" title="为各个微服务之间提供，配置管理、服务发现、断路器、路由、微代理、事件总"></a>为各个微服务之间提供，配置管理、服务发现、断路器、路由、微代理、事件总</h4><h4 id="线、全局锁、决策竞选、分布式会话等等集成服务"><a href="#线、全局锁、决策竞选、分布式会话等等集成服务" class="headerlink" title="线、全局锁、决策竞选、分布式会话等等集成服务"></a>线、全局锁、决策竞选、分布式会话等等集成服务</h4><p>SpringBoot可以离开SpringCloud独立使用开发项目， 但是SpringCloud离不<br>开SpringBoot ，属于依赖的关系<br>SpringBoot专注于快速、方便的开发单个微服务个体，SpringCloud关注全局<br>的服务治理框架。</p>
+<h1 id="使用-Spring-Boot-开发分布式微服务时，我们面临"><a href="#使用-Spring-Boot-开发分布式微服务时，我们面临" class="headerlink" title="使用 Spring Boot 开发分布式微服务时，我们面临"></a>使用 Spring Boot 开发分布式微服务时，我们面临</h1><h1 id="以下问题"><a href="#以下问题" class="headerlink" title="以下问题"></a>以下问题</h1><h4 id="（1）与分布式系统相关的复杂性-这种开销包括网络问题，延迟开销，带宽问"><a href="#（1）与分布式系统相关的复杂性-这种开销包括网络问题，延迟开销，带宽问" class="headerlink" title="（1）与分布式系统相关的复杂性-这种开销包括网络问题，延迟开销，带宽问"></a>（1）与分布式系统相关的复杂性-这种开销包括网络问题，延迟开销，带宽问</h4><h4 id="题，安全问题。"><a href="#题，安全问题。" class="headerlink" title="题，安全问题。"></a>题，安全问题。</h4><h4 id="（2）服务发现-服务发现工具管理群集中的流程和服务如何查找和互相交谈。它"><a href="#（2）服务发现-服务发现工具管理群集中的流程和服务如何查找和互相交谈。它" class="headerlink" title="（2）服务发现-服务发现工具管理群集中的流程和服务如何查找和互相交谈。它"></a>（2）服务发现-服务发现工具管理群集中的流程和服务如何查找和互相交谈。它</h4><h4 id="涉及一个服务目录，在该目录中注册服务，然后能够查找并连接到该目录中的服"><a href="#涉及一个服务目录，在该目录中注册服务，然后能够查找并连接到该目录中的服" class="headerlink" title="涉及一个服务目录，在该目录中注册服务，然后能够查找并连接到该目录中的服"></a>涉及一个服务目录，在该目录中注册服务，然后能够查找并连接到该目录中的服</h4><h4 id="务。"><a href="#务。" class="headerlink" title="务。"></a>务。</h4><h4 id="（3）冗余-分布式系统中的冗余问题。"><a href="#（3）冗余-分布式系统中的冗余问题。" class="headerlink" title="（3）冗余-分布式系统中的冗余问题。"></a>（3）冗余-分布式系统中的冗余问题。</h4><h4 id="（4）负载平衡-–负载平衡改善跨多个计算资源的工作负荷，诸如计算机，计算"><a href="#（4）负载平衡-–负载平衡改善跨多个计算资源的工作负荷，诸如计算机，计算" class="headerlink" title="（4）负载平衡 –负载平衡改善跨多个计算资源的工作负荷，诸如计算机，计算"></a>（4）负载平衡 –负载平衡改善跨多个计算资源的工作负荷，诸如计算机，计算</h4><h4 id="机集群，网络链路，中央处理单元，或磁盘驱动器的分布。"><a href="#机集群，网络链路，中央处理单元，或磁盘驱动器的分布。" class="headerlink" title="机集群，网络链路，中央处理单元，或磁盘驱动器的分布。"></a>机集群，网络链路，中央处理单元，或磁盘驱动器的分布。</h4><h4 id="（5）性能-问题-由于各种运营开销导致的性能问题。"><a href="#（5）性能-问题-由于各种运营开销导致的性能问题。" class="headerlink" title="（5）性能-问题 由于各种运营开销导致的性能问题。"></a>（5）性能-问题 由于各种运营开销导致的性能问题。</h4><p>（6）部署复杂性-Devops 技能的要求。</p>
+<h1 id="服务注册和发现是什么意思？Spring-Cloud-如何实"><a href="#服务注册和发现是什么意思？Spring-Cloud-如何实" class="headerlink" title="服务注册和发现是什么意思？Spring Cloud 如何实"></a>服务注册和发现是什么意思？Spring Cloud 如何实</h1><h1 id="现？"><a href="#现？" class="headerlink" title="现？"></a>现？</h1><h4 id="当我们开始一个项目时，我们通常在属性文件中进行所有的配置。随着越来越多"><a href="#当我们开始一个项目时，我们通常在属性文件中进行所有的配置。随着越来越多" class="headerlink" title="当我们开始一个项目时，我们通常在属性文件中进行所有的配置。随着越来越多"></a>当我们开始一个项目时，我们通常在属性文件中进行所有的配置。随着越来越多</h4><h4 id="的服务开发和部署，添加和修改这些属性变得更加复杂。有些服务可能会下降，"><a href="#的服务开发和部署，添加和修改这些属性变得更加复杂。有些服务可能会下降，" class="headerlink" title="的服务开发和部署，添加和修改这些属性变得更加复杂。有些服务可能会下降，"></a>的服务开发和部署，添加和修改这些属性变得更加复杂。有些服务可能会下降，</h4><p>而某些位置可能会发生变化。手动更改属性可能会产生问题。 Eureka 服务注册<br>和发现可以在这种情况下提供帮助。由于所有服务都在 Eureka 服务器上注册并<br>通过调用 Eureka 服务器完成查找，因此无需处理服务地点的任何更改和处理。</p>
+<h1 id="Spring-Cloud-和dubbo区别"><a href="#Spring-Cloud-和dubbo区别" class="headerlink" title="Spring Cloud 和dubbo区别?"></a>Spring Cloud 和dubbo区别?</h1><p>（1）服务调用方式 dubbo是RPC springcloud Rest Api</p>
+<p>（2）注册中心,dubbo 是zookeeper springcloud是eureka，也可以是<br>zookeeper<br>（3）服务网关,dubbo本身没有实现，只能通过其他第三方技术整合，<br>springcloud有Zuul路由网关，作为路由服务器，进行消费者的请求分<br>发,springcloud支持断路器，与git完美集成配置文件支持版本控制，事物总线<br>实现配置文件的更新与服务自动装配等等一系列的微服务架构要素。</p>
+<h1 id="负载平衡的意义什么？"><a href="#负载平衡的意义什么？" class="headerlink" title="负载平衡的意义什么？"></a>负载平衡的意义什么？</h1><h4 id="在计算中，负载平衡可以改善跨计算机，计算机集群，网络链接，中央处理单元"><a href="#在计算中，负载平衡可以改善跨计算机，计算机集群，网络链接，中央处理单元" class="headerlink" title="在计算中，负载平衡可以改善跨计算机，计算机集群，网络链接，中央处理单元"></a>在计算中，负载平衡可以改善跨计算机，计算机集群，网络链接，中央处理单元</h4><h4 id="或磁盘驱动器等多种计算资源的工作负载分布。负载平衡旨在优化资源使用，最"><a href="#或磁盘驱动器等多种计算资源的工作负载分布。负载平衡旨在优化资源使用，最" class="headerlink" title="或磁盘驱动器等多种计算资源的工作负载分布。负载平衡旨在优化资源使用，最"></a>或磁盘驱动器等多种计算资源的工作负载分布。负载平衡旨在优化资源使用，最</h4><h4 id="大化吞吐量，最小化响应时间并避免任何单一资源的过载。使用多个组件进行负"><a href="#大化吞吐量，最小化响应时间并避免任何单一资源的过载。使用多个组件进行负" class="headerlink" title="大化吞吐量，最小化响应时间并避免任何单一资源的过载。使用多个组件进行负"></a>大化吞吐量，最小化响应时间并避免任何单一资源的过载。使用多个组件进行负</h4><h4 id="载平衡而不是单个组件可能会通过冗余来提高可靠性和可用性。负载平衡通常涉"><a href="#载平衡而不是单个组件可能会通过冗余来提高可靠性和可用性。负载平衡通常涉" class="headerlink" title="载平衡而不是单个组件可能会通过冗余来提高可靠性和可用性。负载平衡通常涉"></a>载平衡而不是单个组件可能会通过冗余来提高可靠性和可用性。负载平衡通常涉</h4><h4 id="及专用软件或硬件，例如多层交换机或域名系统服务器进程。"><a href="#及专用软件或硬件，例如多层交换机或域名系统服务器进程。" class="headerlink" title="及专用软件或硬件，例如多层交换机或域名系统服务器进程。"></a>及专用软件或硬件，例如多层交换机或域名系统服务器进程。</h4><h1 id="什么是-Hystrix？它如何实现容错？"><a href="#什么是-Hystrix？它如何实现容错？" class="headerlink" title="什么是 Hystrix？它如何实现容错？"></a>什么是 Hystrix？它如何实现容错？</h1><p>Hystrix 是一个延迟和容错库，旨在隔离远程系统，服务和第三方库的访问点，<br>当出现故障是不可避免的故障时，停止级联故障并在复杂的分布式系统中实现弹<br>性。<br>通常对于使用微服务架构开发的系统，涉及到许多微服务。这些微服务彼此协<br>作。<br>思考以下微服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img</span><br></pre></td></tr></table></figure>
+
+<h4 id="假设如果上图中的微服务-9-失败了，那么使用传统方法我们将传播一个异常。"><a href="#假设如果上图中的微服务-9-失败了，那么使用传统方法我们将传播一个异常。" class="headerlink" title="假设如果上图中的微服务 9 失败了，那么使用传统方法我们将传播一个异常。"></a>假设如果上图中的微服务 9 失败了，那么使用传统方法我们将传播一个异常。</h4><h4 id="但这仍然会导致整个系统崩溃。"><a href="#但这仍然会导致整个系统崩溃。" class="headerlink" title="但这仍然会导致整个系统崩溃。"></a>但这仍然会导致整个系统崩溃。</h4><h4 id="随着微服务数量的增加，这个问题变得更加复杂。微服务的数量可以高达-1000"><a href="#随着微服务数量的增加，这个问题变得更加复杂。微服务的数量可以高达-1000" class="headerlink" title="随着微服务数量的增加，这个问题变得更加复杂。微服务的数量可以高达 1000."></a>随着微服务数量的增加，这个问题变得更加复杂。微服务的数量可以高达 1000.</h4><p>这是 hystrix 出现的地方 我们将使用 Hystrix 在这种情况下的 Fallback 方法功<br>能。我们有两个服务 employee-consumer 使用由 employee-consumer 公开<br>的服务。<br>简化图如下所示</p>
+<p>img<br>现在假设由于某种原因，employee-producer 公开的服务会抛出异常。我们在<br>这种情况下使用 Hystrix 定义了一个回退方法。这种后备方法应该具有与公开服<br>务相同的返回类型。如果暴露服务中出现异常，则回退方法将返回一些值。</p>
+<h1 id="什么是-Hystrix-断路器？我们需要它吗？"><a href="#什么是-Hystrix-断路器？我们需要它吗？" class="headerlink" title="什么是 Hystrix 断路器？我们需要它吗？"></a>什么是 Hystrix 断路器？我们需要它吗？</h1><p>由于某些原因，employee-consumer 公开服务会引发异常。在这种情况下使<br>用Hystrix 我们定义了一个回退方法。如果在公开服务中发生异常，则回退方法<br>返回一些默认值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img</span><br></pre></td></tr></table></figure>
+
+<p>如果 firstPage method() 中的异常继续发生，则 Hystrix 电路将中断，并且员<br>工使用者将一起跳过 firtsPage 方法，并直接调用回退方法。 断路器的目的是<br>给第一页方法或第一页方法可能调用的其他方法留出时间，并导致异常恢复。可<br>能发生的情况是，在负载较小的情况下，导致异常的问题有更好的恢复机会 。<br>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-<br>nMSJX6ml-1582105816943)(<a href="https://user-gold-" target="_blank" rel="noopener">https://user-gold-</a><br>cdn.xitu.io/2019/12/30/16f55fbfd4e33ae7?<br>imageView2/0/w/1280/h/960/format/webp/ignore-error/1)]</p>
+<h1 id="什么是-Netflix-Feign？它的优点是什么？"><a href="#什么是-Netflix-Feign？它的优点是什么？" class="headerlink" title="什么是 Netflix Feign？它的优点是什么？"></a>什么是 Netflix Feign？它的优点是什么？</h1><p>Feign 是受到 Retrofit，JAXRS-2.0 和 WebSocket 启发的 java 客户端联编程<br>序。<br>Feign 的第一个目标是将约束分母的复杂性统一到 http apis，而不考虑其稳定<br>性。<br>在 employee-consumer 的例子中，我们使用了 employee-producer 使用<br>REST模板公开的 REST 服务。<br>但是我们必须编写大量代码才能执行以下步骤<br>（1）使用功能区进行负载平衡。<br>（2）获取服务实例，然后获取基本 URL。<br>（3）利用 REST 模板来使用服务。 前面的代码如下<br>1 @Controller<br>2 public class ConsumerControllerClient {<br>3 @Autowired<br>4 private LoadBalancerClient loadBalancer;<br>5 public void getEmployee() throws RestClientException, IOException {<br>6  ServiceInstance serviceInstance=loadBalancer.choose(“employee‐<br>producer”);<br>7  System.out.println(serviceInstance.getUri());<br>8  String baseUrl=serviceInstance.getUri().toString();<br>9  baseUrl=baseUrl+”/employee”;<br>10  RestTemplate restTemplate = new RestTemplate();<br>11  ResponseEntity<String> response=null;<br>12 try{<br>13 response=restTemplate.exchange(baseUrl,<br>14 HttpMethod.GET, getHeaders(),String.class);</String></p>
+<p>15 }<br>16 catch (Exception ex)<br>17 {<br>18 System.out.println(ex);<br>19 }<br>20  System.out.println(response.getBody());<br>21 }<br>之前的代码，有像 NullPointer 这样的例外的机会，并不是最优的。我们将看到<br>如何使用 Netflix Feign 使呼叫变得更加轻松和清洁。如果 Netflix Ribbon 依<br>赖关系也在类路径中，那么 Feign 默认也会负责负载平衡。</p>
+<h1 id="什么是-Spring-Cloud-Bus？我们需要它吗？"><a href="#什么是-Spring-Cloud-Bus？我们需要它吗？" class="headerlink" title="什么是 Spring Cloud Bus？我们需要它吗？"></a>什么是 Spring Cloud Bus？我们需要它吗？</h1><p>考虑以下情况：我们有多个应用程序使用 Spring Cloud Config 读取属性，而<br>Spring Cloud Config 从 GIT 读取这些属性。<br>下面的例子中多个员工生产者模块从 Employee Config Module 获取 Eureka<br>注册的财产。</p>
+<p>img<br>如果假设 GIT 中的 Eureka 注册属性更改为指向另一台 Eureka 服务器，会发生<br>什么情况。在这种情况下，我们将不得不重新启动服务以获取更新的属性。<br>还有另一种使用执行器端点/刷新的方式。但是我们将不得不为每个模块单独调<br>用这个 url。例如，如果 Employee Producer1 部署在端口 8080 上，则调用</p>
+<p>http：// localhost：8080 / refresh。同样对于 Employee Producer<br>http：//localhost：8081 / refresh 等等。这又很麻烦。这就是 Spring Cloud<br>Bus 发挥作用的地方。</p>
+<p>img<br>Spring Cloud Bus 提供了跨多个实例刷新配置的功能。因此，在上面的示例<br>中，如果我们刷新 Employee Producer1，则会自动刷新所有其他必需的模<br>块。如果我们有多个微服务启动并运行，这特别有用。这是通过将所有微服务连<br>接到单个消息代理来实现的。无论何时刷新实例，此事件都会订阅到侦听此代理<br>的所有微服务，并且它们也会刷新。可以通过使用端点/总线/刷新来实现对任何<br>单个实例的刷新。</p>
+<h1 id="Spring-Cloud断路器的作用"><a href="#Spring-Cloud断路器的作用" class="headerlink" title="Spring Cloud断路器的作用"></a>Spring Cloud断路器的作用</h1><h4 id="当一个服务调用另一个服务由于网络原因或自身原因出现问题，调用者就会等待"><a href="#当一个服务调用另一个服务由于网络原因或自身原因出现问题，调用者就会等待" class="headerlink" title="当一个服务调用另一个服务由于网络原因或自身原因出现问题，调用者就会等待"></a>当一个服务调用另一个服务由于网络原因或自身原因出现问题，调用者就会等待</h4><h4 id="被调用者的响应-当更多的服务请求到这些资源导致更多的请求等待，发生连锁"><a href="#被调用者的响应-当更多的服务请求到这些资源导致更多的请求等待，发生连锁" class="headerlink" title="被调用者的响应 当更多的服务请求到这些资源导致更多的请求等待，发生连锁"></a>被调用者的响应 当更多的服务请求到这些资源导致更多的请求等待，发生连锁</h4><h4 id="效应（雪崩效应）"><a href="#效应（雪崩效应）" class="headerlink" title="效应（雪崩效应）"></a>效应（雪崩效应）</h4><h4 id="断路器有完全打开状态-一段时间内-达到一定的次数无法调用-并且多次监测没有"><a href="#断路器有完全打开状态-一段时间内-达到一定的次数无法调用-并且多次监测没有" class="headerlink" title="断路器有完全打开状态:一段时间内 达到一定的次数无法调用 并且多次监测没有"></a>断路器有完全打开状态:一段时间内 达到一定的次数无法调用 并且多次监测没有</h4><h4 id="恢复的迹象-断路器完全打开-那么下次请求就不会请求到该服务"><a href="#恢复的迹象-断路器完全打开-那么下次请求就不会请求到该服务" class="headerlink" title="恢复的迹象 断路器完全打开 那么下次请求就不会请求到该服务"></a>恢复的迹象 断路器完全打开 那么下次请求就不会请求到该服务</h4><h4 id="半开-短时间内-有恢复迹象-断路器会将部分请求发给该服务，正常调用时-断路"><a href="#半开-短时间内-有恢复迹象-断路器会将部分请求发给该服务，正常调用时-断路" class="headerlink" title="半开:短时间内 有恢复迹象 断路器会将部分请求发给该服务，正常调用时 断路"></a>半开:短时间内 有恢复迹象 断路器会将部分请求发给该服务，正常调用时 断路</h4><h4 id="器关闭"><a href="#器关闭" class="headerlink" title="器关闭"></a>器关闭</h4><h4 id="关闭：当服务一直处于正常状态-能正常调用"><a href="#关闭：当服务一直处于正常状态-能正常调用" class="headerlink" title="关闭：当服务一直处于正常状态 能正常调用"></a>关闭：当服务一直处于正常状态 能正常调用</h4><h1 id="什么是Spring-Cloud-Config"><a href="#什么是Spring-Cloud-Config" class="headerlink" title="什么是Spring Cloud Config?"></a>什么是Spring Cloud Config?</h1><h4 id="在分布式系统中，由于服务数量巨多，为了方便服务配置文件统一管理，实时更"><a href="#在分布式系统中，由于服务数量巨多，为了方便服务配置文件统一管理，实时更" class="headerlink" title="在分布式系统中，由于服务数量巨多，为了方便服务配置文件统一管理，实时更"></a>在分布式系统中，由于服务数量巨多，为了方便服务配置文件统一管理，实时更</h4><p>新，所以需要分布式配置中心组件。在Spring Cloud中，有分布式配置中心组<br>件spring cloud config ，它支持配置服务放在配置服务的内存中（即本地），<br>也支持放在远程Git仓库中。在spring cloud config 组件中，分两个角色，一是<br>config server，二是config client。<br>使用：<br>（1）添加pom依赖<br>（2）配置文件添加相关配置<br>（3）启动类添加注解@EnableConfigServer</p>
+<h1 id="什么是Spring-Cloud-Gateway"><a href="#什么是Spring-Cloud-Gateway" class="headerlink" title="什么是Spring Cloud Gateway?"></a>什么是Spring Cloud Gateway?</h1><p>Spring Cloud Gateway是Spring Cloud官方推出的第二代网关框架，取代Zuul<br>网关。网关作为流量的，在微服务系统中有着非常作用，网关常见的功能有路由<br>转发、权限校验、限流控制等作用。<br>使用了一个RouteLocatorBuilder的bean去创建路由，除了创建路由<br>RouteLocatorBuilder可以让你添加各种predicates和filters，predicates断言<br>的意思，顾名思义就是根据具体的请求的规则，由具体的route去处理，filters<br>是各种过滤器，用来对请求做各种判断和修改。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://yimchengjie.github.io/2021/05/01/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/springcloud/" title="Java面试专题/springcloud" target="_blank" rel="external">https://yimchengjie.github.io/2021/05/01/Java%E9%9D%A2%E8%AF%95%E4%B8%93%E9%A2%98/springcloud/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yimchengjie" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yimchengjie" target="_blank"><span class="text-dark">yanchengjie</span><small class="ml-1x">love and share</small></a></h3>
+        <div>Anything can go right will go right</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/05/01/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/zookeeper%E4%B8%80%E8%87%B4%E6%80%A7/" title="zookeeper一致性"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/04/15/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/G1%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8%E7%89%B9%E6%80%A7/" title="G1垃圾回收器特性"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/yimchengjie" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+<script src="//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'Java面试专题/springcloud', 
+  owner: 'yimchengjie', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'yimchengjie.github.io',
+  oauth: {
+    client_id: '5357d42fc4697dd63264',
+    client_secret: 'de58f57f595c5efd724c391370688331b810f100',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
