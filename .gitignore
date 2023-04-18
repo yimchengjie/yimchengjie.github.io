@@ -5,3 +5,10 @@ db.json
 node_modules/
 public/
 .deploy*/
+source/_posts/.obsidian/app.json
+source/_posts/.obsidian/appearance.json
+source/_posts/.obsidian/core-plugins-migration.json
+source/_posts/.obsidian/core-plugins.json
+source/_posts/.obsidian/graph.json
+source/_posts/.obsidian/hotkeys.json
+source/_posts/.obsidian/workspace.json
